@@ -12,7 +12,8 @@ The = [[ Original Admin Script == loadstring(game:HttpGet("https://raw.githubuse
 
 ThisIs = {"A script that works in StarterPlayerScripts, ReplicatedFirst, StarterGui, StarterCharacterScripts, and many popular roblox games...", 
 
-	"loadstring for executor"} -- loadstring(game:HttpGet("https://pastebin.com/raw/24aTHMT7", true))()			
+	"loadstring for executor"} -- loadstring(game:HttpGet("https://raw.githubusercontent.com/rainbowhackor/tah-haks/refs/heads/main/QoL", true))()	
+--"pastebin old version, adding a word flagged their smart filter so no more pastebin -- loadstring(game:HttpGet("https://pastebin.com/raw/24aTHMT7", true))()	 
 
 -- Disclaimer -- No one can see the swords, accessories, or special effects created by this client script, but everything else is visible for some reason - animations and physics... 
 -- No R6 does NOT work
@@ -2093,18 +2094,17 @@ function guias()
 		ThisIs = {"show players v1"}	--6-2
 		esp = Button:Clone() esp.Parent = Spaghetti esp.Text = "esp" esp.Position = UDim2.new(0.05,0 , 0,row10)  esp.BackgroundColor3 = Color3.fromRGB(0, 170, 255)  
 		esp.MouseButton1Click:Connect(function() 
-			for _, part in pairs(workspace:GetChildren()) do
-				if part:IsA("Model") and part:FindFirstChildWhichIsA("Humanoid") then iSeeYou = part end
-				--if char:FindFirstChild("iSeeYou") then iSeeYou:FindFirstChild("iSeeYou"):Remove() end 
-				--char:FindFirstChild("iSeeYou"):Remove()  
-				
-			--end
 			if not char:FindFirstChild("iSeeYou") then 
-					--if part:FindFirstChild("YOU WHAT!") then part:FindFirstChild("YOU WHAT!"):Remove() end
+			for _, part in pairs(workspace:GetChildren()) do
+				if part:IsA("Model") and part:FindFirstChildWhichIsA("Humanoid") then iSeeYou = part
 				look = Instance.new("Highlight", iSeeYou) look.Name = "iSeeYou" look.FillColor = Color3.fromRGB(0,255,85) look.FillTransparency = .7  
-					if look.Parent == char then look.FillTransparency = 1 look.OutlineTransparency = 1 end
-			
-	else iSeeYou.iSeeYou:Remove()
+					if look.Parent == char then look.FillTransparency = 1 look.OutlineTransparency = 1 end end
+			end 
+			else 
+				for _, part in pairs(workspace:GetChildren()) do
+					if part:IsA("Model") and part:FindFirstChildWhichIsA("Humanoid") then iSeeYou = part end
+				 
+				if iSeeYou:FindFirstChild("iSeeYou") then iSeeYou:FindFirstChild("iSeeYou"):Remove() end  
 			end end
 				end) 
 		
@@ -2802,6 +2802,19 @@ function guias()
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
 			
+
+			{ Id = "11753545334", Name = "Out",  Color = Color3.fromRGB(217, 0, 255)  },
+			{ Id = "3576747102", Name = "AroundT",  Color = Color3.fromRGB(93, 0, 255)  },
+			{ Id = "7942964447", Name = "Cobra",  Color = Color3.fromRGB(170, 0, 255)  },
+			{ Id = "14353421343", Name = "QueenFace" ,  Color = Color3.fromRGB(255, 127, 255)  },
+			{ Id = "4049646104", Name = "line" ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = "11309263077", Name = "Heart",  Color = Color3.fromRGB(255, 85, 255)  },
+			{ Id = "15698511500", Name = "Cuco-Levitate",  Color = Color3.fromRGB(0, 31, 170)  },
+			{ Id = "12715393154", Name = "Moonlight" ,  Color = Color3.fromRGB(0, 211, 255)  },
+			{ Id = "16276501655", Name = "Daves Spin"  ,  Color = Color3.fromRGB(0, 127, 255)  },  
+
+			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
+			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
 			
 			--{ Id = "16553249658", Name = "Piano Hands",  Color = Color3.fromRGB(0, 170, 255)  },
 		}
@@ -2818,7 +2831,8 @@ function guias()
 			end
 			--if emote.Color then PlaceHolder.BackgroundColor3 = emote.Color end
 		end
-		
+		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "/e dance3" PlaceHolder.Name = "/e dance3" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan	PlaceHolder.BackgroundColor3 = Color3.fromRGB(115, 0, 255)
+
 		--[[PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Dragons" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus) 					PlaceHolder.BackgroundColor3 = Color3.fromRGB(170, 85, 127)
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Ericdoa" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan		PlaceHolder.BackgroundColor3 = Color3.fromRGB(255, 85, 0)
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "BP.Lisa Money" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus) 					PlaceHolder.BackgroundColor3 = Color3.fromRGB(0, 170, 127)
@@ -2840,7 +2854,7 @@ function guias()
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Piano Hands" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan			PlaceHolder.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
 ]]
 
-		ThisIs = {"i like these"} plus=plus+5
+		--[[ThisIs = {"i like these"} plus=plus+5
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Out" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus) 					PlaceHolder.BackgroundColor3 = Color3.fromRGB(217, 0, 255)
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "AroundT" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan	PlaceHolder.BackgroundColor3 = Color3.fromRGB(93, 0, 255)
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Cobra" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus) 					PlaceHolder.BackgroundColor3 = Color3.fromRGB(170, 0, 255)
@@ -2850,8 +2864,7 @@ function guias()
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Cuco-Levitate" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus) 				PlaceHolder.BackgroundColor3 = Color3.fromRGB(0, 31, 170)
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Moonlight" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan		PlaceHolder.BackgroundColor3 = Color3.fromRGB(0, 211, 255)
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Daves Spin" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus) 					PlaceHolder.BackgroundColor3 = Color3.fromRGB(0, 127, 255)
-		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "/e dance3" PlaceHolder.Name = "/e dance3" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan	PlaceHolder.BackgroundColor3 = Color3.fromRGB(115, 0, 255)
-
+		]]
 		ThisIs = {"i like these"} Button.BackgroundColor3 = Color3.fromRGB(0, 255, 127) plus=plus+5
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "BP.Lovesick" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus) 				PlaceHolder.BackgroundColor3 = Color3.fromRGB(211, 255, 255)
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "U-Like-That" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan		PlaceHolder.BackgroundColor3 = Color3.fromRGB(170, 0, 255)
