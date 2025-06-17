@@ -2146,7 +2146,7 @@ function guias()
 			--	local MouseButton = Instance.new("TextButton",Slide) MouseButton.Name = "MouseButton" MouseButton.Position = UDim2.new(0.0, 0 , 0.0, 0) MouseButton.Size = UDim2.new(1,0 , 1,0)   MouseButton.BackgroundTransparency = 1   MouseButton.ZIndex=1
 			local MouseButton = Button:Clone() MouseButton.Parent = Slide MouseButton.Text=Slide.Name MouseButton.Name = "MouseButton" MouseButton.Size = UDim2.new(1,0 , 1,0) MouseButton.Position = UDim2.new(0.0, 0 , 0.0, 0) MouseButton.BackgroundTransparency = 1 MouseButton.ZIndex=1
 			local Max = Instance.new("NumberValue",Slide) Max.Name = "Max" --Max.Value = 100
-			if Slide.Name == "Gravity" then Max.Value = 100 end if Slide.Name == "Jump" then Max.Value = 150 end if Slide.Name == "Run" then Max.Value = 250 end if Slide.Name == "Walk" then Max.Value = 32 end
+			if Slide.Name == "Gravity" then Max.Value = 100 end if Slide.Name == "Jump" then Max.Value = 90 end if Slide.Name == "Run" then Max.Value = 250 end if Slide.Name == "Walk" then Max.Value = 32 end
 			local Value1 = Instance.new("NumberValue",Slide) Value1.Name = "Value1" Value1.Value = 7.2
 			local MouseisOn = Instance.new("BoolValue",Slide) MouseisOn.Value = false MouseisOn.Name = "MouseisOn"
 			local MouseisDown = Instance.new("BoolValue",Slide) MouseisDown.Value = false MouseisDown.Name = "MouseisDown"
@@ -2179,7 +2179,7 @@ function guias()
 				Sliding:TweenSize(UDim2.new(NewValue/Max.Value,0,1,0),Enum.EasingDirection.Out,Enum.EasingStyle.Quad,0.1,true,nil)
 				Point.ValueLabel.TextLabel.Text = NewValue *1--* ValueLabelMultiply.Value
 				if Slide.Name == "Gravity" then workspace.Gravity = NewValue end 
-				if Slide.Name == "Jump" then char.Humanoid.JumpHeight = NewValue char.Humanoid.JumpPower = NewValue end
+				if Slide.Name == "Jump" then char.Humanoid.JumpHeight = NewValue/2 char.Humanoid.JumpPower = NewValue end
 				if Slide.Name == "Run" then char.Humanoid.WalkSpeed = NewValue end 
 				if Slide.Name == "Walk" then char.Humanoid.WalkSpeed = NewValue end 
 			end
@@ -2382,7 +2382,11 @@ function guias()
 		toolate2.MouseButton2Click:Connect(function()
 			for _, Ls in pairs(game.Players.LocalPlayer.logs1:GetChildren()) do Ls:Remove() end
 		end)
-
+		
+		oof = Button:Clone() oof.Parent = Spaghetti oof.Text = "💥oof💥" oof.Position = UDim2.new(0.55,0 , 0,row18)  oof.BackgroundColor3 = Color3.fromRGB(175, 55, 0)   
+		oof.MouseButton1Click:Connect(function() _G.FLing_Killed_Far() end)
+		oof.MouseButton2Click:Connect(function() _G.FLing_Killed() end)
+		
 		added=0 -- *cough *cough (catalog tester)  *cough (outfit games)  *cough (saveinstance)  *cough (aint no party like a-
 		if not game.Lighting:FindFirstChild("oof") then local wa = Instance.new("Model",game.Lighting) wa.Name = "oof" end
 		copychar = Button:Clone() copychar.Parent = Spaghetti copychar.Text = "Copy Me" copychar.Position = UDim2.new(0.05,0 , 0,row20) copychar.BackgroundColor3 = Color3.fromRGB(255, 0, 255)   
@@ -2402,46 +2406,84 @@ function guias()
 				copychar2.BackgroundColor3 = Color3.fromRGB(0, 255, 0) else copychar2.BackgroundColor3 = Color3.fromRGB(85, 85, 85)  end
 		end)
 		ThisIs = {"click char for anims"}  charanim = false
-		per2 = Button:Clone() per2.Parent = Spaghetti per2.Text = "Canim" per2.Position = UDim2.new(0.05,0 , 0,row13)  per2.BackgroundColor3 = Color3.fromRGB(0, 255, 255)   
+		per2 = Button:Clone() per2.Parent = Spaghetti per2.Text = "Anim ID" per2.Position = UDim2.new(0.05,0 , 0,row13)  per2.BackgroundColor3 = Color3.fromRGB(162, 0, 255)   
 		per2.MouseButton1Click:Connect(function() charanim = not charanim
 			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
 			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "copycharanim" then Ui:Remove() end end
 			if Begal.GuiHolder:FindFirstChild("copycharanim") then Begal.GuiHolder:FindFirstChild("copycharanim"):Remove() return end
-			copycharanim = notScroll:Clone() copycharanim.Parent = Begal.GuiHolder  copycharanim.Name = "copycharanim" copycharanim.BackgroundTransparency = .9 copycharanim.Position = UDim2.new(0.15, 0 , 0.3, 0)  copycharanim.Size = UDim2.new(0.1, 0 , 0.36, 0)
-			listing = Instance.new("UIListLayout",copycharanim) listing.Padding = UDim.new(0,1)
+			copycharanim = Scroll:Clone() copycharanim.Parent = Begal.GuiHolder  copycharanim.Name = "copycharanim" copycharanim.BackgroundTransparency = .9 copycharanim.Position = UDim2.new(0.15, 0 , 0.3, 0)  copycharanim.Size = UDim2.new(0.1, 0 , 0.36, 0) 
+			copycharanim.ClipsDescendants = false copycharanim.ZIndex = -1
+			listing = Instance.new("UIListLayout",copycharanim) listing.Padding = UDim.new(0,1) 
+			local clam = Button:Clone() clam.Parent = copycharanim clam.Size = UDim2.new(0.95,0 , 0,15)  clam.BackgroundTransparency = .5 clam.TextXAlignment = Enum.TextXAlignment.Left clam.BackgroundColor3 = Color3.fromRGB(143, 143, 143)
+			clam.Text = "click this button, or other players"
+			clam.MouseButton1Down:Connect(function()
+				
+				if char:FindFirstChildWhichIsA("Humanoid") then animas = char:FindFirstChildWhichIsA("Humanoid"):GetPlayingAnimationTracks() end
+				for i, track in pairs(animas) do task.spawn(function()
+						local pass = true for _,v in pairs(_G.animtable) do 
+							if v == track.Animation.AnimationId then pass = false
+								 
 
-
+							end
+						end
+						if pass then 
+							table.insert(_G.animtable,track.Animation.AnimationId)
+							--createbutton(track.Animation.AnimationId)
+							local str = string.match(tostring(track.Animation.AnimationId), "%d+" )
+							local ba = Button:Clone() ba.Parent = copycharanim ba.Size = UDim2.new(0.95,0 , 0,15) ba.BackgroundTransparency = .5 ba.TextXAlignment = Enum.TextXAlignment.Left ba.BackgroundColor3 = Color3.fromRGB(0, 170, 0)
+							ba.Text = game:GetService("MarketplaceService"):GetProductInfo(tonumber(str)).Name .. "	"  ..str--track.Animation.AnimationId:gsub('[^%d.]', '')  -- track.Animation.AnimationId
+							ba.MouseButton1Down:Connect(function()
+								setclipboard("https://assetdelivery.roblox.com/v1/asset/?id="..str .."  ".. ba.Text  )
+								--setclipboard(str.."  "..track.Animation.AnimationId)
+							end)
+						end
+					end)
+				end
+				
+			end)
+			
 		end)
-		local animtable = {}
-		task.spawn(function() task.wait(10) 
+		if not _G.animtable then _G.animtable = {} end
+		 
+		task.spawn(function() task.wait(3) 
 			local charclick = UserInputService.InputBegan:Connect(function(input, gameProcessed) local mouse = player:GetMouse()
 				if input.UserInputType == Enum.UserInputType.MouseButton1 then 
-
+This = "is scripted very incorrectly, but still works"
 					if oval == true or charanim == true then 
 						if mouse.Target.Parent ~= nil then Cmodel = mouse.Target.Parent  Cmodel.Archivable = true  --cha:MoveTo(Cmodel.Head.Position)
+							print(Cmodel)
 							if charanim == true then 
-								if Cmodel:FindFirstChildWhichIsA("Humanoid") then animas = Cmodel:FindFirstChildWhichIsA("Humanoid"):GetPlayingAnimationTracks() end
-								if Cmodel.Parent:FindFirstChildWhichIsA("Humanoid") then animas = Cmodel.Parent:FindFirstChildWhichIsA("Humanoid"):GetPlayingAnimationTracks() end
+								if Cmodel:FindFirstChildWhichIsA("Humanoid") then the_Humanoid = Cmodel:FindFirstChildWhichIsA("Humanoid")  animas = the_Humanoid:GetPlayingAnimationTracks() end
+								if Cmodel.Parent:FindFirstChildWhichIsA("Humanoid") then the_Humanoid = Cmodel.Parent:FindFirstChildWhichIsA("Humanoid")  animas = the_Humanoid:GetPlayingAnimationTracks() end
+								if the_Humanoid then print(the_Humanoid)
 									for i, track in pairs(animas) do task.spawn(function()
-											local pass = true for _,v in pairs(animtable) do 
+										local pass = true for _,v in pairs(_G.animtable) do 
 												if v == track.Animation.AnimationId then pass = false
-													
+												local str = string.match(tostring(track.Animation.AnimationId), "%d+" )
+												local ba = Button:Clone() ba.Parent = copycharanim ba.Size = UDim2.new(0.95,0 , 0,15) ba.TextXAlignment = Enum.TextXAlignment.Left
+												ba.Text = "already got" .. "  " .. game:GetService("MarketplaceService"):GetProductInfo(tonumber(str)).Name.. "	"  ..str
+												ba.MouseButton1Down:Connect(function()
+													setclipboard(str .."  ".. ba.Text  )
+													--setclipboard(str.."  "..track.Animation.AnimationId)
+												end)	
+												  
 												end
 											end
 											if pass then 
-												table.insert(animtable,track.Animation.AnimationId)
+											table.insert(_G.animtable,track.Animation.AnimationId)
 												--createbutton(track.Animation.AnimationId)
 												local str = string.match(tostring(track.Animation.AnimationId), "%d+" )
-												local ba = Button:Clone() ba.Parent = copycharanim ba.Size = UDim2.new(0.95,0 , 0,15) ba.TextXAlignment = Enum.TextXAlignment.Left
+											local ba = Button:Clone() ba.Parent = copycharanim ba.Size = UDim2.new(0.95,0 , 0,15) ba.BackgroundTransparency = .5 ba.TextXAlignment = Enum.TextXAlignment.Left ba.BackgroundColor3 = Color3.fromRGB(0, 170, 0)
 												ba.Text = game:GetService("MarketplaceService"):GetProductInfo(tonumber(str)).Name .. "	"  ..str--track.Animation.AnimationId:gsub('[^%d.]', '')  -- track.Animation.AnimationId
 												ba.MouseButton1Down:Connect(function()
-													setclipboard(ba.Text)
+												setclipboard("https://assetdelivery.roblox.com/v1/asset/?id="..str .."  ".. ba.Text  )
 													--setclipboard(str.."  "..track.Animation.AnimationId)
 												end)
 											end
 										end)
+										the_Humanoid = nil
 								end
-								
+								end
 								task.wait()
 							end
 							
@@ -3311,11 +3353,12 @@ Updates=[[
 	v9	4/16/24 - 5/1/24	I KNEW I CHANGED LIGHTING TECHNOLOGY WITH A SCRIPT BEFORE!  stop gaslighting me roblox community!!!  ( note You cannot change lighting technology with a script unless you are using a exploited version of roblox, now if only i had an exploited version of roblox studio, would be very usefull to script change lighting tech for the 500 maps i stole  )
 	v10	7/7/24 - 7/13/24	they did so bad with the border that it saved his life
 	v11	8/3/24 - 8/5/24		nil x 1OO
-	v12	9/26/24 - 10/10/24	scripts to assist in saving smaller assets, because saving the whole game results in a corrupted file sometimes
+	v12	9/26/24 - 10/10/24	added functions to assist in saving smaller assets, because saving the entire game results in a corrupted file sometimes
 	
-	v13	3/15/25 - 3/15/25	new tables, _G functions
+	v13	3/15/25 - 3/15/25	reformatted classic spammy tables for
+	more modern and efficient scripting, _G functions to merge scripts from my game
 	v14 5/21/25 - 6/2/25	added pcall function to ignore a few errors because this script runs with default roblox local scripts, this entire script would break in games that customized the default roblox local scripts.
-
+	v15 6/8/25 - 6/16/25	added animation id copier to export animations to your game
 ]]
 
 
