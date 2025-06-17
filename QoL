@@ -1,9 +1,7 @@
 
 
 
---nds hax
---
---https://hastebin.com/share/xawajicelu.lua 
+--nds hax 
 
 
 The = [[ Original Admin Script == loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()	]] --i dont understand why they are as offencive as possible...
@@ -13,7 +11,7 @@ The = [[ Original Admin Script == loadstring(game:HttpGet("https://raw.githubuse
 ThisIs = {"A script that works in StarterPlayerScripts, ReplicatedFirst, StarterGui, StarterCharacterScripts, and many popular roblox games...", 
 
 	"loadstring for executor"} -- loadstring(game:HttpGet("https://raw.githubusercontent.com/rainbowhackor/tah-haks/refs/heads/main/QoL", true))()	
---"pastebin old version, adding a word flagged their smart filter so no more pastebin -- loadstring(game:HttpGet("https://pastebin.com/raw/24aTHMT7", true))()	 
+--"old pastebin version, updating is flagged so it looks like no more pastebin -- loadstring(game:HttpGet("https://pastebin.com/raw/24aTHMT7", true))()	 
 
 -- Disclaimer -- No one can see the swords, accessories, or special effects created by this client script, but everything else is visible for some reason - animations and physics... 
 -- No R6 does NOT work
@@ -210,9 +208,9 @@ Press Z to Disable HA-]] end
 	UserInputService.InputBegan:Connect(function(input, gameProcessethend)
 		
 		ThisIsServerSided = {"spin + explode"}
-		if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.FLing_Killed2() end end 
-		if input.UserInputType == Enum.UserInputType.MouseButton2 then if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.FLing_Killed() end end 
-		if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.nilspin() end 
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.flipspin() end end 
+		if input.UserInputType == Enum.UserInputType.MouseButton2 then if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.nilspinmove() end end 
+		--if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.nilspin() end 
 		
 		if disabled.Value == false then
 			ThisIsServerSided = {"flip"}
@@ -291,7 +289,7 @@ end
 
 mover = nil bayblade = nil bayblade2 = nil smack = nil rotat = nil wind = nil 
 if not _G.nds then _G.nds = true
-function _G.FLing_Killed2()   char.HumanoidRootPart.Anchored = false --char.UpperTorso.RotVelocity = Vector3.new( math.random(5,10)*100, math.random(5,10)*100, math.random(5,15)*100)
+function _G.FLing_Killed_Far()   char.HumanoidRootPart.Anchored = false --char.UpperTorso.RotVelocity = Vector3.new( math.random(5,10)*100, math.random(5,10)*100, math.random(5,15)*100)
 	mover = Vector3.new( math.random(-100,100)*50, math.random(80,100)*20, math.random(50,100)*200)
 	bayblade = Vector3.new( math.random(5,10)*100, math.random(5,10)*100, math.random(5,15)*100)
 	char.HumanoidRootPart.RotVelocity = bayblade
@@ -314,14 +312,31 @@ end
 	smack = Instance.new("Sound",char.HumanoidRootPart) smack.SoundId = "rbxassetid://6029917449" smack.RollOffMinDistance = 1000000 smack.RollOffMaxDistance = 1000000 smack:Play()
 	game.StarterGui:SetCore("SendNotification", {Title="fling killed"; Text= "u r in space" ; Duration=1;})
 end
-	function _G.nilspin() if Ruse == false then 
+	function _G.nilspinmove()  
 		rotat = Vector3.new( math.random(-100,100)/66, math.random(-100,100)/66, math.random(-100,100)/66 ) 
 		char.HumanoidRootPart.RotVelocity = rotat char.UpperTorso.RotVelocity = rotat 
-		if char.Humanoid.SeatPart then char.Humanoid.SeatPart.RotVelocity = rotat*50 end else
-		wind = Instance.new("BodyAngularVelocity", char.UpperTorso) wind.AngularVelocity = Vector3.new(math.random(5,50), math.random(5,50), math.random(5,50))
-		wind.MaxTorque = Vector3.new(math.random(-10,10), math.random(-10,10), math.random(-10,10)) wait(.01) wind:Remove() end
+		--if char.Humanoid.SeatPart then char.Humanoid.SeatPart.RotVelocity = rotat*50 end else
+		--wind = Instance.new("BodyAngularVelocity", char.UpperTorso) wind.AngularVelocity = Vector3.new(math.random(5,50), math.random(5,50), math.random(5,50))
+		--wind.MaxTorque = Vector3.new(math.random(-10,10), math.random(-10,10), math.random(-10,10)) wait(.01) wind:Remove() end
+	end
+	function _G.nilspin()  
+			rotat = Vector3.new( math.random(-100,100)/66, math.random(-100,100)/66, math.random(-100,100)/66 ) 
+			char.HumanoidRootPart.RotVelocity = rotat --char.UpperTorso.RotVelocity = rotat 
+			--if char.Humanoid.SeatPart then char.Humanoid.SeatPart.RotVelocity = rotat*50 end else
+			--wind = Instance.new("BodyAngularVelocity", char.UpperTorso) wind.AngularVelocity = Vector3.new(math.random(5,50), math.random(5,50), math.random(5,50))
+			--wind.MaxTorque = Vector3.new(math.random(-10,10), math.random(-10,10), math.random(-10,10)) wait(.01) wind:Remove() end
+	end
+	function _G.flipspin()  
+		 
+			--rotat = Vector3.new( math.random(-100,100)/66, 0, 0 ) 
+			--char.HumanoidRootPart.RotVelocity = rotat --char.UpperTorso.RotVelocity = rotat 
+		--if char.Humanoid.SeatPart then char.Humanoid.SeatPart.RotVelocity = rotat*50 end else
+		
+		local wind = Instance.new("AngularVelocity", char.HumanoidRootPart.RootAttachment) wind.AngularVelocity = Vector3.new(math.random(-10,10), 0, 0) wind.Attachment0 = char.HumanoidRootPart.RootAttachment
+		wind.RelativeTo = Enum.ActuatorRelativeTo.Attachment0  wind.ReactionTorqueEnabled = true	wind.MaxTorque = math.random(50,100) wait(1) wind:Remove() 
+	end
+	
 end
-		end
 tptohide1 = nil tptohide2 = nil tptodone = nil tpto = nil modleh = nil 
 function tpvector() char.HumanoidRootPart.Anchored = false --if seatcheck == true then return end 
 	if char.Humanoid.SeatPart then for _,seat in pairs(char.Humanoid.SeatPart:GetConnectedParts(true)) do if seat.Anchored then print("seat is anchored") return end end  end
@@ -508,10 +523,11 @@ function OOF() --to be honest I highly doubt roblox is worth $5O,OOO,OOO,OOO whe
 		end end 
 end
 colcor = nil
-function CharSettings() humy = char:WaitForChild("Humanoid")
+function CharSettings() humy = char:WaitForChild("Humanoid") humy.UseJumpPower = false game.StarterGui:SetCore("SendNotification", {Title="UseJumpPower = false"; Text= "JumpHeight better for gravity" ; Duration=5;})
+	workspace.Camera.CameraType = Enum.CameraType.Custom workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
 	humy:GetPropertyChangedSignal("Sit"):Connect(function() wait() if humy.Sit == true then GetUp() end end)
 	humy:GetPropertyChangedSignal("PlatformStand"):Connect(function() wait() if humy.PlatformStand == true then GetUp() end end)
-	if char:FindFirstChild("Meshes/Chocolate Donut Rainbow LimitedAccessory") then camm = -1.25  ME=true an=169402 AnimSet()task.wait(1) an=0 runan=1 humy.UseJumpPower = false 
+	if char:FindFirstChild("Meshes/Chocolate Donut Rainbow LimitedAccessory") then camm = -1.25  ME=true an=169402 AnimSet()task.wait(1) an=0 runan=1
 		if not game.Lighting:FindFirstChildWhichIsA("ColorCorrectionEffect") then colcor=Instance.new("ColorCorrectionEffect",game.Lighting) colcor.Name = "morecolor" game.Lighting:FindFirstChildWhichIsA("ColorCorrectionEffect").Saturation = 0.4 end
 	end
 
@@ -523,7 +539,7 @@ function CharSettings() humy = char:WaitForChild("Humanoid")
 			if target.MeshId == "rbxassetid://17899996187" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false end
 		end
 	end
-	workspace.Camera.CameraType = Enum.CameraType.Custom workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
+	
 end
 function NoToolHold() if char.Animate.toolnone.ToolNoneAnim.AnimationId ~= "rbxassetid://14366558676" then an=99 AnimOther() an=0 end end
 --function NoToolHold() if not char.Humanoid:FindFirstChildWhichIsA("BuoyancySensor") then Instance.new("BuoyancySensor",char.Humanoid) an=99 AnimOther() an=0 end end
@@ -1440,9 +1456,12 @@ row21 = 310  row22 = 325  row23 = 340  row24 = 355  row25 = 370  row26 = 385  ro
 
 
 ThisIs = {"Clickable Gui", }  
+player.CharacterRemoving:Connect(function() if player.PlayerGui:FindFirstChild("MAMALUIGI") then player.PlayerGui:FindFirstChild("MAMALUIGI"):Remove() end end)
 function guias() 
 	if player.Character.Humanoid.Health < 1 then return end 
-	if player.PlayerGui:FindFirstChild("MAMALUIGI") then player.PlayerGui:FindFirstChild("MAMALUIGI"):Remove() end
+	if player.PlayerGui:FindFirstChild("MAMALUIGI") then return end 
+	
+	--if player.PlayerGui:FindFirstChild("MAMALUIGI") then player.PlayerGui:FindFirstChild("MAMALUIGI"):Remove() end
 	if not player.PlayerGui:FindFirstChild("MAMALUIGI") then 
 		--if not game.StarterGui:FindFirstChild("MAMALUIGI") then 
 		GuiLuigi = Instance.new("ScreenGui",player.PlayerGui) GuiLuigi.Name = "MAMALUIGI" GuiLuigi.Enabled = true
@@ -2040,7 +2059,7 @@ function guias()
 		end)  
 
 		ThisIs = {"Faces"} --no one can see this, it's just mental assurance  
-		faces1 = Button:Clone() faces1.Parent = Spaghetti faces1.Text = "Face" faces1.Position = UDim2.new(0.05,0 , 0,row15) faces1.BackgroundColor3 = Color3.fromRGB(255, 255, 0)   
+		--[[faces1 = Button:Clone() faces1.Parent = Spaghetti faces1.Text = "Face" faces1.Position = UDim2.new(0.05,0 , 0,row15) faces1.BackgroundColor3 = Color3.fromRGB(255, 255, 0)   
 		faces1.MouseButton1Click:Connect(function()
 			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
 			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "facelist" then Ui:Remove() end end
@@ -2054,9 +2073,11 @@ function guias()
 			for _, faces in pairs(faceID) do local face = FaceButton:Clone() face.Parent = facelist face.Image = "http://www.roblox.com/asset?id="..faces face.MouseButton1Click:Connect(function()
 					if char.Head:FindFirstChild("face") then char.Head.face.Texture = face.Image else if not char:FindFirstChild("FakeHead") then NewHead1() end FakeHead.face.Texture = face.Image end end) end
 		end)
-
-		faces1.MouseButton2Click:Connect(function() NewHead1() end)
-
+		faces1.MouseButton2Click:Connect(function() NewHead1() end)]]
+		
+		
+		
+		
 		ThisIs = {"Swim in air"}	 
 		swimin = Button:Clone() swimin.Parent = Spaghetti swimin.Text = "swim" swimin.Position = UDim2.new(0.05,0 , 0,row6)  swimin.BackgroundColor3 = Color3.fromRGB(0, 170, 255)  
 		swimin.MouseButton1Click:Connect(function() Swim() end) 
@@ -2380,24 +2401,66 @@ function guias()
 		copychar2.MouseButton1Click:Connect(function() oval = not oval if oval == true then 
 				copychar2.BackgroundColor3 = Color3.fromRGB(0, 255, 0) else copychar2.BackgroundColor3 = Color3.fromRGB(85, 85, 85)  end
 		end)
+		ThisIs = {"click char for anims"}  charanim = false
+		per2 = Button:Clone() per2.Parent = Spaghetti per2.Text = "Canim" per2.Position = UDim2.new(0.05,0 , 0,row13)  per2.BackgroundColor3 = Color3.fromRGB(0, 255, 255)   
+		per2.MouseButton1Click:Connect(function() charanim = not charanim
+			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
+			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "copycharanim" then Ui:Remove() end end
+			if Begal.GuiHolder:FindFirstChild("copycharanim") then Begal.GuiHolder:FindFirstChild("copycharanim"):Remove() return end
+			copycharanim = notScroll:Clone() copycharanim.Parent = Begal.GuiHolder  copycharanim.Name = "copycharanim" copycharanim.BackgroundTransparency = .9 copycharanim.Position = UDim2.new(0.15, 0 , 0.3, 0)  copycharanim.Size = UDim2.new(0.1, 0 , 0.36, 0)
+			listing = Instance.new("UIListLayout",copycharanim) listing.Padding = UDim.new(0,1)
+
+
+		end)
+		local animtable = {}
 		task.spawn(function() task.wait(10) 
-			UserInputService.InputBegan:Connect(function(input, gameProcessed) local mouse = player:GetMouse()
-				if input.UserInputType == Enum.UserInputType.MouseButton1 then if oval == true then 
+			local charclick = UserInputService.InputBegan:Connect(function(input, gameProcessed) local mouse = player:GetMouse()
+				if input.UserInputType == Enum.UserInputType.MouseButton1 then 
 
-
+					if oval == true or charanim == true then 
 						if mouse.Target.Parent ~= nil then Cmodel = mouse.Target.Parent  Cmodel.Archivable = true  --cha:MoveTo(Cmodel.Head.Position)
-							if Cmodel:FindFirstChildWhichIsA("Humanoid") then cha = Cmodel:Clone() cha.Parent = workspace added += 1 cha.Name = cha.Name.." "..added   wait(.5) cha.Parent = game.Lighting.oof 
+							if charanim == true then 
+								if Cmodel:FindFirstChildWhichIsA("Humanoid") then animas = Cmodel:FindFirstChildWhichIsA("Humanoid"):GetPlayingAnimationTracks() end
+								if Cmodel.Parent:FindFirstChildWhichIsA("Humanoid") then animas = Cmodel.Parent:FindFirstChildWhichIsA("Humanoid"):GetPlayingAnimationTracks() end
+									for i, track in pairs(animas) do task.spawn(function()
+											local pass = true for _,v in pairs(animtable) do 
+												if v == track.Animation.AnimationId then pass = false
+													
+												end
+											end
+											if pass then 
+												table.insert(animtable,track.Animation.AnimationId)
+												--createbutton(track.Animation.AnimationId)
+												local str = string.match(tostring(track.Animation.AnimationId), "%d+" )
+												local ba = Button:Clone() ba.Parent = copycharanim ba.Size = UDim2.new(0.95,0 , 0,15) ba.TextXAlignment = Enum.TextXAlignment.Left
+												ba.Text = game:GetService("MarketplaceService"):GetProductInfo(tonumber(str)).Name .. "	"  ..str--track.Animation.AnimationId:gsub('[^%d.]', '')  -- track.Animation.AnimationId
+												ba.MouseButton1Down:Connect(function()
+													setclipboard(ba.Text)
+													--setclipboard(str.."  "..track.Animation.AnimationId)
+												end)
+											end
+										end)
+								end
+								
+								task.wait()
+							end
+							
+							
+							if oval == true then 
+								if Cmodel:FindFirstChildWhichIsA("Humanoid") then cha = Cmodel:Clone() cha.Parent = workspace added += 1 cha.Name = cha.Name.." "..added   wait(.5) cha.Parent = game.Lighting.oof 
 								for _, p in pairs(cha:GetDescendants()) do   
 									if    p:IsA("BillboardGui") or p:IsA("ClickDetector") or p:IsA("BodyColors") or p:IsA("LocalScript") or p:IsA("Script") or p:IsA("ProximityPrompt") then p:Remove() end
 									if p:IsA("BasePart") then p.Locked = false end end
 								return end
 							--if Cmodel.Parent:FindFirstChildWhichIsA("Humanoid") then Cmodel.Parent.Archivable = true cha = Cmodel.Parent:Clone() cha.Parent = workspace added += 1 cha.Name = cha.Name.." "..added  wait(.5) cha.Parent = game.Lighting.oof return  end
 							--	if cha then added += 1 cha.Name = cha.Name.." "..added end end
-
+end
 						end
 					end
 				end
 			end)
+			
+			player.CharacterRemoving:Connect(function() charclick:Disconnect() end) --it's simpler for this to be a global function like click to teleport, but I don't feel like doing that
 		end)
 
 
@@ -2562,7 +2625,7 @@ function guias()
 		spark.Position = UDim2.new(0.5,0 , 0,row12)
 
 		SWOD.Position = UDim2.new(0.05,0 , 0,row14)
-		faces1.Position = UDim2.new(0.05,0 , 0,row13)
+		--faces1.Position = UDim2.new(0.05,0 , 0,row13)
 
 		runsp.Position = UDim2.new(0.5,0 , 0,row17)
 		gravy.Position = UDim2.new(0.05,0 , 0,row17)
@@ -3250,7 +3313,7 @@ Updates=[[
 	v11	8/3/24 - 8/5/24		nil x 1OO
 	v12	9/26/24 - 10/10/24	scripts to assist in saving smaller assets, because saving the whole game results in a corrupted file sometimes
 	
-	v13	3/15/25 - 3/15/25	new tables
+	v13	3/15/25 - 3/15/25	new tables, _G functions
 	v14 5/21/25 - 6/2/25	added pcall function to ignore a few errors because this script runs with default roblox local scripts, this entire script would break in games that customized the default roblox local scripts.
 
 ]]
