@@ -338,7 +338,7 @@ end
 	
 end
 tptohide1 = nil tptohide2 = nil tptodone = nil tpto = nil modleh = nil 
-function tpvector() char.HumanoidRootPart.Anchored = false --if seatcheck == true then return end 
+function tpvector() char.HumanoidRootPart.Anchored = false if sethiddenproperty then player.CameraMaxZoomDistance = 1000 end --if seatcheck == true then return end 
 	if char.Humanoid.SeatPart then for _,seat in pairs(char.Humanoid.SeatPart:GetConnectedParts(true)) do if seat.Anchored then print("seat is anchored") return end end  end
 	for _,v in pairs(char:GetChildren()) do if v:IsA("BasePart") then v.Velocity = Vector3.new(0,0,0) v.RotVelocity = Vector3.new(0,0,0) end end
 	if not char.Humanoid.SeatPart then
@@ -353,13 +353,13 @@ function tpvector() char.HumanoidRootPart.Anchored = false --if seatcheck == tru
 	char:PivotTo(tptodone.CFrame) tptodone:Remove()
 end
 
-function tpOnPoint()
+function tpOnPoint() if sethiddenproperty then player.CameraMaxZoomDistance = 1000 end
 	if char.Humanoid.SeatPart then for _,seat in pairs(char.Humanoid.SeatPart:GetConnectedParts(true)) do if seat.Anchored then print("seat is anchored") return end end end
 	for _,v in pairs(char:GetChildren()) do if v:IsA("BasePart") then v.Velocity = Vector3.new(0,0,0) v.RotVelocity = Vector3.new(0,0,0) end end
 	tpto = Instance.new("Part") tpto.CanCollide = false tpto.CFrame = char.HumanoidRootPart.CFrame tpto.Position = Vector3.new(mouse.Hit.x, mouse.Hit.y+1, mouse.Hit.z)
 	char:PivotTo(tpto.CFrame) tpto:Remove()
 end
-function tpAbovePoint()
+function tpAbovePoint() if sethiddenproperty then player.CameraMaxZoomDistance = 1000 end
 	if char.Humanoid.SeatPart then for _,seat in pairs(char.Humanoid.SeatPart:GetConnectedParts(true)) do if seat.Anchored then print("seat is anchored") return end end end
 	for _,v in pairs(char:GetChildren()) do if v:IsA("BasePart") then v.Velocity = Vector3.new(0,0,0) v.RotVelocity = Vector3.new(0,0,0) end end
 	modleh = Instance.new("Model",workspace)
@@ -2328,17 +2328,17 @@ function guias()
 			end) 
 		end) ]]
 
-		ThisIs = {"Anti Fling 2"} 
+		This = {"Anti Fling 2"} 
 		afling = Button:Clone() afling.Parent = Spaghetti afling.Text = "nofling" afling.Position = UDim2.new(0.05,0 , 0,row19) afling.BackgroundColor3 = Color3.fromRGB(255, 255, 127) 
 		afling.MouseButton1Click:Connect(function() AntiFlingPlayable() end)
 
-		ThisIs = {"HipHeight"} -- client side
+		This = {"HipHeight"} -- client side
 		--wheight = Button:Clone() wheight.Parent = Spaghetti wheight.Text = "hiphi" wheight.Position = UDim2.new(0.5,0 , 0,row20) wheight.BackgroundColor3 = Color3.fromRGB(255, 255, 255)  
 		--wheight.MouseButton1Click:Connect(function() char.Humanoid.HipHeight -= .25 wheight.Text = math.floor(char.Humanoid.HipHeight*100)/100 end) 
 		--wheight.MouseButton2Click:Connect(function() char.Humanoid.HipHeight += .25 wheight.Text = math.floor(char.Humanoid.HipHeight*100)/100 end) 
 
 
-		ThisIs = {"get player info. Not even gonna lie to you, this is for my ### game"} 
+		This = {"get player info. Not even gonna lie to you, this is for my ### game"} 
 		--if purv = true then --  what? you expect me to talk to trans kawaii traps when i can just yoink their gyatt? 
 		toolate = Button:Clone() toolate.Parent = Spaghetti toolate.Text = "toolate" toolate.Position = UDim2.new(0.05,0 , 0,row20) toolate.BackgroundColor3 = Color3.fromRGB(0, 0, 0)   
 		toolate.MouseButton1Click:Connect(function()
@@ -2383,6 +2383,7 @@ function guias()
 			for _, Ls in pairs(game.Players.LocalPlayer.logs1:GetChildren()) do Ls:Remove() end
 		end)
 		
+		This = "Force Reset button"
 		oof = Button:Clone() oof.Parent = Spaghetti oof.Text = "💥oof💥" oof.Position = UDim2.new(0.55,0 , 0,row18)  oof.BackgroundColor3 = Color3.fromRGB(175, 55, 0)   
 		oof.MouseButton1Click:Connect(function() _G.FLing_Killed_Far() end)
 		oof.MouseButton2Click:Connect(function() _G.FLing_Killed() end)
@@ -2534,8 +2535,8 @@ end
 		
 		This = "eeeEEEEWWWWW"
 		fail = Button:Clone() fail.Parent = Spaghetti fail.Text = "s p sk" fail.Position = UDim2.new(0.05,0 , 0,row24) fail.BackgroundColor3 = Color3.fromRGB(0, 0, 0)   
-		fail.MouseButton1Click:Connect(function() char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "http://www.roblox.com/asset/?id=0" end)
-		fail.MouseButton2Click:Connect(function() char:FindFirstChildWhichIsA("Pants").PantsTemplate = "http://www.roblox.com/asset/?id=0" end)
+		fail.MouseButton1Click:Connect(function() char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "" end)
+		fail.MouseButton2Click:Connect(function() char:FindFirstChildWhichIsA("Pants").PantsTemplate = "" end)
 		fail.MouseWheelForward:Connect(function()  
 			for _, ro in pairs(char:GetChildren()) do --if ro:IsA("BasePart") then ro.Material = Enum.Material.SmoothPlastic end  
 				if ro:IsA("MeshPart") and ro.Name ~= "Head" then  ro.TextureID = "" 
@@ -2544,6 +2545,29 @@ end
 					end
 				end  
 			end 
+		end)
+		
+		This = "ttd3"
+		ttd = Button:Clone() ttd.Parent = Spaghetti ttd.Text = "TTD 3" ttd.Position = UDim2.new(0.55,0 , 0,row19) ttd.BackgroundColor3 = Color3.fromRGB(255, 255, 0)   
+		ttd.MouseButton1Click:Connect(function() 
+			
+			 
+		
+		 	if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
+			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "facelist" then Ui:Remove() end end
+			if Begal.GuiHolder:FindFirstChild("facelist") then Begal.GuiHolder:FindFirstChild("facelist"):Remove() return end
+			ttdlist = Scroll:Clone() ttdlist.Parent = Begal.GuiHolder  ttdlist.Name = "copycharanim" ttdlist.BackgroundTransparency = .9 ttdlist.Position = UDim2.new(0.15, 0 , 0.3, 0)  ttdlist.Size = UDim2.new(0.1, 0 , 0.36, 0) 
+			listing = Instance.new("UIListLayout",ttdlist) listing.Padding = UDim.new(0,1) 
+			
+		danceName = {"carpet","witch","smooth","smuwug","sturdy","boogie d","breakdow","ramb","samsa","minny","mannr","wanna","viva","tuff v","laid b","star p","verv","radic","the q","shiba","belly s","sou","bubb","shift","freem","frol","elect","introdu", "realit", "lovesi"," true","hit it","tootsee","springy","true h","bara b","ken sh","ssy fe","bam b","ss wi","assumpt", "breez","expr","glitt","hype","salsa","bob s",}
+			for _, faces in pairs(danceName) do local dbutton = Button:Clone() dbutton.Parent = ttdlist dbutton.Text = faces dbutton.Size = UDim2.new(0.95,0 , 0,15) 
+				dbutton.MouseButton1Click:Connect(function()
+					dbutton.BackgroundColor3 = Color3.fromRGB(0, 170, 0) 
+					search = player.PlayerGui.Emotes.MainFrame.Buttons.SearchBar
+			--emotes = player.PlayerGui.Emotes.MainFrame.EmoteContainer["1"]
+			--emotes.Poplock
+			search.Text = "carpet" wait(1)
+					search.Text = dbutton.Text   end) end
 		end)
 		
 		This = "Save sky settings for you game"
@@ -3317,7 +3341,6 @@ function NDS()
 end
 
 NDS()
-
 
 
 
