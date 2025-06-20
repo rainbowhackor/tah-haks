@@ -47,7 +47,7 @@ if player.Backpack:FindFirstChild("Rainbow Star Sword Client") then player.Backp
 
 if player:FindFirstChild("disable_nds_HA") then player:FindFirstChild("disable_nds_HA"):Remove() end
 if not player:FindFirstChild("disable_nds_HA") then disabled = Instance.new("BoolValue",player) disabled.Name = "disable_nds_HA" end
- 
+
 
 
 
@@ -96,7 +96,7 @@ _G.ClickTeleport = nil
 _G.camm = char.Humanoid.CameraOffset.Y 
 --if char.Humanoid.CameraOffset.Y == 0 then camm = -1  if Ruse == true then camm = -1.75 end end
 function cam()  repeat wait(1) until char:FindFirstChild("HumanoidRootPart")  _G.camm = -char.HumanoidRootPart.Size.Y  end
-	cam()
+cam()
 function ResetValues() an = 0 runan = 0 char = player.Character  ShowAction() cam()--disabled.Value = false
 	if workspace:FindFirstChild("RainbowStarSwords") then if not workspace.RainbowStarSwords:IsA("Tool") then workspace:FindFirstChild("RainbowStarSwords"):Remove() end end
 	char.ChildAdded:Connect(function(gear) task.wait() if gear.Name == "Rainbow Star Sword" or gear.Name == "Big Bang Sword" then disabled.Value = true game.StarterGui:SetCore("SendNotification", {Title="HA-Disabled"; Text="Press Z to Enable HA-"; Duration=5;}) end end)
@@ -108,13 +108,13 @@ function ResetValues() an = 0 runan = 0 char = player.Character  ShowAction() ca
 		end)
 		if success then --print("no error:", data)
 		else  warn("Errors:", data) end
-		
+
 		local success, data = pcall(function()
 			Gears()  
 			guias() 
 			NewCamera() 
 			OOF() 
-		return  end)
+			return  end)
 		if success then-- print("no error:", data)
 		else  warn("Errors:", data) end
 
@@ -145,8 +145,9 @@ if not game.Lighting:FindFirstChild("binds") then Instance.new("BoolValue",game.
 				elseif actionName == "Zero Gravity" then workspace.Gravity = 0 actiontext.Text = "Zero Gravity"
 				elseif actionName == "Moon Gravity" then workspace.Gravity = 32.41 actiontext.Text = "Moon Gravity" char.Humanoid.JumpPower = 25 char.Humanoid.JumpHeight = 11
 				elseif actionName == "Jupiter Gravity" then workspace.Gravity = 111111 actiontext.Text = "Jupiter Gravity"
-				elseif actionName == "Low" then workspace.Gravity = 15 char.Humanoid.JumpPower = 17 actiontext.Text = "Low Gravity" if ME == true then char.Humanoid.WalkSpeed = 11 end
-				elseif actionName == "Sit" then player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit"
+				elseif actionName == "Low2" then workspace.Gravity = 5 char.Humanoid.JumpPower = 11 actiontext.Text = "Low Gravity2" 
+				elseif actionName == "Low" then workspace.Gravity = 15 char.Humanoid.JumpPower = 17 actiontext.Text = "Low Gravity" --if ME == true then char.Humanoid.WalkSpeed = 11 end
+				elseif actionName == "Sit" then player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" 
 				elseif actionName == "PlatformStand" then player.Character.Humanoid.PlatformStand = not player.Character.Humanoid.PlatformStand actiontext.Text = "PlatformStand"
 				elseif actionName == "Dance List" then player.PlayerGui.MAMALUIGI.Button["TIME TO DIY 3"].Enabled = not player.PlayerGui.MAMALUIGI.Button["TIME TO DIY 3"].Enabled actiontext.Text = "Dance"
 				elseif actionName == "AirBlock" then AirBlock() 
@@ -166,20 +167,20 @@ if not game.Lighting:FindFirstChild("binds") then Instance.new("BoolValue",game.
 	--CAS:BindAction("Toggle tp", hax, false, Enum.KeyCode.Y)
 	CAS:BindAction("Low", hax, false, Enum.KeyCode.X)
 	CAS:BindAction("HAX", hax, false, Enum.KeyCode.G)
-	CAS:BindAction("Mirror", hax, false, Enum.KeyCode.E)
+	--CAS:BindAction("Mirror", hax, false, Enum.KeyCode.E)
 	CAS:BindAction("Anti Fling HAX", hax, false, Enum.KeyCode.F)
 	--CAS:BindAction("Rainbow Nova", hax, false, Enum.KeyCode.F)
 	--CAS:BindAction("RAINBOW STAR SWORDS", hax, false, Enum.KeyCode.U)
-	CAS:BindAction("Dog Walk", hax, false, Enum.KeyCode.U)
+	CAS:BindAction("Dog Walk", hax, false, Enum.KeyCode.K)
 	CAS:BindAction("Zero Gravity", hax, false, Enum.KeyCode.H)
-	CAS:BindAction("Moon Gravity", hax, false, Enum.KeyCode.B)
+	CAS:BindAction("Low Gravity2", hax, false, Enum.KeyCode.B)
 	CAS:BindAction("Default Gravity", hax, false, Enum.KeyCode.V)
 	CAS:BindAction("Jupiter Gravity", hax, false, Enum.KeyCode.J) 
 	L = Enum.KeyCode.R if Ruse == true then L = Enum.KeyCode.B end CAS:BindAction("Sit", hax, false, L)
 	CAS:BindAction("PlatformStand", hax, false, Enum.KeyCode.T) 
 	CAS:BindAction("Dance List", hax, false, Enum.KeyCode.Period,Enum.KeyCode.Comma)
-	CAS:BindAction("AirBlock", hax, false, Enum.KeyCode.K)
-	CAS:BindAction("A spot", hax, false, Enum.KeyCode.M)
+	CAS:BindAction("AirBlock", hax, false, Enum.KeyCode.M)
+	CAS:BindAction("A spot", hax, false, Enum.KeyCode.U)
 	if disabled.Value == true then actiontext.Text = [[HA-Disabled"
 Press Z to Enable HA-]] else actiontext.Text = [[HA-Enabled"
 Press Z to Disable HA-]] end
@@ -206,12 +207,12 @@ Press Z to Disable HA-]] end
 
 	ThisIs = {"Keybinds 2"}
 	UserInputService.InputBegan:Connect(function(input, gameProcessethend)
-		
+
 		ThisIsServerSided = {"spin + explode"}
 		if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.flipspin() end end 
 		if input.UserInputType == Enum.UserInputType.MouseButton2 then if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.nilspinmove() end end 
 		--if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.nilspin() end 
-		
+
 		if disabled.Value == false then
 			ThisIsServerSided = {"flip"}
 			if UserInputService:IsKeyDown(Enum.KeyCode.C) then if char.Humanoid.SeatPart then for _,seat in pairs(char.Humanoid.SeatPart:GetConnectedParts(true)) do if seat.Anchored then print("seat is anchored") return end end end
@@ -233,7 +234,7 @@ Press Z to Disable HA-]] end
 			ThisIsServerSided = {"antifling"}
 			if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.F) then AntiFlingPlayable() end end 
 
-			
+
 
 			ThisIsServerSided = {"Remove Legs to be floaty", } --no take backs
 			if UserInputService:IsKeyDown(Enum.KeyCode.N) and UserInputService:IsKeyDown(Enum.KeyCode.L) then HIDE_LEGS() end--REMOVE_LEGS() end
@@ -242,11 +243,14 @@ Press Z to Disable HA-]] end
 			local ThisIsServerSided = {"Animation Groups" }
 			if UserInputService:IsKeyDown(Enum.KeyCode.A) and UserInputService:IsKeyDown(Enum.KeyCode.X) then AnimSet() end 
 			if UserInputService:IsKeyDown(Enum.KeyCode.A) and UserInputService:IsKeyDown(Enum.KeyCode.B) then AnimRun() end 
-
-			if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.V) then char.Humanoid.WalkSpeed = 16 end end 
-			if input.UserInputType == Enum.UserInputType.MouseButton2 then if UserInputService:IsKeyDown(Enum.KeyCode.V) then char.Humanoid.WalkSpeed = 24 end end 
-			if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.G) then char.Humanoid.WalkSpeed = 20 end end 
-			if input.UserInputType == Enum.UserInputType.MouseButton2 then if UserInputService:IsKeyDown(Enum.KeyCode.G) then char.Humanoid.WalkSpeed = 5 end end 
+			
+			if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.E) then Mirror() end end 
+			
+			
+			--if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.V) then char.Humanoid.WalkSpeed = 16 end end 
+			--if input.UserInputType == Enum.UserInputType.MouseButton2 then if UserInputService:IsKeyDown(Enum.KeyCode.V) then char.Humanoid.WalkSpeed = 24 end end 
+			--if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.G) then char.Humanoid.WalkSpeed = 20 end end 
+			--if input.UserInputType == Enum.UserInputType.MouseButton2 then if UserInputService:IsKeyDown(Enum.KeyCode.G) then char.Humanoid.WalkSpeed = 5 end end 
 		end
 	end) 
 end
@@ -289,29 +293,29 @@ end
 
 mover = nil bayblade = nil bayblade2 = nil smack = nil rotat = nil wind = nil 
 if not _G.nds then _G.nds = true
-function _G.FLing_Killed_Far()   char.HumanoidRootPart.Anchored = false --char.UpperTorso.RotVelocity = Vector3.new( math.random(5,10)*100, math.random(5,10)*100, math.random(5,15)*100)
-	mover = Vector3.new( math.random(-100,100)*50, math.random(80,100)*20, math.random(50,100)*200)
-	bayblade = Vector3.new( math.random(5,10)*100, math.random(5,10)*100, math.random(5,15)*100)
-	char.HumanoidRootPart.RotVelocity = bayblade
+	function _G.FLing_Killed_Far()   char.HumanoidRootPart.Anchored = false --char.UpperTorso.RotVelocity = Vector3.new( math.random(5,10)*100, math.random(5,10)*100, math.random(5,15)*100)
+		mover = Vector3.new( math.random(-100,100)*50, math.random(80,100)*20, math.random(50,100)*200)
+		bayblade = Vector3.new( math.random(5,10)*100, math.random(5,10)*100, math.random(5,15)*100)
+		char.HumanoidRootPart.RotVelocity = bayblade
 		if char.Humanoid.SeatPart  then char.Humanoid.SeatPart.RotVelocity = bayblade*50 task.wait(math.random(110,260)/100) end
-			if char.Animate.Enabled == false  then char.HumanoidRootPart.RotVelocity = bayblade*50 char.UpperTorso.RotVelocity = bayblade*50 end  
-			
-	char.HumanoidRootPart.Velocity = mover char.UpperTorso.Velocity = mover
-	char.Humanoid.Sit = true task.wait(math.random(40,60)/100) char.Humanoid.Health = - 100999 
-	smack = Instance.new("Sound",char.HumanoidRootPart) smack.SoundId = "rbxassetid://6029917449" smack.RollOffMinDistance = 1000000 smack.RollOffMaxDistance = 1000000 smack:Play()
-	game.StarterGui:SetCore("SendNotification", {Title="fling killed"; Text= "u r in space" ; Duration=1;})
-end
+		if char.Animate.Enabled == false  then char.HumanoidRootPart.RotVelocity = bayblade*50 char.UpperTorso.RotVelocity = bayblade*50 end  
+
+		char.HumanoidRootPart.Velocity = mover char.UpperTorso.Velocity = mover
+		char.Humanoid.Sit = true task.wait(math.random(40,60)/100) char.Humanoid.Health = - 100999 
+		smack = Instance.new("Sound",char.HumanoidRootPart) smack.SoundId = "rbxassetid://6029917449" smack.RollOffMinDistance = 1000000 smack.RollOffMaxDistance = 1000000 smack:Play()
+		game.StarterGui:SetCore("SendNotification", {Title="fling killed"; Text= "u r in space" ; Duration=1;})
+	end
 	function _G.FLing_Killed() char.HumanoidRootPart.Anchored = false -- because OOOooOOoUFGZRFF = peak entertainment
-	--char.UpperTorso.RotVelocity = Vector3.new( math.random(5,10)*100, math.random(5,10)*100, math.random(5,15)*100) 
-	bayblade2 = Vector3.new( math.random(50,100)*3, math.random(50,100)*3, math.random(50,100)*3)
-	char.HumanoidRootPart.RotVelocity = bayblade2 
-	char.UpperTorso.RotVelocity = bayblade2
-	if char.Humanoid.SeatPart then char.Humanoid.SeatPart.RotVelocity = bayblade2*50 char.UpperTorso.RotVelocity = bayblade2*50 char.HumanoidRootPart.RotVelocity = bayblade2*50 task.wait(math.random(110,260)/100) end
-	--char.HumanoidRootPart.Velocity = Vector3.new( math.random(-25,25)/10, math.random(25,25)/10, math.random(25,25)/10) char.UpperTorso.Velocity = char.HumanoidRootPart.Velocity
-	char.Humanoid.Sit = true task.wait(math.random(40,60)/100) char.Humanoid.Health = - 100999 
-	smack = Instance.new("Sound",char.HumanoidRootPart) smack.SoundId = "rbxassetid://6029917449" smack.RollOffMinDistance = 1000000 smack.RollOffMaxDistance = 1000000 smack:Play()
-	game.StarterGui:SetCore("SendNotification", {Title="fling killed"; Text= "u r in space" ; Duration=1;})
-end
+		--char.UpperTorso.RotVelocity = Vector3.new( math.random(5,10)*100, math.random(5,10)*100, math.random(5,15)*100) 
+		bayblade2 = Vector3.new( math.random(50,100)*3, math.random(50,100)*3, math.random(50,100)*3)
+		char.HumanoidRootPart.RotVelocity = bayblade2 
+		char.UpperTorso.RotVelocity = bayblade2
+		if char.Humanoid.SeatPart then char.Humanoid.SeatPart.RotVelocity = bayblade2*50 char.UpperTorso.RotVelocity = bayblade2*50 char.HumanoidRootPart.RotVelocity = bayblade2*50 task.wait(math.random(110,260)/100) end
+		--char.HumanoidRootPart.Velocity = Vector3.new( math.random(-25,25)/10, math.random(25,25)/10, math.random(25,25)/10) char.UpperTorso.Velocity = char.HumanoidRootPart.Velocity
+		char.Humanoid.Sit = true task.wait(math.random(40,60)/100) char.Humanoid.Health = - 100999 
+		smack = Instance.new("Sound",char.HumanoidRootPart) smack.SoundId = "rbxassetid://6029917449" smack.RollOffMinDistance = 1000000 smack.RollOffMaxDistance = 1000000 smack:Play()
+		game.StarterGui:SetCore("SendNotification", {Title="fling killed"; Text= "u r in space" ; Duration=1;})
+	end
 	function _G.nilspinmove()  
 		rotat = Vector3.new( math.random(-100,100)/66, math.random(-100,100)/66, math.random(-100,100)/66 ) 
 		char.HumanoidRootPart.RotVelocity = rotat char.UpperTorso.RotVelocity = rotat 
@@ -320,22 +324,23 @@ end
 		--wind.MaxTorque = Vector3.new(math.random(-10,10), math.random(-10,10), math.random(-10,10)) wait(.01) wind:Remove() end
 	end
 	function _G.nilspin()  
-			rotat = Vector3.new( math.random(-100,100)/66, math.random(-100,100)/66, math.random(-100,100)/66 ) 
-			char.HumanoidRootPart.RotVelocity = rotat --char.UpperTorso.RotVelocity = rotat 
-			--if char.Humanoid.SeatPart then char.Humanoid.SeatPart.RotVelocity = rotat*50 end else
-			--wind = Instance.new("BodyAngularVelocity", char.UpperTorso) wind.AngularVelocity = Vector3.new(math.random(5,50), math.random(5,50), math.random(5,50))
-			--wind.MaxTorque = Vector3.new(math.random(-10,10), math.random(-10,10), math.random(-10,10)) wait(.01) wind:Remove() end
+		rotat = Vector3.new( math.random(-100,100)/66, math.random(-100,100)/66, math.random(-100,100)/66 ) 
+		char.HumanoidRootPart.RotVelocity = rotat --char.UpperTorso.RotVelocity = rotat 
+		--if char.Humanoid.SeatPart then char.Humanoid.SeatPart.RotVelocity = rotat*50 end else
+		--wind = Instance.new("BodyAngularVelocity", char.UpperTorso) wind.AngularVelocity = Vector3.new(math.random(5,50), math.random(5,50), math.random(5,50))
+		--wind.MaxTorque = Vector3.new(math.random(-10,10), math.random(-10,10), math.random(-10,10)) wait(.01) wind:Remove() end
 	end
 	function _G.flipspin()  
-		 
-			--rotat = Vector3.new( math.random(-100,100)/66, 0, 0 ) 
-			--char.HumanoidRootPart.RotVelocity = rotat --char.UpperTorso.RotVelocity = rotat 
+		rotat = Vector3.new( math.random(-100,100)/66, 0, 0 ) 
+		char.HumanoidRootPart.RotVelocity = rotat
+		--rotat = Vector3.new( math.random(-100,100)/66, 0, 0 ) 
+		--char.HumanoidRootPart.RotVelocity = rotat --char.UpperTorso.RotVelocity = rotat 
 		--if char.Humanoid.SeatPart then char.Humanoid.SeatPart.RotVelocity = rotat*50 end else
-		
-		local wind = Instance.new("AngularVelocity", char.HumanoidRootPart.RootAttachment) wind.AngularVelocity = Vector3.new(math.random(-10,10), 0, 0) wind.Attachment0 = char.HumanoidRootPart.RootAttachment
-		wind.RelativeTo = Enum.ActuatorRelativeTo.Attachment0  wind.ReactionTorqueEnabled = true	wind.MaxTorque = math.random(50,100) wait(1) wind:Remove() 
+
+		--local wind = Instance.new("AngularVelocity", char.HumanoidRootPart.RootAttachment) wind.AngularVelocity = Vector3.new(math.random(-10,10), 0, 0) wind.Attachment0 = char.HumanoidRootPart.RootAttachment
+		--wind.RelativeTo = Enum.ActuatorRelativeTo.Attachment0  wind.ReactionTorqueEnabled = true	wind.MaxTorque = math.random(50,100) wait(1) wind:Remove() 
 	end
-	
+
 end
 tptohide1 = nil tptohide2 = nil tptodone = nil tpto = nil modleh = nil 
 function tpvector() char.HumanoidRootPart.Anchored = false if sethiddenproperty then player.CameraMaxZoomDistance = 1000 end --if seatcheck == true then return end 
@@ -539,7 +544,7 @@ function CharSettings() humy = char:WaitForChild("Humanoid") humy.UseJumpPower =
 			if target.MeshId == "rbxassetid://17899996187" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false end
 		end
 	end
-	
+
 end
 function NoToolHold() if char.Animate.toolnone.ToolNoneAnim.AnimationId ~= "rbxassetid://14366558676" then an=99 AnimOther() an=0 end end
 --function NoToolHold() if not char.Humanoid:FindFirstChildWhichIsA("BuoyancySensor") then Instance.new("BuoyancySensor",char.Humanoid) an=99 AnimOther() an=0 end end
@@ -991,7 +996,7 @@ function RainbowStarSword() --( glow sticks for dancing ) OH MY GAH THIS LOOKS S
 		IvoryShard1 = Instance.new("BoolValue",starfolder) IvoryShard1.Name = "IvoryShard1" IvoryShard1.Value = true 
 		IvoryShard2 = Instance.new("BoolValue",starfolder) IvoryShard2.Name = "IvoryShard2"
 		RainbowShard1 = Instance.new("BoolValue",starfolder) RainbowShard1.Name = "RainbowShard1"
-		Beams = Instance.new("BoolValue",starfolder) Beams.Name = "Beams" Beams.Value = true 
+		Beams = Instance.new("BoolValue",starfolder) Beams.Name = "Beams" Beams.Value = false 
 		RainbowBeams = Instance.new("BoolValue",starfolder) RainbowBeams.Name = "RainbowBeams"
 		BeamSpam = Instance.new("BoolValue",starfolder) BeamSpam.Name = "BeamSpam"
 		ShardSpam = Instance.new("BoolValue",starfolder) ShardSpam.Name = "ShardSpam"
@@ -1460,7 +1465,7 @@ player.CharacterRemoving:Connect(function() if player.PlayerGui:FindFirstChild("
 function guias() 
 	if player.Character.Humanoid.Health < 1 then return end 
 	if player.PlayerGui:FindFirstChild("MAMALUIGI") then return end 
-	
+
 	--if player.PlayerGui:FindFirstChild("MAMALUIGI") then player.PlayerGui:FindFirstChild("MAMALUIGI"):Remove() end
 	if not player.PlayerGui:FindFirstChild("MAMALUIGI") then 
 		--if not game.StarterGui:FindFirstChild("MAMALUIGI") then 
@@ -2056,7 +2061,87 @@ function guias()
 			Mass41 = Button:Clone() Mass41.Parent = masslist Mass41.Text = "Heavy" 
 			Mass41.MouseButton1Click:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, .3, .5, 1, 1) end end end)
 
+		end)
+		
+		ThisIs = {"Lazy"} 
+		Lazy = Button:Clone() Lazy.Parent = Spaghetti Lazy.Text = "Lazy" Lazy.Position = UDim2.new(0.05,0 , 0,row11)  Lazy.BackgroundColor3 = Color3.fromRGB(255, 0, 127)   
+		Lazy.MouseButton1Click:Connect(function()
+			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
+			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "masslist" then Ui:Remove() end end
+			if Begal.GuiHolder:FindFirstChild("masslist") then Begal.GuiHolder:FindFirstChild("masslist"):Remove() return end
+			masslist = notScroll:Clone() masslist.Parent = Begal.GuiHolder  masslist.Name = "masslist" masslist.BackgroundTransparency = 1 masslist.Position = UDim2.new(0.15, 0 , 0.3, 0)  masslist.Size = UDim2.new(0.1, 0 , 0.36, 0)
+			listing = Instance.new("UIListLayout",masslist) listing.Padding = UDim.new(0,1)
+
+			plus = 15 Button.BackgroundColor3 = Color3.fromRGB(85, 85, 127) Button.Size = UDim2.new(0.95,0 , 0,15) Button.TextXAlignment = Enum.TextXAlignment.Left Button.BackgroundTransparency = .5
+
+			ran = Button:Clone() ran.Parent = masslist ran.Text = "run 16" 
+			ran.MouseButton1Click:Connect(function() char.Humanoid.WalkSpeed = 16 end)
+			ran2 = Button:Clone() ran2.Parent = masslist ran2.Text = "run / character height" 
+			ran2.MouseButton1Click:Connect(function() char.Humanoid.WalkSpeed = char.Humanoid.HipHeight * 7.634 end)
+			
+			jum = Button:Clone() jum.Parent = masslist jum.Text = "jump 50, 7.2" jum.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
+			jum.MouseButton1Click:Connect(function() char.Humanoid.JumpPower = 50 char.Humanoid.JumpHeight = 7.2 end)
+			jum2 = Button:Clone() jum2.Parent = masslist jum2.Text = "jump / character height" jum2.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
+			jum2.MouseButton1Click:Connect(function() char.Humanoid.JumpPower = 50 * char.Humanoid.BodyHeightScale.Value  char.Humanoid.JumpHeight = 7.2 * char.Humanoid.BodyHeightScale.Value end)
+			
+			
+			times = Button:Clone() times.Parent = masslist times.Text = "times" times.BackgroundColor3 = Color3.fromRGB(90, 255, 255)
+			times.MouseButton1Click:Connect(function() game.Lighting.ClockTime = 17.8  end)
+			times.MouseButton2Click:Connect(function() game.Lighting.ClockTime = 2 end)
+			times.MouseWheelForward:Connect(function() game.Lighting.ClockTime = 13 end)
+			times.MouseWheelBackward:Connect(function() game.Lighting.ClockTime = 16 end)
+			
+			gravs = Button:Clone() gravs.Parent = masslist gravs.Text = "grav 0" 
+			gravs.MouseButton1Click:Connect(function() workspace.Gravity = 0 end)
+			gravs2 = Button:Clone() gravs2.Parent = masslist gravs2.Text = "grav 5 , 55" gravs2.BackgroundColor3 = Color3.fromRGB(127, 90, 59)
+			gravs2.MouseButton1Click:Connect(function() workspace.Gravity = 5 end)
+			gravs2.MouseButton2Click:Connect(function() workspace.Gravity = 55 end)
+			gravs3 = Button:Clone() gravs3.Parent = masslist gravs3.Text = "grav 15 , 333" 
+			gravs3.MouseButton1Click:Connect(function() workspace.Gravity = 15 end)
+			gravs3.MouseButton2Click:Connect(function() workspace.Gravity = 333 end)
+			gravs4 = Button:Clone() gravs4.Parent = masslist gravs4.Text = "grav 196.2 , 444" 
+			gravs4.MouseButton1Click:Connect(function() workspace.Gravity = 196.2 end)
+			gravs4.MouseButton2Click:Connect(function() workspace.Gravity = 444 end)
+			
+			sito = Button:Clone() sito.Parent = masslist sito.Text = "sit" 
+			sito.MouseButton1Click:Connect(function() char.Humanoid.Sit = not char.Humanoid.Sit  end)
+			sito.MouseButton2Click:Connect(function() char.Humanoid.PlatformStand = not char.Humanoid.PlatformStand  end)
+			
+			lightss = Button:Clone() lightss.Parent = masslist lightss.Text = "lights" lightss.BackgroundColor3 = Color3.fromRGB(176, 176, 0)
+			lightss.MouseButton1Click:Connect(function() 
+				for _, light in pairs(workspace:GetDescendants()) do 
+					if light:IsA("Light") then 
+						if light.Enabled == true then light:AddTag("was on") end  
+						
+					end 
+				end 
+				for _, light in pairs(workspace:GetDescendants()) do 
+					if light:IsA("Light") and light:HasTag("was on") then 
+						light.Enabled = not light.Enabled  
+
+					end 
+				end 
+			end)
+			
+			shadows = Button:Clone() shadows.Parent = masslist shadows.Text = "SHaDOWS"  shadows.BackgroundColor3 = Color3.fromRGB(149, 149, 149)
+			shadows.MouseButton1Click:Connect(function() 
+				for _, light in pairs(workspace:GetDescendants()) do 
+					if light:IsA("BasePart") then 
+						if light.CastShadow == true then light:AddTag("CastShadow") end  
+
+					end 
+				end 
+				for _, light in pairs(workspace:GetDescendants()) do 
+					if light:IsA("BasePart") and light:HasTag("CastShadow") then 
+						light.CastShadow = not light.CastShadow  
+
+					end 
+				end 
+			end)
+			
+			 
 		end)  
+		
 
 		ThisIs = {"Faces"} --no one can see this, it's just mental assurance  
 		--[[faces1 = Button:Clone() faces1.Parent = Spaghetti faces1.Text = "Face" faces1.Position = UDim2.new(0.05,0 , 0,row15) faces1.BackgroundColor3 = Color3.fromRGB(255, 255, 0)   
@@ -2074,10 +2159,10 @@ function guias()
 					if char.Head:FindFirstChild("face") then char.Head.face.Texture = face.Image else if not char:FindFirstChild("FakeHead") then NewHead1() end FakeHead.face.Texture = face.Image end end) end
 		end)
 		faces1.MouseButton2Click:Connect(function() NewHead1() end)]]
-		
-		
-		
-		
+
+
+
+
 		ThisIs = {"Swim in air"}	 
 		swimin = Button:Clone() swimin.Parent = Spaghetti swimin.Text = "swim" swimin.Position = UDim2.new(0.05,0 , 0,row6)  swimin.BackgroundColor3 = Color3.fromRGB(0, 170, 255)  
 		swimin.MouseButton1Click:Connect(function() Swim() end) 
@@ -2092,8 +2177,8 @@ function guias()
 		runsp = TextBox:Clone() runsp.Parent = Spaghetti runsp.PlaceholderText = "run "..char.Humanoid.WalkSpeed runsp.Position = UDim2.new(0.5,0 , 0,row21)  runsp.BackgroundColor3 = Color3.fromRGB(255, 85, 0)  
 		--runsp:GetPropertyChangedSignal("Text"):Connect(function() runsp.Text = runsp.Text:gsub('[^%d.]', ''); char.Humanoid.WalkSpeed = (runsp.Text) end)  
 		runsp.FocusLost:Connect(function() runsp.Text = runsp.Text:gsub('[^%d.]', ''); char.Humanoid.WalkSpeed = (runsp.Text) end)  
-		
-		
+
+
 		ThisIs = {"fps cap"} 
 		--[[fpsc = TextBox:Clone() fpsc.Parent = Spaghetti fpsc.PlaceholderText = "fps 60" fpsc.Position = UDim2.new(0.5,0 , 0,row27)  fpsc.BackgroundColor3 = Color3.fromRGB(170, 0, 255)  
 		--runsp:GetPropertyChangedSignal("Text"):Connect(function() runsp.Text = runsp.Text:gsub('[^%d.]', ''); char.Humanoid.WalkSpeed = (runsp.Text) end)  
@@ -2103,142 +2188,142 @@ function guias()
 			end
 
 		end) ]]
-		
+
 		--ThisIs = {"toggle climb"}	 --fail
 		--climbin = Button:Clone() climbin.Parent = Spaghetti climbin.Text = "climb" climbin.Position = UDim2.new(0.05,0 , 0,row28)  climbin.BackgroundColor3 = Color3.fromRGB(0, 170, 255)  
 		--climbin.MouseButton1Click:Connect(function() climb() end) 
-		
+
 		--[[ThisIs = {"invisicam"}	
 		invcam = Button:Clone() invcam.Parent = Spaghetti invcam.Text = "climb" invcam.Position = UDim2.new(0.05,0 , 0,row29)  invcam.BackgroundColor3 = Color3.fromRGB(0, 170, 255)  
 		invcam.MouseButton1Click:Connect(function()   end) ]]
-		
+
 		ThisIs = {"show players v1"}	--6-2
 		esp = Button:Clone() esp.Parent = Spaghetti esp.Text = "esp" esp.Position = UDim2.new(0.05,0 , 0,row10)  esp.BackgroundColor3 = Color3.fromRGB(0, 170, 255)  
 		esp.MouseButton1Click:Connect(function() 
 			if not char:FindFirstChild("iSeeYou") then 
-			for _, part in pairs(workspace:GetChildren()) do
-				if part:IsA("Model") and part:FindFirstChildWhichIsA("Humanoid") then iSeeYou = part
-				look = Instance.new("Highlight", iSeeYou) look.Name = "iSeeYou" look.FillColor = Color3.fromRGB(0,255,85) look.FillTransparency = .7  
-					if look.Parent == char then look.FillTransparency = 1 look.OutlineTransparency = 1 end end
-			end 
+				for _, part in pairs(workspace:GetChildren()) do
+					if part:IsA("Model") and part:FindFirstChildWhichIsA("Humanoid") then iSeeYou = part
+						look = Instance.new("Highlight", iSeeYou) look.Name = "iSeeYou" look.FillColor = Color3.fromRGB(0,255,85) look.FillTransparency = .7  
+						if look.Parent == char then look.FillTransparency = 1 look.OutlineTransparency = 1 end end
+				end 
 			else 
 				for _, part in pairs(workspace:GetChildren()) do
 					if part:IsA("Model") and part:FindFirstChildWhichIsA("Humanoid") then iSeeYou = part end
-				 
-				if iSeeYou:FindFirstChild("iSeeYou") then iSeeYou:FindFirstChild("iSeeYou"):Remove() end  
-			end end
-				end) 
-		
+
+					if iSeeYou:FindFirstChild("iSeeYou") then iSeeYou:FindFirstChild("iSeeYou"):Remove() end  
+				end end
+		end) 
+
 		if Ruse == false then
-		ThisIs = {"Sliding guis - Gravity, JumpHeight, WalkSpeed"}  --the old version
-		SliderG = Instance.new("Frame",Spaghetti) SliderG.Name = "Gravity" SliderG.Position = UDim2.new(0.05, 0 , 0, row7) SliderG.Size = UDim2.new(0.95,0 , 0,15) SliderG.BackgroundColor3 = Color3.fromRGB(0, 0, 0) SliderG.BackgroundTransparency = .85   SliderG.ZIndex=2 
-		SliderJ = Instance.new("Frame",Spaghetti) SliderJ.Name = "Jump" SliderJ.Position = UDim2.new(0.05, 0 , 0, row16) SliderJ.Size = UDim2.new(0.95,0 , 0,15) SliderJ.BackgroundColor3 = Color3.fromRGB(0, 0, 0) SliderJ.BackgroundTransparency = .85   SliderJ.ZIndex=2 
-		SliderR = Instance.new("Frame",Spaghetti) SliderR.Name = "Run" SliderR.Position = UDim2.new(0.05, 0 , 0, row15) SliderR.Size = UDim2.new(0.95,0 , 0,15) SliderR.BackgroundColor3 = Color3.fromRGB(0, 0, 0) SliderR.BackgroundTransparency = .85   SliderR.ZIndex=2  
-		SliderW = Instance.new("Frame",Spaghetti) SliderW.Name = "Walk" SliderW.Position = UDim2.new(0.05, 0 , 0, row8) SliderW.Size = UDim2.new(0.95,0 , 0,15) SliderW.BackgroundColor3 = Color3.fromRGB(0, 0, 0) SliderW.BackgroundTransparency = .85   SliderW.ZIndex=2  
-		colorG = Color3.fromRGB(170, 85, 0)
-		colorR = Color3.fromRGB(0, 170, 127)
+			ThisIs = {"Sliding guis - Gravity, JumpHeight, WalkSpeed"}  --the old version
+			SliderG = Instance.new("Frame",Spaghetti) SliderG.Name = "Gravity" SliderG.Position = UDim2.new(0.05, 0 , 0, row7) SliderG.Size = UDim2.new(0.95,0 , 0,15) SliderG.BackgroundColor3 = Color3.fromRGB(0, 0, 0) SliderG.BackgroundTransparency = .85   SliderG.ZIndex=2 
+			SliderJ = Instance.new("Frame",Spaghetti) SliderJ.Name = "Jump" SliderJ.Position = UDim2.new(0.05, 0 , 0, row16) SliderJ.Size = UDim2.new(0.95,0 , 0,15) SliderJ.BackgroundColor3 = Color3.fromRGB(0, 0, 0) SliderJ.BackgroundTransparency = .85   SliderJ.ZIndex=2 
+			SliderR = Instance.new("Frame",Spaghetti) SliderR.Name = "Run" SliderR.Position = UDim2.new(0.05, 0 , 0, row15) SliderR.Size = UDim2.new(0.95,0 , 0,15) SliderR.BackgroundColor3 = Color3.fromRGB(0, 0, 0) SliderR.BackgroundTransparency = .85   SliderR.ZIndex=2  
+			SliderW = Instance.new("Frame",Spaghetti) SliderW.Name = "Walk" SliderW.Position = UDim2.new(0.05, 0 , 0, row8) SliderW.Size = UDim2.new(0.95,0 , 0,15) SliderW.BackgroundColor3 = Color3.fromRGB(0, 0, 0) SliderW.BackgroundTransparency = .85   SliderW.ZIndex=2  
+			colorG = Color3.fromRGB(170, 85, 0)
+			colorR = Color3.fromRGB(0, 170, 127)
 
-		sliders =	{SliderG,SliderJ,SliderW,SliderR} 
-		for _,Slide in pairs(sliders) do 
+			sliders =	{SliderG,SliderJ,SliderW,SliderR} 
+			for _,Slide in pairs(sliders) do 
 
-			Mouse = game.Players.LocalPlayer:GetMouse()
-			local Sliding = Instance.new("Frame",Slide) Sliding.Name = "Sliding" Sliding.Position = UDim2.new(0, 0 , 0, 0) Sliding.Size = UDim2.new(0.1,0 , 0,15) Sliding.BackgroundColor3 = Color3.fromRGB(0, 255, 0) Sliding.BackgroundTransparency = .7   Sliding.ZIndex=2
-			--	local MouseButton = Instance.new("TextButton",Slide) MouseButton.Name = "MouseButton" MouseButton.Position = UDim2.new(0.0, 0 , 0.0, 0) MouseButton.Size = UDim2.new(1,0 , 1,0)   MouseButton.BackgroundTransparency = 1   MouseButton.ZIndex=1
-			local MouseButton = Button:Clone() MouseButton.Parent = Slide MouseButton.Text=Slide.Name MouseButton.Name = "MouseButton" MouseButton.Size = UDim2.new(1,0 , 1,0) MouseButton.Position = UDim2.new(0.0, 0 , 0.0, 0) MouseButton.BackgroundTransparency = 1 MouseButton.ZIndex=1
-			local Max = Instance.new("NumberValue",Slide) Max.Name = "Max" --Max.Value = 100
-			if Slide.Name == "Gravity" then Max.Value = 100 end if Slide.Name == "Jump" then Max.Value = 90 end if Slide.Name == "Run" then Max.Value = 250 end if Slide.Name == "Walk" then Max.Value = 32 end
-			local Value1 = Instance.new("NumberValue",Slide) Value1.Name = "Value1" Value1.Value = 7.2
-			local MouseisOn = Instance.new("BoolValue",Slide) MouseisOn.Value = false MouseisOn.Name = "MouseisOn"
-			local MouseisDown = Instance.new("BoolValue",Slide) MouseisDown.Value = false MouseisDown.Name = "MouseisDown"
+				Mouse = game.Players.LocalPlayer:GetMouse()
+				local Sliding = Instance.new("Frame",Slide) Sliding.Name = "Sliding" Sliding.Position = UDim2.new(0, 0 , 0, 0) Sliding.Size = UDim2.new(0.1,0 , 0,15) Sliding.BackgroundColor3 = Color3.fromRGB(0, 255, 0) Sliding.BackgroundTransparency = .7   Sliding.ZIndex=2
+				--	local MouseButton = Instance.new("TextButton",Slide) MouseButton.Name = "MouseButton" MouseButton.Position = UDim2.new(0.0, 0 , 0.0, 0) MouseButton.Size = UDim2.new(1,0 , 1,0)   MouseButton.BackgroundTransparency = 1   MouseButton.ZIndex=1
+				local MouseButton = Button:Clone() MouseButton.Parent = Slide MouseButton.Text=Slide.Name MouseButton.Name = "MouseButton" MouseButton.Size = UDim2.new(1,0 , 1,0) MouseButton.Position = UDim2.new(0.0, 0 , 0.0, 0) MouseButton.BackgroundTransparency = 1 MouseButton.ZIndex=1
+				local Max = Instance.new("NumberValue",Slide) Max.Name = "Max" --Max.Value = 100
+				if Slide.Name == "Gravity" then Max.Value = 100 end if Slide.Name == "Jump" then Max.Value = 90 end if Slide.Name == "Run" then Max.Value = 250 end if Slide.Name == "Walk" then Max.Value = 32 end
+				local Value1 = Instance.new("NumberValue",Slide) Value1.Name = "Value1" Value1.Value = 7.2
+				local MouseisOn = Instance.new("BoolValue",Slide) MouseisOn.Value = false MouseisOn.Name = "MouseisOn"
+				local MouseisDown = Instance.new("BoolValue",Slide) MouseisDown.Value = false MouseisDown.Name = "MouseisDown"
 
-			local Point = Instance.new("ImageLabel",Slide) Point.Name = "Point" Point.Position = UDim2.new(0.1, 0 , 0.5, 0) Point.Size = UDim2.new(0,12 , 0,12) Point.Image = "rbxassetid://1217158727" Point.ImageColor3 = Color3.fromRGB(0, 255, 0) Point.BackgroundTransparency = 1 Point.ImageTransparency = .7   Point.ZIndex=4 Point.AnchorPoint = Vector2.new(.5,.5)
-			local UnClick = Instance.new("BoolValue",Point) UnClick.Value = false UnClick.Name = "Unclick"
-			local MouseDown = Instance.new("ImageLabel",Point) MouseDown.Name = "MouseDown" MouseDown.Position = UDim2.new(0.5, 0 , 0.5, 0) MouseDown.Size = UDim2.new(0,0 , 0,0) MouseDown.Image = "rbxassetid://1217158727" MouseDown.ImageColor3 = Color3.fromRGB(0, 255, 0) MouseDown.BackgroundTransparency = 1 MouseDown.ImageTransparency = .7   MouseDown.ZIndex=4 MouseDown.AnchorPoint = Vector2.new(.5,.5)
-			local MouseOn = Instance.new("ImageLabel",Point) MouseOn.Name = "MouseOn" MouseOn.Position = UDim2.new(0.5, 0 , 0.5, 0) MouseOn.Size = UDim2.new(0,0 , 0,0) MouseOn.Image = "rbxassetid://1217158727" MouseOn.ImageColor3 = Color3.fromRGB(0, 255, 0) MouseOn.BackgroundTransparency = 1 MouseOn.ImageTransparency = .7   MouseOn.ZIndex=4 MouseOn.AnchorPoint = Vector2.new(.5,.5)
-			local ValueLableP = Instance.new("ImageLabel",Point) ValueLableP.Name = "ValueLabel" ValueLableP.Position = UDim2.new(0.5, 0 , 0, -5) ValueLableP.Size = UDim2.new(0,0 , 0,0) ValueLableP.Image = "http://www.roblox.com/asset/?id=3961048262" ValueLableP.ImageColor3 = Color3.fromRGB(0, 255, 0) ValueLableP.BackgroundTransparency = 1  ValueLableP.ImageTransparency = .5  ValueLableP.ZIndex=4 ValueLableP.AnchorPoint = Vector2.new(.5,1)
-			local ValueLableT = Instance.new("TextLabel",ValueLableP) ValueLableT.Position = UDim2.new(0.5, 0 , 0, 0) ValueLableT.Size = UDim2.new(0.8,0 , 0,28)  ValueLableT.BackgroundTransparency = 1  ValueLableT.Text="" ValueLableT.AnchorPoint = Vector2.new(.5,0) ValueLableT.TextColor3 = Color3.fromRGB(255, 255, 255) ValueLableT.ZIndex=4
+				local Point = Instance.new("ImageLabel",Slide) Point.Name = "Point" Point.Position = UDim2.new(0.1, 0 , 0.5, 0) Point.Size = UDim2.new(0,12 , 0,12) Point.Image = "rbxassetid://1217158727" Point.ImageColor3 = Color3.fromRGB(0, 255, 0) Point.BackgroundTransparency = 1 Point.ImageTransparency = .7   Point.ZIndex=4 Point.AnchorPoint = Vector2.new(.5,.5)
+				local UnClick = Instance.new("BoolValue",Point) UnClick.Value = false UnClick.Name = "Unclick"
+				local MouseDown = Instance.new("ImageLabel",Point) MouseDown.Name = "MouseDown" MouseDown.Position = UDim2.new(0.5, 0 , 0.5, 0) MouseDown.Size = UDim2.new(0,0 , 0,0) MouseDown.Image = "rbxassetid://1217158727" MouseDown.ImageColor3 = Color3.fromRGB(0, 255, 0) MouseDown.BackgroundTransparency = 1 MouseDown.ImageTransparency = .7   MouseDown.ZIndex=4 MouseDown.AnchorPoint = Vector2.new(.5,.5)
+				local MouseOn = Instance.new("ImageLabel",Point) MouseOn.Name = "MouseOn" MouseOn.Position = UDim2.new(0.5, 0 , 0.5, 0) MouseOn.Size = UDim2.new(0,0 , 0,0) MouseOn.Image = "rbxassetid://1217158727" MouseOn.ImageColor3 = Color3.fromRGB(0, 255, 0) MouseOn.BackgroundTransparency = 1 MouseOn.ImageTransparency = .7   MouseOn.ZIndex=4 MouseOn.AnchorPoint = Vector2.new(.5,.5)
+				local ValueLableP = Instance.new("ImageLabel",Point) ValueLableP.Name = "ValueLabel" ValueLableP.Position = UDim2.new(0.5, 0 , 0, -5) ValueLableP.Size = UDim2.new(0,0 , 0,0) ValueLableP.Image = "http://www.roblox.com/asset/?id=3961048262" ValueLableP.ImageColor3 = Color3.fromRGB(0, 255, 0) ValueLableP.BackgroundTransparency = 1  ValueLableP.ImageTransparency = .5  ValueLableP.ZIndex=4 ValueLableP.AnchorPoint = Vector2.new(.5,1)
+				local ValueLableT = Instance.new("TextLabel",ValueLableP) ValueLableT.Position = UDim2.new(0.5, 0 , 0, 0) ValueLableT.Size = UDim2.new(0.8,0 , 0,28)  ValueLableT.BackgroundTransparency = 1  ValueLableT.Text="" ValueLableT.AnchorPoint = Vector2.new(.5,0) ValueLableT.TextColor3 = Color3.fromRGB(255, 255, 255) ValueLableT.ZIndex=4
 
-			for _,color in pairs(Slide:GetDescendants()) do 
-				if color:IsA("ImageLabel") then 
-					if Slide.Name == "Gravity" then color.ImageColor3 = colorG end 
-					if Slide.Name == "Run" then color.ImageColor3 = colorR end
-					if Slide.Name == "Walk" then color.ImageColor3 = colorR end
+				for _,color in pairs(Slide:GetDescendants()) do 
+					if color:IsA("ImageLabel") then 
+						if Slide.Name == "Gravity" then color.ImageColor3 = colorG end 
+						if Slide.Name == "Run" then color.ImageColor3 = colorR end
+						if Slide.Name == "Walk" then color.ImageColor3 = colorR end
+					end
 				end
-			end
-			if Slide.Name == "Gravity" then Sliding.BackgroundColor3 = colorG end 
-			if Slide.Name == "Run" then Sliding.BackgroundColor3 = colorR end
-			if Slide.Name == "Walk" then Sliding.BackgroundColor3 = colorR end
+				if Slide.Name == "Gravity" then Sliding.BackgroundColor3 = colorG end 
+				if Slide.Name == "Run" then Sliding.BackgroundColor3 = colorR end
+				if Slide.Name == "Walk" then Sliding.BackgroundColor3 = colorR end
 
-			MouseButton.MouseEnter:Connect(function() MouseisOn.Value = true end)--Point.MouseOn:TweenSize(UDim2.new(3,0,3,0),Enum.EasingDirection.Out,Enum.EasingStyle.Linear,0.12,true,nil) end)
-			MouseButton.MouseLeave:Connect(function()
-				MouseisOn.Value = false if MouseisDown.Value == false then Point.MouseOn:TweenSize(UDim2.new(0,0,0,0),Enum.EasingDirection.Out,Enum.EasingStyle.Linear,0.12,true,nil) end
-			end)
-			local function DoChangeValue()
-				local NewValue = Value1.Value
-				Point:TweenPosition(UDim2.new(NewValue/Max.Value,0,0.5,0),Enum.EasingDirection.Out,Enum.EasingStyle.Quad,0.1,true,nil)
-				Sliding:TweenSize(UDim2.new(NewValue/Max.Value,0,1,0),Enum.EasingDirection.Out,Enum.EasingStyle.Quad,0.1,true,nil)
-				Point.ValueLabel.TextLabel.Text = NewValue *1--* ValueLabelMultiply.Value
-				if Slide.Name == "Gravity" then workspace.Gravity = NewValue end 
-				if Slide.Name == "Jump" then char.Humanoid.JumpHeight = NewValue/2 char.Humanoid.JumpPower = NewValue end
-				if Slide.Name == "Run" then char.Humanoid.WalkSpeed = NewValue end 
-				if Slide.Name == "Walk" then char.Humanoid.WalkSpeed = NewValue end 
-			end
-			Value1:GetPropertyChangedSignal("Value"):Connect(DoChangeValue)
-			Max:GetPropertyChangedSignal("Value"):Connect(DoChangeValue)
-			local function SetValueFromMousePos()
-				local Pos = Mouse.X - Slide.AbsolutePosition.X
-				if Pos < 0 or Pos == 0 then Pos = 0 end
-				if Pos > Slide.AbsoluteSize.X or Pos == Slide.AbsoluteSize.X then Pos = Slide.AbsoluteSize.X end 
-				Value1.Value = math.floor((Pos/Slide.AbsoluteSize.X)*Max.Value+0.5)--if IntOnly.Value then --else Value.Value = (Pos/Slider.AbsoluteSize.X)*Max.Value end
-			end
-			MouseButton.MouseButton1Down:Connect(function()
-				if MouseisOn.Value == true then MouseisDown.Value = true SetValueFromMousePos()
-					Point:TweenSize(UDim2.new(0,14,0,14),Enum.EasingDirection.Out,Enum.EasingStyle.Quad,0.2,true,nil)
-					Point.MouseDown:TweenSize(UDim2.new(3,0,3,0),Enum.EasingDirection.Out,Enum.EasingStyle.Linear,0.12,true,nil) 
-					Point.ValueLabel:TweenSize(UDim2.new(0, 28,0, 40),Enum.EasingDirection.Out,Enum.EasingStyle.Linear,0.12,true,nil)--if ValueLabel.Value == true then --end
+				MouseButton.MouseEnter:Connect(function() MouseisOn.Value = true end)--Point.MouseOn:TweenSize(UDim2.new(3,0,3,0),Enum.EasingDirection.Out,Enum.EasingStyle.Linear,0.12,true,nil) end)
+				MouseButton.MouseLeave:Connect(function()
+					MouseisOn.Value = false if MouseisDown.Value == false then Point.MouseOn:TweenSize(UDim2.new(0,0,0,0),Enum.EasingDirection.Out,Enum.EasingStyle.Linear,0.12,true,nil) end
+				end)
+				local function DoChangeValue()
+					local NewValue = Value1.Value
+					Point:TweenPosition(UDim2.new(NewValue/Max.Value,0,0.5,0),Enum.EasingDirection.Out,Enum.EasingStyle.Quad,0.1,true,nil)
+					Sliding:TweenSize(UDim2.new(NewValue/Max.Value,0,1,0),Enum.EasingDirection.Out,Enum.EasingStyle.Quad,0.1,true,nil)
+					Point.ValueLabel.TextLabel.Text = NewValue *1--* ValueLabelMultiply.Value
+					if Slide.Name == "Gravity" then workspace.Gravity = NewValue end 
+					if Slide.Name == "Jump" then char.Humanoid.JumpHeight = NewValue/2 char.Humanoid.JumpPower = NewValue end
+					if Slide.Name == "Run" then char.Humanoid.WalkSpeed = NewValue end 
+					if Slide.Name == "Walk" then char.Humanoid.WalkSpeed = NewValue end 
 				end
-
-			end)
-			MouseButton.MouseButton1Up:Connect(function()
-				MouseisDown.Value = false
-			end)
-			MouseButton.MouseButton2Click:Connect(function() 
-				if Slide.Name == "Gravity" then workspace.Gravity = 196.2 end 
-				if Slide.Name == "Jump" then char.Humanoid.JumpHeight = 7.2 char.Humanoid.JumpPower = 50 end
-				if Slide.Name == "Run" then char.Humanoid.WalkSpeed = 16 end 
-				if Slide.Name == "Walk" then char.Humanoid.WalkSpeed = 16 end 
-
-			end)
-			local function Button1Up()
-				MouseisDown.Value = false --if Point then if Point ~= nil then --Point = Slide:WaitForChild("Point") 
-				--print(Point) 
-				--print(Point.Parent)
-				if Point.Parent == nil then return end
-				Point:TweenSize(UDim2.new(0,12,0,12),Enum.EasingDirection.Out,Enum.EasingStyle.Quad,0.2,true,nil)
-				Point.MouseDown:TweenSize(UDim2.new(0,0,0,0),Enum.EasingDirection.Out,Enum.EasingStyle.Linear,0.12,true,nil)
-				Point.ValueLabel:TweenSize(UDim2.new(0,0,0,0),Enum.EasingDirection.Out,Enum.EasingStyle.Linear,0.12,true,nil)--if ValueLabel.Value == true then --end
-				if MouseisOn.Value == false then Point.MouseOn:TweenSize(UDim2.new(0,0,0,0),Enum.EasingDirection.Out,Enum.EasingStyle.Linear,0.12,true,nil) end
-			end  
-
-			local GuiInputService = game:GetService("UserInputService")
-			GuiInputService.InputEnded:Connect(function(Key, GameProcessedEvent)
-				if Key.UserInputType == Enum.UserInputType.MouseButton1 then --Button1Up() end 
-					UnClick.Value = true Button1Up() 
-					UnClick.Value = false
+				Value1:GetPropertyChangedSignal("Value"):Connect(DoChangeValue)
+				Max:GetPropertyChangedSignal("Value"):Connect(DoChangeValue)
+				local function SetValueFromMousePos()
+					local Pos = Mouse.X - Slide.AbsolutePosition.X
+					if Pos < 0 or Pos == 0 then Pos = 0 end
+					if Pos > Slide.AbsoluteSize.X or Pos == Slide.AbsoluteSize.X then Pos = Slide.AbsoluteSize.X end 
+					Value1.Value = math.floor((Pos/Slide.AbsoluteSize.X)*Max.Value+0.5)--if IntOnly.Value then --else Value.Value = (Pos/Slider.AbsoluteSize.X)*Max.Value end
 				end
-			end) 
+				MouseButton.MouseButton1Down:Connect(function()
+					if MouseisOn.Value == true then MouseisDown.Value = true SetValueFromMousePos()
+						Point:TweenSize(UDim2.new(0,14,0,14),Enum.EasingDirection.Out,Enum.EasingStyle.Quad,0.2,true,nil)
+						Point.MouseDown:TweenSize(UDim2.new(3,0,3,0),Enum.EasingDirection.Out,Enum.EasingStyle.Linear,0.12,true,nil) 
+						Point.ValueLabel:TweenSize(UDim2.new(0, 28,0, 40),Enum.EasingDirection.Out,Enum.EasingStyle.Linear,0.12,true,nil)--if ValueLabel.Value == true then --end
+					end
+
+				end)
+				MouseButton.MouseButton1Up:Connect(function()
+					MouseisDown.Value = false
+				end)
+				MouseButton.MouseButton2Click:Connect(function() 
+					if Slide.Name == "Gravity" then workspace.Gravity = 196.2 end 
+					if Slide.Name == "Jump" then char.Humanoid.JumpHeight = 7.2 char.Humanoid.JumpPower = 50 end
+					if Slide.Name == "Run" then char.Humanoid.WalkSpeed = 16 end 
+					if Slide.Name == "Walk" then char.Humanoid.WalkSpeed = 16 end 
+
+				end)
+				local function Button1Up()
+					MouseisDown.Value = false --if Point then if Point ~= nil then --Point = Slide:WaitForChild("Point") 
+					--print(Point) 
+					--print(Point.Parent)
+					if Point.Parent == nil then return end
+					Point:TweenSize(UDim2.new(0,12,0,12),Enum.EasingDirection.Out,Enum.EasingStyle.Quad,0.2,true,nil)
+					Point.MouseDown:TweenSize(UDim2.new(0,0,0,0),Enum.EasingDirection.Out,Enum.EasingStyle.Linear,0.12,true,nil)
+					Point.ValueLabel:TweenSize(UDim2.new(0,0,0,0),Enum.EasingDirection.Out,Enum.EasingStyle.Linear,0.12,true,nil)--if ValueLabel.Value == true then --end
+					if MouseisOn.Value == false then Point.MouseOn:TweenSize(UDim2.new(0,0,0,0),Enum.EasingDirection.Out,Enum.EasingStyle.Linear,0.12,true,nil) end
+				end  
+
+				local GuiInputService = game:GetService("UserInputService")
+				GuiInputService.InputEnded:Connect(function(Key, GameProcessedEvent)
+					if Key.UserInputType == Enum.UserInputType.MouseButton1 then --Button1Up() end 
+						UnClick.Value = true Button1Up() 
+						UnClick.Value = false
+					end
+				end) 
 
 
-			UnClick:GetPropertyChangedSignal("Value"):Connect(function() -- this is not functional
-				if UnClick.Value == true then Button1Up() end UnClick.Value = false
-			end)
+				UnClick:GetPropertyChangedSignal("Value"):Connect(function() -- this is not functional
+					if UnClick.Value == true then Button1Up() end UnClick.Value = false
+				end)
 
-			--MouseButton.MouseButton1Up:Connect(Button1Up)
-			--local UserInputService = game:GetService("UserInputService")
-			Mouse.Move:Connect(function() if MouseisDown.Value == true then SetValueFromMousePos() end end)
+				--MouseButton.MouseButton1Up:Connect(Button1Up)
+				--local UserInputService = game:GetService("UserInputService")
+				Mouse.Move:Connect(function() if MouseisDown.Value == true then SetValueFromMousePos() end end)
+			end
 		end
-			end
-			
+
 
 		ThisIs = {"Manage Current Accessories"} 
 		hats = Button:Clone() hats.Parent = Spaghetti hats.Text = "nil" hats.Position = UDim2.new(0.5,0 , 0,row11)  hats.BackgroundColor3 = Color3.fromRGB(255, 0, 127)  
@@ -2329,7 +2414,7 @@ function guias()
 		end) ]]
 
 		This = {"Anti Fling 2"} 
-		afling = Button:Clone() afling.Parent = Spaghetti afling.Text = "nofling" afling.Position = UDim2.new(0.05,0 , 0,row19) afling.BackgroundColor3 = Color3.fromRGB(255, 255, 127) 
+		afling = Button:Clone() afling.Parent = Spaghetti afling.Text = "nofling" afling.Position = UDim2.new(0.05,0 , 0,row12) afling.BackgroundColor3 = Color3.fromRGB(255, 255, 127) 
 		afling.MouseButton1Click:Connect(function() AntiFlingPlayable() end)
 
 		This = {"HipHeight"} -- client side
@@ -2382,12 +2467,12 @@ function guias()
 		toolate2.MouseButton2Click:Connect(function()
 			for _, Ls in pairs(game.Players.LocalPlayer.logs1:GetChildren()) do Ls:Remove() end
 		end)
-		
+
 		This = "Force Reset button"
 		oof = Button:Clone() oof.Parent = Spaghetti oof.Text = "💥oof💥" oof.Position = UDim2.new(0.55,0 , 0,row18)  oof.BackgroundColor3 = Color3.fromRGB(175, 55, 0)   
 		oof.MouseButton1Click:Connect(function() _G.FLing_Killed_Far() end)
 		oof.MouseButton2Click:Connect(function() _G.FLing_Killed() end)
-		
+
 		added=0 -- *cough *cough (catalog tester)  *cough (outfit games)  *cough (saveinstance)  *cough (aint no party like a-
 		if not game.Lighting:FindFirstChild("oof") then local wa = Instance.new("Model",game.Lighting) wa.Name = "oof" end
 		copychar = Button:Clone() copychar.Parent = Spaghetti copychar.Text = "Copy Me" copychar.Position = UDim2.new(0.05,0 , 0,row20) copychar.BackgroundColor3 = Color3.fromRGB(255, 0, 255)   
@@ -2418,12 +2503,12 @@ function guias()
 			local clam = Button:Clone() clam.Parent = copycharanim clam.Size = UDim2.new(0.95,0 , 0,15)  clam.BackgroundTransparency = .5 clam.TextXAlignment = Enum.TextXAlignment.Left clam.BackgroundColor3 = Color3.fromRGB(143, 143, 143)
 			clam.Text = "click this button, or other players"
 			clam.MouseButton1Down:Connect(function()
-				
+
 				if char:FindFirstChildWhichIsA("Humanoid") then animas = char:FindFirstChildWhichIsA("Humanoid"):GetPlayingAnimationTracks() end
 				for i, track in pairs(animas) do task.spawn(function()
 						local pass = true for _,v in pairs(_G.animtable) do 
 							if v == track.Animation.AnimationId then pass = false
-								 
+
 
 							end
 						end
@@ -2440,16 +2525,16 @@ function guias()
 						end
 					end)
 				end
-				
+
 			end)
-			
+
 		end)
 		if not _G.animtable then _G.animtable = {} end
-		 
+
 		task.spawn(function() task.wait(3) 
 			local charclick = UserInputService.InputBegan:Connect(function(input, gameProcessed) local mouse = player:GetMouse()
 				if input.UserInputType == Enum.UserInputType.MouseButton1 then 
-This = "is scripted very incorrectly, but still works"
+					This = "is scripted very incorrectly, but still works"
 					if oval == true or charanim == true then 
 						if mouse.Target.Parent ~= nil then Cmodel = mouse.Target.Parent  Cmodel.Archivable = true  --cha:MoveTo(Cmodel.Head.Position)
 							print(Cmodel)
@@ -2458,51 +2543,51 @@ This = "is scripted very incorrectly, but still works"
 								if Cmodel.Parent:FindFirstChildWhichIsA("Humanoid") then the_Humanoid = Cmodel.Parent:FindFirstChildWhichIsA("Humanoid")  animas = the_Humanoid:GetPlayingAnimationTracks() end
 								if the_Humanoid then print(the_Humanoid)
 									for i, track in pairs(animas) do task.spawn(function()
-										local pass = true for _,v in pairs(_G.animtable) do 
+											local pass = true for _,v in pairs(_G.animtable) do 
 												if v == track.Animation.AnimationId then pass = false
-												local str = string.match(tostring(track.Animation.AnimationId), "%d+" )
-												local ba = Button:Clone() ba.Parent = copycharanim ba.Size = UDim2.new(0.95,0 , 0,15) ba.TextXAlignment = Enum.TextXAlignment.Left
-												ba.Text = "already got" .. "  " .. game:GetService("MarketplaceService"):GetProductInfo(tonumber(str)).Name.. "	"  ..str
-												ba.MouseButton1Down:Connect(function()
-													setclipboard(str .."  ".. ba.Text  )
-													--setclipboard(str.."  "..track.Animation.AnimationId)
-												end)	
-												  
+													local str = string.match(tostring(track.Animation.AnimationId), "%d+" )
+													local ba = Button:Clone() ba.Parent = copycharanim ba.Size = UDim2.new(0.95,0 , 0,15) ba.TextXAlignment = Enum.TextXAlignment.Left
+													ba.Text = "already got" .. "  " .. game:GetService("MarketplaceService"):GetProductInfo(tonumber(str)).Name.. "	"  ..str
+													ba.MouseButton1Down:Connect(function()
+														setclipboard(str .."  ".. ba.Text  )
+														--setclipboard(str.."  "..track.Animation.AnimationId)
+													end)	
+
 												end
 											end
 											if pass then 
-											table.insert(_G.animtable,track.Animation.AnimationId)
+												table.insert(_G.animtable,track.Animation.AnimationId)
 												--createbutton(track.Animation.AnimationId)
 												local str = string.match(tostring(track.Animation.AnimationId), "%d+" )
-											local ba = Button:Clone() ba.Parent = copycharanim ba.Size = UDim2.new(0.95,0 , 0,15) ba.BackgroundTransparency = .5 ba.TextXAlignment = Enum.TextXAlignment.Left ba.BackgroundColor3 = Color3.fromRGB(0, 170, 0)
+												local ba = Button:Clone() ba.Parent = copycharanim ba.Size = UDim2.new(0.95,0 , 0,15) ba.BackgroundTransparency = .5 ba.TextXAlignment = Enum.TextXAlignment.Left ba.BackgroundColor3 = Color3.fromRGB(0, 170, 0)
 												ba.Text = game:GetService("MarketplaceService"):GetProductInfo(tonumber(str)).Name .. "	"  ..str--track.Animation.AnimationId:gsub('[^%d.]', '')  -- track.Animation.AnimationId
 												ba.MouseButton1Down:Connect(function()
-												setclipboard("https://assetdelivery.roblox.com/v1/asset/?id="..str .."  ".. ba.Text  )
+													setclipboard("https://assetdelivery.roblox.com/v1/asset/?id="..str .."  ".. ba.Text  )
 													--setclipboard(str.."  "..track.Animation.AnimationId)
 												end)
 											end
 										end)
 										the_Humanoid = nil
-								end
+									end
 								end
 								task.wait()
 							end
-							
-							
+
+
 							if oval == true then 
 								if Cmodel:FindFirstChildWhichIsA("Humanoid") then cha = Cmodel:Clone() cha.Parent = workspace added += 1 cha.Name = cha.Name.." "..added   wait(.5) cha.Parent = game.Lighting.oof 
-								for _, p in pairs(cha:GetDescendants()) do   
-									if    p:IsA("BillboardGui") or p:IsA("ClickDetector") or p:IsA("BodyColors") or p:IsA("LocalScript") or p:IsA("Script") or p:IsA("ProximityPrompt") then p:Remove() end
-									if p:IsA("BasePart") then p.Locked = false end end
-								return end
-							--if Cmodel.Parent:FindFirstChildWhichIsA("Humanoid") then Cmodel.Parent.Archivable = true cha = Cmodel.Parent:Clone() cha.Parent = workspace added += 1 cha.Name = cha.Name.." "..added  wait(.5) cha.Parent = game.Lighting.oof return  end
-							--	if cha then added += 1 cha.Name = cha.Name.." "..added end end
-end
+									for _, p in pairs(cha:GetDescendants()) do   
+										if    p:IsA("BillboardGui") or p:IsA("ClickDetector") or p:IsA("BodyColors") or p:IsA("LocalScript") or p:IsA("Script") or p:IsA("ProximityPrompt") then p:Remove() end
+										if p:IsA("BasePart") then p.Locked = false end end
+									return end
+								--if Cmodel.Parent:FindFirstChildWhichIsA("Humanoid") then Cmodel.Parent.Archivable = true cha = Cmodel.Parent:Clone() cha.Parent = workspace added += 1 cha.Name = cha.Name.." "..added  wait(.5) cha.Parent = game.Lighting.oof return  end
+								--	if cha then added += 1 cha.Name = cha.Name.." "..added end end
+							end
 						end
 					end
 				end
 			end)
-			
+
 			player.CharacterRemoving:Connect(function() charclick:Disconnect() end) --it's simpler for this to be a global function like click to teleport, but I don't feel like doing that
 		end)
 
@@ -2532,7 +2617,7 @@ end
 					v:Clone().Parent = inblock end --use saveimstance on game.Lighting.oof
 			end
 		end)
-		
+
 		This = "eeeEEEEWWWWW"
 		fail = Button:Clone() fail.Parent = Spaghetti fail.Text = "s p sk" fail.Position = UDim2.new(0.05,0 , 0,row24) fail.BackgroundColor3 = Color3.fromRGB(0, 0, 0)   
 		fail.MouseButton1Click:Connect(function() char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "" end)
@@ -2546,30 +2631,31 @@ end
 				end  
 			end 
 		end)
-		
+
 		This = "ttd3"
 		ttd = Button:Clone() ttd.Parent = Spaghetti ttd.Text = "TTD 3" ttd.Position = UDim2.new(0.55,0 , 0,row19) ttd.BackgroundColor3 = Color3.fromRGB(255, 255, 0)   
 		ttd.MouseButton1Click:Connect(function() 
-			
-			 
-		
-		 	if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
+
+
+
+			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
 			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "facelist" then Ui:Remove() end end
 			if Begal.GuiHolder:FindFirstChild("facelist") then Begal.GuiHolder:FindFirstChild("facelist"):Remove() return end
 			ttdlist = Scroll:Clone() ttdlist.Parent = Begal.GuiHolder  ttdlist.Name = "copycharanim" ttdlist.BackgroundTransparency = .9 ttdlist.Position = UDim2.new(0.15, 0 , 0.3, 0)  ttdlist.Size = UDim2.new(0.1, 0 , 0.36, 0) 
+			ttdlist.ClipsDescendants = false ttdlist.ZIndex = -1
 			listing = Instance.new("UIListLayout",ttdlist) listing.Padding = UDim.new(0,1) 
-			
-		danceName = {"carpet","witch","smooth","smuwug","sturdy","boogie d","breakdow","ramb","samsa","minny","mannr","wanna","viva","tuff v","laid b","star p","verv","radic","the q","shiba","belly s","sou","bubb","shift","freem","frol","elect","introdu", "realit", "lovesi"," true","hit it","tootsee","springy","true h","bara b","ken sh","ssy fe","bam b","ss wi","assumpt", "breez","expr","glitt","hype","salsa","bob s",}
+
+			danceName = {"carpet","witch","smooth","smuwug","sturdy","boogie d","breakdow","ramb","samsa","minny","mannr","wanna","viva","tuff v","laid b","star p","verv","radic","the q","shiba","belly s","sou","bubb","shift","freem","frol","elect","introdu", "realit", "lovesi"," true","hit it","tootsee","springy","true h","bara b","ken sh","ssy fe","bam b","ss wi","assumpt", "breez","expr","glitt","hype","salsa","bob s",}
 			for _, faces in pairs(danceName) do local dbutton = Button:Clone() dbutton.Parent = ttdlist dbutton.Text = faces dbutton.Size = UDim2.new(0.95,0 , 0,15) 
 				dbutton.MouseButton1Click:Connect(function()
 					dbutton.BackgroundColor3 = Color3.fromRGB(0, 170, 0) 
 					search = player.PlayerGui.Emotes.MainFrame.Buttons.SearchBar
-			--emotes = player.PlayerGui.Emotes.MainFrame.EmoteContainer["1"]
-			--emotes.Poplock
-			search.Text = "carpet" wait(1)
+					--emotes = player.PlayerGui.Emotes.MainFrame.EmoteContainer["1"]
+					--emotes.Poplock
+					search.Text = "carpet" wait(1)
 					search.Text = dbutton.Text   end) end
 		end)
-		
+
 		This = "Save sky settings for you game"
 		savedL=0
 		ligh = Button:Clone() ligh.Parent = Spaghetti ligh.Text = "save Light" ligh.Position = UDim2.new(0.05,0 , 0,row21) ligh.BackgroundColor3 = Color3.fromRGB(255, 170, 0)   
@@ -2685,7 +2771,7 @@ end
 
 		Flag.Position = UDim2.new(0.5,0 , 0,row10)
 
-		afling.Position = UDim2.new(0.05,0 , 0,row11)
+		--afling.Position = UDim2.new(0.05,0 , 0,row11)
 
 		--hatb.Position = UDim2.new(0.05,0 , 0,row12)
 		spark.Position = UDim2.new(0.5,0 , 0,row12)
@@ -2787,7 +2873,7 @@ end
 			Hm = hum:FindFirstChildWhichIsA("HumanoidDescription") 
 			if not Hm:HasTag("all") then
 				ThisIs = {"Mines foo"}
-				
+
 				Hm:AddEmote("TopRock",3570535774) Hm:AddEmote("Dorky",4212499637) Hm:AddEmote("AroundT",3576747102) Hm:AddEmote("SideSide",3762641826)
 				Hm:AddEmote("Jump",4940602656) Hm:AddEmote("Baby",4272484885) Hm:AddEmote("Monkey",3716636630) Hm:AddEmote("Shuffle",4391208058)
 				Hm:AddEmote("Under",6797938823) Hm:AddEmote("Highwave",5915776835) Hm:AddEmote("Air",4646302011) 
@@ -2908,7 +2994,7 @@ end
 		ThisIs = {"i like these"} 
 		local Emote_info = {
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
-			
+
 			{ Id = "15689314578", Name = "Dragons",  Color = Color3.fromRGB(170, 85, 127)  },
 			{ Id = "15698510244", Name = "Ericdoa",  Color = Color3.fromRGB(255, 85, 0)  },
 			{ Id = "15679957363", Name = "BP.Lisa Money",  Color = Color3.fromRGB(0, 170, 127)  },
@@ -2927,10 +3013,10 @@ end
 			{ Id = "18855609889", Name = "BP what?" ,  Color = Color3.fromRGB(206, 0, 255)  },
 			{ Id = "18855603653", Name = "your last"  ,  Color = Color3.fromRGB(0, 255, 255)  },
 			{ Id = "14900151704", Name = "LIKEY",  Color = Color3.fromRGB(255, 0, 255)  },
-			
+
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
-			
+
 
 			{ Id = "11753545334", Name = "Out",  Color = Color3.fromRGB(217, 0, 255)  },
 			{ Id = "3576747102", Name = "AroundT",  Color = Color3.fromRGB(93, 0, 255)  },
@@ -2944,16 +3030,16 @@ end
 
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
-			
+
 			--{ Id = "16553249658", Name = "Piano Hands",  Color = Color3.fromRGB(0, 170, 255)  },
 		}
-		 x=0
+		x=0
 		--anim.AnimationId = "http://www.roblox.com/asset/?id="..idles[Current].Id 
 		for _,emote in pairs(Emote_info) do
 			Hm:AddEmote(emote.Name,emote.Id) 	
 			PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = emote.Name
 			if emote.Color then PlaceHolder.BackgroundColor3 = emote.Color else
-			PlaceHolder.BackgroundColor3 = Color3.fromHSV(x,1,1) end
+				PlaceHolder.BackgroundColor3 = Color3.fromHSV(x,1,1) end
 			x = x + 25/255 -- you can change the increment to speed/slow up the changing effect (eg: 3/500, 10/255, 0.5/255, etc.)
 			if x >= 1 then
 				x = x-1 --x = 0
@@ -3378,8 +3464,7 @@ Updates=[[
 	v11	8/3/24 - 8/5/24		nil x 1OO
 	v12	9/26/24 - 10/10/24	added functions to assist in saving smaller assets, because saving the entire game results in a corrupted file sometimes
 	
-	v13	3/15/25 - 3/15/25	reformatted classic spammy tables for
-	more modern and efficient scripting, _G functions to merge scripts from my game
+	v13	3/15/25 - 3/15/25	reformatted classic spammy tables for a more modern and efficient scripting, added _G functions to merge scripts from my game
 	v14 5/21/25 - 6/2/25	added pcall function to ignore a few errors because this script runs with default roblox local scripts, this entire script would break in games that customized the default roblox local scripts.
 	v15 6/8/25 - 6/16/25	added animation id copier to export animations to your game
 ]]
