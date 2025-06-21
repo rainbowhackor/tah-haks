@@ -90,7 +90,7 @@ end
 ProllyMobile = false ME = false
 if UserInputService.TouchEnabled then ProllyMobile = true end if workspace:FindFirstChild("WeatherMachine") then ProllyMobile = true end
 if ProllyMobile == true then nan = 13 else nan = 15 end
-Ruse = false if   workspace:FindFirstChildWhichIsA("TerrainRegion") or workspace:FindFirstChildWhichIsA("BrickColorValue")  then Ruse = true end 
+Ruse = false if   workspace:FindFirstChildWhichIsA("TerrainRegion")  then Ruse = true end  if workspace:FindFirstChildWhichIsA("BrickColorValue")  then Ruse = true end 
 if Ruse == true then	disabled = player.disable_nds_HA disabled.Value = true end
 _G.ClickTeleport = nil 
 _G.camm = char.Humanoid.CameraOffset.Y 
@@ -209,9 +209,9 @@ Press Z to Disable HA-]] end
 	UserInputService.InputBegan:Connect(function(input, gameProcessethend)
 
 		ThisIsServerSided = {"spin + explode"}
-		if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.flipspin() end end 
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.flipspin2() end end 
 		if input.UserInputType == Enum.UserInputType.MouseButton2 then if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.nilspinmove() end end 
-		--if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.nilspin() end 
+		if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.nilspin() end 
 
 		if disabled.Value == false then
 			ThisIsServerSided = {"flip"}
@@ -243,10 +243,10 @@ Press Z to Disable HA-]] end
 			local ThisIsServerSided = {"Animation Groups" }
 			if UserInputService:IsKeyDown(Enum.KeyCode.A) and UserInputService:IsKeyDown(Enum.KeyCode.X) then AnimSet() end 
 			if UserInputService:IsKeyDown(Enum.KeyCode.A) and UserInputService:IsKeyDown(Enum.KeyCode.B) then AnimRun() end 
-			
+
 			if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.E) then Mirror() end end 
-			
-			
+
+
 			--if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.V) then char.Humanoid.WalkSpeed = 16 end end 
 			--if input.UserInputType == Enum.UserInputType.MouseButton2 then if UserInputService:IsKeyDown(Enum.KeyCode.V) then char.Humanoid.WalkSpeed = 24 end end 
 			--if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.G) then char.Humanoid.WalkSpeed = 20 end end 
@@ -330,6 +330,9 @@ if not _G.nds then _G.nds = true
 		--wind = Instance.new("BodyAngularVelocity", char.UpperTorso) wind.AngularVelocity = Vector3.new(math.random(5,50), math.random(5,50), math.random(5,50))
 		--wind.MaxTorque = Vector3.new(math.random(-10,10), math.random(-10,10), math.random(-10,10)) wait(.01) wind:Remove() end
 	end
+	function _G.nilspin2()  
+		rotat = Vector3.new( math.random(-100,100)/6, math.random(-100,100)/6, math.random(-100,100)/6 ) 
+		char.HumanoidRootPart.RotVelocity = rotat end
 	function _G.flipspin()  
 		rotat = Vector3.new( math.random(-100,100)/66, 0, 0 ) 
 		char.HumanoidRootPart.RotVelocity = rotat
@@ -2033,7 +2036,7 @@ function guias()
 			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
 			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "masslist" then Ui:Remove() end end
 			if Begal.GuiHolder:FindFirstChild("masslist") then Begal.GuiHolder:FindFirstChild("masslist"):Remove() return end
-			masslist = notScroll:Clone() masslist.Parent = Begal.GuiHolder  masslist.Name = "masslist" masslist.BackgroundTransparency = 1 masslist.Position = UDim2.new(0.15, 0 , 0.3, 0)  masslist.Size = UDim2.new(0.1, 0 , 0.36, 0)
+			local masslist = notScroll:Clone() masslist.Parent = Begal.GuiHolder  masslist.Name = "masslist" masslist.BackgroundTransparency = 1 masslist.Position = UDim2.new(0.15, 0 , 0.3, 0)  masslist.Size = UDim2.new(0.1, 0 , 0.36, 0)
 			listing = Instance.new("UIListLayout",masslist) listing.Padding = UDim.new(0,1)
 
 			plus = 15 Button.BackgroundColor3 = Color3.fromRGB(85, 85, 127) Button.Size = UDim2.new(0.95,0 , 0,15) Button.TextXAlignment = Enum.TextXAlignment.Left Button.BackgroundTransparency = .5
@@ -2062,14 +2065,14 @@ function guias()
 			Mass41.MouseButton1Click:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, .3, .5, 1, 1) end end end)
 
 		end)
-		
+
 		ThisIs = {"Lazy"} 
-		Lazy = Button:Clone() Lazy.Parent = Spaghetti Lazy.Text = "Lazy" Lazy.Position = UDim2.new(0.05,0 , 0,row11)  Lazy.BackgroundColor3 = Color3.fromRGB(255, 0, 127)   
+		Lazy = Button:Clone() Lazy.Parent = Spaghetti Lazy.Text = "Lazy" Lazy.Position = UDim2.new(0.05,0 , 0,row9)  Lazy.BackgroundColor3 = Color3.fromRGB(255, 0, 127)   
 		Lazy.MouseButton1Click:Connect(function()
 			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
 			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "masslist" then Ui:Remove() end end
 			if Begal.GuiHolder:FindFirstChild("masslist") then Begal.GuiHolder:FindFirstChild("masslist"):Remove() return end
-			masslist = notScroll:Clone() masslist.Parent = Begal.GuiHolder  masslist.Name = "masslist" masslist.BackgroundTransparency = 1 masslist.Position = UDim2.new(0.15, 0 , 0.3, 0)  masslist.Size = UDim2.new(0.1, 0 , 0.36, 0)
+			local masslist = notScroll:Clone() masslist.Parent = Begal.GuiHolder  masslist.Name = "masslist" masslist.BackgroundTransparency = 1 masslist.Position = UDim2.new(0.15, 0 , 0.3, 0)  masslist.Size = UDim2.new(0.1, 0 , 0.36, 0)
 			listing = Instance.new("UIListLayout",masslist) listing.Padding = UDim.new(0,1)
 
 			plus = 15 Button.BackgroundColor3 = Color3.fromRGB(85, 85, 127) Button.Size = UDim2.new(0.95,0 , 0,15) Button.TextXAlignment = Enum.TextXAlignment.Left Button.BackgroundTransparency = .5
@@ -2078,21 +2081,22 @@ function guias()
 			ran.MouseButton1Click:Connect(function() char.Humanoid.WalkSpeed = 16 end)
 			ran2 = Button:Clone() ran2.Parent = masslist ran2.Text = "run / character height" 
 			ran2.MouseButton1Click:Connect(function() char.Humanoid.WalkSpeed = char.Humanoid.HipHeight * 7.634 end)
-			
+
 			jum = Button:Clone() jum.Parent = masslist jum.Text = "jump 50, 7.2" jum.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
 			jum.MouseButton1Click:Connect(function() char.Humanoid.JumpPower = 50 char.Humanoid.JumpHeight = 7.2 end)
 			jum2 = Button:Clone() jum2.Parent = masslist jum2.Text = "jump / character height" jum2.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
 			jum2.MouseButton1Click:Connect(function() char.Humanoid.JumpPower = 50 * char.Humanoid.BodyHeightScale.Value  char.Humanoid.JumpHeight = 7.2 * char.Humanoid.BodyHeightScale.Value end)
-			
-			
+
+
 			times = Button:Clone() times.Parent = masslist times.Text = "times" times.BackgroundColor3 = Color3.fromRGB(90, 255, 255)
 			times.MouseButton1Click:Connect(function() game.Lighting.ClockTime = 17.8  end)
 			times.MouseButton2Click:Connect(function() game.Lighting.ClockTime = 2 end)
 			times.MouseWheelForward:Connect(function() game.Lighting.ClockTime = 13 end)
 			times.MouseWheelBackward:Connect(function() game.Lighting.ClockTime = 16 end)
-			
+
 			gravs = Button:Clone() gravs.Parent = masslist gravs.Text = "grav 0" 
 			gravs.MouseButton1Click:Connect(function() workspace.Gravity = 0 end)
+			gravs.MouseButton2Click:Connect(function() workspace.Gravity = 33 end)
 			gravs2 = Button:Clone() gravs2.Parent = masslist gravs2.Text = "grav 5 , 55" gravs2.BackgroundColor3 = Color3.fromRGB(127, 90, 59)
 			gravs2.MouseButton1Click:Connect(function() workspace.Gravity = 5 end)
 			gravs2.MouseButton2Click:Connect(function() workspace.Gravity = 55 end)
@@ -2102,17 +2106,17 @@ function guias()
 			gravs4 = Button:Clone() gravs4.Parent = masslist gravs4.Text = "grav 196.2 , 444" 
 			gravs4.MouseButton1Click:Connect(function() workspace.Gravity = 196.2 end)
 			gravs4.MouseButton2Click:Connect(function() workspace.Gravity = 444 end)
-			
+
 			sito = Button:Clone() sito.Parent = masslist sito.Text = "sit" 
 			sito.MouseButton1Click:Connect(function() char.Humanoid.Sit = not char.Humanoid.Sit  end)
 			sito.MouseButton2Click:Connect(function() char.Humanoid.PlatformStand = not char.Humanoid.PlatformStand  end)
-			
+
 			lightss = Button:Clone() lightss.Parent = masslist lightss.Text = "lights" lightss.BackgroundColor3 = Color3.fromRGB(176, 176, 0)
 			lightss.MouseButton1Click:Connect(function() 
 				for _, light in pairs(workspace:GetDescendants()) do 
 					if light:IsA("Light") then 
 						if light.Enabled == true then light:AddTag("was on") end  
-						
+
 					end 
 				end 
 				for _, light in pairs(workspace:GetDescendants()) do 
@@ -2122,7 +2126,7 @@ function guias()
 					end 
 				end 
 			end)
-			
+
 			shadows = Button:Clone() shadows.Parent = masslist shadows.Text = "SHaDOWS"  shadows.BackgroundColor3 = Color3.fromRGB(149, 149, 149)
 			shadows.MouseButton1Click:Connect(function() 
 				for _, light in pairs(workspace:GetDescendants()) do 
@@ -2138,10 +2142,12 @@ function guias()
 					end 
 				end 
 			end)
-			
-			 
+			shadows.MouseButton2Click:Connect(function()  
+				for _, light in pairs(workspace:GetDescendants()) do  if light:IsA("BasePart")  then  light.CastShadow = not light.CastShadow end  end 
+			end)
+
 		end)  
-		
+
 
 		ThisIs = {"Faces"} --no one can see this, it's just mental assurance  
 		--[[faces1 = Button:Clone() faces1.Parent = Spaghetti faces1.Text = "Face" faces1.Position = UDim2.new(0.05,0 , 0,row15) faces1.BackgroundColor3 = Color3.fromRGB(255, 255, 0)   
@@ -2766,7 +2772,7 @@ function guias()
 
 		swimin.Position = UDim2.new(0.05,0 , 0,row6)
 
-		tpb.Position = UDim2.new(0.05,0 , 0,row9)
+		tpb.Position = UDim2.new(0.05,0 , 0,row11)
 		heavy1.Position = UDim2.new(0.5,0 , 0,row9)
 
 		Flag.Position = UDim2.new(0.5,0 , 0,row10)
@@ -3328,6 +3334,16 @@ game.Players.PlayerAdded:Connect(function(person) task.wait(.1) if game.Players.
 		imageval2.Texture = game.Players:GetUserThumbnailAsync(pchar.Value , Enum.ThumbnailType.AvatarThumbnail, Enum.ThumbnailSize.Size420x420)
 	end)]]
 end)
+
+if workspace:FindFirstChild("Map") then 
+	if workspace.Map:FindFirstChild("Leaderboards") then workspace.Map:FindFirstChild("Leaderboards"):Remove() end
+	if workspace.Map:FindFirstChild("other") then workspace.Map:FindFirstChild("other"):Remove() end
+	if workspace.Map:FindFirstChild("MainIsland") then workspace.Map:FindFirstChild("MainIsland").Name = "Island" end
+	if workspace.Map:FindFirstChild("MainIsland") then workspace.Map:FindFirstChild("MainIsland"):Remove() end -- They accidentally duplicated the map in this version of TTD3
+	if workspace.Map:FindFirstChild("Island") then 
+		for _,L in pairs( workspace.Map:FindFirstChild("Island"):GetDescendants()) do if L.Name == "SoccerField" then L:Remove() end end
+	 end
+	end
 
 ThisIsClientSided = {"Walk on ghost dirt", "Drive on ocean"}
 function NDS() 
