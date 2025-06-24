@@ -209,8 +209,8 @@ Press Z to Disable HA-]] end
 	UserInputService.InputBegan:Connect(function(input, gameProcessethend)
 
 		ThisIsServerSided = {"spin + explode"}
-		if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.flipspin2() end end 
-		if input.UserInputType == Enum.UserInputType.MouseButton2 then if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.nilspinmove() end end 
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.flipspin() end end 
+		if input.UserInputType == Enum.UserInputType.MouseButton2 then if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.nilspin2() end end 
 		if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.nilspin() end 
 
 		if disabled.Value == false then
@@ -3337,7 +3337,8 @@ end)
 
 if workspace:FindFirstChild("Map") then 
 	if workspace.Map:FindFirstChild("Leaderboards") then workspace.Map:FindFirstChild("Leaderboards"):Remove() end
-	if workspace.Map:FindFirstChild("other") then workspace.Map:FindFirstChild("other"):Remove() end
+	if workspace.Map:FindFirstChild("Other") then workspace.Map:FindFirstChild("Other"):Remove() end
+	if workspace.Map:FindFirstChild("Teleports") then workspace.Map:FindFirstChild("Teleports"):Remove() end
 	if workspace.Map:FindFirstChild("MainIsland") then workspace.Map:FindFirstChild("MainIsland").Name = "Island" end
 	if workspace.Map:FindFirstChild("MainIsland") then workspace.Map:FindFirstChild("MainIsland"):Remove() end -- They accidentally duplicated the map in this version of TTD3
 	if workspace.Map:FindFirstChild("Island") then 
