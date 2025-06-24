@@ -549,7 +549,7 @@ function CharSettings() humy = char:WaitForChild("Humanoid") humy.UseJumpPower =
 	end
 
 end
-function NoToolHold() if char.Animate.toolnone.ToolNoneAnim.AnimationId ~= "rbxassetid://14366558676" then an=99 AnimOther() an=0 end end
+function NoToolHold() end -- if char.Animate.toolnone.ToolNoneAnim.AnimationId ~= "rbxassetid://14366558676" then an=99 AnimOther() an=0 end end
 --function NoToolHold() if not char.Humanoid:FindFirstChildWhichIsA("BuoyancySensor") then Instance.new("BuoyancySensor",char.Humanoid) an=99 AnimOther() an=0 end end
 --function NoToolHold() MoodAnim = "rbxassetid://14366558676" if char:FindFirstChild("Animate") and char.Animate:FindFirstChild("toolnone") and char.Animate.toolnone:FindFirstChild("ToolNoneAnim") then char.Animate.toolnone:FindFirstChild("ToolNoneAnim").AnimationId = MoodAnim end end
 --function Collision() for _,oof in pairs(player.Character:GetChildren()) do if oof:IsA("BasePart") then oof.CollisionGroup = "Character" end end end
@@ -3338,12 +3338,20 @@ end)
 if workspace:FindFirstChild("Map") then 
 	if workspace.Map:FindFirstChild("Leaderboards") then workspace.Map:FindFirstChild("Leaderboards"):Remove() end
 	if workspace.Map:FindFirstChild("Other") then workspace.Map:FindFirstChild("Other"):Remove() end
-	if workspace.Map:FindFirstChild("Teleports") then workspace.Map:FindFirstChild("Teleports"):Remove() end
+	if workspace.Map:FindFirstChild("Teleporters") then workspace.Map:FindFirstChild("Teleporters"):Remove() end
 	if workspace.Map:FindFirstChild("MainIsland") then workspace.Map:FindFirstChild("MainIsland").Name = "Island" end
 	if workspace.Map:FindFirstChild("MainIsland") then workspace.Map:FindFirstChild("MainIsland"):Remove() end -- They accidentally duplicated the map in this version of TTD3
 	if workspace.Map:FindFirstChild("Island") then 
-		for _,L in pairs( workspace.Map:FindFirstChild("Island"):GetDescendants()) do if L.Name == "SoccerField" then L:Remove() end end
-	 end
+		for _,L in pairs( workspace.Map:FindFirstChild("Island"):GetDescendants()) do 
+			if L.Name == "SoccerField" then L:Remove() end
+			if L.Name == "Meshes/Palm Trees V2_Plane.001" or L.Name == "Meshes/Palm Trees V2_Plane.003" or L.Name == "Meshes/ad_Cylinder" or L.Name == "Meshes/ewe_Cylinder.006" or L.Name == "Meshes/ad_Icosphere.006" or L.Name == "Meshes/e_Plane.001 (1)" or L.Name == "Meshes/e_Icosphere.011" then 
+				L.CanCollide = false
+			end
+			if L.Color == Color3.fromRGB(99, 79, 63) then 
+				L.CanCollide = false
+			end
+		end
+		end
 	end
 
 ThisIsClientSided = {"Walk on ghost dirt", "Drive on ocean"}
