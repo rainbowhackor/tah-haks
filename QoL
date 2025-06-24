@@ -3347,11 +3347,11 @@ if workspace:FindFirstChild("Map") then
 			if L.Name == "Meshes/Palm Trees V2_Plane.001" or L.Name == "Meshes/Palm Trees V2_Plane.003" or L.Name == "Meshes/ad_Cylinder" or L.Name == "Meshes/ewe_Cylinder.006" or L.Name == "Meshes/ad_Icosphere.006" or L.Name == "Meshes/e_Plane.001 (1)" or L.Name == "Meshes/e_Icosphere.011" then 
 				L.CanCollide = false
 			end
-			if L:Isa("BasePart") then if L.Color == Color3.fromRGB(99, 79, 63) then 
+			if L:IsA("BasePart") then if L.Color == Color3.fromRGB(99, 79, 63) then 
 				L.CanCollide = false end
 			end
 		end
-		end
+		end    
 	end
 
 ThisIsClientSided = {"Walk on ghost dirt", "Drive on ocean"}
