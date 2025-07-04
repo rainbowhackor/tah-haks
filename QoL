@@ -2659,7 +2659,7 @@ function guias()
 					search = player.PlayerGui.Emotes.MainFrame.Buttons.SearchBar
 					--emotes = player.PlayerGui.Emotes.MainFrame.EmoteContainer["1"]
 					--emotes.Poplock
-					search.Text = "carpet" wait(1)
+					--search.Text = "carpet" wait(1)
 					search.Text = dbutton.Text   end) end
 		end)
 
@@ -3349,31 +3349,45 @@ if workspace:FindFirstChild("Map") then
 		for _,L in pairs( workspace.Map:FindFirstChild("Island"):GetDescendants()) do 
 			if L.Name == "SoccerField" then L:Remove() end
 			if L.Name == "Meshes/Palm Trees V2_Plane.001" or L.Name == "Meshes/Palm Trees V2_Plane.003" or L.Name == "Meshes/ad_Cylinder" or L.Name == "Meshes/ewe_Cylinder.006" or L.Name == "Meshes/ad_Icosphere.006" or L.Name == "Meshes/e_Plane.001 (1)" or L.Name == "Meshes/e_Icosphere.011"  
-				or L.Name == "FireVFX" or L.Name == "Meshes/DA_Cylinder.015" or L.Name == "Meshes/DA_Cylinder.017"  or L.Name == "Meshes/DA_Plane"  or L.Name == "Cylinder.003" or L.Name =="Meshes/stone head"
+				or L.Name == "FireVFX" or L.Name == "Meshes/DA_Cylinder.015" or L.Name == "Meshes/DA_Cylinder.017"  or L.Name == "Meshes/DA_Plane"  or L.Name == "Cylinder.003" or L.Name =="Meshes/stone head" or L.Name == "Meshes/sdasa_Plane.001"
 				then L.CanCollide = false
 			end
 			if L:IsA("BasePart") then if L.Color == Color3.fromRGB(99, 79, 63) then 
 				L.CanCollide = false end
 			end
 			if L:IsA("MeshPart") then 
-				if L.MeshId == "rbxassetid://17814036182" or L.MeshId == "rbxassetid://17814036882" or L.MeshId == "rbxassetid://17814036743" or L.MeshId == "rbxassetid://17814036743" then 
+				if L.MeshId == "rbxassetid://17814036182" or L.MeshId == "rbxassetid://17814036882" or L.MeshId == "rbxassetid://17814036743"  then 
 					L.CanCollide = false end
+			end
+			if L.Name == "Lamp post" then
+				for _,p in pairs( L:GetDescendants()) do 
+					if L:IsA("BasePart") then  
+						L.CanCollide = false end
+
 				end
+			end
 		end
+		 
+		if workspace.Map.MainIsland.NewWorld.MainIsland.Map.Volcano ~= nil then
+			for _,L in pairs( workspace.Map.MainIsland.NewWorld.MainIsland.Map.Volcano:GetDescendants()) do 
+				if L:IsA("ParticleEmitter") then L:Remove() 
+				end
+			end
+			
+		end
+	
+		
 	end  
 	if workspace.Map:FindFirstChild("Zones") then 
 		for _,L in pairs( workspace.Map:FindFirstChild("Zones"):GetChildren()) do 
 			if L:IsA("BasePart") then  
 					L.CanQuery = false end
-			end
-		end
-	end
-	if workspace.Map:FindFirstChild("Volcano") then 
-	for _,L in pairs( workspace.Map:FindFirstChild("Volcano"):GetDescendants()) do 
-		if L:IsA("ParticleEmitter") then L:Remove() end
 			
 		end
-		end
+	end
+	
+	
+end
 
 ThisIsClientSided = {"Walk on ghost dirt", "Drive on ocean"}
 function NDS() 
