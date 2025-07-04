@@ -2651,7 +2651,8 @@ function guias()
 			ttdlist.ClipsDescendants = false ttdlist.ZIndex = -1
 			listing = Instance.new("UIListLayout",ttdlist) listing.Padding = UDim.new(0,1) 
 
-			danceName = {"carpet","witch","smooth","smuwug","sturdy","boogie d","breakdow","ramb","samsa","minny","mannr","wanna","viva","tuff v","laid b","star p","verv","radic","the q","shiba","belly s","sou","bubb","shift","freem","frol","elect","introdu", "realit", "lovesi"," true","hit it","tootsee","springy","true h","bara b","ken sh","ssy fe","bam b","ss wi","assumpt", "breez","expr","glitt","hype","salsa","bob s",}
+			danceName = {"carpet","witch","smooth","smuwug","star p","shiba","belly s","frol","elect","tootsee","lovesi","bob s","wanna","viva","the q",
+				"sturdy","boogie d","breakdow","ramb","samsa","minny","mannr","tuff v","laid b","verv","radic","sou","bubb","shift","freem","introdu", "realit","poplock", " true","hit it","springy","true h","bara b","ken sh","ssy fe","bam b","ss wi","assumpt", "breez","expr","glitt","hype","salsa",}
 			for _, faces in pairs(danceName) do local dbutton = Button:Clone() dbutton.Parent = ttdlist dbutton.Text = faces dbutton.Size = UDim2.new(0.95,0 , 0,15) 
 				dbutton.MouseButton1Click:Connect(function()
 					dbutton.BackgroundColor3 = Color3.fromRGB(0, 170, 0) 
@@ -3335,6 +3336,9 @@ game.Players.PlayerAdded:Connect(function(person) task.wait(.1) if game.Players.
 	end)]]
 end)
 
+if workspace:FindFirstChild("NPC") then 
+	workspace:FindFirstChild("NPC"):Remove()
+end
 if workspace:FindFirstChild("Map") then 
 	if workspace.Map:FindFirstChild("Leaderboards") then workspace.Map:FindFirstChild("Leaderboards"):Remove() end
 	if workspace.Map:FindFirstChild("Other") then workspace.Map:FindFirstChild("Other"):Remove() end
@@ -3344,15 +3348,32 @@ if workspace:FindFirstChild("Map") then
 	if workspace.Map:FindFirstChild("Island") then 
 		for _,L in pairs( workspace.Map:FindFirstChild("Island"):GetDescendants()) do 
 			if L.Name == "SoccerField" then L:Remove() end
-			if L.Name == "Meshes/Palm Trees V2_Plane.001" or L.Name == "Meshes/Palm Trees V2_Plane.003" or L.Name == "Meshes/ad_Cylinder" or L.Name == "Meshes/ewe_Cylinder.006" or L.Name == "Meshes/ad_Icosphere.006" or L.Name == "Meshes/e_Plane.001 (1)" or L.Name == "Meshes/e_Icosphere.011" then 
-				L.CanCollide = false
+			if L.Name == "Meshes/Palm Trees V2_Plane.001" or L.Name == "Meshes/Palm Trees V2_Plane.003" or L.Name == "Meshes/ad_Cylinder" or L.Name == "Meshes/ewe_Cylinder.006" or L.Name == "Meshes/ad_Icosphere.006" or L.Name == "Meshes/e_Plane.001 (1)" or L.Name == "Meshes/e_Icosphere.011"  
+				or L.Name == "FireVFX" or L.Name == "Meshes/DA_Cylinder.015" or L.Name == "Meshes/DA_Cylinder.017"  or L.Name == "Meshes/DA_Plane"  or L.Name == "Cylinder.003" or L.Name =="Meshes/stone head"
+				then L.CanCollide = false
 			end
 			if L:IsA("BasePart") then if L.Color == Color3.fromRGB(99, 79, 63) then 
 				L.CanCollide = false end
 			end
+			if L:IsA("MeshPart") then 
+				if L.MeshId == "rbxassetid://17814036182" or L.MeshId == "rbxassetid://17814036882" or L.MeshId == "rbxassetid://17814036743" or L.MeshId == "rbxassetid://17814036743" then 
+					L.CanCollide = false end
+				end
 		end
-		end    
+	end  
+	if workspace.Map:FindFirstChild("Zones") then 
+		for _,L in pairs( workspace.Map:FindFirstChild("Zones"):GetChildren()) do 
+			if L:IsA("BasePart") then  
+					L.CanQuery = false end
+			end
+		end
 	end
+	if workspace.Map:FindFirstChild("Volcano") then 
+	for _,L in pairs( workspace.Map:FindFirstChild("Volcano"):GetDescendants()) do 
+		if L:IsA("ParticleEmitter") then L:Remove() end
+			
+		end
+		end
 
 ThisIsClientSided = {"Walk on ghost dirt", "Drive on ocean"}
 function NDS() 
