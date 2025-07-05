@@ -3343,13 +3343,14 @@ if workspace:FindFirstChild("Map") then
 	if workspace.Map:FindFirstChild("Leaderboards") then workspace.Map:FindFirstChild("Leaderboards"):Remove() end
 	if workspace.Map:FindFirstChild("Other") then workspace.Map:FindFirstChild("Other"):Remove() end
 	if workspace.Map:FindFirstChild("Teleporters") then workspace.Map:FindFirstChild("Teleporters"):Remove() end
-	if workspace.Map:FindFirstChild("MainIsland") then workspace.Map:FindFirstChild("MainIsland").Name = "Island" end
-	if workspace.Map:FindFirstChild("MainIsland") then workspace.Map:FindFirstChild("MainIsland"):Remove() end -- They accidentally duplicated the map in this version of TTD3
-	if workspace.Map:FindFirstChild("Island") then 
-		for _,L in pairs( workspace.Map:FindFirstChild("Island"):GetDescendants()) do 
+	--if workspace.Map:FindFirstChild("MainIsland") then workspace.Map:FindFirstChild("MainIsland").Name = "Island" end
+	--if workspace.Map:FindFirstChild("MainIsland") then workspace.Map:FindFirstChild("MainIsland"):Remove() end -- They accidentally duplicated the map in this version of TTD3
+	if workspace.Map:FindFirstChild("MainIsland") then 
+		for _,L in pairs( workspace.Map:FindFirstChild("MainIsland"):GetDescendants()) do 
 			if L.Name == "SoccerField" then L:Remove() end
 			if L.Name == "Meshes/Palm Trees V2_Plane.001" or L.Name == "Meshes/Palm Trees V2_Plane.003" or L.Name == "Meshes/ad_Cylinder" or L.Name == "Meshes/ewe_Cylinder.006" or L.Name == "Meshes/ad_Icosphere.006" or L.Name == "Meshes/e_Plane.001 (1)" or L.Name == "Meshes/e_Icosphere.011"  
 				or L.Name == "FireVFX" or L.Name == "Meshes/DA_Cylinder.015" or L.Name == "Meshes/DA_Cylinder.017"  or L.Name == "Meshes/DA_Plane"  or L.Name == "Cylinder.003" or L.Name =="Meshes/stone head" or L.Name == "Meshes/sdasa_Plane.001"
+				or L.Name == "Meshes/tokyo bench_Cube.064" or L.Name == "Meshes/tokyo bench_Cube.063" 
 			then if L:IsA("BasePart") then L.CanCollide = false end
 			end
 			if L:IsA("BasePart") then if L.Color == Color3.fromRGB(99, 79, 63) then 
@@ -3381,7 +3382,8 @@ if workspace:FindFirstChild("Map") then
 	if workspace.Map:FindFirstChild("Zones") then 
 		for _,L in pairs( workspace.Map:FindFirstChild("Zones"):GetChildren()) do 
 			if L:IsA("BasePart") then  
-					L.CanQuery = false end
+				--L.CanQuery = false 
+			end--
 			
 		end
 	end
