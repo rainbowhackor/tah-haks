@@ -3367,14 +3367,14 @@ if workspace:FindFirstChild("Map") then
 				end
 			end
 		end
-		 pie = workspace.Map.Island.NewWorld.MainIsland.Map.Volcano
+		--[[}} pie = workspace.Map.Island.NewWorld.MainIsland.Map.Volcano
 		if pie ~= nil then
 			for _,L in pairs( workspace.Map.Island.NewWorld.MainIsland.Map.Volcano:GetDescendants()) do 
 				if L:IsA("ParticleEmitter") or L:IsA("Beam") then L:Remove() 
 				end
 			end
 			
-		end
+		end]]
 	
 		
 	end  
