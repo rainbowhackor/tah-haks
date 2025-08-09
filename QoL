@@ -252,7 +252,7 @@ Press Z to Disable HA- end]]
 
 			if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.E) then Mirror() end end 
 
-			if UserInputService:IsKeyDown(Enum.KeyCode.P) then disabled.Value = not disabled.Value
+			if UserInputService:IsKeyDown(Enum.KeyCode.O) then disabled.Value = not disabled.Value
 				if disabled.Value == true then actiontext.TextColor3 = Color3.fromRGB(255, 0, 0) actiontext.Text = "Keys Disabled, Press Z" else actiontext.TextColor3 = Color3.fromRGB(0, 255, 0) actiontext.Text = "Keys Enabled" end
 			end
 			
@@ -2176,7 +2176,7 @@ function guias()
 			Mass24 = Button:Clone() Mass24.Parent = masslist Mass24.Text = "Ice Ball, Glacier" Mass24.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
 			Mass24.MouseButton1Click:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100) end end end)
 			--Mass1 = Button:Clone() Mass1.Parent = masslist Mass1.Text = "Glacier" 
-			Mass1.MouseButton2Click:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) end end end)
+			Mass24.MouseButton2Click:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) end end end)
 
 			gravs = Button:Clone() gravs.Parent = masslist gravs.Text = "grav 5 11" 
 			gravs.MouseButton1Click:Connect(function() workspace.Gravity = 5 end)
