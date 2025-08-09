@@ -213,7 +213,7 @@ Press Z to Disable HA- end]]
 
 	ThisIs = {"Keybinds 2"}
 	UserInputService.InputBegan:Connect(function(input, gameProcessethend)
-
+		if not gameProcessethend then
 		ThisIsServerSided = {"spin + explode"}
 		if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.are_you_sure1() end end 
 		if input.UserInputType == Enum.UserInputType.MouseButton2 then if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.nilspin2() end end 
@@ -251,10 +251,10 @@ Press Z to Disable HA- end]]
 			if UserInputService:IsKeyDown(Enum.KeyCode.A) and UserInputService:IsKeyDown(Enum.KeyCode.B) then AnimRun() end 
 
 			if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.E) then Mirror() end end 
-
-			if UserInputService:IsKeyDown(Enum.KeyCode.O) then disabled.Value = not disabled.Value
+			well = " Enum.KeyCode.O  and  Enum.KeyCode.I  breaks the entire fuckin UserInputService"
+			--[[if UserInputService:IsKeyDown(Enum.KeyCode.K) then disabled.Value = not disabled.Value
 				if disabled.Value == true then actiontext.TextColor3 = Color3.fromRGB(255, 0, 0) actiontext.Text = "Keys Disabled, Press Z" else actiontext.TextColor3 = Color3.fromRGB(0, 255, 0) actiontext.Text = "Keys Enabled" end
-			end
+			end]]
 			
 			L = Enum.KeyCode.R if Ruse == true then L = Enum.KeyCode.B end  
 			if UserInputService:IsKeyDown(L) then player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" end
@@ -264,13 +264,16 @@ Press Z to Disable HA- end]]
 			if UserInputService:IsKeyDown(Enum.KeyCode.U) then local success, data = pcall(function()
 					tpval = game.Lighting.save4.Value tpvector() return  end)
 				if data then  warn("Errors:", data) end   end
-
+			
+			if UserInputService:IsKeyDown(Enum.KeyCode.L) then Swim()  end
 			
 			--if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.V) then char.Humanoid.WalkSpeed = 16 end end 
 			--if input.UserInputType == Enum.UserInputType.MouseButton2 then if UserInputService:IsKeyDown(Enum.KeyCode.V) then char.Humanoid.WalkSpeed = 24 end end 
 			--if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.G) then char.Humanoid.WalkSpeed = 20 end end 
 			--if input.UserInputType == Enum.UserInputType.MouseButton2 then if UserInputService:IsKeyDown(Enum.KeyCode.G) then char.Humanoid.WalkSpeed = 5 end end 
-		end
+		end		
+				
+			end
 	end) 
 end
 
