@@ -132,11 +132,16 @@ end
 task.wait(1) ResetValues()
 player.CharacterAdded:Connect(ResetValues)
 
+ 
 
+ 
 if not game.Lighting:FindFirstChild("binds") then Instance.new("BoolValue",game.Lighting).Name = "binds"
+	
+	
 	ThisIs = {"Keybinds 1"}
-	--[[CAS = game:GetService("ContextActionService")
+	CAS = game:GetService("ContextActionService")
 	function hax(actionName, inputState, inputObject)
+		local success, data = pcall(function()
 		if inputState == Enum.UserInputState.Begin then
 			if actionName == "Controls" then ShowControls()
 			elseif actionName == "Toggle Keybinds" then ThisIs = {"Toggle Keybinds"}--Usefull when you dance with rainbow glow sticks that use half the keys on your keyboard...	
@@ -167,32 +172,37 @@ if not game.Lighting:FindFirstChild("binds") then Instance.new("BoolValue",game.
 				elseif actionName == "Mirror" then  Mirror() --char:PivotTo(char.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(180),0))
 				end
 			end 
-		end
+			end
+			end)
 	end 
 	--CAS:BindAction("v1", hax, false, Enum.KeyCode.Y)
 	--CAS:BindAction("SEAT no nds tp", hax, false, Enum.KeyCode.Y)
 	--CAS:BindAction("Controls", hax, false, Enum.KeyCode.Y)
-	CAS:BindAction("Toggle Keybinds", hax, false, Enum.KeyCode.Z)
+--	CAS:BindAction("Toggle Keybinds", hax, false, Enum.KeyCode.Z)
 	--CAS:BindAction("Toggle tp", hax, false, Enum.KeyCode.Y)
 	CAS:BindAction("Low", hax, false, Enum.KeyCode.X)
-	CAS:BindAction("HAX", hax, false, Enum.KeyCode.G)
+--	CAS:BindAction("HAX", hax, false, Enum.KeyCode.G)
 	--CAS:BindAction("Mirror", hax, false, Enum.KeyCode.E)
-	CAS:BindAction("Anti Fling HAX", hax, false, Enum.KeyCode.F)
+	--CAS:BindAction("Anti Fling HAX", hax, false, Enum.KeyCode.F)
 	--CAS:BindAction("Rainbow Nova", hax, false, Enum.KeyCode.F)
 	--CAS:BindAction("RAINBOW STAR SWORDS", hax, false, Enum.KeyCode.U)
-	CAS:BindAction("Dog Walk", hax, false, Enum.KeyCode.K)
+--	CAS:BindAction("Dog Walk", hax, false, Enum.KeyCode.K)
 	CAS:BindAction("Zero Gravity", hax, false, Enum.KeyCode.H)
-	CAS:BindAction("Low Gravity2", hax, false, Enum.KeyCode.B)
+--	CAS:BindAction("Low Gravity2", hax, false, Enum.KeyCode.B)
 	CAS:BindAction("Default Gravity", hax, false, Enum.KeyCode.V)
-	CAS:BindAction("Jupiter Gravity", hax, false, Enum.KeyCode.J) 
+--	CAS:BindAction("Jupiter Gravity", hax, false, Enum.KeyCode.J) 
 	L = Enum.KeyCode.R if Ruse == true then L = Enum.KeyCode.B end CAS:BindAction("Sit", hax, false, L)
-	CAS:BindAction("PlatformStand", hax, false, Enum.KeyCode.T) 
+--	CAS:BindAction("PlatformStand", hax, false, Enum.KeyCode.T) 
 	CAS:BindAction("Dance List", hax, false, Enum.KeyCode.Period,Enum.KeyCode.Comma)
 	CAS:BindAction("AirBlock", hax, false, Enum.KeyCode.M)
-	CAS:BindAction("A spot", hax, false, Enum.KeyCode.U)
+--	CAS:BindAction("A spot", hax, false, Enum.KeyCode.U)
 	if disabled.Value == true then actiontext.Text = [[HA-Disabled"
-Press Z to Enable HA- else actiontext.Text = [[HA-Enabled"
-Press Z to Disable HA- end]]
+Press Z to Enable HA-]] else actiontext.Text = [[HA-Enabled"
+Press Z to Disable HA-]] end
+	
+		 
+ 
+	
 
 	ThisIsServerSided = {"Setup tp"}
 	if _G.ClickTeleport == nil then _G.ClickTeleport = true
@@ -218,17 +228,18 @@ Press Z to Disable HA- end]]
 	UserInputService.InputBegan:Connect(function(input, gameProcessethend)
 		
 		if gameProcessethend then
-			if UserInputService:IsKeyDown(Enum.KeyCode.R) then if Ruse == false then 
+		--[[	if UserInputService:IsKeyDown(Enum.KeyCode.R) then if Ruse == false then 
 					if workspace:FindFirstChildWhichIsA("BrickColorValue") then return end 
 					player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" 
-				end end
-		end
-		if gameProcessethend then
+				end end]]
+		
 			if UserInputService:IsKeyDown(Enum.KeyCode.Q) then 
 					if workspace:FindFirstChildWhichIsA("BrickColorValue") then return end 
 					player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" 
-				end 
+			end 
+			 
 		end
+		
 		if not gameProcessethend then
 		ThisIsServerSided = {"spin + explode"}
 		if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.are_you_sure1() end end 
@@ -275,14 +286,14 @@ Press Z to Disable HA- end]]
 			end]]
 			
 			--L = Enum.KeyCode.R if Ruse == true then L = Enum.KeyCode.B end  -- it woesnt work in this order 
-				if UserInputService:IsKeyDown(Enum.KeyCode.R) then if Ruse == false then 
+				if UserInputService:IsKeyDown(Enum.KeyCode.T) then if Ruse == false then 
 						if workspace:FindFirstChildWhichIsA("BrickColorValue") then return end 
 						player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" 
 					end end
 				if UserInputService:IsKeyDown(Enum.KeyCode.B) then if Ruse == true then 
 						player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" 
 					end end
-			if UserInputService:IsKeyDown(Enum.KeyCode.T) then player.Character.Humanoid.PlatformStand = not player.Character.Humanoid.PlatformStand actiontext.Text = "PlatformStand" end
+			if UserInputService:IsKeyDown(Enum.KeyCode.Y) then player.Character.Humanoid.PlatformStand = not player.Character.Humanoid.PlatformStand actiontext.Text = "PlatformStand" end
 			
 			if UserInputService:IsKeyDown(Enum.KeyCode.F) then AntiFling()  end
 			if UserInputService:IsKeyDown(Enum.KeyCode.U) then local success, data = pcall(function()
@@ -2274,7 +2285,7 @@ function guias()
 
 		end)  
 
-		player.DevCameraOcclusionMode = Enum.DevCameraOcclusionMode.Invisicam 
+		 
 		
 		ThisIs = {"Faces"} --no one can see this, it's just mental assurance  
 		--[[faces1 = Button:Clone() faces1.Parent = Spaghetti faces1.Text = "Face" faces1.Position = UDim2.new(0.05,0 , 0,row15) faces1.BackgroundColor3 = Color3.fromRGB(255, 255, 0)   
@@ -3488,7 +3499,7 @@ if workspace:FindFirstChild("Map") then
 				if L.MeshId == "rbxassetid://17814036182" or L.MeshId == "rbxassetid://17814036882" or L.MeshId == "rbxassetid://17814036743"  then 
 					L.CanCollide = false end
 			end
-			if L.Name == "Lamp post" or L.Name == "Tiki"  or L.Name == "BeachStore" then
+			if L.Name == "Lamp post" or L.Name == "Tiki"  or L.Name == "BeachStore"  or L.Name == "border" then
 				for _,p in pairs( L:GetDescendants()) do 
 					if p:IsA("BasePart") then  
 						p.CanCollide = false end
@@ -3631,7 +3642,7 @@ NDS()
 if sethiddenproperty then
 	--for _,part in pairs(workspace:GetDescendants()) do if part:IsA("BasePart") then part.CanQuery = true end end
 	workspace.FallenPartsDestroyHeight = -50000 player.CameraMaxZoomDistance = 1000
-
+	player.DevCameraOcclusionMode = Enum.DevCameraOcclusionMode.Invisicam
 
 	ThisIs = {"invisicam broke"}
 	--[[local sc = (debug and debug.setconstant) or setconstant local gc = (debug and debug.getconstants) or getconstants
