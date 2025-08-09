@@ -132,7 +132,7 @@ player.CharacterAdded:Connect(ResetValues)
 
 if not game.Lighting:FindFirstChild("binds") then Instance.new("BoolValue",game.Lighting).Name = "binds"
 	ThisIs = {"Keybinds 1"}
-	CAS = game:GetService("ContextActionService")
+	--[[CAS = game:GetService("ContextActionService")
 	function hax(actionName, inputState, inputObject)
 		if inputState == Enum.UserInputState.Begin then
 			if actionName == "Controls" then ShowControls()
@@ -188,8 +188,8 @@ if not game.Lighting:FindFirstChild("binds") then Instance.new("BoolValue",game.
 	CAS:BindAction("AirBlock", hax, false, Enum.KeyCode.M)
 	CAS:BindAction("A spot", hax, false, Enum.KeyCode.U)
 	if disabled.Value == true then actiontext.Text = [[HA-Disabled"
-Press Z to Enable HA-]] else actiontext.Text = [[HA-Enabled"
-Press Z to Disable HA-]] end
+Press Z to Enable HA- else actiontext.Text = [[HA-Enabled"
+Press Z to Disable HA- end]]
 
 	ThisIsServerSided = {"Setup tp"}
 	if _G.ClickTeleport == nil then _G.ClickTeleport = true
@@ -252,7 +252,20 @@ Press Z to Disable HA-]] end
 
 			if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.E) then Mirror() end end 
 
+			if UserInputService:IsKeyDown(Enum.KeyCode.P) then disabled.Value = not disabled.Value
+				if disabled.Value == true then actiontext.TextColor3 = Color3.fromRGB(255, 0, 0) actiontext.Text = "Keys Disabled, Press Z" else actiontext.TextColor3 = Color3.fromRGB(0, 255, 0) actiontext.Text = "Keys Enabled" end
+			end
+			
+			L = Enum.KeyCode.R if Ruse == true then L = Enum.KeyCode.B end  
+			if UserInputService:IsKeyDown(L) then player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" end
+			if UserInputService:IsKeyDown(Enum.KeyCode.T) then player.Character.Humanoid.PlatformStand = not player.Character.Humanoid.PlatformStand actiontext.Text = "PlatformStand" end
+			
+			if UserInputService:IsKeyDown(Enum.KeyCode.F) then AntiFling()  end
+			if UserInputService:IsKeyDown(Enum.KeyCode.U) then local success, data = pcall(function()
+					tpval = game.Lighting.save4.Value tpvector() return  end)
+				if data then  warn("Errors:", data) end   end
 
+			
 			--if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.V) then char.Humanoid.WalkSpeed = 16 end end 
 			--if input.UserInputType == Enum.UserInputType.MouseButton2 then if UserInputService:IsKeyDown(Enum.KeyCode.V) then char.Humanoid.WalkSpeed = 24 end end 
 			--if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.G) then char.Humanoid.WalkSpeed = 20 end end 
@@ -2129,17 +2142,24 @@ function guias()
 		Lazy = Button:Clone() Lazy.Parent = Spaghetti Lazy.Text = "Lazy" Lazy.Position = UDim2.new(0.05,0 , 0,row9)  Lazy.BackgroundColor3 = Color3.fromRGB(255, 0, 127)   
 		Lazy.MouseButton1Click:Connect(function()
 			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
-			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "masslist" then Ui:Remove() end end
-			if Begal.GuiHolder:FindFirstChild("masslist") then Begal.GuiHolder:FindFirstChild("masslist"):Remove() return end
-			local masslist = notScroll:Clone() masslist.Parent = Begal.GuiHolder  masslist.Name = "masslist" masslist.BackgroundTransparency = 1 masslist.Position = UDim2.new(0.15, 0 , 0.3, 0)  masslist.Size = UDim2.new(0.1, 0 , 0.36, 0)
+			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "lazylist" then Ui:Remove() end end
+			if Begal.GuiHolder:FindFirstChild("lazylist") then Begal.GuiHolder:FindFirstChild("lazylist"):Remove() return end
+			local masslist = notScroll:Clone() masslist.Parent = Begal.GuiHolder  masslist.Name = "lazylist" masslist.BackgroundTransparency = 1 masslist.Position = UDim2.new(0.15, 0 , 0.3, 0)  masslist.Size = UDim2.new(0.1, 0 , 0.36, 0)
 			listing = Instance.new("UIListLayout",masslist) listing.Padding = UDim.new(0,1)
 
 			plus = 15 Button.BackgroundColor3 = Color3.fromRGB(85, 85, 127) Button.Size = UDim2.new(0.95,0 , 0,15) Button.TextXAlignment = Enum.TextXAlignment.Left Button.BackgroundTransparency = .5
 
-			ran = Button:Clone() ran.Parent = masslist ran.Text = "run 16" 
-			ran.MouseButton1Click:Connect(function() char.Humanoid.WalkSpeed = 16 end)
-			ran2 = Button:Clone() ran2.Parent = masslist ran2.Text = "run / character height" 
-			ran2.MouseButton1Click:Connect(function() char.Humanoid.WalkSpeed = char.Humanoid.HipHeight * 7.634 end)
+			ran = Button:Clone() ran.Parent = masslist ran.Text = "run  CH, 80, 16, 120" 
+			ran.MouseButton1Click:Connect(function() char.Humanoid.WalkSpeed = char.Humanoid.HipHeight * 7.634  end)
+			ran.MouseButton2Click:Connect(function() char.Humanoid.WalkSpeed = 80 end)
+			ran.MouseWheelForward:Connect(function() char.Humanoid.WalkSpeed = 16 end)
+			ran.MouseWheelBackward:Connect(function() char.Humanoid.WalkSpeed = 120 end)
+			ran2 = Button:Clone() ran2.Parent = masslist ran2.Text = "run  160, 250, 200, 50" 
+			ran2.MouseButton1Click:Connect(function() char.Humanoid.WalkSpeed = 160  end)
+			ran2.MouseButton2Click:Connect(function() char.Humanoid.WalkSpeed = 250 end)
+			ran2.MouseWheelForward:Connect(function() char.Humanoid.WalkSpeed = 200 end)
+			ran2.MouseWheelBackward:Connect(function() char.Humanoid.WalkSpeed = 50 end)
+			
 
 			jum = Button:Clone() jum.Parent = masslist jum.Text = "jump 50, 7.2" jum.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
 			jum.MouseButton1Click:Connect(function() char.Humanoid.JumpPower = 50 char.Humanoid.JumpHeight = 7.2 end)
@@ -2147,16 +2167,21 @@ function guias()
 			jum2.MouseButton1Click:Connect(function() char.Humanoid.JumpPower = 50 * char.Humanoid.BodyHeightScale.Value  char.Humanoid.JumpHeight = 7.2 * char.Humanoid.BodyHeightScale.Value end)
 
 
-			times = Button:Clone() times.Parent = masslist times.Text = "times" times.BackgroundColor3 = Color3.fromRGB(90, 255, 255)
+			times = Button:Clone() times.Parent = masslist times.Text = "time  17.8 , 2 , 13 , 16" times.BackgroundColor3 = Color3.fromRGB(170, 0, 255)
 			times.MouseButton1Click:Connect(function() game.Lighting.ClockTime = 17.8  end)
 			times.MouseButton2Click:Connect(function() game.Lighting.ClockTime = 2 end)
 			times.MouseWheelForward:Connect(function() game.Lighting.ClockTime = 13 end)
 			times.MouseWheelBackward:Connect(function() game.Lighting.ClockTime = 16 end)
+			
+			Mass24 = Button:Clone() Mass24.Parent = masslist Mass24.Text = "Ice Ball, Glacier" Mass24.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
+			Mass24.MouseButton1Click:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100) end end end)
+			--Mass1 = Button:Clone() Mass1.Parent = masslist Mass1.Text = "Glacier" 
+			Mass1.MouseButton2Click:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) end end end)
 
-			gravs = Button:Clone() gravs.Parent = masslist gravs.Text = "grav 0 5" 
-			gravs.MouseButton1Click:Connect(function() workspace.Gravity = 0 end)
-			gravs.MouseButton2Click:Connect(function() workspace.Gravity = 5 end)
-			gravs2 = Button:Clone() gravs2.Parent = masslist gravs2.Text = "grav 33 , 55" gravs2.BackgroundColor3 = Color3.fromRGB(127, 90, 59)
+			gravs = Button:Clone() gravs.Parent = masslist gravs.Text = "grav 5 11" 
+			gravs.MouseButton1Click:Connect(function() workspace.Gravity = 5 end)
+			gravs.MouseButton2Click:Connect(function() workspace.Gravity = 11 end)
+			gravs2 = Button:Clone() gravs2.Parent = masslist gravs2.Text = "grav 33 , 55" 
 			gravs2.MouseButton1Click:Connect(function() workspace.Gravity = 33 end)
 			gravs2.MouseButton2Click:Connect(function() workspace.Gravity = 55 end)
 			gravs3 = Button:Clone() gravs3.Parent = masslist gravs3.Text = "grav 111 , 222" 
@@ -2173,6 +2198,14 @@ function guias()
 			sito = Button:Clone() sito.Parent = masslist sito.Text = "sit" 
 			sito.MouseButton1Click:Connect(function() char.Humanoid.Sit = not char.Humanoid.Sit  end)
 			sito.MouseButton2Click:Connect(function() char.Humanoid.PlatformStand = not char.Humanoid.PlatformStand  end)
+			
+			jump1 = Button:Clone() jump1.Parent = masslist jump1.Text = "jump 10 , 15" jump1.BackgroundColor3 = Color3.fromRGB(127, 90, 59)
+			jump1.MouseButton1Click:Connect(function() char.Humanoid.JumpHeight = 10 end)
+			jump1.MouseButton2Click:Connect(function() char.Humanoid.JumpHeight = 15 end)
+			jump2 = Button:Clone() jump2.Parent = masslist jump2.Text = "jump 20 , 25" jump2.BackgroundColor3 = Color3.fromRGB(127, 90, 59)
+			jump2.MouseButton1Click:Connect(function() char.Humanoid.JumpHeight = 20 end)
+			jump2.MouseButton2Click:Connect(function() char.Humanoid.JumpHeight = 25 end)
+			
 			
 			lightss = Button:Clone() lightss.Parent = masslist lightss.Text = "lights" lightss.BackgroundColor3 = Color3.fromRGB(176, 176, 0)
 			lightss.MouseButton1Click:Connect(function() 
