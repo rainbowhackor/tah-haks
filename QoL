@@ -93,10 +93,15 @@ if ProllyMobile == true then nan = 13 else nan = 15 end
 Ruse = false if   workspace:FindFirstChildWhichIsA("TerrainRegion")  then Ruse = true end  if workspace:FindFirstChildWhichIsA("BrickColorValue")  then Ruse = true end 
 if Ruse == true then	disabled = player.disable_nds_HA disabled.Value = true end
 _G.ClickTeleport = nil 
-_G.camm = char.Humanoid.CameraOffset.Y 
+
 --if char.Humanoid.CameraOffset.Y == 0 then camm = -1  if Ruse == true then camm = -1.75 end end
-function cam()  repeat wait(1) until char:FindFirstChild("HumanoidRootPart")  _G.camm = -char.HumanoidRootPart.Size.Y  end
-cam()
+function cam()  
+	if workspace:FindFirstChildWhichIsA("BrickColorValue") or workspace:FindFirstChildWhichIsA("TerrainRegion") then else 
+		repeat wait(1) until char:FindFirstChild("HumanoidRootPart")
+		_G.camm = char.Humanoid.CameraOffset.Y 
+		_G.camm = -char.HumanoidRootPart.Size.Y + char.UpperTorso.NeckRigAttachment.Position.Y end 
+end
+--cam()  
 function ResetValues() an = 0 runan = 0 char = player.Character  ShowAction() cam()--disabled.Value = false
 	if workspace:FindFirstChild("RainbowStarSwords") then if not workspace.RainbowStarSwords:IsA("Tool") then workspace:FindFirstChild("RainbowStarSwords"):Remove() end end
 	char.ChildAdded:Connect(function(gear) task.wait() if gear.Name == "Rainbow Star Sword" or gear.Name == "Big Bang Sword" then disabled.Value = true game.StarterGui:SetCore("SendNotification", {Title="HA-Disabled"; Text="Press Z to Enable HA-"; Duration=5;}) end end)
@@ -112,7 +117,8 @@ function ResetValues() an = 0 runan = 0 char = player.Character  ShowAction() ca
 		local success, data = pcall(function()
 			Gears()  
 			guias() 
-			NewCamera() 
+			--cam()  
+			--NewCamera() 
 			OOF() 
 			return  end)
 		if success then-- print("no error:", data)
@@ -209,7 +215,7 @@ Press Z to Disable HA-]] end
 	UserInputService.InputBegan:Connect(function(input, gameProcessethend)
 
 		ThisIsServerSided = {"spin + explode"}
-		if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.flipspin() end end 
+		if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.are_you_sure1() end end 
 		if input.UserInputType == Enum.UserInputType.MouseButton2 then if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.nilspin2() end end 
 		if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.nilspin() end 
 
@@ -293,6 +299,19 @@ end
 
 mover = nil bayblade = nil bayblade2 = nil smack = nil rotat = nil wind = nil 
 if not _G.nds then _G.nds = true
+	
+	function _G.are_you_sure1() 
+		if player.PlayerGui:FindFirstChild("ded") then player.PlayerGui:FindFirstChild("ded"):Remove() end
+		gui = Instance.new("ScreenGui",player.PlayerGui) gui.Name = "ded"
+		frame = Instance.new("Frame",gui) frame.Position = UDim2.new(.3,0,.7,0) frame.Size = UDim2.new(.2,0,.05,0) frame.BackgroundTransparency = .7
+		b1 = Instance.new("TextButton",frame) b1.Position = UDim2.new(.1,0,.1,0) b1.Size = UDim2.new(.4,0,.8,0) b1.BackgroundColor3 = Color3.fromRGB(0, 170, 0) b1.Text = "Yes" 
+		b1.MouseButton1Click:Connect(function() _G.FLing_Killed_Far() gui:Remove() end)
+		b2 = Instance.new("TextButton",frame) b2.Position = UDim2.new(.5,0,.1,0) b2.Size = UDim2.new(.4,0,.8,0) b2.BackgroundColor3 = Color3.fromRGB(170, 0, 0) b2.Text = "No"
+		b2.MouseButton1Click:Connect(function() gui:Remove() end)
+		eg = Instance.new("TextLabel",frame) eg.Position = UDim2.new(.0,0,-.1,0) eg.Size = UDim2.new(1,0,.5,0) eg.Text = "Are You Sure Died" frame.BackgroundTransparency = .7
+		wait(3) gui:Remove()
+	end
+	
 	function _G.FLing_Killed_Far()   char.HumanoidRootPart.Anchored = false --char.UpperTorso.RotVelocity = Vector3.new( math.random(5,10)*100, math.random(5,10)*100, math.random(5,15)*100)
 		mover = Vector3.new( math.random(-100,100)*50, math.random(80,100)*20, math.random(50,100)*200)
 		bayblade = Vector3.new( math.random(5,10)*100, math.random(5,10)*100, math.random(5,15)*100)
@@ -1985,7 +2004,47 @@ function guias()
 						for _,froze in pairs(fpart:GetConnectedParts(false)) do 
 							if not froze.Anchored and not froze:FindFirstChildWhichIsA("Weld") and not froze:FindFirstChildWhichIsA("Snap") and not froze:FindFirstChildWhichIsA("Rotate") and not froze:FindFirstChildWhichIsA("RotateP")  then froze:Remove() end end
 					end end end)
-
+			
+			winds = Button:Clone() winds.Parent = gaminglist winds.Text = "WindShake" wond = true
+			winds.MouseButton1Click:Connect(function()		wond = not wond
+				for _,item in pairs(workspace:GetDescendants()) do 
+					if item:IsA("BasePart") then  
+						if item:HasTag("WindShake") then item:AddTag("had wind") end
+						if item:HasTag("had wind") then 
+							if wond == true then item:AddTag("WindShake") else item:RemoveTag("WindShake") end end
+						end end    end)
+			winds.MouseButton2Click:Connect(function()		wondh = not wondh
+				for _,item in pairs(workspace:GetDescendants()) do 
+					if item:IsA("BasePart") then  
+						if item:HasTag("WindShake") then item:AddTag("had wind") end
+						if item:HasTag("had wind") then 
+							if wondh == true then look2 = Instance.new("Highlight",item)  look2.FillColor = Color3.fromRGB(170, 85, 0) look2.FillTransparency = .7   else
+								if item:FindFirstChildWhichIsA("Highlight") then item:FindFirstChildWhichIsA("Highlight"):Remove()  end
+							end end
+					end end    end)
+			
+			
+			Glass = Button:Clone() Glass.Parent = gaminglist Glass.Text = "Glass"  glass = true
+			Glass.MouseButton1Click:Connect(function()		glass = not glass
+				for _,item in pairs(workspace:GetDescendants()) do 
+					if item:IsA("BasePart") then
+						if item.Material == Enum.Material.Glass then  item:AddTag("was glass") end
+						if item:HasTag("was glass") then if glass == true then item.Material = Enum.Material.Glass else item.Material = Enum.Material.SmoothPlastic end
+					end end end
+			end)	
+			
+			Neon = Button:Clone() Neon.Parent = gaminglist Neon.Text = "Neon"  neonn = true
+			Neon.MouseButton1Click:Connect(function()		neonn = not neonn
+				for _,item in pairs(workspace:GetDescendants()) do 
+					if item:IsA("BasePart") then
+						if item.Material == Enum.Material.Neon then  item:AddTag("was glass") end
+						if item:HasTag("was glass") then if neonn == true then item.Material = Enum.Material.Neon else item.Material = Enum.Material.SmoothPlastic end
+						end end end
+			end)
+			
+			
+			
+			
 			anchorbroken = Button:Clone() anchorbroken.Parent = gaminglist anchorbroken.Text = "anchor broken" 
 			anchorbroken.MouseButton1Click:Connect(function() for _,fpart in pairs(workspace.Structure:GetDescendants()) do if fpart:IsA("BasePart") then --and not fpart:FindFirstChildWhichIsA("Weld") and not fpart:FindFirstChildWhichIsA("Snap") and not fpart:FindFirstChildWhichIsA("Rotate") and not fpart:FindFirstChildWhichIsA("RotateP")  then 
 						for _,froze in pairs(fpart:GetConnectedParts(false)) do 
@@ -2094,23 +2153,27 @@ function guias()
 			times.MouseWheelForward:Connect(function() game.Lighting.ClockTime = 13 end)
 			times.MouseWheelBackward:Connect(function() game.Lighting.ClockTime = 16 end)
 
-			gravs = Button:Clone() gravs.Parent = masslist gravs.Text = "grav 0" 
+			gravs = Button:Clone() gravs.Parent = masslist gravs.Text = "grav 0 5" 
 			gravs.MouseButton1Click:Connect(function() workspace.Gravity = 0 end)
-			gravs.MouseButton2Click:Connect(function() workspace.Gravity = 33 end)
-			gravs2 = Button:Clone() gravs2.Parent = masslist gravs2.Text = "grav 5 , 55" gravs2.BackgroundColor3 = Color3.fromRGB(127, 90, 59)
-			gravs2.MouseButton1Click:Connect(function() workspace.Gravity = 5 end)
+			gravs.MouseButton2Click:Connect(function() workspace.Gravity = 5 end)
+			gravs2 = Button:Clone() gravs2.Parent = masslist gravs2.Text = "grav 33 , 55" gravs2.BackgroundColor3 = Color3.fromRGB(127, 90, 59)
+			gravs2.MouseButton1Click:Connect(function() workspace.Gravity = 33 end)
 			gravs2.MouseButton2Click:Connect(function() workspace.Gravity = 55 end)
-			gravs3 = Button:Clone() gravs3.Parent = masslist gravs3.Text = "grav 15 , 333" 
-			gravs3.MouseButton1Click:Connect(function() workspace.Gravity = 15 end)
-			gravs3.MouseButton2Click:Connect(function() workspace.Gravity = 333 end)
-			gravs4 = Button:Clone() gravs4.Parent = masslist gravs4.Text = "grav 196.2 , 444" 
-			gravs4.MouseButton1Click:Connect(function() workspace.Gravity = 196.2 end)
+			gravs3 = Button:Clone() gravs3.Parent = masslist gravs3.Text = "grav 111 , 222" 
+			gravs3.MouseButton1Click:Connect(function() workspace.Gravity = 111 end)
+			gravs3.MouseButton2Click:Connect(function() workspace.Gravity = 222 end)
+			gravs4 = Button:Clone() gravs4.Parent = masslist gravs4.Text = "grav 333 , 444" 
+			gravs4.MouseButton1Click:Connect(function() workspace.Gravity = 333 end)
 			gravs4.MouseButton2Click:Connect(function() workspace.Gravity = 444 end)
 
+			inviscam = Button:Clone() inviscam.Parent = masslist inviscam.Text = "invisicam" 
+			inviscam.MouseButton1Click:Connect(function() player.DevCameraOcclusionMode = Enum.DevCameraOcclusionMode.Invisicam end)
+			inviscam.MouseButton2Click:Connect(function() player.DevCameraOcclusionMode = Enum.DevCameraOcclusionMode.Zoom  end)
+			
 			sito = Button:Clone() sito.Parent = masslist sito.Text = "sit" 
 			sito.MouseButton1Click:Connect(function() char.Humanoid.Sit = not char.Humanoid.Sit  end)
 			sito.MouseButton2Click:Connect(function() char.Humanoid.PlatformStand = not char.Humanoid.PlatformStand  end)
-
+			
 			lightss = Button:Clone() lightss.Parent = masslist lightss.Text = "lights" lightss.BackgroundColor3 = Color3.fromRGB(176, 176, 0)
 			lightss.MouseButton1Click:Connect(function() 
 				for _, light in pairs(workspace:GetDescendants()) do 
@@ -2648,11 +2711,11 @@ function guias()
 			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "facelist" then Ui:Remove() end end
 			if Begal.GuiHolder:FindFirstChild("facelist") then Begal.GuiHolder:FindFirstChild("facelist"):Remove() return end
 			ttdlist = Scroll:Clone() ttdlist.Parent = Begal.GuiHolder  ttdlist.Name = "copycharanim" ttdlist.BackgroundTransparency = .9 ttdlist.Position = UDim2.new(0.15, 0 , 0.3, 0)  ttdlist.Size = UDim2.new(0.1, 0 , 0.36, 0) 
-			ttdlist.ClipsDescendants = false ttdlist.ZIndex = -1
+			ttdlist.ClipsDescendants = true ttdlist.ZIndex = -1
 			listing = Instance.new("UIListLayout",ttdlist) listing.Padding = UDim.new(0,1) 
 
-			danceName = {"carpet","witch","smooth","smuwug","star p","shiba","belly s","frol","elect","tootsee","lovesi","bob s","wanna","viva","the q",
-				"sturdy","boogie d","breakdow","ramb","samsa","minny","mannr","tuff v","laid b","verv","radic","sou","bubb","shift","freem","introdu", "realit","poplock", " true","hit it","springy","true h","bara b","ken sh","ssy fe","bam b","ss wi","assumpt", "breez","expr","glitt","hype","salsa",}
+			danceName = {"carpet","witch","smooth","smuwug","star p","viva","shiba","frol","the q","tootsee","radic","verv","elect","lovesi","bob s","wanna","introdu","belly s",
+				"sturdy","boogie d","breakdow","ramb","samsa","minny","mannr","tuff v","laid b","sou","bubb","shift","freem", "realit","poplock", " true","hit it","springy","true h","bara b","ken sh","ssy fe","bam b","ss wi","assumpt", "breez","expr","glitt","hype","salsa",}
 			for _, faces in pairs(danceName) do local dbutton = Button:Clone() dbutton.Parent = ttdlist dbutton.Text = faces dbutton.Size = UDim2.new(0.95,0 , 0,15) 
 				dbutton.MouseButton1Click:Connect(function()
 					dbutton.BackgroundColor3 = Color3.fromRGB(0, 170, 0) 
@@ -3350,7 +3413,7 @@ if workspace:FindFirstChild("Map") then
 			if L.Name == "SoccerField" then L:Remove() end
 			if L.Name == "Meshes/Palm Trees V2_Plane.001" or L.Name == "Meshes/Palm Trees V2_Plane.003" or L.Name == "Meshes/ad_Cylinder" or L.Name == "Meshes/ewe_Cylinder.006" or L.Name == "Meshes/ad_Icosphere.006" or L.Name == "Meshes/e_Plane.001 (1)" or L.Name == "Meshes/e_Icosphere.011"  
 				or L.Name == "FireVFX" or L.Name == "Meshes/DA_Cylinder.015" or L.Name == "Meshes/DA_Cylinder.017"  or L.Name == "Meshes/DA_Plane"  or L.Name == "Cylinder.003" or L.Name =="Meshes/stone head" or L.Name == "Meshes/sdasa_Plane.001"
-				or L.Name == "Meshes/tokyo bench_Cube.064" or L.Name == "Meshes/tokyo bench_Cube.063" 
+				or L.Name == "Meshes/tokyo bench_Cube.064" or L.Name == "Meshes/tokyo bench_Cube.063" or L.Name == "Rocks" or L.Name == "Rock" or L.Name == "rock"
 			then if L:IsA("BasePart") then L.CanCollide = false end
 			end
 			if L:IsA("BasePart") then if L.Color == Color3.fromRGB(99, 79, 63) then 
@@ -3380,12 +3443,13 @@ if workspace:FindFirstChild("Map") then
 		
 	end  
 	if workspace.Map:FindFirstChild("Zones") then 
-		for _,L in pairs( workspace.Map:FindFirstChild("Zones"):GetChildren()) do 
+		mouse.TargetFilter = workspace.Map:FindFirstChild("Zones")
+		--[[for _,L in pairs( workspace.Map:FindFirstChild("Zones"):GetChildren()) do 
 			if L:IsA("BasePart") then  
 				--L.CanQuery = false 
 			end--
 			
-		end
+		end]]
 	end
 	
 	
@@ -3497,15 +3561,15 @@ if sethiddenproperty then
 	workspace.FallenPartsDestroyHeight = -50000 player.CameraMaxZoomDistance = 1000
 
 
-	ThisIs = {"invisicam"}
-	local sc = (debug and debug.setconstant) or setconstant local gc = (debug and debug.getconstants) or getconstants
+	ThisIs = {"invisicam broke"}
+	--[[local sc = (debug and debug.setconstant) or setconstant local gc = (debug and debug.getconstants) or getconstants
 	if not sc or not getgc or not gc then return  end --notify = {'this runs on executors but not on default roblox'} 
 	local pop = game.Players.LocalPlayer.PlayerScripts.PlayerModule.CameraModule.ZoomController.Popper
 	for _, v in pairs(getgc()) do if type(v) == 'function' and getfenv(v).script == pop then
 			--for i, v1 in pairs(gc(v)) do if tonumber(v1) == .25 then sc(v, i, 0) elseif tonumber(v1) == 0 then sc(v, i, .25) end end
 			for i, v1 in pairs(gc(v)) do if tonumber(v1) == .25 then sc(v, i, 0)   end end
 		end
-	end
+	end]]
 end
 
 
