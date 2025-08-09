@@ -216,6 +216,19 @@ Press Z to Disable HA- end]]
 
 	ThisIs = {"Keybinds 2"}
 	UserInputService.InputBegan:Connect(function(input, gameProcessethend)
+		
+		if gameProcessethend then
+			if UserInputService:IsKeyDown(Enum.KeyCode.R) then if Ruse == false then 
+					if workspace:FindFirstChildWhichIsA("BrickColorValue") then return end 
+					player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" 
+				end end
+		end
+		if gameProcessethend then
+			if UserInputService:IsKeyDown(Enum.KeyCode.Q) then 
+					if workspace:FindFirstChildWhichIsA("BrickColorValue") then return end 
+					player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" 
+				end 
+		end
 		if not gameProcessethend then
 		ThisIsServerSided = {"spin + explode"}
 		if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.are_you_sure1() end end 
@@ -3482,7 +3495,7 @@ if workspace:FindFirstChild("Map") then
 
 				end
 			end
-			if L.Name == "border" and L:IsA("Model") then --this one may be laggy
+			if L.Name == "gate" then 
 				for _,p in pairs( L.Parent:GetDescendants()) do 
 					if p:IsA("BasePart") then  
 						p.CanCollide = false end
