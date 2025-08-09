@@ -161,7 +161,7 @@ if not game.Lighting:FindFirstChild("binds") then Instance.new("BoolValue",game.
 				elseif actionName == "Jupiter Gravity" then workspace.Gravity = 111111 actiontext.Text = "Jupiter Gravity"
 				elseif actionName == "Low2" then workspace.Gravity = 5 char.Humanoid.JumpPower = 11 actiontext.Text = "Low Gravity2" 
 				elseif actionName == "Low" then workspace.Gravity = 15 char.Humanoid.JumpPower = 17 actiontext.Text = "Low Gravity" --if ME == true then char.Humanoid.WalkSpeed = 11 end
-				elseif actionName == "Sit" then player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" 
+				elseif actionName == "Sit" then --player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" 
 				elseif actionName == "PlatformStand" then player.Character.Humanoid.PlatformStand = not player.Character.Humanoid.PlatformStand actiontext.Text = "PlatformStand"
 				elseif actionName == "Dance List" then player.PlayerGui.MAMALUIGI.Button["TIME TO DIY 3"].Enabled = not player.PlayerGui.MAMALUIGI.Button["TIME TO DIY 3"].Enabled actiontext.Text = "Dance"
 				elseif actionName == "AirBlock" then AirBlock() 
@@ -228,10 +228,10 @@ Press Z to Disable HA-]] end
 	UserInputService.InputBegan:Connect(function(input, gameProcessethend)
 		
 		if gameProcessethend then
-		--[[	if UserInputService:IsKeyDown(Enum.KeyCode.R) then if Ruse == false then 
+			if UserInputService:IsKeyDown(Enum.KeyCode.R) then if Ruse == false then HA = "context action service still broke my target keybind even after roblox disabled it on solar, now we over write the keybind with user input service doesnt "
 					if workspace:FindFirstChildWhichIsA("BrickColorValue") then return end 
 					player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" 
-				end end]]
+				end end
 		
 			if UserInputService:IsKeyDown(Enum.KeyCode.Q) then 
 					if workspace:FindFirstChildWhichIsA("BrickColorValue") then return end 
@@ -286,14 +286,14 @@ Press Z to Disable HA-]] end
 			end]]
 			
 			--L = Enum.KeyCode.R if Ruse == true then L = Enum.KeyCode.B end  -- it woesnt work in this order 
-				if UserInputService:IsKeyDown(Enum.KeyCode.T) then if Ruse == false then 
+				--[[if UserInputService:IsKeyDown(Enum.KeyCode.R) then if Ruse == false then 
 						if workspace:FindFirstChildWhichIsA("BrickColorValue") then return end 
 						player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" 
-					end end
+					end end]]
 				if UserInputService:IsKeyDown(Enum.KeyCode.B) then if Ruse == true then 
 						player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" 
 					end end
-			if UserInputService:IsKeyDown(Enum.KeyCode.Y) then player.Character.Humanoid.PlatformStand = not player.Character.Humanoid.PlatformStand actiontext.Text = "PlatformStand" end
+			if UserInputService:IsKeyDown(Enum.KeyCode.T) then player.Character.Humanoid.PlatformStand = not player.Character.Humanoid.PlatformStand actiontext.Text = "PlatformStand" end
 			
 			if UserInputService:IsKeyDown(Enum.KeyCode.F) then AntiFling()  end
 			if UserInputService:IsKeyDown(Enum.KeyCode.U) then local success, data = pcall(function()
