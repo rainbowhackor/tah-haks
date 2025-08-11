@@ -3474,6 +3474,8 @@ game.Players.PlayerAdded:Connect(function(person) task.wait(.1) if game.Players.
 	end)]]
 end)
 
+
+this = "TTD map settings"
 if workspace:FindFirstChild("NPC") then 
 	workspace:FindFirstChild("NPC"):Remove()
 end
@@ -3513,9 +3515,18 @@ if workspace:FindFirstChild("Map") then
 
 				end
 			end
-			if L.Name == "ground tower" or L.Name == "main tower"  or L.Name == "secondary towers"  or L.Name == "Lava particles" or L.Name == "Part" or L.Name == "Shop" then
-				if L.Parent.Name == "Volcano" then L:Remove() end
+			if L.Name == "Volcano" then 
+				for _,p in pairs( L:GetChildren()) do 
+					if p.Name == "ground tower" or p.Name == "main tower"  or p.Name == "secondary towers"  or p.Name == "Lava particles" or p.Name == "Part" or p.Name == "Shop" then
+						p:Remove()
+					end
+
+				end
 			end
+		--[[	if L.Name == "ground tower" or L.Name == "main tower"  or L.Name == "secondary towers"  or L.Name == "Lava particles" or L.Name == "Part" or L.Name == "Shop" then
+				if L.Parent.Name == "Volcano" then L:Remove() end
+			end]]
+			
 		end
 		--[[}} pie = workspace.Map.Island.NewWorld.MainIsland.Map.Volcano
 		if pie ~= nil then
