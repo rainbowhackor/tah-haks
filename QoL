@@ -2234,11 +2234,19 @@ function guias()
 			ran2.MouseWheelBackward:Connect(function() char.Humanoid.WalkSpeed = 50 end)
 			
 
-			jum = Button:Clone() jum.Parent = masslist jum.Text = "Jum  50, 7.2" jum.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
+			jum = Button:Clone() jum.Parent = masslist jum.Text = "Jum  7.2, CH, 15, 22" jum.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
 			jum.MouseButton1Click:Connect(function() char.Humanoid.JumpPower = 50 char.Humanoid.JumpHeight = 7.2 end)
-			jum2 = Button:Clone() jum2.Parent = masslist jum2.Text = "Jum  / character height" jum2.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
+			jum.MouseButton2Click:Connect(function() char.Humanoid.JumpPower = 50 * char.Humanoid.BodyHeightScale.Value  char.Humanoid.JumpHeight = 7.2 * char.Humanoid.BodyHeightScale.Value end)
+			jum.MouseWheelForward:Connect(function() char.Humanoid.JumpHeight = 15 end)
+			jum.MouseWheelBackward:Connect(function() char.Humanoid.JumpHeight = 22 end)
+			--[[jum2 = Button:Clone() jum2.Parent = masslist jum2.Text = "Jum  / character height" jum2.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
 			jum2.MouseButton1Click:Connect(function() char.Humanoid.JumpPower = 50 * char.Humanoid.BodyHeightScale.Value  char.Humanoid.JumpHeight = 7.2 * char.Humanoid.BodyHeightScale.Value end)
-
+			jump1 = Button:Clone() jump1.Parent = masslist jump1.Text = "jump 10 , 15" jump1.BackgroundColor3 = Color3.fromRGB(127, 90, 59)
+			jump1.MouseButton1Click:Connect(function() char.Humanoid.JumpHeight = 10 end)
+			jump1.MouseButton2Click:Connect(function() char.Humanoid.JumpHeight = 15 end)
+			jump2 = Button:Clone() jump2.Parent = masslist jump2.Text = "jump 20 , 25" jump2.BackgroundColor3 = Color3.fromRGB(127, 90, 59)
+			jump2.MouseButton1Click:Connect(function() char.Humanoid.JumpHeight = 20 end)
+			jump2.MouseButton2Click:Connect(function() char.Humanoid.JumpHeight = 25 end)]]
 
 			
 			gravs = Button:Clone() gravs.Parent = masslist gravs.Text = "G 5 11" 
@@ -2273,12 +2281,7 @@ function guias()
 			sito.MouseButton1Click:Connect(function() char.Humanoid.Sit = not char.Humanoid.Sit  end)
 			sito.MouseButton2Click:Connect(function() char.Humanoid.PlatformStand = not char.Humanoid.PlatformStand  end)
 			
-			jump1 = Button:Clone() jump1.Parent = masslist jump1.Text = "jump 10 , 15" jump1.BackgroundColor3 = Color3.fromRGB(127, 90, 59)
-			jump1.MouseButton1Click:Connect(function() char.Humanoid.JumpHeight = 10 end)
-			jump1.MouseButton2Click:Connect(function() char.Humanoid.JumpHeight = 15 end)
-			jump2 = Button:Clone() jump2.Parent = masslist jump2.Text = "jump 20 , 25" jump2.BackgroundColor3 = Color3.fromRGB(127, 90, 59)
-			jump2.MouseButton1Click:Connect(function() char.Humanoid.JumpHeight = 20 end)
-			jump2.MouseButton2Click:Connect(function() char.Humanoid.JumpHeight = 25 end)
+			
 			
 			
 			
@@ -3517,7 +3520,8 @@ if workspace:FindFirstChild("Map") then
 			end
 			if L.Name == "Volcano" then 
 				for _,p in pairs( L:GetChildren()) do 
-					if p.Name == "ground tower" or p.Name == "main tower"  or p.Name == "secondary towers"  or p.Name == "Lava particles" or p.Name == "Part" or p.Name == "Shop" then
+					if p.Name == "ground tower" or p.Name == "ground small1" or p.Name == "ground" or p.Name == "ground small2" or p.Name == "main tower"  
+						or p.Name == "Secondary Towers"  or p.Name == "Lava particles" or p.Name == "Part" or p.Name == "Shop" or p.Name == "bridge" or p.Name == "Dead Tree" or p.Name == "Meshes/volcanofixx333222_lava.004" then
 						p:Remove()
 					end
 
@@ -3552,6 +3556,12 @@ if workspace:FindFirstChild("Map") then
 	
 	
 end
+
+
+
+
+
+
 
 ThisIsClientSided = {"Walk on ghost dirt", "Drive on ocean"}
 function NDS() 
@@ -3675,22 +3685,35 @@ end
 
 
 Updates=[[
+	anti fling era
+	v0  2022				anti fling, I dont like being fling killed in natural disaster survival
 	v1	6/14/23 - 8/9/23	nds hax
-	v2	1O/6/23 - 11/O9/23	emote gui v1
-	v3	12/16/23 - 12/25/23	emote gui v2, player animations gui
+	v2	1O/6/23 - 11/O9/23	dances gui v1
+	v3	12/16/23 - 12/25/23	dances gui v2, player movement animations gui
+	
+	magnus savegame era
 	v4	12/25/23 - 1/28/24	inproved hax,  inproved hax more
 	v5	1/28/24 - 2/28/24	oh mah gahh bro i fixed so many game breaking bugs
 	v6	2/28/24 - 3/1O/24	glow sticks + my hats + faces,	I should've made this 6 years ago
 	v7	3/22/24	- 4/1/24	99% FIXED!!! Why do spawn(functions()) and wait() work perfectly in studio but is unplayable in game? "We do not care, just fix it"
-	v8	4/1/24	- 4/16/24	wow... that was way too late
-	v9	4/16/24 - 5/1/24	I KNEW I CHANGED LIGHTING TECHNOLOGY WITH A SCRIPT BEFORE!  stop gaslighting me roblox community!!!  ( note You cannot change lighting technology with a script unless you are using a exploited version of roblox, now if only i had an exploited version of roblox studio, would be very usefull to script change lighting tech for the 500 maps i stole  )
-	v10	7/7/24 - 7/13/24	they did so bad with the border that it saved his life
-	v11	8/3/24 - 8/5/24		nil x 1OO
-	v12	9/26/24 - 10/10/24	added functions to assist in saving smaller assets, because saving the entire game results in a corrupted file sometimes
 	
+	byfron anticheat era
+	v8	4/1/24	- 4/16/24	inspite of byfron-	added functions to assist in saving characters, because N SFW game, wow... that was way too late
+	v9	4/16/24 - 5/1/24	I KNEW I CHANGED LIGHTING TECHNOLOGY WITH A SCRIPT BEFORE!  stop gaslighting me roblox community!!!  ( note You cannot change lighting technology with a script unless you are using a modified version of roblox, now if only i had an exploited version of roblox studio, would be very usefull to script change lighting tech for the 100 maps i "barrowed"  )
+	v10	7/7/24 - 7/13/24	guis
+	v11	8/3/24 - 8/5/24		nil x 1OO
+	v12	9/26/24 - 10/10/24	inspite of byfron-	added functions to assist in saving smaller assets, because saving the entire game results in a corrupted file sometimes
+	
+	daily banning modified client users era		shoot I had made 50 alt accounts during this time for ttd3, good job roblox. 
 	v13	3/15/25 - 3/15/25	reformatted classic spammy tables for a more modern and efficient scripting, added _G functions to merge scripts from my game
 	v14 5/21/25 - 6/2/25	added pcall function to ignore a few errors because this script runs with default roblox local scripts, this entire script would break in games that customized the default roblox local scripts.
-	v15 6/8/25 - 6/16/25	added animation id copier to export animations to your game
+	v15 6/8/25 - 6/16/25	inspite of byfron-	added animation id copier to export animations, because N SFW game, wow... that was way too late
+	v16 7/20/25 - 8/12/25	Lazy gui, switched to user input service keybinds because context action service was banned on some clients, altered TTD3
+	
+	and I got fling killed by 2 people the literal second that I joined natural disaster survival after taking a year break from it, WHAT THE HELL IS THIS?!? 
+	Roblox took away my anti fling defence and made the game worse by not allowing me to dance with my rainbow periastrons...
+	all because someone else was auto farming pets or aimboting? they clearly don't care about the fling trolls in nds, I wont spend my salary on a Lord of the Federation anymore because of this.
+	
 ]]
 
 
