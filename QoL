@@ -2056,21 +2056,27 @@ function guias()
 							if not froze.Anchored and not froze:FindFirstChildWhichIsA("Weld") and not froze:FindFirstChildWhichIsA("Snap") and not froze:FindFirstChildWhichIsA("Rotate") and not froze:FindFirstChildWhichIsA("RotateP")  then froze:Remove() end end
 					end end end)
 			
-			winds = Button:Clone() winds.Parent = gaminglist winds.Text = "WindShake" wond = true
+			winds = Button:Clone() winds.Parent = gaminglist winds.Text = "toggle WindShake" wond = true
 			winds.MouseButton1Click:Connect(function()		wond = not wond
 				for _,item in pairs(workspace:GetDescendants()) do 
 					if item:IsA("BasePart") then  
 						if item:HasTag("WindShake") then item:AddTag("had wind") end
 						if item:HasTag("had wind") then 
 							if wond == true then item:AddTag("WindShake") else item:RemoveTag("WindShake") end end
-						end end    end)
-			winds.MouseButton2Click:Connect(function()		wondh = not wondh
+					end end    end)
+			winds2 = Button:Clone() winds2.Parent = gaminglist winds2.Text = "show WindShake" wondh = true
+			winds2.MouseButton1Click:Connect(function()		wondh = not wondh
 				for _,item in pairs(workspace:GetDescendants()) do 
 					if item:IsA("BasePart") then  
 						if item:HasTag("WindShake") then item:AddTag("had wind") end
 						if item:HasTag("had wind") then 
-							if wondh == true then look2 = Instance.new("Highlight",item)  look2.FillColor = Color3.fromRGB(170, 85, 0) look2.FillTransparency = .7   else
+							if wondh == true then
+								look2 = Instance.new("Highlight",item)  look2.FillColor = Color3.fromRGB(170, 85, 0) look2.FillTransparency = .7 
+								look3 = Instance.new("SelectionBox",item)  look3.LineThickness = .02 look3.Adornee = item
+--highlight only rendered 20 parts so selection box will be backup
+							else
 								if item:FindFirstChildWhichIsA("Highlight") then item:FindFirstChildWhichIsA("Highlight"):Remove()  end
+								if item:FindFirstChildWhichIsA("SelectionBox") then item:FindFirstChildWhichIsA("SelectionBox"):Remove()  end
 							end end
 					end end    end)
 			
@@ -2765,10 +2771,14 @@ function guias()
 			end
 		end)
 
-		This = "eeeEEEEWWWWW"
-		fail = Button:Clone() fail.Parent = Spaghetti fail.Text = "s p sk" fail.Position = UDim2.new(0.05,0 , 0,row24) fail.BackgroundColor3 = Color3.fromRGB(0, 0, 0)   
-		fail.MouseButton1Click:Connect(function() char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "" end)
-		fail.MouseButton2Click:Connect(function() char:FindFirstChildWhichIsA("Pants").PantsTemplate = "" end)
+		This = "eeeEEEEWWWWW roblox bugged out and disabled everyones clothes, hey wait a second this isn't half bad, I think I'll add it "
+		fail = Button:Clone() fail.Parent = Spaghetti fail.Text = "nu p sk" fail.Position = UDim2.new(0.05,0 , 0,row24) fail.BackgroundColor3 = Color3.fromRGB(0, 0, 0)   
+		fail.MouseButton1Click:Connect(function() char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "" char:FindFirstChildWhichIsA("Pants").PantsTemplate = "" end)
+		fail.MouseButton2Click:Connect(function() for _, ro in pairs(workspace:GetDescendants()) do --if ro:IsA("BasePart") then ro.Material = Enum.Material.SmoothPlastic end  
+				if ro:IsA("Shirt") and not ro:IsDescendantOf(char) then  ro.ShirtTemplate = "" end
+				if ro:IsA("Pants") and not ro:IsDescendantOf(char) then  ro.PantsTemplate = "" end
+			end
+		end)
 		fail.MouseWheelForward:Connect(function()  
 			for _, ro in pairs(char:GetChildren()) do --if ro:IsA("BasePart") then ro.Material = Enum.Material.SmoothPlastic end  
 				if ro:IsA("MeshPart") and ro.Name ~= "Head" then  ro.TextureID = "" 
@@ -2778,6 +2788,7 @@ function guias()
 				end  
 			end 
 		end)
+		
 
 		This = "ttd3"
 		ttd = Button:Clone() ttd.Parent = Spaghetti ttd.Text = "TTD 3" ttd.Position = UDim2.new(0.55,0 , 0,row19) ttd.BackgroundColor3 = Color3.fromRGB(255, 255, 0)   
