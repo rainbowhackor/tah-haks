@@ -2349,11 +2349,25 @@ function guias()
 		--[[ThisIs = {"invisicam"}	
 		invcam = Button:Clone() invcam.Parent = Spaghetti invcam.Text = "climb" invcam.Position = UDim2.new(0.05,0 , 0,row29)  invcam.BackgroundColor3 = Color3.fromRGB(0, 170, 255)  
 		invcam.MouseButton1Click:Connect(function()   end) ]]
-
+ 
 		ThisIs = {"show players v1"}	--6-2
 		esp = Button:Clone() esp.Parent = Spaghetti esp.Text = "esp" esp.Position = UDim2.new(0.05,0 , 0,row10)  esp.BackgroundColor3 = Color3.fromRGB(0, 170, 255)  
 		esp.MouseButton1Click:Connect(function() 
 			if not char:FindFirstChild("iSeeYou") then 
+				Instance.new("Model",workspace).Name = "hiden"
+				for _, person in pairs(game.Players:GetChildren()) do
+					iSeeYou = person.Character
+					 	look = Instance.new("Highlight", iSeeYou) look.Name = "iSeeYou" look.FillColor = Color3.fromRGB(0,255,85) look.FillTransparency = .7  
+					if look.Parent == char then look.FillTransparency = 1 look.OutlineTransparency = 1 end end
+				if not iSeeYou:IsDescendantOf(workspace) then invisible_spy = Instance.new("Part",workspace.hiden) invisible_spy.Anchored = true invisible_spy.Size = Vector3.new(4,4,4) invisible_spy.Material = Enum.Material.Neon invisible_spy.BrickColor = BrickColor.new("New Yeller") end
+				 
+			else 
+				for _, person in pairs(game.Players:GetChildren()) do
+					iSeeYou = person.Character
+					if iSeeYou:FindFirstChild("iSeeYou") then iSeeYou:FindFirstChild("iSeeYou"):Remove() end  
+				end end
+			workspace.hiden:Remove()
+			--[[if not char:FindFirstChild("iSeeYou") then 
 				for _, part in pairs(workspace:GetChildren()) do
 					if part:IsA("Model") and part:FindFirstChildWhichIsA("Humanoid") then iSeeYou = part
 						look = Instance.new("Highlight", iSeeYou) look.Name = "iSeeYou" look.FillColor = Color3.fromRGB(0,255,85) look.FillTransparency = .7  
@@ -2364,9 +2378,12 @@ function guias()
 					if part:IsA("Model") and part:FindFirstChildWhichIsA("Humanoid") then iSeeYou = part end
 
 					if iSeeYou:FindFirstChild("iSeeYou") then iSeeYou:FindFirstChild("iSeeYou"):Remove() end  
-				end end
+				end end]]
 		end) 
 
+
+		
+		
 		if Ruse == false then
 			ThisIs = {"Sliding guis - Gravity, JumpHeight, WalkSpeed"}  --the old version
 			SliderG = Instance.new("Frame",Spaghetti) SliderG.Name = "Gravity" SliderG.Position = UDim2.new(0.05, 0 , 0, row7) SliderG.Size = UDim2.new(0.95,0 , 0,15) SliderG.BackgroundColor3 = Color3.fromRGB(0, 0, 0) SliderG.BackgroundTransparency = .85   SliderG.ZIndex=2 
