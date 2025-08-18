@@ -2359,14 +2359,17 @@ function guias()
 					iSeeYou = person.Character
 					 	look = Instance.new("Highlight", iSeeYou) look.Name = "iSeeYou" look.FillColor = Color3.fromRGB(0,255,85) look.FillTransparency = .7  
 					if look.Parent == char then look.FillTransparency = 1 look.OutlineTransparency = 1 end end
-				if not iSeeYou:IsDescendantOf(workspace) then invisible_spy = Instance.new("Part",workspace.hiden) invisible_spy.Anchored = true invisible_spy.Size = Vector3.new(4,4,4) invisible_spy.Material = Enum.Material.Neon invisible_spy.BrickColor = BrickColor.new("New Yeller") end
-				 
+				if not iSeeYou:IsDescendantOf(workspace) then invisible_spy = Instance.new("Part",workspace.hiden) invisible_spy.Anchored = true 
+					invisible_spy.Size = Vector3.new(4,4,4) invisible_spy.Material = Enum.Material.Neon invisible_spy.BrickColor = BrickColor.new("New Yeller") end
+				invisible_spy.CFrame = iSeeYou.HumanoidRootPart.CFrame
 			else 
 				for _, person in pairs(game.Players:GetChildren()) do
 					iSeeYou = person.Character
 					if iSeeYou:FindFirstChild("iSeeYou") then iSeeYou:FindFirstChild("iSeeYou"):Remove() end  
-				end end
-			workspace.hiden:Remove()
+				end
+				workspace.hiden:Remove()
+			end
+			
 			--[[if not char:FindFirstChild("iSeeYou") then 
 				for _, part in pairs(workspace:GetChildren()) do
 					if part:IsA("Model") and part:FindFirstChildWhichIsA("Humanoid") then iSeeYou = part
@@ -2697,6 +2700,23 @@ function guias()
 				end
 
 			end)
+			
+			
+			insertgui = Instance.new("ScreenGui",copycharanim)
+			--insertframe = Instance.new("Frame",insertgui)
+			InsertAnim = Instance.new("TextBox",insertgui) InsertAnim.Size = UDim2.new(0,250,0,58) InsertAnim.Position = UDim2.new(0.01,0,0.1,0) InsertAnim.BackgroundTransparency = .5 InsertAnim.BackgroundColor3 = Color3.new(0,0,0)
+			InsertAnim.Text = "Insert Anim ID" InsertAnim.TextColor3 = Color3.fromRGB(37, 95, 255) InsertAnim.TextScaled = true InsertAnim.TextTransparency = .4 
+			InsertAnim.FontFace.Weight = Enum.FontWeight.Bold 
+			InsertAnim.FocusLost:connect(function(enterPressed)
+
+				pasta1 = InsertAnim.Text  --k = ro.Value 
+				hum = char:WaitForChild("Humanoid") or char.Humanoid 
+				Hm = hum:FindFirstChildWhichIsA("HumanoidDescription") 
+				Hm:AddEmote(pasta1,pasta1) char.Humanoid:PlayEmote(pasta1)
+				--game.ReplicatedStorage.AccessId:FireServer(pasta1) 
+
+			end)
+			
 
 		end)
 		if not _G.animtable then _G.animtable = {} end
@@ -3715,14 +3735,14 @@ end
 Updates=[[
 	anti fling era
 	v0  2022				anti fling, I dont like being fling killed in natural disaster survival
-	v1	6/14/23 - 8/9/23	nds hax
-	v2	1O/6/23 - 11/O9/23	dances gui v1
-	v3	12/16/23 - 12/25/23	dances gui v2, player movement animations gui
+	v1	6/14/23 - 8/9/23	goofy natural disaster survival hax, very fun
+	v2	1O/6/23 - 11/O9/23	dances gui v1, wow I can't believe I can use all of the emotes.
+	v3	12/16/23 - 12/25/23	dances gui v2, player walking, idle animations gui
 	
 	magnus savegame era
 	v4	12/25/23 - 1/28/24	inproved hax,  inproved hax more
 	v5	1/28/24 - 2/28/24	oh mah gahh bro i fixed so many game breaking bugs
-	v6	2/28/24 - 3/1O/24	glow sticks + my hats + faces,	I should've made this 6 years ago
+	v6	2/28/24 - 3/1O/24	MY RAINBOW PERIASTRONS? + hats + faces,	I should've made this 6 years ago!!!
 	v7	3/22/24	- 4/1/24	99% FIXED!!! Why do spawn(functions()) and wait() work perfectly in studio but is unplayable in game? "We do not care, just fix it"
 	
 	byfron anticheat era
@@ -3737,6 +3757,7 @@ Updates=[[
 	v14 5/21/25 - 6/2/25	added pcall function to ignore a few errors because this script runs with default roblox local scripts, this entire script would break in games that customized the default roblox local scripts.
 	v15 6/8/25 - 6/16/25	inspite of byfron-	added animation id copier to export animations, because N SFW game, wow... that was way too late
 	v16 7/20/25 - 8/12/25	Lazy gui, switched to user input service keybinds because context action service was banned on some clients, altered TTD3
+	v17 8/17/25				inspite of byfron-	added INSERT ANIMATION ID FROM CATAOLOG, next to the animation copier, so you can save the animation to your computer, note that copy anim id to clipboard doesnt work in studio, so take your list of animations and put it into a modified client.
 	
 	and I got fling killed by 2 people the literal second that I joined natural disaster survival after taking a year break from it, WHAT THE HELL IS THIS?!? 
 	Roblox took away my anti fling defence and made the game worse by not allowing me to dance with my rainbow periastrons...
@@ -3745,7 +3766,11 @@ Updates=[[
 ]]
 
 
+emotess = [[
+emotes
+77149558693280,83631731992984,107209758946768,116763497204710,131339823651749,123553122578545,92552364961000,88229016850146,119210088768512,114780504024021,93713173667371,71967794411167,126335401091253,110396144979011,127060034657291,134122474620791,121731656692407,118327702241673,,88551713495731,78156472143757,139830733782518,139271706064778,132074413582912,102565198603280,114033319722651,138386881919239,107123910784384,82739386299071,122517421714966,95385842020103,132593821491008,119716335729853,133777231113994,78276416047037,
 
+]]
 
 
 
