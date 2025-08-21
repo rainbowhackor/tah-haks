@@ -2255,29 +2255,37 @@ function guias()
 			jump2.MouseButton2Click:Connect(function() char.Humanoid.JumpHeight = 25 end)]]
 
 			
-			gravs = Button:Clone() gravs.Parent = masslist gravs.Text = "G 5 11" 
+			gravs = Button:Clone() gravs.Parent = masslist gravs.Text = "G 5 11 22" 
 			gravs.MouseButton1Click:Connect(function() workspace.Gravity = 5 end)
 			gravs.MouseButton2Click:Connect(function() workspace.Gravity = 11 end)
-			gravs2 = Button:Clone() gravs2.Parent = masslist gravs2.Text = "G 33 , 55" 
-			gravs2.MouseButton1Click:Connect(function() workspace.Gravity = 33 end)
-			gravs2.MouseButton2Click:Connect(function() workspace.Gravity = 55 end)
-			gravs3 = Button:Clone() gravs3.Parent = masslist gravs3.Text = "G 111 , 222" 
-			gravs3.MouseButton1Click:Connect(function() workspace.Gravity = 111 end)
-			gravs3.MouseButton2Click:Connect(function() workspace.Gravity = 222 end)
-			gravs4 = Button:Clone() gravs4.Parent = masslist gravs4.Text = "G 333 , 444" 
-			gravs4.MouseButton1Click:Connect(function() workspace.Gravity = 333 end)
-			gravs4.MouseButton2Click:Connect(function() workspace.Gravity = 444 end)
-
+			gravs.MouseWheelForward:Connect(function() workspace.Gravity = 22 end)
+			gravs2 = Button:Clone() gravs2.Parent = masslist gravs2.Text = "G 55 , 33" 
+			gravs2.MouseButton1Click:Connect(function() workspace.Gravity = 55 end)
+			gravs2.MouseButton2Click:Connect(function() workspace.Gravity = 33 end)
+			gravs3 = Button:Clone() gravs3.Parent = masslist gravs3.Text = "G 444 , 333 , 555" 
+			gravs3.MouseButton1Click:Connect(function() workspace.Gravity = 444 end)
+			gravs3.MouseButton2Click:Connect(function() workspace.Gravity = 333 end)
+			gravs3.MouseWheelForward:Connect(function() workspace.Gravity = 555 end)
+			gravs4 = Button:Clone() gravs4.Parent = masslist gravs4.Text = "G 777 , 666" 
+			gravs4.MouseButton1Click:Connect(function() workspace.Gravity = 777 end)
+			gravs4.MouseButton2Click:Connect(function() workspace.Gravity = 666 end)
+			gravs5 = Button:Clone() gravs5.Parent = masslist gravs5.Text = "G 111 , 222, 160" 
+			gravs5.MouseButton1Click:Connect(function() workspace.Gravity = 111 end)
+			gravs5.MouseButton2Click:Connect(function() workspace.Gravity = 222 end)
+			gravs5.MouseWheelForward:Connect(function() workspace.Gravity = 160 end)
+			
+			
+			
 			times = Button:Clone() times.Parent = masslist times.Text = "time  17.8 , 2 , 13 , 16" times.BackgroundColor3 = Color3.fromRGB(170, 0, 255)
 			times.MouseButton1Click:Connect(function() game.Lighting.ClockTime = 17.8  end)
 			times.MouseButton2Click:Connect(function() game.Lighting.ClockTime = 2 end)
 			times.MouseWheelForward:Connect(function() game.Lighting.ClockTime = 13 end)
 			times.MouseWheelBackward:Connect(function() game.Lighting.ClockTime = 16 end)
 			
-			Mass24 = Button:Clone() Mass24.Parent = masslist Mass24.Text = "Ice Ball, Glacier" Mass24.BackgroundColor3 = Color3.fromRGB(0, 255, 255)
-			Mass24.MouseButton1Click:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100) end end end)
+			Mass24 = Button:Clone() Mass24.Parent = masslist Mass24.Text = "Glacier ,  Ice Ball" Mass24.BackgroundColor3 = Color3.fromRGB(85, 170, 255)
+			Mass24.MouseButton2Click:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100) end end end)
 			--Mass1 = Button:Clone() Mass1.Parent = masslist Mass1.Text = "Glacier" 
-			Mass24.MouseButton2Click:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) end end end)
+			Mass24.MouseButton1Click:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) end end end)
 
 			inviscam = Button:Clone() inviscam.Parent = masslist inviscam.Text = "invisicam" 
 			inviscam.MouseButton1Click:Connect(function() player.DevCameraOcclusionMode = Enum.DevCameraOcclusionMode.Invisicam end)
@@ -2692,8 +2700,10 @@ function guias()
 							local ba = Button:Clone() ba.Parent = copycharanim ba.Size = UDim2.new(0.95,0 , 0,15) ba.BackgroundTransparency = .5 ba.TextXAlignment = Enum.TextXAlignment.Left ba.BackgroundColor3 = Color3.fromRGB(0, 170, 0)
 							ba.Text = game:GetService("MarketplaceService"):GetProductInfo(tonumber(str)).Name .. "	"  ..str--track.Animation.AnimationId:gsub('[^%d.]', '')  -- track.Animation.AnimationId
 							ba.MouseButton1Down:Connect(function()
-								setclipboard("https://assetdelivery.roblox.com/v1/asset/?id="..str .."  ".. ba.Text  )
+								--setclipboard("https://assetdelivery.roblox.com/v1/asset/?id="..str .."  ".. ba.Text  ) --pre ugc patch
 								--setclipboard(str.."  "..track.Animation.AnimationId)
+								setclipboard(str .."  ".. ba.Text  )
+
 							end)
 						end
 					end)
@@ -3767,9 +3777,7 @@ Updates=[[
 
 
 emotess = [[
-emotes
-77149558693280,83631731992984,107209758946768,116763497204710,131339823651749,123553122578545,92552364961000,88229016850146,119210088768512,114780504024021,93713173667371,71967794411167,126335401091253,110396144979011,127060034657291,134122474620791,121731656692407,118327702241673,,88551713495731,78156472143757,139830733782518,139271706064778,132074413582912,102565198603280,114033319722651,138386881919239,107123910784384,82739386299071,122517421714966,95385842020103,132593821491008,119716335729853,133777231113994,78276416047037,
-
+ 
 ]]
 
 
