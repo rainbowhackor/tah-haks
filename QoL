@@ -2255,10 +2255,10 @@ function guias()
 			jump2.MouseButton2Click:Connect(function() char.Humanoid.JumpHeight = 25 end)]]
 
 			
-			gravs = Button:Clone() gravs.Parent = masslist gravs.Text = "G 5 11 22" 
-			gravs.MouseButton1Click:Connect(function() workspace.Gravity = 5 end)
-			gravs.MouseButton2Click:Connect(function() workspace.Gravity = 11 end)
-			gravs.MouseWheelForward:Connect(function() workspace.Gravity = 22 end)
+			gravs = Button:Clone() gravs.Parent = masslist gravs.Text = "G 11 22 5" 
+			gravs.MouseButton1Click:Connect(function() workspace.Gravity = 11 end)
+			gravs.MouseButton2Click:Connect(function() workspace.Gravity = 22 end)
+			gravs.MouseWheelForward:Connect(function() workspace.Gravity = 5 end)
 			gravs2 = Button:Clone() gravs2.Parent = masslist gravs2.Text = "G 55 , 33" 
 			gravs2.MouseButton1Click:Connect(function() workspace.Gravity = 55 end)
 			gravs2.MouseButton2Click:Connect(function() workspace.Gravity = 33 end)
@@ -3553,6 +3553,7 @@ if workspace:FindFirstChild("Map") then
 				or L.Name == "FireVFX" or L.Name == "Meshes/DA_Cylinder.015" or L.Name == "Meshes/DA_Cylinder.017"  or L.Name == "Meshes/DA_Plane"  or L.Name == "Cylinder.003" or L.Name =="Meshes/stone head" or L.Name == "Meshes/sdasa_Plane.001"
 				or L.Name == "Meshes/tokyo bench_Cube.064" or L.Name == "Meshes/tokyo bench_Cube.063" or L.Name == "Rocks" or L.Name == "Rock" or L.Name == "rock"
 				or L.Name == "Meshes/Bush_Cylinder.001" or L.Name == "Meshes/Bush_Sphere.003"  or L.Name == "Rock.002"  or L.Name == "tikitorch" or L.Name == "Tiki Hut_Seats" 
+				or L.Name == "Shrine_01" or L.Name == "Shrine_02"  or L.Name == "Shrine_03"  or L.Name == "Cooler" or L.Name == "Tiki Hut_Seats" 
 			then if L:IsA("BasePart") then L.CanCollide = false end
 			end
 			if L:IsA("BasePart") then if L.Color == Color3.fromRGB(99, 79, 63) then 
@@ -3562,7 +3563,7 @@ if workspace:FindFirstChild("Map") then
 				if L.MeshId == "rbxassetid://17814036182" or L.MeshId == "rbxassetid://17814036882" or L.MeshId == "rbxassetid://17814036743"  then 
 					L.CanCollide = false end
 			end
-			if L.Name == "Lamp post" or L.Name == "Tiki"  or L.Name == "BeachStore"  or L.Name == "border" or L.Name == "Fence" or L.Name == "Crate" or L.Name == "Cart" or L.Name == "Box" or L.Name == "Barrel" or L.Name == "Pine Tree" or L.Name == "Lantern" or L.Name == "bench"then
+			if L.Name == "Lamp post" or L.Name == "Tiki"  or L.Name == "Beach_chair"  or L.Name == "BeachStore"  or L.Name == "border" or L.Name == "Fence" or L.Name == "Crate" or L.Name == "Cart" or L.Name == "Box" or L.Name == "Barrel" or L.Name == "Pine Tree" or L.Name == "Lantern" or L.Name == "bench"then
 				for _,p in pairs( L:GetDescendants()) do 
 					if p:IsA("BasePart") then  
 						p.CanCollide = false end
