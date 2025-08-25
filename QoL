@@ -2367,9 +2367,12 @@ function guias()
 					iSeeYou = person.Character
 					 	look = Instance.new("Highlight", iSeeYou) look.Name = "iSeeYou" look.FillColor = Color3.fromRGB(0,255,85) look.FillTransparency = .7  
 					if look.Parent == char then look.FillTransparency = 1 look.OutlineTransparency = 1 end end
-				if not iSeeYou:IsDescendantOf(workspace) then invisible_spy = Instance.new("Part",workspace.hiden) invisible_spy.Anchored = true 
-					invisible_spy.Size = Vector3.new(4,4,4) invisible_spy.Material = Enum.Material.Neon invisible_spy.BrickColor = BrickColor.new("New Yeller") end
+				--if not iSeeYou:IsDescendantOf(workspace) then 
+					invisible_spy = Instance.new("Part",workspace.hiden) invisible_spy.Anchored = true 
+				invisible_spy.Size = Vector3.new(4,4,4) invisible_spy.Material = Enum.Material.Neon invisible_spy.BrickColor = BrickColor.new("New Yeller") 
+				--end
 				invisible_spy.CFrame = iSeeYou.HumanoidRootPart.CFrame
+				look21 = Instance.new("Highlight", invisible_spy) look21.Name = "iSeeYou" look21.FillColor = Color3.fromRGB(0,255,85) look21.FillTransparency = .7  
 			else 
 				for _, person in pairs(game.Players:GetChildren()) do
 					iSeeYou = person.Character
@@ -2737,7 +2740,7 @@ function guias()
 					This = "is scripted very incorrectly, but still works"
 					if oval == true or charanim == true then 
 						if mouse.Target.Parent ~= nil then Cmodel = mouse.Target.Parent  Cmodel.Archivable = true  --cha:MoveTo(Cmodel.Head.Position)
-							print(Cmodel)
+							print("animstealer clicked on = "..Cmodel)
 							if charanim == true then 
 								if Cmodel:FindFirstChildWhichIsA("Humanoid") then the_Humanoid = Cmodel:FindFirstChildWhichIsA("Humanoid")  animas = the_Humanoid:GetPlayingAnimationTracks() end
 								if Cmodel.Parent:FindFirstChildWhichIsA("Humanoid") then the_Humanoid = Cmodel.Parent:FindFirstChildWhichIsA("Humanoid")  animas = the_Humanoid:GetPlayingAnimationTracks() end
