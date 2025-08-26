@@ -2368,11 +2368,11 @@ function guias()
 					 	look = Instance.new("Highlight", iSeeYou) look.Name = "iSeeYou" look.FillColor = Color3.fromRGB(0,255,85) look.FillTransparency = .7  
 					if look.Parent == char then look.FillTransparency = 1 look.OutlineTransparency = 1 end end
 				--if not iSeeYou:IsDescendantOf(workspace) then 
-					invisible_spy = Instance.new("Part",workspace.hiden) invisible_spy.Anchored = true 
+					local invisible_spy = Instance.new("Part",workspace.hiden) invisible_spy.Anchored = true 
 				invisible_spy.Size = Vector3.new(4,4,4) invisible_spy.Material = Enum.Material.Neon invisible_spy.BrickColor = BrickColor.new("New Yeller") 
 				--end
 				invisible_spy.CFrame = iSeeYou.HumanoidRootPart.CFrame
-				look21 = Instance.new("Highlight", invisible_spy) look21.Name = "iSeeYou" look21.FillColor = Color3.fromRGB(0,255,85) look21.FillTransparency = .7  
+				local look21 = Instance.new("Highlight", invisible_spy) look21.Name = "iSeeYou" look21.FillColor = Color3.fromRGB(0,255,85) look21.FillTransparency = .7  
 			else 
 				for _, person in pairs(game.Players:GetChildren()) do
 					iSeeYou = person.Character
@@ -3554,10 +3554,13 @@ if workspace:FindFirstChild("Map") then
 			if L.Name == "SoccerField" then L:Remove() end
 			if L.Name == "Meshes/Palm Trees V2_Plane.001" or L.Name == "Meshes/Palm Trees V2_Plane.003" or L.Name == "Meshes/ad_Cylinder" or L.Name == "Meshes/ewe_Cylinder.006" or L.Name == "Meshes/ad_Icosphere.006" or L.Name == "Meshes/e_Plane.001 (1)" or L.Name == "Meshes/e_Icosphere.011"  
 				or L.Name == "FireVFX" or L.Name == "Meshes/DA_Cylinder.015" or L.Name == "Meshes/DA_Cylinder.017"  or L.Name == "Meshes/DA_Plane"  or L.Name == "Cylinder.003" or L.Name =="Meshes/stone head" or L.Name == "Meshes/sdasa_Plane.001"
-				or L.Name == "Meshes/tokyo bench_Cube.064" or L.Name == "Meshes/tokyo bench_Cube.063" or L.Name == "Rocks" or L.Name == "Rock" or L.Name == "rock"
+				or L.Name == "Meshes/tokyo bench_Cube.064" or L.Name == "Meshes/tokyo bench_Cube.063" or L.Name == "Meshes/tokyo_Cube.207" or L.Name == "Rocks" or L.Name == "Rock" or L.Name == "rock"
 				or L.Name == "Meshes/Bush_Cylinder.001" or L.Name == "Meshes/Bush_Sphere.003"  or L.Name == "Rock.002"  or L.Name == "tikitorch" or L.Name == "Tiki Hut_Seats" 
 				or L.Name == "Shrine_01" or L.Name == "Shrine_02"  or L.Name == "Shrine_03"  or L.Name == "Cooler" or L.Name == "Tiki Hut_Seats" 
 			then if L:IsA("BasePart") then L.CanCollide = false end
+			end
+			if L.Name == "Meshes/tokyo_Cube.248" or L.Name == "Meshes/tokyo_Cube.207" then
+				L.CastShadow = false 
 			end
 			if L:IsA("BasePart") then if L.Color == Color3.fromRGB(99, 79, 63) then 
 				L.CanCollide = false end
@@ -3789,8 +3792,7 @@ emotess = [[
 
 
 --[[ 
-NDS hax = loadstring(game:HttpGet("https://raw.githubusercontent.com/2dgeneralspam1/scripts-and-stuff/master/scripts/LoadstringUjHI6RQpz2o8", true))() 
-this is irrelivant now because it seems like StickMasterLuke replaced client fall damage with server fall damage, it only took 15 years my guy...
+  now because it seems like StickMasterLuke replaced client fall damage with server fall damage, it only took 15 years my guy...
 I turned off fall damage so fast when I saw people get smacked to space by an invisible fling hacker that everyone thought I was flinging them when I survived
 ah bad times... I still don't understand why people fling hack to this day. 
 
