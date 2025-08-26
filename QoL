@@ -2366,13 +2366,14 @@ function guias()
 				for _, person in pairs(game.Players:GetChildren()) do
 					iSeeYou = person.Character
 					 	look = Instance.new("Highlight", iSeeYou) look.Name = "iSeeYou" look.FillColor = Color3.fromRGB(0,255,85) look.FillTransparency = .7  
-					if look.Parent == char then look.FillTransparency = 1 look.OutlineTransparency = 1 end end
+					if look.Parent == char then look.FillTransparency = 1 look.OutlineTransparency = 1 end 
 				--if not iSeeYou:IsDescendantOf(workspace) then 
 					local invisible_spy = Instance.new("Part",workspace.hiden) invisible_spy.Anchored = true 
 				invisible_spy.Size = Vector3.new(4,4,4) invisible_spy.Material = Enum.Material.Neon invisible_spy.BrickColor = BrickColor.new("New Yeller") 
 				--end
 				invisible_spy.CFrame = iSeeYou.HumanoidRootPart.CFrame
 				local look21 = Instance.new("Highlight", invisible_spy) look21.Name = "iSeeYou" look21.FillColor = Color3.fromRGB(0,255,85) look21.FillTransparency = .7  
+				end
 			else 
 				for _, person in pairs(game.Players:GetChildren()) do
 					iSeeYou = person.Character
@@ -2843,7 +2844,7 @@ function guias()
 		This = "ttd3"
 		ttd = Button:Clone() ttd.Parent = Spaghetti ttd.Text = "TTD 3" ttd.Position = UDim2.new(0.55,0 , 0,row19) ttd.BackgroundColor3 = Color3.fromRGB(255, 255, 0)   
 		ttd.MouseButton1Click:Connect(function() 
-
+			 
 
 
 			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
@@ -2862,7 +2863,9 @@ function guias()
 					--emotes = player.PlayerGui.Emotes.MainFrame.EmoteContainer["1"]
 					--emotes.Poplock
 					--search.Text = "carpet" wait(1)
-					search.Text = dbutton.Text   end) end
+					search.Text = dbutton.Text   end) 
+			end
+			TTD()
 		end)
 
 		This = "Save sky settings for you game"
@@ -3540,6 +3543,7 @@ end)
 
 
 this = "TTD map settings"
+function TTD() 
 if workspace:FindFirstChild("NPC") then 
 	workspace:FindFirstChild("NPC"):Remove()
 end
@@ -3619,10 +3623,10 @@ if workspace:FindFirstChild("Map") then
 		end]]
 	end
 	
-	
+	end
 end
 
-
+TTD()
 
 
 
@@ -3792,7 +3796,8 @@ emotess = [[
 
 
 --[[ 
-  now because it seems like StickMasterLuke replaced client fall damage with server fall damage, it only took 15 years my guy...
+NDS hax = loadstring(game:HttpGet("https://raw.githubusercontent.com/2dgeneralspam1/scripts-and-stuff/master/scripts/LoadstringUjHI6RQpz2o8", true))() 
+this is irrelivant now because it seems like StickMasterLuke replaced client fall damage with server fall damage, it only took 15 years my guy...
 I turned off fall damage so fast when I saw people get smacked to space by an invisible fling hacker that everyone thought I was flinging them when I survived
 ah bad times... I still don't understand why people fling hack to this day. 
 
