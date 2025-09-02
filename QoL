@@ -463,7 +463,7 @@ function tpCarAbovePoint() if not char.Humanoid.SeatPart then return end
 	car:PivotTo(modleh:GetPivot())  -- modleh:Remove()	
 end
 
-function Mirror() if Ruse == false then
+function Mirror() --if Ruse == false then
 		if workspace.CurrentCamera:FindFirstChild("L") then workspace.CurrentCamera:FindFirstChild("L"):Remove() return end
 		if not workspace.CurrentCamera:FindFirstChild("L") then
 			local l__CurrentCamera__3 = workspace.CurrentCamera;
@@ -471,7 +471,7 @@ function Mirror() if Ruse == false then
 			v12.Parent = l__CurrentCamera__3; v12.CFrame = l__CurrentCamera__3.CFrame;
 			v12.Position = char.HumanoidRootPart.Position 
 			char:PivotTo(v12.CFrame* CFrame.new(0,0, 0)*CFrame.Angles(0,math.rad(-180),0)) v12:Remove()
-		end end
+		end --end
 end
 
 --[[function RainbowNova() if workspace:FindFirstChild("RainbowStarSwords") then 
@@ -2368,13 +2368,14 @@ function guias()
 					 	look = Instance.new("Highlight", iSeeYou) look.Name = "iSeeYou" look.FillColor = Color3.fromRGB(0,255,85) look.FillTransparency = .7  
 					if look.Parent == char then look.FillTransparency = 1 look.OutlineTransparency = 1 end 
 				--if not iSeeYou:IsDescendantOf(workspace) then 
-					local invisible_spy = Instance.new("Part",workspace.hiden) invisible_spy.Anchored = true 
-				invisible_spy.Size = Vector3.new(4,4,4) invisible_spy.Material = Enum.Material.Neon invisible_spy.BrickColor = BrickColor.new("New Yeller") 
+					local invisible_spy = Instance.new("Part",workspace.hiden) invisible_spy.Anchored = true invisible_spy.CanCollide = false --invisible_spy.Transparency=.3
+				invisible_spy.Size = Vector3.new(2,2,2) invisible_spy.Material = Enum.Material.Neon invisible_spy.BrickColor = BrickColor.new("Alder") 
 				--end
-				invisible_spy.CFrame = iSeeYou.HumanoidRootPart.CFrame
-				local look21 = Instance.new("Highlight", invisible_spy) look21.Name = "iSeeYou" look21.FillColor = Color3.fromRGB(0,255,85) look21.FillTransparency = .7  
+				invisible_spy.CFrame = iSeeYou.HumanoidRootPart.CFrame * CFrame.new(0,3,0)
+				--local look21 = Instance.new("Highlight", invisible_spy) look21.Name = "iSeeYou" look21.FillColor = Color3.fromRGB(0,255,85) look21.FillTransparency = .7  
 				end
-			else 
+			 
+			elseif char:FindFirstChild("iSeeYou") then 
 				for _, person in pairs(game.Players:GetChildren()) do
 					iSeeYou = person.Character
 					if iSeeYou:FindFirstChild("iSeeYou") then iSeeYou:FindFirstChild("iSeeYou"):Remove() end  
@@ -2704,9 +2705,14 @@ function guias()
 							local ba = Button:Clone() ba.Parent = copycharanim ba.Size = UDim2.new(0.95,0 , 0,15) ba.BackgroundTransparency = .5 ba.TextXAlignment = Enum.TextXAlignment.Left ba.BackgroundColor3 = Color3.fromRGB(0, 170, 0)
 							ba.Text = game:GetService("MarketplaceService"):GetProductInfo(tonumber(str)).Name .. "	"  ..str--track.Animation.AnimationId:gsub('[^%d.]', '')  -- track.Animation.AnimationId
 							ba.MouseButton1Down:Connect(function()
+								if sethiddenproperty then
 								--setclipboard("https://assetdelivery.roblox.com/v1/asset/?id="..str .."  ".. ba.Text  ) --pre ugc patch
-								--setclipboard(str.."  "..track.Animation.AnimationId)
-								setclipboard(str .."  ".. ba.Text  )
+									setclipboard( ba.Text )
+								end
+								if not workspace:FindFirstChild("Erm Actually") then Instance.new("Folder",workspace).Name = "Erm Actually" end
+								Instance.new("Folder",workspace:FindFirstChild("Erm Actually") ).Name =   ba.Text 
+
+								setclipboard(  ba.Text  )
 
 							end)
 						end
@@ -2824,8 +2830,8 @@ function guias()
 
 		This = "eeeEEEEWWWWW roblox bugged out and disabled everyones clothes, hey wait a second this isn't half bad, I think I'll add it "
 		fail = Button:Clone() fail.Parent = Spaghetti fail.Text = "nu p sk" fail.Position = UDim2.new(0.05,0 , 0,row24) fail.BackgroundColor3 = Color3.fromRGB(0, 0, 0)   
-		fail.MouseButton1Click:Connect(function() char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "" char:FindFirstChildWhichIsA("Pants").PantsTemplate = "" end)
-		fail.MouseButton2Click:Connect(function() for _, ro in pairs(workspace:GetDescendants()) do --if ro:IsA("BasePart") then ro.Material = Enum.Material.SmoothPlastic end  
+		fail.MouseButton2Click:Connect(function() char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "" char:FindFirstChildWhichIsA("Pants").PantsTemplate = "" end)
+		fail.MouseButton1Click:Connect(function() for _, ro in pairs(workspace:GetDescendants()) do --if ro:IsA("BasePart") then ro.Material = Enum.Material.SmoothPlastic end  
 				if ro:IsA("Shirt") and not ro:IsDescendantOf(char) then  ro.ShirtTemplate = "" end
 				if ro:IsA("Pants") and not ro:IsDescendantOf(char) then  ro.PantsTemplate = "" end
 			end
