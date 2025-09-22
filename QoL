@@ -3227,11 +3227,29 @@ function guias()
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
 			
 			{ Id = "94075411097215", Name = "Star",  Color = Color3.fromRGB(0, 0, 255)  },
-			{ Id = "125968836170127", Name = "The quick",  Color = Color3.fromRGB(157, 0, 255)  },
 			{ Id = "80126109220878", Name = "Boogie",  Color = Color3.fromRGB(170, 0, 0)  },
+			{ Id = "94825102596214", Name = "frolic",  Color = Color3.fromRGB(255, 255, 0)  },
+			{ Id = "120970343961976", Name = "electro",  Color = Color3.fromRGB(144, 0, 170)  },
+			{ Id = "139109930448132", Name = "uwu1",  Color = Color3.fromRGB(170, 170, 0)  },
+			{ Id = "80025911045333", Name = "lovesick",  Color = Color3.fromRGB(0, 0, 255)  },
+			
+			{ Id = "125968836170127", Name = "The quick",  Color = Color3.fromRGB(157, 0, 255)  },
+			{ Id = "117376334986179", Name = "breakdown",  Color = Color3.fromRGB(157, 0, 255)  },
+			{ Id = "110703158553077", Name = "its true",  Color = Color3.fromRGB(170, 170, 127)  },
+			{ Id = "109608096496039", Name = "true heart",  Color = Color3.fromRGB(86, 86, 0)  },
+			
 			{ Id = "101020675113442", Name = "sM",  Color = Color3.fromRGB(0, 0, 255)  },
 			{ Id = "136110760748930", Name = "wiggle",  Color = Color3.fromRGB(170, 170, 127)  },
-			{ Id = "107878126791437", Name = "mufasa",  Color = Color3.fromRGB(170, 170, 0)  },
+			{ Id = "107878126791437", Name = "mufasa",  Color = Color3.fromRGB(86, 86, 0)  },
+			 
+			--94269443119985  120970343961976 electro
+		 
+			--x 83802950612366  x dupe 135915367893892
+			
+			
+			
+			
+			 
 			
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
@@ -3274,7 +3292,15 @@ function guias()
 			{ Id = "3576747102", Name = "AroundT",  Color = Color3.fromRGB(93, 0, 255)  },
 			{ Id = "5915776835", Name = "Highwave",  Color = Color3.fromRGB(170, 85, 127)  },
 			{ Id = "3696757129", Name = "Hype",  Color = Color3.fromRGB(255, 255, 0)  },
+			{ Id = "139750331539521", Name = "wu no",  Color = Color3.fromRGB(170, 170, 0)  },
 			
+			
+			
+			{ Id = "77444612920420", Name = "wu3",  Color = Color3.fromRGB(170, 170, 0)  },
+			{ Id = "74278105103260", Name = "wu aura",  Color = Color3.fromRGB(170, 170, 0)  },
+			{ Id = "78514839375893", Name = "wu5",  Color = Color3.fromRGB(170, 170, 0)  },
+			{ Id = "78773506370628", Name = "wu6",  Color = Color3.fromRGB(170, 170, 0)  },
+			{ Id = "82986076817477", Name = "wu7",  Color = Color3.fromRGB(170, 170, 0)  },
 			--{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
 			--{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
 			--{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
