@@ -242,7 +242,8 @@ Press Z to Disable HA-]] end
 		
 		if not gameProcessethend then
 		ThisIsServerSided = {"spin + explode"}
-		if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.are_you_sure1() end end 
+			if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.N) then
+					if workspace:FindFirstChild("WeatherMachine") then _G.FLing_Killed()  else _G.are_you_sure1() end end end 
 		if input.UserInputType == Enum.UserInputType.MouseButton2 then if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.nilspin2() end end 
 		if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.nilspin() end 
 
@@ -614,13 +615,18 @@ function OOF() --to be honest I highly doubt roblox is worth $5O,OOO,OOO,OOO whe
 		end end 
 end
 colcor = nil
-function CharSettings() humy = char:WaitForChild("Humanoid") humy.UseJumpPower = false game.StarterGui:SetCore("SendNotification", {Title="UseJumpPower = false"; Text= "JumpHeight better for gravity" ; Duration=5;})
+function CharSettings() humy = char:WaitForChild("Humanoid") humy.UseJumpPower = false humy.AutoJumpEnabled = false game.StarterGui:SetCore("SendNotification", {Title="UseJumpPower = false"; Text= "JumpHeight better for gravity" ; Duration=5;})
 	workspace.Camera.CameraType = Enum.CameraType.Custom workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
 	humy:GetPropertyChangedSignal("Sit"):Connect(function() wait() if humy.Sit == true then GetUp() end end)
 	humy:GetPropertyChangedSignal("PlatformStand"):Connect(function() wait() if humy.PlatformStand == true then GetUp() end end)
-	if char:FindFirstChild("Meshes/Chocolate Donut Rainbow LimitedAccessory") then camm = -1.25  ME=true an=169402 AnimSet()task.wait(1) an=0 runan=1
+	if char:FindFirstChild("Meshes/Chocolate Donut Rainbow LimitedAccessory") or char:FindFirstChild("SnowQueenNecklace") then 
+		--camm = -1.25  
+		--ME=true 
+		an=169402 AnimSet()task.wait(1) an=0 runan=1
 		if not game.Lighting:FindFirstChildWhichIsA("ColorCorrectionEffect") then colcor=Instance.new("ColorCorrectionEffect",game.Lighting) colcor.Name = "morecolor" game.Lighting:FindFirstChildWhichIsA("ColorCorrectionEffect").Saturation = 0.4 end
 	end
+	
+	
 
 	--if char:FindFirstChild[["Accessory (HappyFace)"]] then char:FindFirstChild[["Accessory (HappyFace)"]]:Remove() end
 	--	if char:FindFirstChild[["Accessory (beast)"]] then  end
@@ -1339,7 +1345,7 @@ function AnimSet()
 
 	if an == 0 or an == "0" then  ThisIs = {"goofy ah"}
 		idle1.Weight.Value = "6"					idle2.Weight.Value = "4"
-		idle1.AnimationId = WolfSwimIdle 		idle2.AnimationId = CartoonSwimIdle --astroidle  idle2.AnimationId =  "http://www.roblox.com/asset/?id=891621366"
+	--	idle1.AnimationId = WolfSwimIdle 		idle2.AnimationId = CartoonSwimIdle --astroidle  idle2.AnimationId =  "http://www.roblox.com/asset/?id=891621366"
 		jump.AnimationId = StyleJump 			fall.AnimationId = adiniball1	
 		swim.AnimationId = WolfSwim			 	swimidle.AnimationId = WolfSwimIdle 
 		run.AnimationId = Confident_Walk 		walk.AnimationId = Ninja_walk
@@ -1385,12 +1391,12 @@ function AnimSet()
 		idle1.Weight.Value = "6" idle2.Weight.Value = "4" idle1.AnimationId = WolfSwimIdle idle2.AnimationId = CartoonSwimIdle 
 		swim.AnimationId = WolfSwim	swimidle.AnimationId = WolfSwimIdle sit.AnimationId = WolfSwimIdle run.AnimationId = Confident_Walk
 		char.Animate.toolnone:FindFirstChild("ToolNoneAnim").AnimationId = "rbxassetid://14366558676"
-		--naniwalk = math.random(1,4) if naniwalk ~= 1 then run.AnimationId = Confident_Walk else run.AnimationId = WolfFall REMOVE_LEGS() end -- "http://www.roblox.com/asset/?id=656118852" end
+		naniwalk = math.random(1,4) if naniwalk ~= 1 then run.AnimationId = Confident_Walk else run.AnimationId = WolfFall REMOVE_LEGS() end -- "http://www.roblox.com/asset/?id=656118852" end
 	end
 	if an == 6 then  ThisIs = {"adini"}
 		idle1.Weight.Value = "6" idle2.Weight.Value = "4" idle1.AnimationId = WolfSwimIdle idle2.AnimationId = CartoonSwimIdle 
 		swim.AnimationId = adiniswim	swimidle.AnimationId = WolfSwimIdle sit.AnimationId = WolfSwimIdle run.AnimationId = Confident_Walk
-		char.Animate.toolnone:FindFirstChild("ToolNoneAnim").AnimationId = "rbxassetid://14366558676"
+		--char.Animate.toolnone:FindFirstChild("ToolNoneAnim").AnimationId = "rbxassetid://14366558676"
 		--naniwalk = math.random(1,4) if naniwalk ~= 1 then run.AnimationId = Confident_Walk else run.AnimationId = WolfFall REMOVE_LEGS() end -- "http://www.roblox.com/asset/?id=656118852" end
 	end 
 	if an == 3 then  ThisIs = {"adini ball"}
@@ -3230,17 +3236,19 @@ function guias()
 			{ Id = "80126109220878", Name = "Boogie",  Color = Color3.fromRGB(170, 0, 0)  },
 			{ Id = "94825102596214", Name = "frolic",  Color = Color3.fromRGB(255, 255, 0)  },
 			{ Id = "120970343961976", Name = "electro",  Color = Color3.fromRGB(144, 0, 170)  },
-			{ Id = "139109930448132", Name = "uwu1",  Color = Color3.fromRGB(170, 170, 0)  },
-			{ Id = "80025911045333", Name = "lovesick",  Color = Color3.fromRGB(0, 0, 255)  },
+			{ Id = "139109930448132", Name = "smuwug1",  Color = Color3.fromRGB(0, 255, 0)  },
+			{ Id = "78773506370628", Name = "smuwug2",  Color = Color3.fromRGB(85, 255, 0)  },
+			{ Id = "80025911045333", Name = "lovesick",  Color = Color3.fromRGB(170, 85, 255)  },
 			
-			{ Id = "125968836170127", Name = "The quick",  Color = Color3.fromRGB(157, 0, 255)  },
-			{ Id = "117376334986179", Name = "breakdown",  Color = Color3.fromRGB(157, 0, 255)  },
+			{ Id = "125968836170127", Name = "The quick",  Color = Color3.fromRGB(170, 85, 0)  },
+			{ Id = "117376334986179", Name = "breakdown",  Color = Color3.fromRGB(170, 0, 0)  },
 			{ Id = "110703158553077", Name = "its true",  Color = Color3.fromRGB(170, 170, 127)  },
-			{ Id = "109608096496039", Name = "true heart",  Color = Color3.fromRGB(86, 86, 0)  },
+			{ Id = "109608096496039", Name = "true heart",  Color = Color3.fromRGB(255, 170, 255)  },
 			
-			{ Id = "101020675113442", Name = "sM",  Color = Color3.fromRGB(0, 0, 255)  },
+			{ Id = "101020675113442", Name = "Sm Moves",  Color = Color3.fromRGB(0, 0, 255)  },
 			{ Id = "136110760748930", Name = "wiggle",  Color = Color3.fromRGB(170, 170, 127)  },
 			{ Id = "107878126791437", Name = "mufasa",  Color = Color3.fromRGB(86, 86, 0)  },
+			{ Id = "75625820126017", Name = "Louisiana-Jigg",  Color = Color3.fromRGB(0, 85, 127)  }, 
 			 
 			--94269443119985  120970343961976 electro
 		 
@@ -3257,7 +3265,7 @@ function guias()
 			{ Id = "15689314578", Name = "Dragons",  Color = Color3.fromRGB(170, 85, 127)  },
 			{ Id = "15439457146", Name = "BP.Jennie",  Color = Color3.fromRGB(255, 0, 255)  },
 			{ Id = "13520623514", Name = "Fancy" ,  Color = Color3.fromRGB(255, 127, 255)  },
-			{ Id = "15679957363", Name = "BP.Lisa Money",  Color = Color3.fromRGB(0, 170, 127)  },
+			{ Id = "16874600526", Name = "BP.Lovesick",  Color = Color3.fromRGB(211, 255, 255)  },
 			{ Id = "14901371589", Name = "ShutDown2",  Color = Color3.fromRGB(0, 170, 0)  },
 			{ Id = "14548711723", Name = "To Ya Dome" ,  Color = Color3.fromRGB(255, 170, 0)  },
 			{ Id = "12874468267", Name = "The Feels",  Color = Color3.fromRGB(255, 0, 191)  },
@@ -3267,6 +3275,7 @@ function guias()
 			
 			{ Id = "4272484885", Name = "Baby",  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = "15698510244", Name = "Ericdoa",  Color = Color3.fromRGB(255, 85, 0)  },
+			{ Id = "15679957363", Name = "BP.Lisa Money",  Color = Color3.fromRGB(0, 170, 127)  },
 			
 			{ Id = "3570535774", Name = "TopRock" ,  Color = Color3.fromRGB(170, 255, 0)  },
 			{ Id = "14901369589", Name = "ShutDown",  Color = Color3.fromRGB(170, 85, 255)  },
@@ -3292,6 +3301,8 @@ function guias()
 			{ Id = "3576747102", Name = "AroundT",  Color = Color3.fromRGB(93, 0, 255)  },
 			{ Id = "5915776835", Name = "Highwave",  Color = Color3.fromRGB(170, 85, 127)  },
 			{ Id = "3696757129", Name = "Hype",  Color = Color3.fromRGB(255, 255, 0)  },
+			
+			
 			{ Id = "139750331539521", Name = "wu no",  Color = Color3.fromRGB(170, 170, 0)  },
 			
 			
@@ -3299,8 +3310,9 @@ function guias()
 			{ Id = "77444612920420", Name = "wu3",  Color = Color3.fromRGB(170, 170, 0)  },
 			{ Id = "74278105103260", Name = "wu aura",  Color = Color3.fromRGB(170, 170, 0)  },
 			{ Id = "78514839375893", Name = "wu5",  Color = Color3.fromRGB(170, 170, 0)  },
-			{ Id = "78773506370628", Name = "wu6",  Color = Color3.fromRGB(170, 170, 0)  },
-			{ Id = "82986076817477", Name = "wu7",  Color = Color3.fromRGB(170, 170, 0)  },
+			
+			{ Id = "82986076817477", Name = "wu7",  Color = Color3.fromRGB(170, 170, 0)  }, 
+			{ Id = "139750331539521", Name = "wu9",  Color = Color3.fromRGB(170, 170, 0)  },
 			--{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
 			--{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
 			--{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
@@ -3362,7 +3374,7 @@ function guias()
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Daves Spin" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus) 					PlaceHolder.BackgroundColor3 = Color3.fromRGB(0, 127, 255)
 		]]
 		ThisIs = {"i like these"} Button.BackgroundColor3 = Color3.fromRGB(0, 255, 127) plus=plus+5
-		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "BP.Lovesick" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus) 				PlaceHolder.BackgroundColor3 = Color3.fromRGB(211, 255, 255)
+		--PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "BP.Lovesick" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus) 				PlaceHolder.BackgroundColor3 = Color3.fromRGB(211, 255, 255)
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "U-Like-That" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan		PlaceHolder.BackgroundColor3 = Color3.fromRGB(170, 0, 255)
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "BP.DDU DU" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus) 				PlaceHolder.BackgroundColor3 = Color3.fromRGB(170, 0, 127)
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Boombayah" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan			PlaceHolder.BackgroundColor3 = Color3.fromRGB(255, 0, 255)
@@ -3372,8 +3384,8 @@ function guias()
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Kick-It" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan		PlaceHolder.BackgroundColor3 = Color3.fromRGB(0, 255, 0)
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "hi hands" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus) 					PlaceHolder.BackgroundColor3 = Color3.fromRGB(170, 0, 170)
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "bounce twirl" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan 			PlaceHolder.BackgroundColor3 = Color3.fromRGB(255, 0, 127)
-		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "What Is Love" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus) 				PlaceHolder.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
-		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "LIKEY" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan	PlaceHolder.BackgroundColor3 = Color3.fromRGB(255, 0, 255)
+		--PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "What Is Love" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus) 				PlaceHolder.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
+		--PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "LIKEY" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan	PlaceHolder.BackgroundColor3 = Color3.fromRGB(255, 0, 255)
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "SideSide" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus)				PlaceHolder.BackgroundColor3 = Color3.fromRGB(85, 255, 0)
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Shuffle" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan			PlaceHolder.BackgroundColor3 = Color3.fromRGB(85, 85, 255)
 
