@@ -152,7 +152,7 @@ if not game.Lighting:FindFirstChild("binds") then Instance.new("BoolValue",game.
 			end
 			if disabled.Value == false then if actiontext.TextColor3 ~= Color3.fromRGB(255, 255, 255) then actiontext.TextColor3 = Color3.fromRGB(255, 255, 255) end	
 				if actionName == "HAX" then workspace.Gravity = 126.2 char.Humanoid.JumpPower = 50 char.Humanoid.JumpHeight = 11 actiontext.Text = "hax"
-				elseif actionName == "Anti Fling HAX" then AntiFling() 
+				elseif actionName == "Anti Fling HAX" then --AntiFling() 
 				elseif actionName == "RAINBOW STAR SWORDS" then RainbowStarSword()
 				elseif actionName == "Dog Walk" then Swim() --dog walk only works with werewolf swim animation
 				elseif actionName == "Default Gravity" then workspace.Gravity = 196.2 char.Humanoid.JumpPower = 50 actiontext.Text = "Default Gravity" if Spaghetti and Spaghetti:FindFirstChild("fps 60") then Spaghetti:FindFirstChild("fps 60").fps.Value = 900 end
@@ -279,7 +279,8 @@ Press Z to Disable HA-]] end
 			if UserInputService:IsKeyDown(Enum.KeyCode.A) and UserInputService:IsKeyDown(Enum.KeyCode.B) then AnimRun() end 
 
 				if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.E) then Mirror() end end 
-				
+				if input.UserInputType == Enum.UserInputType.MouseButton2 then if UserInputService:IsKeyDown(Enum.KeyCode.E) then Mirror2() end end 
+
 			well = " Enum.KeyCode.O  and  Enum.KeyCode.I  breaks the entire fuckin UserInputService"
 			--[[if UserInputService:IsKeyDown(Enum.KeyCode.K) then disabled.Value = not disabled.Value
 				if disabled.Value == true then actiontext.TextColor3 = Color3.fromRGB(255, 0, 0) actiontext.Text = "Keys Disabled, Press Z" else actiontext.TextColor3 = Color3.fromRGB(0, 255, 0) actiontext.Text = "Keys Enabled" end
@@ -473,6 +474,18 @@ function Mirror() --if Ruse == false then
 			char:PivotTo(v12.CFrame* CFrame.new(0,0, 0)*CFrame.Angles(0,math.rad(-180),0)) v12:Remove()
 		end --end
 end
+function Mirror2() --if Ruse == false then
+	if workspace.CurrentCamera:FindFirstChild("L") then workspace.CurrentCamera:FindFirstChild("L"):Remove() return end
+	if not workspace.CurrentCamera:FindFirstChild("L") then
+		local l__CurrentCamera__3 = workspace.CurrentCamera;
+		local v12 = Instance.new("Part"); v12.Transparency = 1;  v12.Anchored = true; v12.Shape = Enum.PartType.Ball; v12.CanCollide = false; 
+		v12.Parent = l__CurrentCamera__3; v12.CFrame = l__CurrentCamera__3.CFrame;
+		v12.Position = char.HumanoidRootPart.Position 
+		char:PivotTo(v12.CFrame* CFrame.new(0,0, 0)*CFrame.Angles(0,math.rad(-0),0)) v12:Remove()
+	end --end
+end
+
+
 
 --[[function RainbowNova() if workspace:FindFirstChild("RainbowStarSwords") then 
 	end
@@ -3212,39 +3225,63 @@ function guias()
 		ThisIs = {"i like these"} 
 		local Emote_info = {
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
-
+			
+			{ Id = "94075411097215", Name = "Star",  Color = Color3.fromRGB(0, 0, 255)  },
+			{ Id = "125968836170127", Name = "The quick",  Color = Color3.fromRGB(157, 0, 255)  },
+			{ Id = "80126109220878", Name = "Boogie",  Color = Color3.fromRGB(170, 0, 0)  },
+			{ Id = "101020675113442", Name = "sM",  Color = Color3.fromRGB(0, 0, 255)  },
+			{ Id = "136110760748930", Name = "wiggle",  Color = Color3.fromRGB(170, 170, 127)  },
+			{ Id = "107878126791437", Name = "mufasa",  Color = Color3.fromRGB(170, 170, 0)  },
+			
+			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
+			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
+			
 			{ Id = "15689314578", Name = "Dragons",  Color = Color3.fromRGB(170, 85, 127)  },
-			{ Id = "15698510244", Name = "Ericdoa",  Color = Color3.fromRGB(255, 85, 0)  },
-			{ Id = "15679957363", Name = "BP.Lisa Money",  Color = Color3.fromRGB(0, 170, 127)  },
 			{ Id = "15439457146", Name = "BP.Jennie",  Color = Color3.fromRGB(255, 0, 255)  },
-			{ Id = "3570535774", Name = "TopRock" ,  Color = Color3.fromRGB(170, 255, 0)  },
-			{ Id = "14901369589", Name = "ShutDown",  Color = Color3.fromRGB(170, 85, 255)  },
 			{ Id = "13520623514", Name = "Fancy" ,  Color = Color3.fromRGB(255, 127, 255)  },
+			{ Id = "15679957363", Name = "BP.Lisa Money",  Color = Color3.fromRGB(0, 170, 127)  },
+			{ Id = "14901371589", Name = "ShutDown2",  Color = Color3.fromRGB(0, 170, 0)  },
 			{ Id = "14548711723", Name = "To Ya Dome" ,  Color = Color3.fromRGB(255, 170, 0)  },
 			{ Id = "12874468267", Name = "The Feels",  Color = Color3.fromRGB(255, 0, 191)  },
-			{ Id = "14901371589", Name = "ShutDown2",  Color = Color3.fromRGB(0, 170, 0)  },
+			{ Id = "14900151704", Name = "LIKEY",  Color = Color3.fromRGB(255, 0, 255)  },
 			{ Id = "15123050663", Name = "bone",  Color = Color3.fromRGB(0, 0, 255)  },
 			{ Id = "4646302011", Name = "Air" ,  Color = Color3.fromRGB(206, 0, 255)  },
-			{ Id = "6797938823", Name = "Under" ,  Color = Color3.fromRGB(0, 255, 255)  },
+			
 			{ Id = "4272484885", Name = "Baby",  Color = Color3.fromRGB(0, 170, 255)  },
-			{ Id = "18933761755", Name = "ABCD",  Color = Color3.fromRGB(0, 0, 255)  },
-			{ Id = "18855609889", Name = "BP what?" ,  Color = Color3.fromRGB(206, 0, 255)  },
+			{ Id = "15698510244", Name = "Ericdoa",  Color = Color3.fromRGB(255, 85, 0)  },
+			
+			{ Id = "3570535774", Name = "TopRock" ,  Color = Color3.fromRGB(170, 255, 0)  },
+			{ Id = "14901369589", Name = "ShutDown",  Color = Color3.fromRGB(170, 85, 255)  },
+			--{ Id = "18933761755", Name = "ABCD",  Color = Color3.fromRGB(0, 0, 255)  },
+			--{ Id = "18855609889", Name = "BP what?" ,  Color = Color3.fromRGB(206, 0, 255)  },
 			{ Id = "18855603653", Name = "your last"  ,  Color = Color3.fromRGB(0, 255, 255)  },
-			{ Id = "14900151704", Name = "LIKEY",  Color = Color3.fromRGB(255, 0, 255)  },
+			{ Id = "6797938823", Name = "Under" ,  Color = Color3.fromRGB(0, 255, 255)  },
 
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
 
-
-			{ Id = "11753545334", Name = "Out",  Color = Color3.fromRGB(217, 0, 255)  },
-			{ Id = "3576747102", Name = "AroundT",  Color = Color3.fromRGB(93, 0, 255)  },
 			{ Id = "7942964447", Name = "Cobra",  Color = Color3.fromRGB(170, 0, 255)  },
-			{ Id = "14353421343", Name = "QueenFace" ,  Color = Color3.fromRGB(255, 127, 255)  },
-			{ Id = "4049646104", Name = "line" ,  Color = Color3.fromRGB(0, 170, 255)  },
-			{ Id = "11309263077", Name = "Heart",  Color = Color3.fromRGB(255, 85, 255)  },
 			{ Id = "15698511500", Name = "Cuco-Levitate",  Color = Color3.fromRGB(0, 31, 170)  },
-			{ Id = "12715393154", Name = "Moonlight" ,  Color = Color3.fromRGB(0, 211, 255)  },
-			{ Id = "16276501655", Name = "Daves Spin"  ,  Color = Color3.fromRGB(0, 127, 255)  },  
+			
+			{ Id = "4049646104", Name = "line" ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = "13344121112", Name = "What is love",  Color = Color3.fromRGB(0, 170, 255)  },
+			
+			{ Id = "11753545334", Name = "Out",  Color = Color3.fromRGB(217, 0, 255)  },
+			{ Id = "11309263077", Name = "Heart",  Color = Color3.fromRGB(255, 85, 255)  },
+			
+			{ Id = "14353421343", Name = "QueenFace" ,  Color = Color3.fromRGB(255, 127, 255)  },
+			
+			{ Id = "3576747102", Name = "AroundT",  Color = Color3.fromRGB(93, 0, 255)  },
+			{ Id = "5915776835", Name = "Highwave",  Color = Color3.fromRGB(170, 85, 127)  },
+			{ Id = "3696757129", Name = "Hype",  Color = Color3.fromRGB(255, 255, 0)  },
+			
+			--{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
+			--{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
+			--{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
+			
+			
+			--{ Id = "12715393154", Name = "Moonlight" ,  Color = Color3.fromRGB(0, 211, 255)  },
+			--{ Id = "16276501655", Name = "Daves Spin"  ,  Color = Color3.fromRGB(0, 127, 255)  },  
 
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
@@ -3327,13 +3364,13 @@ function guias()
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Yungblud" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan		PlaceHolder.BackgroundColor3 = Color3.fromRGB(85, 255, 255)
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Selfie" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus) 				PlaceHolder.BackgroundColor3 = Color3.fromRGB(255, 85, 127)
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Monkey" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan		PlaceHolder.BackgroundColor3 = Color3.fromRGB(255, 85, 255)
-		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "hype" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus) 				PlaceHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 0)	
+	--	PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "hype" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus) 				PlaceHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 0)	
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Got Me" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan	PlaceHolder.BackgroundColor3 = Color3.fromRGB(255, 170, 255)
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Happy" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus) 				PlaceHolder.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
 
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Olympic" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan	
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Bebe Rexha" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus)				
-		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Highwave" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan	
+	--	PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Highwave" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan	
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Flex-Walk" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus)				
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "fly" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan	PlaceHolder.BackgroundColor3 = Color3.fromRGB(0, 170, 170)
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Piano Hands" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus) 	
