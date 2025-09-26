@@ -1313,7 +1313,7 @@ anim = nil  fall = nil idle1 = nil idle2 = nil jump = nil run = nil walk = nil s
 
 
 function AnimSet()
-	for _,anims in pairs(char.Animate.idle:GetChildren()) do if a2:IsA("Animation") and a2.Name ~= "Animation1" then a2.Name = "Animation2" end end 
+	for _,anims in pairs(char.Animate.idle:GetChildren()) do if anims:IsA("Animation") and anims.Name ~= "Animation1" then anims.Name = "Animation2" end end 
 
 	if not char.Animate.idle:FindFirstChild("Animation1") then local a1 = char.Animate.idle:FindFirstChildWhichIsA("Animation") a1.Name = "Animation1" 
 		for _,a2 in pairs(char.Animate.idle:GetChildren()) do if a2:IsA("Animation") and a2.Name ~= "Animation1" then a2.Name = "Animation2" end end 
@@ -3238,14 +3238,18 @@ function guias()
 			{ Id = "120970343961976", Name = "electro",  Color = Color3.fromRGB(144, 0, 170)  },
 			{ Id = "139109930448132", Name = "smuwug1",  Color = Color3.fromRGB(0, 255, 0)  },
 			{ Id = "78773506370628", Name = "smuwug2",  Color = Color3.fromRGB(85, 255, 0)  },
+			
+			{ Id = "75625820126017", Name = "Louisiana-Jigg",  Color = Color3.fromRGB(0, 85, 127)  }, 
+			
 			{ Id = "80025911045333", Name = "lovesick",  Color = Color3.fromRGB(170, 85, 255)  },
 			
 			{ Id = "125968836170127", Name = "The quick",  Color = Color3.fromRGB(170, 85, 0)  },
 			{ Id = "117376334986179", Name = "breakdown",  Color = Color3.fromRGB(170, 0, 0)  },
+			{ Id = "121577088569956", Name = "Get Sturdy",  Color = Color3.fromRGB(255, 170, 0)  },   
+			{ Id = "111374273230179", Name = "Ramb",  Color = Color3.fromRGB(255, 255, 0)  },
 			
 			
 			
-			{ Id = "75625820126017", Name = "Louisiana-Jigg",  Color = Color3.fromRGB(0, 85, 127)  }, 
 			{ Id = "81442470330880", Name = "Shuffle S",  Color = Color3.fromRGB(170, 0, 0)  },
 			{ Id = "101020675113442", Name = "Sm Moves",  Color = Color3.fromRGB(0, 0, 255)  },
 			{ Id = "136110760748930", Name = "wiggle",  Color = Color3.fromRGB(170, 170, 127)  },
@@ -3254,14 +3258,13 @@ function guias()
 			{ Id = "109608096496039", Name = "true heart",  Color = Color3.fromRGB(255, 170, 255)  },
 			
 			
-			{ Id = "121577088569956", Name = "Get Sturdy",  Color = Color3.fromRGB(255, 170, 0)  },   
-			{ Id = "111374273230179", Name = "rambunctious",  Color = Color3.fromRGB(255, 255, 0)  },
+			
 			{ Id = "75633008404400", Name = "criss cross",  Color = Color3.fromRGB(144, 0, 170)  },--no this is not potato { Id = "94705135359914", Name = "potato",  Color = Color3.fromRGB(144, 0, 170)  },
 			
-			{ Id = "123881853795949", Name = "Chicken Wing It",  Color = Color3.fromRGB(85, 255, 0)  },
-			{ Id = "82438623948539", Name = "Shuffle E",  Color = Color3.fromRGB(0, 0, 255)  },
+			{ Id = "123881853795949", Name = "Chicken Wing",  Color = Color3.fromRGB(85, 255, 0)  },
+			--{ Id = "82438623948539", Name = "Shuffle E",  Color = Color3.fromRGB(0, 0, 255)  },
 			
-			{ Id = "111545999639330", Name = "Shuffle L",  Color = Color3.fromRGB(255, 255, 0)  },
+			--{ Id = "111545999639330", Name = "Shuffle L",  Color = Color3.fromRGB(255, 255, 0)  },
 			{ Id = "128314698188053", Name = "float1",  Color = Color3.fromRGB(0, 85, 127)  },
 			
 			--{ Id = "73087588794289", Name = "cat loving",  Color = Color3.fromRGB(0, 255, 0)  },
@@ -3285,6 +3288,8 @@ function guias()
 			
 			{ Id = "15689314578", Name = "Dragons",  Color = Color3.fromRGB(170, 85, 127)  },
 			{ Id = "15439457146", Name = "BP.Jennie",  Color = Color3.fromRGB(255, 0, 255)  },
+			{ Id = "3696757129", Name = "Hype",  Color = Color3.fromRGB(255, 255, 0)  },
+			
 			{ Id = "13520623514", Name = "Fancy" ,  Color = Color3.fromRGB(255, 127, 255)  },
 			{ Id = "16874600526", Name = "BP.Lovesick",  Color = Color3.fromRGB(211, 255, 255)  },
 			{ Id = "14901371589", Name = "ShutDown2",  Color = Color3.fromRGB(0, 170, 0)  },
@@ -3302,7 +3307,7 @@ function guias()
 			{ Id = "14901369589", Name = "ShutDown",  Color = Color3.fromRGB(170, 85, 255)  },
 			--{ Id = "18933761755", Name = "ABCD",  Color = Color3.fromRGB(0, 0, 255)  },
 			--{ Id = "18855609889", Name = "BP what?" ,  Color = Color3.fromRGB(206, 0, 255)  },
-			{ Id = "18855603653", Name = "your last"  ,  Color = Color3.fromRGB(0, 255, 255)  },
+				
 			{ Id = "6797938823", Name = "Under" ,  Color = Color3.fromRGB(0, 255, 255)  },
 
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
@@ -3321,7 +3326,8 @@ function guias()
 			
 			{ Id = "3576747102", Name = "AroundT",  Color = Color3.fromRGB(93, 0, 255)  },
 			{ Id = "5915776835", Name = "Highwave",  Color = Color3.fromRGB(170, 85, 127)  },
-			{ Id = "3696757129", Name = "Hype",  Color = Color3.fromRGB(255, 255, 0)  },
+			{ Id = "18855603653", Name = "your last"  ,  Color = Color3.fromRGB(0, 255, 255)  },
+		
 			
 			
 		--	{ Id = "139750331539521", Name = "wu no",  Color = Color3.fromRGB(170, 170, 0)  },
