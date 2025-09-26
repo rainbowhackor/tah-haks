@@ -3744,8 +3744,9 @@ ThisIsClientSided = {"Walk on ghost dirt", "Drive on ocean"}
 function NDS() 
 	if player.PlayerScripts:FindFirstChild("UnderwaterVisionLocalScript") then 
 		player.PlayerScripts.UnderwaterVisionLocalScript.Enabled = false
-		player.PlayerScripts.UnderwaterVisionLocalScript.WaterAtmosphere.Haze = 0
-		player.PlayerScripts.UnderwaterVisionLocalScript.WaterAtmosphere.Density = 0
+		--wait(5)
+	--	player.PlayerScripts.UnderwaterVisionLocalScript.WaterAtmosphere.Haze = 0
+		--player.PlayerScripts.UnderwaterVisionLocalScript.WaterAtmosphere.Density = 0
 		--game.Lighting.WaterAtmosphere.Haze = 0
 		--game.Lighting.WaterAtmosphere.Density = 0
 	end
