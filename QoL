@@ -213,12 +213,12 @@ Press Z to Disable HA-]] end
 			if input.UserInputType == Enum.UserInputType.MouseButton1 then 
 				--if _G.ClickTeleport and UserInputService:IsKeyDown(Enum.KeyCode.LeftControl) then tpOnPoint() end
 				if _G.ClickTeleport and UserInputService:IsKeyDown(Enum.KeyCode.Q) then tpOnPoint() end 
-				if _G.ClickTeleport and UserInputService:IsKeyDown(Enum.KeyCode.E) then tpCarOnPoint() end 
+				--if _G.ClickTeleport and UserInputService:IsKeyDown(Enum.KeyCode.E) then tpCarOnPoint() end 
 			end
 			if input.UserInputType == Enum.UserInputType.MouseButton2 then 
 				--if _G.ClickTeleport and UserInputService:IsKeyDown(Enum.KeyCode.LeftControl) then tpAbovePoint() end
 				if _G.ClickTeleport and UserInputService:IsKeyDown(Enum.KeyCode.Q) then tpAbovePoint() end 
-				if _G.ClickTeleport and UserInputService:IsKeyDown(Enum.KeyCode.E) then tpCarAbovePoint() end 
+				--if _G.ClickTeleport and UserInputService:IsKeyDown(Enum.KeyCode.E) then tpCarAbovePoint() end 
 			end
 		end)
 		--else if Ruse == true then _G.ClickTeleport = false end
@@ -272,8 +272,8 @@ Press Z to Disable HA-]] end
 
 
 			ThisIsServerSided = {"Remove Legs to be floaty", } --no take backs
-			if UserInputService:IsKeyDown(Enum.KeyCode.N) and UserInputService:IsKeyDown(Enum.KeyCode.L) then HIDE_LEGS() end--REMOVE_LEGS() end
-			if UserInputService:IsKeyDown(Enum.KeyCode.L) and UserInputService:IsKeyDown(Enum.KeyCode.N) then HIDE_LEGS() end--REMOVE_LEGS() end
+			--if UserInputService:IsKeyDown(Enum.KeyCode.N) and UserInputService:IsKeyDown(Enum.KeyCode.L) then HIDE_LEGS() end--REMOVE_LEGS() end
+			--if UserInputService:IsKeyDown(Enum.KeyCode.L) and UserInputService:IsKeyDown(Enum.KeyCode.N) then HIDE_LEGS() end--REMOVE_LEGS() end
 
 			local ThisIsServerSided = {"Animation Groups" }
 			if UserInputService:IsKeyDown(Enum.KeyCode.A) and UserInputService:IsKeyDown(Enum.KeyCode.X) then AnimSet() end 
@@ -1391,7 +1391,7 @@ function AnimSet()
 		idle1.Weight.Value = "6" idle2.Weight.Value = "4" idle1.AnimationId = WolfSwimIdle idle2.AnimationId = CartoonSwimIdle 
 		swim.AnimationId = WolfSwim	swimidle.AnimationId = WolfSwimIdle sit.AnimationId = WolfSwimIdle run.AnimationId = Confident_Walk
 		char.Animate.toolnone:FindFirstChild("ToolNoneAnim").AnimationId = "rbxassetid://14366558676"
-		naniwalk = math.random(1,4) if naniwalk ~= 1 then run.AnimationId = Confident_Walk else run.AnimationId = WolfFall REMOVE_LEGS() end -- "http://www.roblox.com/asset/?id=656118852" end
+		--naniwalk = math.random(1,4) if naniwalk ~= 1 then run.AnimationId = Confident_Walk else run.AnimationId = WolfFall REMOVE_LEGS() end -- "http://www.roblox.com/asset/?id=656118852" end
 	end
 	if an == 6 then  ThisIs = {"adini"}
 		idle1.Weight.Value = "6" idle2.Weight.Value = "4" idle1.AnimationId = WolfSwimIdle idle2.AnimationId = CartoonSwimIdle 
