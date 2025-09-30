@@ -1116,7 +1116,7 @@ function RainbowStarSword() --( glow sticks for dancing ) OH MY GAH THIS LOOKS S
 		ColorSequenceKeypoint.new(1, Color3.fromRGB(170, 0, 255))}
 	Trail.LightEmission=1 Trail.LightInfluence=0 
 	Trail.Transparency = NumberSequence.new{ NumberSequenceKeypoint.new(0,1),NumberSequenceKeypoint.new(.1,.75),NumberSequenceKeypoint.new(1,1)}
-	Trail.Attachment0 = TopTrail Trail.Attachment1 = BottomTrail Trail.Lifetime=1 Trail.WidthScale = NumberSequence.new(5) Trail.Enabled = true
+	Trail.Attachment0 = TopTrail Trail.Attachment1 = BottomTrail Trail.Lifetime=.5 Trail.WidthScale = NumberSequence.new(5) Trail.Enabled = true
 
 	Flare:Clone().Parent = BottomTrail
 	OriginalFlare:Clone().Parent = BottomTrail 
@@ -3247,7 +3247,7 @@ function guias()
 			{ Id = "117376334986179", Name = "breakdown",  Color = Color3.fromRGB(170, 0, 0)  },
 			{ Id = "121577088569956", Name = "Get Sturdy",  Color = Color3.fromRGB(255, 170, 0)  },   
 			{ Id = "111374273230179", Name = "Ramb",  Color = Color3.fromRGB(255, 255, 0)  },
-			
+			{ Id = "116040353115576", Name = "Spob",  Color = Color3.fromRGB(255, 255, 0)  },
 			
 			
 			{ Id = "81442470330880", Name = "Shuffle S",  Color = Color3.fromRGB(170, 0, 0)  },
