@@ -193,7 +193,7 @@ if not game.Lighting:FindFirstChild("binds") then Instance.new("BoolValue",game.
 --	CAS:BindAction("Jupiter Gravity", hax, false, Enum.KeyCode.J) 
 	L = Enum.KeyCode.R if Ruse == true then L = Enum.KeyCode.B end CAS:BindAction("Sit", hax, false, L)
 --	CAS:BindAction("PlatformStand", hax, false, Enum.KeyCode.T) 
-	CAS:BindAction("Dance List", hax, false, Enum.KeyCode.Period,Enum.KeyCode.Comma)
+	CAS:BindAction("Dance List", hax, false, Enum.KeyCode.Comma)
 	CAS:BindAction("AirBlock", hax, false, Enum.KeyCode.M)
 --	CAS:BindAction("A spot", hax, false, Enum.KeyCode.U)
 	if disabled.Value == true then actiontext.Text = [[HA-Disabled"
@@ -1115,8 +1115,8 @@ function RainbowStarSword() --( glow sticks for dancing ) OH MY GAH THIS LOOKS S
 		ColorSequenceKeypoint.new(0.83, Color3.fromRGB(0, 0, 255)),
 		ColorSequenceKeypoint.new(1, Color3.fromRGB(170, 0, 255))}
 	Trail.LightEmission=1 Trail.LightInfluence=0 
-	Trail.Transparency = NumberSequence.new{ NumberSequenceKeypoint.new(0,1),NumberSequenceKeypoint.new(.1,.75),NumberSequenceKeypoint.new(1,1)}
-	Trail.Attachment0 = TopTrail Trail.Attachment1 = BottomTrail Trail.Lifetime=.5 Trail.WidthScale = NumberSequence.new(5) Trail.Enabled = true
+	Trail.Transparency = NumberSequence.new{ NumberSequenceKeypoint.new(0,1),NumberSequenceKeypoint.new(.1,.9),NumberSequenceKeypoint.new(1,1)}--.75
+	Trail.Attachment0 = TopTrail Trail.Attachment1 = BottomTrail Trail.Lifetime=1 Trail.WidthScale = NumberSequence.new(5) Trail.Enabled = true
 
 	Flare:Clone().Parent = BottomTrail
 	OriginalFlare:Clone().Parent = BottomTrail 
