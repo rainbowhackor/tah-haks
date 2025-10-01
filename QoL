@@ -3237,7 +3237,8 @@ function guias()
 			{ Id = "94825102596214", Name = "frolic",  Color = Color3.fromRGB(255, 255, 0)  },
 			{ Id = "120970343961976", Name = "electro",  Color = Color3.fromRGB(144, 0, 170)  },
 			{ Id = "139109930448132", Name = "smuwug1",  Color = Color3.fromRGB(0, 255, 0)  },
-			{ Id = "78773506370628", Name = "smuwug2",  Color = Color3.fromRGB(85, 255, 0)  },
+			--{ Id = "78773506370628", Name = "smuwug2",  Color = Color3.fromRGB(85, 255, 0)  },
+			{ Id = "108466807801186", Name = "springy",  Color = Color3.fromRGB(85, 255, 0)  }, 
 			
 			{ Id = "75625820126017", Name = "Louisiana-Jigg",  Color = Color3.fromRGB(0, 85, 127)  }, 
 			
@@ -3266,6 +3267,9 @@ function guias()
 			
 			--{ Id = "111545999639330", Name = "Shuffle L",  Color = Color3.fromRGB(255, 255, 0)  },
 			{ Id = "128314698188053", Name = "float1",  Color = Color3.fromRGB(0, 85, 127)  },
+			
+			{ Id = "83702306317443", Name = "Mannrobics",  Color = Color3.fromRGB(170, 170, 127)  },
+			{ Id = "122588181027551", Name = "Engineer",  Color = Color3.fromRGB(255, 170, 255)  },
 			
 			--{ Id = "73087588794289", Name = "cat loving",  Color = Color3.fromRGB(0, 255, 0)  },
 			--{ Id = "101417838306172", Name = "banana",  Color = Color3.fromRGB(170, 0, 0)  },
