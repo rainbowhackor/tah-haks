@@ -4,8 +4,7 @@
 --nds hax 
 
 
-The = [[ Original Admin Script == loadstring(game:HttpGet("https://raw.githubusercontent.com/CMD-X/CMD-X/master/Source", true))()	]] --i dont understand why they are as offencive as possible...
-
+ 
 
 
 ThisIs = {"A script that works in StarterPlayerScripts, ReplicatedFirst, StarterGui, StarterCharacterScripts, and many popular roblox games...", 
@@ -132,77 +131,77 @@ end
 task.wait(1) ResetValues()
 player.CharacterAdded:Connect(ResetValues)
 
- 
 
- 
+
+
 if not game.Lighting:FindFirstChild("binds") then Instance.new("BoolValue",game.Lighting).Name = "binds"
-	
-	
+
+
 	ThisIs = {"Keybinds 1"}
 	CAS = game:GetService("ContextActionService")
 	function hax(actionName, inputState, inputObject)
 		local success, data = pcall(function()
-		if inputState == Enum.UserInputState.Begin then
-			if actionName == "Controls" then ShowControls()
-			elseif actionName == "Toggle Keybinds" then ThisIs = {"Toggle Keybinds"}--Usefull when you dance with rainbow glow sticks that use half the keys on your keyboard...	
-				disabled.Value = not disabled.Value
-				if disabled.Value == true then actiontext.TextColor3 = Color3.fromRGB(255, 0, 0) actiontext.Text = "Keys Disabled, Press Z" else actiontext.TextColor3 = Color3.fromRGB(0, 255, 0) actiontext.Text = "Keys Enabled" end
-			elseif actionName == "Toggle tp" then _G.ClickTeleport = not _G.ClickTeleport if _G.ClickTeleport then actiontext.TextColor3 = Color3.fromRGB(0, 255, 0) actiontext.Text = "Click teleport enabled" else actiontext.TextColor3 = Color3.fromRGB(255, 0, 0) actiontext.Text = "Press M to enable teleport" end
-				--elseif actionName == "Rainbow Nova" then RainbowNova()
-			end
-			if disabled.Value == false then if actiontext.TextColor3 ~= Color3.fromRGB(255, 255, 255) then actiontext.TextColor3 = Color3.fromRGB(255, 255, 255) end	
-				if actionName == "HAX" then workspace.Gravity = 126.2 char.Humanoid.JumpPower = 50 char.Humanoid.JumpHeight = 11 actiontext.Text = "hax"
-				elseif actionName == "Anti Fling HAX" then --AntiFling() 
-				elseif actionName == "RAINBOW STAR SWORDS" then RainbowStarSword()
-				elseif actionName == "Dog Walk" then Swim() --dog walk only works with werewolf swim animation
-				elseif actionName == "Default Gravity" then workspace.Gravity = 196.2 char.Humanoid.JumpPower = 50 actiontext.Text = "Default Gravity" if Spaghetti and Spaghetti:FindFirstChild("fps 60") then Spaghetti:FindFirstChild("fps 60").fps.Value = 900 end
-				elseif actionName == "Zero Gravity" then workspace.Gravity = 0 actiontext.Text = "Zero Gravity"
-				elseif actionName == "Moon Gravity" then workspace.Gravity = 32.41 actiontext.Text = "Moon Gravity" char.Humanoid.JumpPower = 25 char.Humanoid.JumpHeight = 11
-				elseif actionName == "Jupiter Gravity" then workspace.Gravity = 111111 actiontext.Text = "Jupiter Gravity"
-				elseif actionName == "Low2" then workspace.Gravity = 5 char.Humanoid.JumpPower = 11 actiontext.Text = "Low Gravity2" 
-				elseif actionName == "Low" then workspace.Gravity = 15 char.Humanoid.JumpPower = 17 actiontext.Text = "Low Gravity" --if ME == true then char.Humanoid.WalkSpeed = 11 end
-				elseif actionName == "Sit" then --player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" 
-				elseif actionName == "PlatformStand" then player.Character.Humanoid.PlatformStand = not player.Character.Humanoid.PlatformStand actiontext.Text = "PlatformStand"
-				elseif actionName == "Dance List" then player.PlayerGui.MAMALUIGI.Button["TIME TO DIY 3"].Enabled = not player.PlayerGui.MAMALUIGI.Button["TIME TO DIY 3"].Enabled actiontext.Text = "Dance"
-				elseif actionName == "AirBlock" then AirBlock() 
-				elseif actionName == "A spot" then  local success, data = pcall(function()
-						tpval = game.Lighting.save4.Value tpvector()  	return  end)
-					if data then  warn("Errors:", data) end 
-				elseif actionName == "SEAT no nds tp" then SEAT() 
-				elseif actionName == "Mirror" then  Mirror() --char:PivotTo(char.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(180),0))
+			if inputState == Enum.UserInputState.Begin then
+				if actionName == "Controls" then ShowControls()
+				elseif actionName == "Toggle Keybinds" then ThisIs = {"Toggle Keybinds"}--Usefull when you dance with rainbow glow sticks that use half the keys on your keyboard...	
+					disabled.Value = not disabled.Value
+					if disabled.Value == true then actiontext.TextColor3 = Color3.fromRGB(255, 0, 0) actiontext.Text = "Keys Disabled, Press Z" else actiontext.TextColor3 = Color3.fromRGB(0, 255, 0) actiontext.Text = "Keys Enabled" end
+				elseif actionName == "Toggle tp" then _G.ClickTeleport = not _G.ClickTeleport if _G.ClickTeleport then actiontext.TextColor3 = Color3.fromRGB(0, 255, 0) actiontext.Text = "Click teleport enabled" else actiontext.TextColor3 = Color3.fromRGB(255, 0, 0) actiontext.Text = "Press M to enable teleport" end
+					--elseif actionName == "Rainbow Nova" then RainbowNova()
 				end
-			end 
+				if disabled.Value == false then if actiontext.TextColor3 ~= Color3.fromRGB(255, 255, 255) then actiontext.TextColor3 = Color3.fromRGB(255, 255, 255) end	
+					if actionName == "HAX" then workspace.Gravity = 126.2 char.Humanoid.JumpPower = 50 char.Humanoid.JumpHeight = 11 actiontext.Text = "hax"
+					elseif actionName == "Anti Fling HAX" then --AntiFling() 
+					elseif actionName == "RAINBOW STAR SWORDS" then RainbowStarSword()
+					elseif actionName == "Dog Walk" then Swim() --dog walk only works with werewolf swim animation
+					elseif actionName == "Default Gravity" then workspace.Gravity = 196.2 char.Humanoid.JumpPower = 50 actiontext.Text = "Default Gravity" if Spaghetti and Spaghetti:FindFirstChild("fps 60") then Spaghetti:FindFirstChild("fps 60").fps.Value = 900 end
+					elseif actionName == "Zero Gravity" then workspace.Gravity = 0 actiontext.Text = "Zero Gravity"
+					elseif actionName == "Moon Gravity" then workspace.Gravity = 32.41 actiontext.Text = "Moon Gravity" char.Humanoid.JumpPower = 25 char.Humanoid.JumpHeight = 11
+					elseif actionName == "Jupiter Gravity" then workspace.Gravity = 111111 actiontext.Text = "Jupiter Gravity"
+					elseif actionName == "Low2" then workspace.Gravity = 5 char.Humanoid.JumpPower = 11 actiontext.Text = "Low Gravity2" 
+					elseif actionName == "Low" then workspace.Gravity = 15 char.Humanoid.JumpPower = 17 actiontext.Text = "Low Gravity" --if ME == true then char.Humanoid.WalkSpeed = 11 end
+					elseif actionName == "Sit" then --player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" 
+					elseif actionName == "PlatformStand" then player.Character.Humanoid.PlatformStand = not player.Character.Humanoid.PlatformStand actiontext.Text = "PlatformStand"
+					elseif actionName == "Dance List" then player.PlayerGui.MAMALUIGI.Button["TIME TO DIY 3"].Enabled = not player.PlayerGui.MAMALUIGI.Button["TIME TO DIY 3"].Enabled actiontext.Text = "Dance"
+					elseif actionName == "AirBlock" then AirBlock() 
+					elseif actionName == "A spot" then  local success, data = pcall(function()
+							tpval = game.Lighting.save4.Value tpvector()  	return  end)
+						if data then  warn("Errors:", data) end 
+					elseif actionName == "SEAT no nds tp" then SEAT() 
+					elseif actionName == "Mirror" then  Mirror() --char:PivotTo(char.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(180),0))
+					end
+				end 
 			end
-			end)
+		end)
 	end 
 	--CAS:BindAction("v1", hax, false, Enum.KeyCode.Y)
 	--CAS:BindAction("SEAT no nds tp", hax, false, Enum.KeyCode.Y)
 	--CAS:BindAction("Controls", hax, false, Enum.KeyCode.Y)
---	CAS:BindAction("Toggle Keybinds", hax, false, Enum.KeyCode.Z)
+	--	CAS:BindAction("Toggle Keybinds", hax, false, Enum.KeyCode.Z)
 	--CAS:BindAction("Toggle tp", hax, false, Enum.KeyCode.Y)
 	CAS:BindAction("Low", hax, false, Enum.KeyCode.X)
---	CAS:BindAction("HAX", hax, false, Enum.KeyCode.G)
+	--	CAS:BindAction("HAX", hax, false, Enum.KeyCode.G)
 	--CAS:BindAction("Mirror", hax, false, Enum.KeyCode.E)
 	--CAS:BindAction("Anti Fling HAX", hax, false, Enum.KeyCode.F)
 	--CAS:BindAction("Rainbow Nova", hax, false, Enum.KeyCode.F)
 	--CAS:BindAction("RAINBOW STAR SWORDS", hax, false, Enum.KeyCode.U)
---	CAS:BindAction("Dog Walk", hax, false, Enum.KeyCode.K)
+	--	CAS:BindAction("Dog Walk", hax, false, Enum.KeyCode.K)
 	CAS:BindAction("Zero Gravity", hax, false, Enum.KeyCode.H)
---	CAS:BindAction("Low Gravity2", hax, false, Enum.KeyCode.B)
+	--	CAS:BindAction("Low Gravity2", hax, false, Enum.KeyCode.B)
 	CAS:BindAction("Default Gravity", hax, false, Enum.KeyCode.V)
---	CAS:BindAction("Jupiter Gravity", hax, false, Enum.KeyCode.J) 
+	--	CAS:BindAction("Jupiter Gravity", hax, false, Enum.KeyCode.J) 
 	L = Enum.KeyCode.R if Ruse == true then L = Enum.KeyCode.B end CAS:BindAction("Sit", hax, false, L)
---	CAS:BindAction("PlatformStand", hax, false, Enum.KeyCode.T) 
+	--	CAS:BindAction("PlatformStand", hax, false, Enum.KeyCode.T) 
 	CAS:BindAction("Dance List", hax, false, Enum.KeyCode.Comma)
 	CAS:BindAction("AirBlock", hax, false, Enum.KeyCode.M)
---	CAS:BindAction("A spot", hax, false, Enum.KeyCode.U)
+	--	CAS:BindAction("A spot", hax, false, Enum.KeyCode.U)
 	if disabled.Value == true then actiontext.Text = [[HA-Disabled"
 Press Z to Enable HA-]] else actiontext.Text = [[HA-Enabled"
 Press Z to Disable HA-]] end
-	
-		 
- 
-	
+
+
+
+
 
 	ThisIsServerSided = {"Setup tp"}
 	if _G.ClickTeleport == nil then _G.ClickTeleport = true
@@ -226,68 +225,68 @@ Press Z to Disable HA-]] end
 
 	ThisIs = {"Keybinds 2"}
 	UserInputService.InputBegan:Connect(function(input, gameProcessethend)
-		
+
 		if gameProcessethend then
 			if UserInputService:IsKeyDown(Enum.KeyCode.R) then if Ruse == false then HA = "context action service still broke my target keybind even after roblox disabled it on solar, now we over write the keybind with user input service doesnt "
 					if workspace:FindFirstChildWhichIsA("BrickColorValue") then return end 
 					player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" 
 				end end
-		
+
 			if UserInputService:IsKeyDown(Enum.KeyCode.Q) then 
-					if workspace:FindFirstChildWhichIsA("BrickColorValue") then return end 
-					player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" 
+				if workspace:FindFirstChildWhichIsA("BrickColorValue") then return end 
+				player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" 
 			end 
-			 
+
 		end
-		
+
 		if not gameProcessethend then
-		ThisIsServerSided = {"spin + explode"}
+			ThisIsServerSided = {"spin + explode"}
 			if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.N) then
 					if workspace:FindFirstChild("WeatherMachine") then _G.FLing_Killed()  else _G.are_you_sure1() end end end 
-		if input.UserInputType == Enum.UserInputType.MouseButton2 then if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.nilspin2() end end 
-		if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.nilspin() end 
+			if input.UserInputType == Enum.UserInputType.MouseButton2 then if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.nilspin2() end end 
+			if UserInputService:IsKeyDown(Enum.KeyCode.N) then _G.nilspin() end 
 
-		if disabled.Value == false then
-			ThisIsServerSided = {"flip"}
-			if UserInputService:IsKeyDown(Enum.KeyCode.C) then if char.Humanoid.SeatPart then for _,seat in pairs(char.Humanoid.SeatPart:GetConnectedParts(true)) do if seat.Anchored then print("seat is anchored") return end end end
-				char:PivotTo(char.HumanoidRootPart.CFrame * CFrame.Angles(math.rad(180),0,0))
+			if disabled.Value == false then
+				ThisIsServerSided = {"flip"}
+				if UserInputService:IsKeyDown(Enum.KeyCode.C) then if char.Humanoid.SeatPart then for _,seat in pairs(char.Humanoid.SeatPart:GetConnectedParts(true)) do if seat.Anchored then print("seat is anchored") return end end end
+					char:PivotTo(char.HumanoidRootPart.CFrame * CFrame.Angles(math.rad(180),0,0))
 					--game.StarterGui:SetCore("SendNotification", {Title="flip"; Text= "click + C = rand CFrame" ; Duration=1;}) 
 				end
-			ThisIsServerSided = {"flipRandom"}
-			if input.UserInputType == Enum.UserInputType.MouseButton1 then 
-				if UserInputService:IsKeyDown(Enum.KeyCode.C) then if char.Humanoid.SeatPart then for _,seat in pairs(char.Humanoid.SeatPart:GetConnectedParts(true)) do if seat.Anchored then print("seat is anchored") return end end end
-					char:PivotTo(char.HumanoidRootPart.CFrame * CFrame.Angles(math.rad(math.random( 0,360)),math.rad(math.random( 0,360)),math.rad(math.random( 0,360))))
+				ThisIsServerSided = {"flipRandom"}
+				if input.UserInputType == Enum.UserInputType.MouseButton1 then 
+					if UserInputService:IsKeyDown(Enum.KeyCode.C) then if char.Humanoid.SeatPart then for _,seat in pairs(char.Humanoid.SeatPart:GetConnectedParts(true)) do if seat.Anchored then print("seat is anchored") return end end end
+						char:PivotTo(char.HumanoidRootPart.CFrame * CFrame.Angles(math.rad(math.random( 0,360)),math.rad(math.random( 0,360)),math.rad(math.random( 0,360))))
+					end
 				end
-			end
-			if input.UserInputType == Enum.UserInputType.MouseButton2 then 
-				if UserInputService:IsKeyDown(Enum.KeyCode.C) then if char.Humanoid.SeatPart then for _,seat in pairs(char.Humanoid.SeatPart:GetConnectedParts(true)) do if seat.Anchored then print("seat is anchored") return end end end
-					--char:PivotTo(char.HumanoidRootPart.CFrame * CFrame.Angles(0,0,math.rad(180))) 
-					char:PivotTo(  workspace.CurrentCamera.CFrame ) 
+				if input.UserInputType == Enum.UserInputType.MouseButton2 then 
+					if UserInputService:IsKeyDown(Enum.KeyCode.C) then if char.Humanoid.SeatPart then for _,seat in pairs(char.Humanoid.SeatPart:GetConnectedParts(true)) do if seat.Anchored then print("seat is anchored") return end end end
+						--char:PivotTo(char.HumanoidRootPart.CFrame * CFrame.Angles(0,0,math.rad(180))) 
+						char:PivotTo(  workspace.CurrentCamera.CFrame ) 
+					end
 				end
-			end
 
-			ThisIsServerSided = {"antifling"}
-			if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.F) then AntiFlingPlayable() end end 
-
+				ThisIsServerSided = {"antifling"}
+				if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.F) then AntiFlingPlayable() end end 
 
 
-			ThisIsServerSided = {"Remove Legs to be floaty", } --no take backs
-			--if UserInputService:IsKeyDown(Enum.KeyCode.N) and UserInputService:IsKeyDown(Enum.KeyCode.L) then HIDE_LEGS() end--REMOVE_LEGS() end
-			--if UserInputService:IsKeyDown(Enum.KeyCode.L) and UserInputService:IsKeyDown(Enum.KeyCode.N) then HIDE_LEGS() end--REMOVE_LEGS() end
 
-			local ThisIsServerSided = {"Animation Groups" }
-			if UserInputService:IsKeyDown(Enum.KeyCode.A) and UserInputService:IsKeyDown(Enum.KeyCode.X) then AnimSet() end 
-			if UserInputService:IsKeyDown(Enum.KeyCode.A) and UserInputService:IsKeyDown(Enum.KeyCode.B) then AnimRun() end 
+				ThisIsServerSided = {"Remove Legs to be floaty", } --no take backs
+				--if UserInputService:IsKeyDown(Enum.KeyCode.N) and UserInputService:IsKeyDown(Enum.KeyCode.L) then HIDE_LEGS() end--REMOVE_LEGS() end
+				--if UserInputService:IsKeyDown(Enum.KeyCode.L) and UserInputService:IsKeyDown(Enum.KeyCode.N) then HIDE_LEGS() end--REMOVE_LEGS() end
+
+				local ThisIsServerSided = {"Animation Groups" }
+				if UserInputService:IsKeyDown(Enum.KeyCode.A) and UserInputService:IsKeyDown(Enum.KeyCode.X) then AnimSet() end 
+				if UserInputService:IsKeyDown(Enum.KeyCode.A) and UserInputService:IsKeyDown(Enum.KeyCode.B) then AnimRun() end 
 
 				if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.E) then Mirror() end end 
 				if input.UserInputType == Enum.UserInputType.MouseButton2 then if UserInputService:IsKeyDown(Enum.KeyCode.E) then Mirror2() end end 
 
-			well = " Enum.KeyCode.O  and  Enum.KeyCode.I  breaks the entire fuckin UserInputService"
+				well = " Enum.KeyCode.O  and  Enum.KeyCode.I  breaks the entire fuckin UserInputService"
 			--[[if UserInputService:IsKeyDown(Enum.KeyCode.K) then disabled.Value = not disabled.Value
 				if disabled.Value == true then actiontext.TextColor3 = Color3.fromRGB(255, 0, 0) actiontext.Text = "Keys Disabled, Press Z" else actiontext.TextColor3 = Color3.fromRGB(0, 255, 0) actiontext.Text = "Keys Enabled" end
 			end]]
-			
-			--L = Enum.KeyCode.R if Ruse == true then L = Enum.KeyCode.B end  -- it woesnt work in this order 
+
+				--L = Enum.KeyCode.R if Ruse == true then L = Enum.KeyCode.B end  -- it woesnt work in this order 
 				--[[if UserInputService:IsKeyDown(Enum.KeyCode.R) then if Ruse == false then 
 						if workspace:FindFirstChildWhichIsA("BrickColorValue") then return end 
 						player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" 
@@ -295,22 +294,22 @@ Press Z to Disable HA-]] end
 				if UserInputService:IsKeyDown(Enum.KeyCode.B) then if Ruse == true then 
 						player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" 
 					end end
-			if UserInputService:IsKeyDown(Enum.KeyCode.T) then player.Character.Humanoid.PlatformStand = not player.Character.Humanoid.PlatformStand actiontext.Text = "PlatformStand" end
-			
-			if UserInputService:IsKeyDown(Enum.KeyCode.F) then AntiFling()  end
-			if UserInputService:IsKeyDown(Enum.KeyCode.U) then local success, data = pcall(function()
-					tpval = game.Lighting.save4.Value tpvector() return  end)
-				if data then  warn("Errors:", data) end   end
-			
-			if UserInputService:IsKeyDown(Enum.KeyCode.L) then Swim()  end
-			
-			--if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.V) then char.Humanoid.WalkSpeed = 16 end end 
-			--if input.UserInputType == Enum.UserInputType.MouseButton2 then if UserInputService:IsKeyDown(Enum.KeyCode.V) then char.Humanoid.WalkSpeed = 24 end end 
-			--if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.G) then char.Humanoid.WalkSpeed = 20 end end 
-			--if input.UserInputType == Enum.UserInputType.MouseButton2 then if UserInputService:IsKeyDown(Enum.KeyCode.G) then char.Humanoid.WalkSpeed = 5 end end 
-		end		
-				
-			end
+				if UserInputService:IsKeyDown(Enum.KeyCode.T) then player.Character.Humanoid.PlatformStand = not player.Character.Humanoid.PlatformStand actiontext.Text = "PlatformStand" end
+
+				if UserInputService:IsKeyDown(Enum.KeyCode.F) then AntiFling()  end
+				if UserInputService:IsKeyDown(Enum.KeyCode.U) then local success, data = pcall(function()
+						tpval = game.Lighting.save4.Value tpvector() return  end)
+					if data then  warn("Errors:", data) end   end
+
+				if UserInputService:IsKeyDown(Enum.KeyCode.L) then Swim()  end
+
+				--if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.V) then char.Humanoid.WalkSpeed = 16 end end 
+				--if input.UserInputType == Enum.UserInputType.MouseButton2 then if UserInputService:IsKeyDown(Enum.KeyCode.V) then char.Humanoid.WalkSpeed = 24 end end 
+				--if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.G) then char.Humanoid.WalkSpeed = 20 end end 
+				--if input.UserInputType == Enum.UserInputType.MouseButton2 then if UserInputService:IsKeyDown(Enum.KeyCode.G) then char.Humanoid.WalkSpeed = 5 end end 
+			end		
+
+		end
 	end) 
 end
 
@@ -352,7 +351,7 @@ end
 
 mover = nil bayblade = nil bayblade2 = nil smack = nil rotat = nil wind = nil 
 if not _G.nds then _G.nds = true
-	
+
 	function _G.are_you_sure1() 
 		if player.PlayerGui:FindFirstChild("ded") then player.PlayerGui:FindFirstChild("ded"):Remove() end
 		gui = Instance.new("ScreenGui",player.PlayerGui) gui.Name = "ded"
@@ -364,7 +363,7 @@ if not _G.nds then _G.nds = true
 		eg = Instance.new("TextLabel",frame) eg.Position = UDim2.new(.0,0,-.1,0) eg.Size = UDim2.new(1,0,.5,0) eg.Text = "Are You Sure Died" frame.BackgroundTransparency = .7
 		wait(3) gui:Remove()
 	end
-	
+
 	function _G.FLing_Killed_Far()   char.HumanoidRootPart.Anchored = false --char.UpperTorso.RotVelocity = Vector3.new( math.random(5,10)*100, math.random(5,10)*100, math.random(5,15)*100)
 		mover = Vector3.new( math.random(-100,100)*50, math.random(80,100)*20, math.random(50,100)*200)
 		bayblade = Vector3.new( math.random(5,10)*100, math.random(5,10)*100, math.random(5,15)*100)
@@ -466,14 +465,14 @@ function tpCarAbovePoint() if not char.Humanoid.SeatPart then return end
 end
 
 function Mirror() --if Ruse == false then
-		if workspace.CurrentCamera:FindFirstChild("L") then workspace.CurrentCamera:FindFirstChild("L"):Remove() return end
-		if not workspace.CurrentCamera:FindFirstChild("L") then
-			local l__CurrentCamera__3 = workspace.CurrentCamera;
-			local v12 = Instance.new("Part"); v12.Transparency = 1;  v12.Anchored = true; v12.Shape = Enum.PartType.Ball; v12.CanCollide = false; 
-			v12.Parent = l__CurrentCamera__3; v12.CFrame = l__CurrentCamera__3.CFrame;
-			v12.Position = char.HumanoidRootPart.Position 
-			char:PivotTo(v12.CFrame* CFrame.new(0,0, 0)*CFrame.Angles(0,math.rad(-180),0)) v12:Remove()
-		end --end
+	if workspace.CurrentCamera:FindFirstChild("L") then workspace.CurrentCamera:FindFirstChild("L"):Remove() return end
+	if not workspace.CurrentCamera:FindFirstChild("L") then
+		local l__CurrentCamera__3 = workspace.CurrentCamera;
+		local v12 = Instance.new("Part"); v12.Transparency = 1;  v12.Anchored = true; v12.Shape = Enum.PartType.Ball; v12.CanCollide = false; 
+		v12.Parent = l__CurrentCamera__3; v12.CFrame = l__CurrentCamera__3.CFrame;
+		v12.Position = char.HumanoidRootPart.Position 
+		char:PivotTo(v12.CFrame* CFrame.new(0,0, 0)*CFrame.Angles(0,math.rad(-180),0)) v12:Remove()
+	end --end
 end
 function Mirror2() --if Ruse == false then
 	if workspace.CurrentCamera:FindFirstChild("L") then workspace.CurrentCamera:FindFirstChild("L"):Remove() return end
@@ -625,8 +624,8 @@ function CharSettings() humy = char:WaitForChild("Humanoid") humy.UseJumpPower =
 		an=169402 AnimSet()task.wait(1) an=0 runan=1
 		if not game.Lighting:FindFirstChildWhichIsA("ColorCorrectionEffect") then colcor=Instance.new("ColorCorrectionEffect",game.Lighting) colcor.Name = "morecolor" game.Lighting:FindFirstChildWhichIsA("ColorCorrectionEffect").Saturation = 0.4 end
 	end
-	
-	
+
+
 
 	--if char:FindFirstChild[["Accessory (HappyFace)"]] then char:FindFirstChild[["Accessory (HappyFace)"]]:Remove() end
 	--	if char:FindFirstChild[["Accessory (beast)"]] then  end
@@ -1345,7 +1344,7 @@ function AnimSet()
 
 	if an == 0 or an == "0" then  ThisIs = {"goofy ah"}
 		idle1.Weight.Value = "6"					idle2.Weight.Value = "4"
-	--	idle1.AnimationId = WolfSwimIdle 		idle2.AnimationId = CartoonSwimIdle --astroidle  idle2.AnimationId =  "http://www.roblox.com/asset/?id=891621366"
+		--	idle1.AnimationId = WolfSwimIdle 		idle2.AnimationId = CartoonSwimIdle --astroidle  idle2.AnimationId =  "http://www.roblox.com/asset/?id=891621366"
 		jump.AnimationId = StyleJump 			fall.AnimationId = adiniball1	
 		swim.AnimationId = WolfSwim			 	swimidle.AnimationId = WolfSwimIdle 
 		run.AnimationId = Confident_Walk 		walk.AnimationId = Ninja_walk
@@ -2074,7 +2073,7 @@ function guias()
 						for _,froze in pairs(fpart:GetConnectedParts(false)) do 
 							if not froze.Anchored and not froze:FindFirstChildWhichIsA("Weld") and not froze:FindFirstChildWhichIsA("Snap") and not froze:FindFirstChildWhichIsA("Rotate") and not froze:FindFirstChildWhichIsA("RotateP")  then froze:Remove() end end
 					end end end)
-			
+
 			winds = Button:Clone() winds.Parent = gaminglist winds.Text = "toggle WindShake" wond = true
 			winds.MouseButton1Click:Connect(function()		wond = not wond
 				for _,item in pairs(workspace:GetDescendants()) do 
@@ -2092,23 +2091,23 @@ function guias()
 							if wondh == true then
 								look2 = Instance.new("Highlight",item)  look2.FillColor = Color3.fromRGB(170, 85, 0) look2.FillTransparency = .7 
 								look3 = Instance.new("SelectionBox",item)  look3.LineThickness = .02 look3.Adornee = item
---highlight only rendered 20 parts so selection box will be backup
+								--highlight only rendered 20 parts so selection box will be backup
 							else
 								if item:FindFirstChildWhichIsA("Highlight") then item:FindFirstChildWhichIsA("Highlight"):Remove()  end
 								if item:FindFirstChildWhichIsA("SelectionBox") then item:FindFirstChildWhichIsA("SelectionBox"):Remove()  end
 							end end
 					end end    end)
-			
-			
+
+
 			Glass = Button:Clone() Glass.Parent = gaminglist Glass.Text = "Glass"  glass = true
 			Glass.MouseButton1Click:Connect(function()		glass = not glass
 				for _,item in pairs(workspace:GetDescendants()) do 
 					if item:IsA("BasePart") then
 						if item.Material == Enum.Material.Glass then  item:AddTag("was glass") end
 						if item:HasTag("was glass") then if glass == true then item.Material = Enum.Material.Glass else item.Material = Enum.Material.SmoothPlastic end
-					end end end
+						end end end
 			end)	
-			
+
 			Neon = Button:Clone() Neon.Parent = gaminglist Neon.Text = "Neon"  neonn = true
 			Neon.MouseButton1Click:Connect(function()		neonn = not neonn
 				for _,item in pairs(workspace:GetDescendants()) do 
@@ -2117,7 +2116,7 @@ function guias()
 						if item:HasTag("was glass") then if neonn == true then item.Material = Enum.Material.Neon else item.Material = Enum.Material.SmoothPlastic end
 						end end end
 			end)
-			
+
 			lightss = Button:Clone() lightss.Parent = masslist lightss.Text = "lights" lightss.BackgroundColor3 = Color3.fromRGB(176, 176, 0)
 			lightss.MouseButton1Click:Connect(function() 
 				for _, light in pairs(workspace:GetDescendants()) do 
@@ -2152,10 +2151,10 @@ function guias()
 			shadows.MouseButton2Click:Connect(function()  
 				for _, light in pairs(workspace:GetDescendants()) do  if light:IsA("BasePart")  then  light.CastShadow = not light.CastShadow end  end 
 			end)
-			
-			
-			
-			
+
+
+
+
 			anchorbroken = Button:Clone() anchorbroken.Parent = gaminglist anchorbroken.Text = "anchor broken" 
 			anchorbroken.MouseButton1Click:Connect(function() for _,fpart in pairs(workspace.Structure:GetDescendants()) do if fpart:IsA("BasePart") then --and not fpart:FindFirstChildWhichIsA("Weld") and not fpart:FindFirstChildWhichIsA("Snap") and not fpart:FindFirstChildWhichIsA("Rotate") and not fpart:FindFirstChildWhichIsA("RotateP")  then 
 						for _,froze in pairs(fpart:GetConnectedParts(false)) do 
@@ -2257,7 +2256,7 @@ function guias()
 			ran2.MouseButton2Click:Connect(function() char.Humanoid.WalkSpeed = 250 end)
 			ran2.MouseWheelForward:Connect(function() char.Humanoid.WalkSpeed = 200 end)
 			ran2.MouseWheelBackward:Connect(function() char.Humanoid.WalkSpeed = 50 end)
-			
+
 
 			jum = Button:Clone() jum.Parent = masslist jum.Text = "Jum  7.2, CH, 15, 22" jum.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
 			jum.MouseButton1Click:Connect(function() char.Humanoid.JumpPower = 50 char.Humanoid.JumpHeight = 7.2 end)
@@ -2273,7 +2272,7 @@ function guias()
 			jump2.MouseButton1Click:Connect(function() char.Humanoid.JumpHeight = 20 end)
 			jump2.MouseButton2Click:Connect(function() char.Humanoid.JumpHeight = 25 end)]]
 
-			
+
 			gravs = Button:Clone() gravs.Parent = masslist gravs.Text = "G 11 22 5" 
 			gravs.MouseButton1Click:Connect(function() workspace.Gravity = 11 end)
 			gravs.MouseButton2Click:Connect(function() workspace.Gravity = 22 end)
@@ -2292,15 +2291,15 @@ function guias()
 			gravs5.MouseButton1Click:Connect(function() workspace.Gravity = 111 end)
 			gravs5.MouseButton2Click:Connect(function() workspace.Gravity = 222 end)
 			gravs5.MouseWheelForward:Connect(function() workspace.Gravity = 160 end)
-			
-			
-			
+
+
+
 			times = Button:Clone() times.Parent = masslist times.Text = "time  17.8 , 2 , 13 , 16" times.BackgroundColor3 = Color3.fromRGB(170, 0, 255)
 			times.MouseButton1Click:Connect(function() game.Lighting.ClockTime = 17.8  end)
 			times.MouseButton2Click:Connect(function() game.Lighting.ClockTime = 2 end)
 			times.MouseWheelForward:Connect(function() game.Lighting.ClockTime = 13 end)
 			times.MouseWheelBackward:Connect(function() game.Lighting.ClockTime = 16 end)
-			
+
 			Mass24 = Button:Clone() Mass24.Parent = masslist Mass24.Text = "Glacier ,  Ice Ball" Mass24.BackgroundColor3 = Color3.fromRGB(85, 170, 255)
 			Mass24.MouseButton2Click:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100) end end end)
 			--Mass1 = Button:Clone() Mass1.Parent = masslist Mass1.Text = "Glacier" 
@@ -2309,20 +2308,20 @@ function guias()
 			inviscam = Button:Clone() inviscam.Parent = masslist inviscam.Text = "invisicam" 
 			inviscam.MouseButton1Click:Connect(function() player.DevCameraOcclusionMode = Enum.DevCameraOcclusionMode.Invisicam end)
 			inviscam.MouseButton2Click:Connect(function() player.DevCameraOcclusionMode = Enum.DevCameraOcclusionMode.Zoom  end)
-			
+
 			sito = Button:Clone() sito.Parent = masslist sito.Text = "sit" 
 			sito.MouseButton1Click:Connect(function() char.Humanoid.Sit = not char.Humanoid.Sit  end)
 			sito.MouseButton2Click:Connect(function() char.Humanoid.PlatformStand = not char.Humanoid.PlatformStand  end)
-			
-			
-			
-			
-			
+
+
+
+
+
 
 		end)  
 
-		 
-		
+
+
 		ThisIs = {"Faces"} --no one can see this, it's just mental assurance  
 		--[[faces1 = Button:Clone() faces1.Parent = Spaghetti faces1.Text = "Face" faces1.Position = UDim2.new(0.05,0 , 0,row15) faces1.BackgroundColor3 = Color3.fromRGB(255, 255, 0)   
 		faces1.MouseButton1Click:Connect(function()
@@ -2376,7 +2375,7 @@ function guias()
 		--[[ThisIs = {"invisicam"}	
 		invcam = Button:Clone() invcam.Parent = Spaghetti invcam.Text = "climb" invcam.Position = UDim2.new(0.05,0 , 0,row29)  invcam.BackgroundColor3 = Color3.fromRGB(0, 170, 255)  
 		invcam.MouseButton1Click:Connect(function()   end) ]]
- 
+
 		ThisIs = {"show players v1"}	--6-2
 		esp = Button:Clone() esp.Parent = Spaghetti esp.Text = "esp" esp.Position = UDim2.new(0.05,0 , 0,row10)  esp.BackgroundColor3 = Color3.fromRGB(0, 170, 255)  
 		esp.MouseButton1Click:Connect(function() 
@@ -2384,16 +2383,16 @@ function guias()
 				Instance.new("Model",workspace).Name = "hiden"
 				for _, person in pairs(game.Players:GetChildren()) do
 					iSeeYou = person.Character
-					 	look = Instance.new("Highlight", iSeeYou) look.Name = "iSeeYou" look.FillColor = Color3.fromRGB(0,255,85) look.FillTransparency = .7  
+					look = Instance.new("Highlight", iSeeYou) look.Name = "iSeeYou" look.FillColor = Color3.fromRGB(0,255,85) look.FillTransparency = .7  
 					if look.Parent == char then look.FillTransparency = 1 look.OutlineTransparency = 1 end 
-				--if not iSeeYou:IsDescendantOf(workspace) then 
+					--if not iSeeYou:IsDescendantOf(workspace) then 
 					local invisible_spy = Instance.new("Part",workspace.hiden) invisible_spy.Anchored = true invisible_spy.CanCollide = false --invisible_spy.Transparency=.3
-				invisible_spy.Size = Vector3.new(2,2,2) invisible_spy.Material = Enum.Material.Neon invisible_spy.BrickColor = BrickColor.new("Alder") 
-				--end
-				invisible_spy.CFrame = iSeeYou.HumanoidRootPart.CFrame * CFrame.new(0,3,0)
-				--local look21 = Instance.new("Highlight", invisible_spy) look21.Name = "iSeeYou" look21.FillColor = Color3.fromRGB(0,255,85) look21.FillTransparency = .7  
+					invisible_spy.Size = Vector3.new(2,2,2) invisible_spy.Material = Enum.Material.Neon invisible_spy.BrickColor = BrickColor.new("Alder") 
+					--end
+					invisible_spy.CFrame = iSeeYou.HumanoidRootPart.CFrame * CFrame.new(0,3,0)
+					--local look21 = Instance.new("Highlight", invisible_spy) look21.Name = "iSeeYou" look21.FillColor = Color3.fromRGB(0,255,85) look21.FillTransparency = .7  
 				end
-			 
+
 			elseif char:FindFirstChild("iSeeYou") then 
 				for _, person in pairs(game.Players:GetChildren()) do
 					iSeeYou = person.Character
@@ -2401,7 +2400,7 @@ function guias()
 				end
 				workspace.hiden:Remove()
 			end
-			
+
 			--[[if not char:FindFirstChild("iSeeYou") then 
 				for _, part in pairs(workspace:GetChildren()) do
 					if part:IsA("Model") and part:FindFirstChildWhichIsA("Humanoid") then iSeeYou = part
@@ -2417,8 +2416,8 @@ function guias()
 		end) 
 
 
-		
-		
+
+
 		if Ruse == false then
 			ThisIs = {"Sliding guis - Gravity, JumpHeight, WalkSpeed"}  --the old version
 			SliderG = Instance.new("Frame",Spaghetti) SliderG.Name = "Gravity" SliderG.Position = UDim2.new(0.05, 0 , 0, row7) SliderG.Size = UDim2.new(0.95,0 , 0,15) SliderG.BackgroundColor3 = Color3.fromRGB(0, 0, 0) SliderG.BackgroundTransparency = .85   SliderG.ZIndex=2 
@@ -2725,7 +2724,7 @@ function guias()
 							ba.Text = game:GetService("MarketplaceService"):GetProductInfo(tonumber(str)).Name .. "	"  ..str--track.Animation.AnimationId:gsub('[^%d.]', '')  -- track.Animation.AnimationId
 							ba.MouseButton1Down:Connect(function()
 								if sethiddenproperty then
-								--setclipboard("https://assetdelivery.roblox.com/v1/asset/?id="..str .."  ".. ba.Text  ) --pre ugc patch
+									--setclipboard("https://assetdelivery.roblox.com/v1/asset/?id="..str .."  ".. ba.Text  ) --pre ugc patch
 									setclipboard( ba.Text )
 								end
 								if not workspace:FindFirstChild("Erm Actually") then Instance.new("Folder",workspace).Name = "Erm Actually" end
@@ -2739,8 +2738,8 @@ function guias()
 				end
 
 			end)
-			
-			
+
+
 			insertgui = Instance.new("ScreenGui",copycharanim)
 			--insertframe = Instance.new("Frame",insertgui)
 			InsertAnim = Instance.new("TextBox",insertgui) InsertAnim.Size = UDim2.new(0,250,0,58) InsertAnim.Position = UDim2.new(0.01,0,0.1,0) InsertAnim.BackgroundTransparency = .5 InsertAnim.BackgroundColor3 = Color3.new(0,0,0)
@@ -2755,7 +2754,7 @@ function guias()
 				--game.ReplicatedStorage.AccessId:FireServer(pasta1) 
 
 			end)
-			
+
 
 		end)
 		if not _G.animtable then _G.animtable = {} end
@@ -2864,12 +2863,12 @@ function guias()
 				end  
 			end 
 		end)
-		
+
 
 		This = "ttd3"
 		ttd = Button:Clone() ttd.Parent = Spaghetti ttd.Text = "TTD 3" ttd.Position = UDim2.new(0.55,0 , 0,row19) ttd.BackgroundColor3 = Color3.fromRGB(255, 255, 0)   
 		ttd.MouseButton1Click:Connect(function() 
-			 
+
 
 
 			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
@@ -3231,7 +3230,7 @@ function guias()
 		ThisIs = {"i like these"} 
 		local Emote_info = {
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
-			
+
 			{ Id = "94075411097215", Name = "Star",  Color = Color3.fromRGB(0, 0, 255)  },
 			{ Id = "80126109220878", Name = "Boogie",  Color = Color3.fromRGB(170, 0, 0)  },
 			{ Id = "94825102596214", Name = "frolic",  Color = Color3.fromRGB(255, 255, 0)  },
@@ -3239,61 +3238,63 @@ function guias()
 			{ Id = "139109930448132", Name = "smuwug1",  Color = Color3.fromRGB(0, 255, 0)  },
 			--{ Id = "78773506370628", Name = "smuwug2",  Color = Color3.fromRGB(85, 255, 0)  },
 			{ Id = "108466807801186", Name = "springy",  Color = Color3.fromRGB(85, 255, 0)  }, 
-			
+
 			{ Id = "75625820126017", Name = "Louisiana-Jigg",  Color = Color3.fromRGB(0, 85, 127)  }, 
-			
+
 			{ Id = "80025911045333", Name = "lovesick",  Color = Color3.fromRGB(170, 85, 255)  },
-			
+
 			{ Id = "125968836170127", Name = "The quick",  Color = Color3.fromRGB(170, 85, 0)  },
 			{ Id = "117376334986179", Name = "breakdown",  Color = Color3.fromRGB(170, 0, 0)  },
 			{ Id = "121577088569956", Name = "Get Sturdy",  Color = Color3.fromRGB(255, 170, 0)  },   
 			{ Id = "111374273230179", Name = "Ramb",  Color = Color3.fromRGB(255, 255, 0)  },
 			{ Id = "116040353115576", Name = "Spob",  Color = Color3.fromRGB(255, 255, 0)  },
-			
-			
+
+
 			{ Id = "81442470330880", Name = "Shuffle S",  Color = Color3.fromRGB(170, 0, 0)  },
 			{ Id = "101020675113442", Name = "Sm Moves",  Color = Color3.fromRGB(0, 0, 255)  },
 			{ Id = "136110760748930", Name = "wiggle",  Color = Color3.fromRGB(170, 170, 127)  },
 			{ Id = "107878126791437", Name = "mufasa",  Color = Color3.fromRGB(86, 86, 0)  },
 			{ Id = "110703158553077", Name = "its true",  Color = Color3.fromRGB(170, 170, 127)  },
 			{ Id = "109608096496039", Name = "true heart",  Color = Color3.fromRGB(255, 170, 255)  },
-			
-			
-			
-			{ Id = "75633008404400", Name = "criss cross",  Color = Color3.fromRGB(144, 0, 170)  },--no this is not potato { Id = "94705135359914", Name = "potato",  Color = Color3.fromRGB(144, 0, 170)  },
+
+{ Id = "118926174910350", Name = "fright f",  Color = Color3.fromRGB(255, 170, 255)  },
+
 			
 			{ Id = "123881853795949", Name = "Chicken Wing",  Color = Color3.fromRGB(85, 255, 0)  },
 			--{ Id = "82438623948539", Name = "Shuffle E",  Color = Color3.fromRGB(0, 0, 255)  },
-			
+
 			--{ Id = "111545999639330", Name = "Shuffle L",  Color = Color3.fromRGB(255, 255, 0)  },
 			{ Id = "128314698188053", Name = "float1",  Color = Color3.fromRGB(0, 85, 127)  },
-			
+
 			{ Id = "83702306317443", Name = "Mannrobics",  Color = Color3.fromRGB(170, 170, 127)  },
-			{ Id = "122588181027551", Name = "Engineer",  Color = Color3.fromRGB(255, 170, 255)  },
 			
+			{ Id = "75633008404400", Name = "criss cross",  Color = Color3.fromRGB(144, 0, 170)  },--no this is not potato { Id = "94705135359914", Name = "potato",  Color = Color3.fromRGB(144, 0, 170)  },
+
+			--{ Id = "122588181027551", Name = "Engineer",  Color = Color3.fromRGB(255, 170, 255)  },
+
 			--{ Id = "73087588794289", Name = "cat loving",  Color = Color3.fromRGB(0, 255, 0)  },
 			--{ Id = "101417838306172", Name = "banana",  Color = Color3.fromRGB(170, 0, 0)  },
 			--{ Id = "86313503682157", Name = "banana no",  Color = Color3.fromRGB(255, 255, 0)  },
-			
-			
-			
-			
+
+
+
+
 			--94269443119985  120970343961976 electro
-		 
+
 			--x 83802950612366  x dupe 135915367893892
-			
-			
-			
-			
-			 
-			
+
+
+
+
+
+
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
-			
+
 			{ Id = "15689314578", Name = "Dragons",  Color = Color3.fromRGB(170, 85, 127)  },
 			{ Id = "15439457146", Name = "BP.Jennie",  Color = Color3.fromRGB(255, 0, 255)  },
 			{ Id = "3696757129", Name = "Hype",  Color = Color3.fromRGB(255, 255, 0)  },
-			
+
 			{ Id = "13520623514", Name = "Fancy" ,  Color = Color3.fromRGB(255, 127, 255)  },
 			{ Id = "16874600526", Name = "BP.Lovesick",  Color = Color3.fromRGB(211, 255, 255)  },
 			{ Id = "14901371589", Name = "ShutDown2",  Color = Color3.fromRGB(0, 170, 0)  },
@@ -3302,16 +3303,16 @@ function guias()
 			{ Id = "14900151704", Name = "LIKEY",  Color = Color3.fromRGB(255, 0, 255)  },
 			{ Id = "15123050663", Name = "bone",  Color = Color3.fromRGB(0, 0, 255)  },
 			{ Id = "4646302011", Name = "Air" ,  Color = Color3.fromRGB(206, 0, 255)  },
-			
+
 			{ Id = "4272484885", Name = "Baby",  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = "15698510244", Name = "Ericdoa",  Color = Color3.fromRGB(255, 85, 0)  },
 			{ Id = "15679957363", Name = "BP.Lisa Money",  Color = Color3.fromRGB(0, 170, 127)  },
-			
+
 			{ Id = "3570535774", Name = "TopRock" ,  Color = Color3.fromRGB(170, 255, 0)  },
 			{ Id = "14901369589", Name = "ShutDown",  Color = Color3.fromRGB(170, 85, 255)  },
 			--{ Id = "18933761755", Name = "ABCD",  Color = Color3.fromRGB(0, 0, 255)  },
 			--{ Id = "18855609889", Name = "BP what?" ,  Color = Color3.fromRGB(206, 0, 255)  },
-				
+
 			{ Id = "6797938823", Name = "Under" ,  Color = Color3.fromRGB(0, 255, 255)  },
 
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
@@ -3319,36 +3320,36 @@ function guias()
 
 			{ Id = "7942964447", Name = "Cobra",  Color = Color3.fromRGB(170, 0, 255)  },
 			{ Id = "15698511500", Name = "Cuco-Levitate",  Color = Color3.fromRGB(0, 31, 170)  },
-			
+
 			{ Id = "4049646104", Name = "line" ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = "13344121112", Name = "What is love",  Color = Color3.fromRGB(0, 255, 81)  },
-			
+
 			{ Id = "11753545334", Name = "Out",  Color = Color3.fromRGB(217, 0, 255)  },
 			{ Id = "11309263077", Name = "Heart",  Color = Color3.fromRGB(255, 85, 255)  },
-			
+
 			{ Id = "14353421343", Name = "QueenFace" ,  Color = Color3.fromRGB(255, 127, 255)  },
-			
+
 			{ Id = "3576747102", Name = "AroundT",  Color = Color3.fromRGB(93, 0, 255)  },
 			{ Id = "5915776835", Name = "Highwave",  Color = Color3.fromRGB(170, 85, 127)  },
 			{ Id = "18855603653", Name = "your last"  ,  Color = Color3.fromRGB(0, 255, 255)  },
-		
-			
-			
-		--	{ Id = "139750331539521", Name = "wu no",  Color = Color3.fromRGB(170, 170, 0)  },
-			
-			
-			
+
+
+
+			--	{ Id = "139750331539521", Name = "wu no",  Color = Color3.fromRGB(170, 170, 0)  },
+
+
+
 			--{ Id = "77444612920420", Name = "wu3",  Color = Color3.fromRGB(170, 170, 0)  },
 			--{ Id = "74278105103260", Name = "wu aura",  Color = Color3.fromRGB(170, 170, 0)  },
 			--{ Id = "78514839375893", Name = "wu5",  Color = Color3.fromRGB(170, 170, 0)  },
-			
+
 			--{ Id = "82986076817477", Name = "wu7",  Color = Color3.fromRGB(170, 170, 0)  }, 
 			--{ Id = "139750331539521", Name = "wu9",  Color = Color3.fromRGB(170, 170, 0)  },
 			--{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
 			--{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
 			--{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
-			
-			
+
+
 			--{ Id = "12715393154", Name = "Moonlight" ,  Color = Color3.fromRGB(0, 211, 255)  },
 			--{ Id = "16276501655", Name = "Daves Spin"  ,  Color = Color3.fromRGB(0, 127, 255)  },  
 
@@ -3433,13 +3434,13 @@ function guias()
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Yungblud" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan		PlaceHolder.BackgroundColor3 = Color3.fromRGB(85, 255, 255)
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Selfie" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus) 				PlaceHolder.BackgroundColor3 = Color3.fromRGB(255, 85, 127)
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Monkey" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan		PlaceHolder.BackgroundColor3 = Color3.fromRGB(255, 85, 255)
-	--	PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "hype" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus) 				PlaceHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 0)	
+		--	PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "hype" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus) 				PlaceHolder.BackgroundColor3 = Color3.fromRGB(255, 255, 0)	
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Got Me" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan	PlaceHolder.BackgroundColor3 = Color3.fromRGB(255, 170, 255)
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Happy" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus) 				PlaceHolder.BackgroundColor3 = Color3.fromRGB(0, 255, 127)
 
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Olympic" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan	
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Bebe Rexha" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus)				
-	--	PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Highwave" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan	
+		--	PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Highwave" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan	
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Flex-Walk" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus)				
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "fly" PlaceHolder.Position = UDim2.new(0.5,0 , 0,plus) plus+=nan	PlaceHolder.BackgroundColor3 = Color3.fromRGB(0, 170, 170)
 		PlaceHolder = Button:Clone() PlaceHolder.Parent = Guidances PlaceHolder.Text = "Piano Hands" PlaceHolder.Position = UDim2.new(0.05,0 , 0,plus) 	
@@ -3656,63 +3657,63 @@ end)
 
 this = "TTD map settings"
 function TTD() 
-if workspace:FindFirstChild("NPC") then 
-	workspace:FindFirstChild("NPC"):Remove()
-end
-if workspace:FindFirstChild("Map") then 
-	if workspace.Map:FindFirstChild("Leaderboards") then workspace.Map:FindFirstChild("Leaderboards"):Remove() end
-	if workspace.Map:FindFirstChild("Other") then workspace.Map:FindFirstChild("Other"):Remove() end
-	if workspace.Map:FindFirstChild("Teleporters") then workspace.Map:FindFirstChild("Teleporters"):Remove() end
-	--if workspace.Map:FindFirstChild("MainIsland") then workspace.Map:FindFirstChild("MainIsland").Name = "Island" end
-	--if workspace.Map:FindFirstChild("MainIsland") then workspace.Map:FindFirstChild("MainIsland"):Remove() end -- They accidentally duplicated the map in this version of TTD3
-	if workspace.Map:FindFirstChild("MainIsland") then 
-		for _,L in pairs( workspace.Map:FindFirstChild("MainIsland"):GetDescendants()) do 
-			if L.Name == "SoccerField" then L:Remove() end
-			if L.Name == "Meshes/Palm Trees V2_Plane.001" or L.Name == "Meshes/Palm Trees V2_Plane.003" or L.Name == "Meshes/ad_Cylinder" or L.Name == "Meshes/ewe_Cylinder.006" or L.Name == "Meshes/ad_Icosphere.006" or L.Name == "Meshes/e_Plane.001 (1)" or L.Name == "Meshes/e_Icosphere.011"  
-				or L.Name == "FireVFX" or L.Name == "Meshes/DA_Cylinder.015" or L.Name == "Meshes/DA_Cylinder.017"  or L.Name == "Meshes/DA_Plane"  or L.Name == "Cylinder.003" or L.Name =="Meshes/stone head" or L.Name == "Meshes/sdasa_Plane.001"
-				or L.Name == "Meshes/tokyo bench_Cube.064" or L.Name == "Meshes/tokyo bench_Cube.063" or L.Name == "Meshes/tokyo_Cube.207" or L.Name == "Rocks" or L.Name == "Rock" or L.Name == "rock"
-				or L.Name == "Meshes/Bush_Cylinder.001" or L.Name == "Meshes/Bush_Sphere.003"  or L.Name == "Rock.002"  or L.Name == "tikitorch" or L.Name == "Tiki Hut_Seats" 
-				or L.Name == "Shrine_01" or L.Name == "Shrine_02"  or L.Name == "Shrine_03"  or L.Name == "Cooler" or L.Name == "Tiki Hut_Seats" 
-			then if L:IsA("BasePart") then L.CanCollide = false end
-			end
-			if L.Name == "Meshes/tokyo_Cube.248" or L.Name == "Meshes/tokyo_Cube.207" then
-				L.CastShadow = false 
-			end
-			if L:IsA("BasePart") then if L.Color == Color3.fromRGB(99, 79, 63) then 
-				L.CanCollide = false end
-			end
-			if L:IsA("MeshPart") then 
-				if L.MeshId == "rbxassetid://17814036182" or L.MeshId == "rbxassetid://17814036882" or L.MeshId == "rbxassetid://17814036743"  then 
-					L.CanCollide = false end
-			end
-			if L.Name == "Lamp post" or L.Name == "Tiki"  or L.Name == "Beach_chair"  or L.Name == "BeachStore"  or L.Name == "border" or L.Name == "Fence" or L.Name == "Crate" or L.Name == "Cart" or L.Name == "Box" or L.Name == "Barrel" or L.Name == "Pine Tree" or L.Name == "Lantern" or L.Name == "bench"then
-				for _,p in pairs( L:GetDescendants()) do 
-					if p:IsA("BasePart") then  
-						p.CanCollide = false end
-
+	if workspace:FindFirstChild("NPC") then 
+		workspace:FindFirstChild("NPC"):Remove()
+	end
+	if workspace:FindFirstChild("Map") then 
+		if workspace.Map:FindFirstChild("Leaderboards") then workspace.Map:FindFirstChild("Leaderboards"):Remove() end
+		if workspace.Map:FindFirstChild("Other") then workspace.Map:FindFirstChild("Other"):Remove() end
+		if workspace.Map:FindFirstChild("Teleporters") then workspace.Map:FindFirstChild("Teleporters"):Remove() end
+		--if workspace.Map:FindFirstChild("MainIsland") then workspace.Map:FindFirstChild("MainIsland").Name = "Island" end
+		--if workspace.Map:FindFirstChild("MainIsland") then workspace.Map:FindFirstChild("MainIsland"):Remove() end -- They accidentally duplicated the map in this version of TTD3
+		if workspace.Map:FindFirstChild("MainIsland") then 
+			for _,L in pairs( workspace.Map:FindFirstChild("MainIsland"):GetDescendants()) do 
+				if L.Name == "SoccerField" then L:Remove() end
+				if L.Name == "Meshes/Palm Trees V2_Plane.001" or L.Name == "Meshes/Palm Trees V2_Plane.003" or L.Name == "Meshes/ad_Cylinder" or L.Name == "Meshes/ewe_Cylinder.006" or L.Name == "Meshes/ad_Icosphere.006" or L.Name == "Meshes/e_Plane.001 (1)" or L.Name == "Meshes/e_Icosphere.011"  
+					or L.Name == "FireVFX" or L.Name == "Meshes/DA_Cylinder.015" or L.Name == "Meshes/DA_Cylinder.017"  or L.Name == "Meshes/DA_Plane"  or L.Name == "Cylinder.003" or L.Name =="Meshes/stone head" or L.Name == "Meshes/sdasa_Plane.001"
+					or L.Name == "Meshes/tokyo bench_Cube.064" or L.Name == "Meshes/tokyo bench_Cube.063" or L.Name == "Meshes/tokyo_Cube.207" or L.Name == "Rocks" or L.Name == "Rock" or L.Name == "rock"
+					or L.Name == "Meshes/Bush_Cylinder.001" or L.Name == "Meshes/Bush_Sphere.003"  or L.Name == "Rock.002"  or L.Name == "tikitorch" or L.Name == "Tiki Hut_Seats" 
+					or L.Name == "Shrine_01" or L.Name == "Shrine_02"  or L.Name == "Shrine_03"  or L.Name == "Cooler" or L.Name == "Tiki Hut_Seats" 
+				then if L:IsA("BasePart") then L.CanCollide = false end
 				end
-			end
-			if L.Name == "gate" then 
-				for _,p in pairs( L.Parent:GetDescendants()) do 
-					if p:IsA("BasePart") then  
-						p.CanCollide = false end
-
+				if L.Name == "Meshes/tokyo_Cube.248" or L.Name == "Meshes/tokyo_Cube.207" then
+					L.CastShadow = false 
 				end
-			end
-			if L.Name == "Volcano" then 
-				for _,p in pairs( L:GetChildren()) do 
-					if p.Name == "ground tower" or p.Name == "ground small1" or p.Name == "ground" or p.Name == "ground small2" or p.Name == "main tower"  
-						or p.Name == "Secondary Towers"  or p.Name == "Lava particles" or p.Name == "Part" or p.Name == "Shop" or p.Name == "bridge" or p.Name == "Dead Tree" or p.Name == "Meshes/volcanofixx333222_lava.004" then
-						p:Remove()
+				if L:IsA("BasePart") then if L.Color == Color3.fromRGB(99, 79, 63) then 
+						L.CanCollide = false end
+				end
+				if L:IsA("MeshPart") then 
+					if L.MeshId == "rbxassetid://17814036182" or L.MeshId == "rbxassetid://17814036882" or L.MeshId == "rbxassetid://17814036743"  then 
+						L.CanCollide = false end
+				end
+				if L.Name == "Lamp post" or L.Name == "Tiki"  or L.Name == "Beach_chair"  or L.Name == "BeachStore"  or L.Name == "border" or L.Name == "Fence" or L.Name == "Crate" or L.Name == "Cart" or L.Name == "Box" or L.Name == "Barrel" or L.Name == "Pine Tree" or L.Name == "Lantern" or L.Name == "bench"then
+					for _,p in pairs( L:GetDescendants()) do 
+						if p:IsA("BasePart") then  
+							p.CanCollide = false end
+
 					end
-
 				end
-			end
+				if L.Name == "gate" then 
+					for _,p in pairs( L.Parent:GetDescendants()) do 
+						if p:IsA("BasePart") then  
+							p.CanCollide = false end
+
+					end
+				end
+				if L.Name == "Volcano" then 
+					for _,p in pairs( L:GetChildren()) do 
+						if p.Name == "ground tower" or p.Name == "ground small1" or p.Name == "ground" or p.Name == "ground small2" or p.Name == "main tower"  
+							or p.Name == "Secondary Towers"  or p.Name == "Lava particles" or p.Name == "Part" or p.Name == "Shop" or p.Name == "bridge" or p.Name == "Dead Tree" or p.Name == "Meshes/volcanofixx333222_lava.004" then
+							p:Remove()
+						end
+
+					end
+				end
 		--[[	if L.Name == "ground tower" or L.Name == "main tower"  or L.Name == "secondary towers"  or L.Name == "Lava particles" or L.Name == "Part" or L.Name == "Shop" then
 				if L.Parent.Name == "Volcano" then L:Remove() end
 			end]]
-			
-		end
+
+			end
 		--[[}} pie = workspace.Map.Island.NewWorld.MainIsland.Map.Volcano
 		if pie ~= nil then
 			for _,L in pairs( workspace.Map.Island.NewWorld.MainIsland.Map.Volcano:GetDescendants()) do 
@@ -3721,20 +3722,20 @@ if workspace:FindFirstChild("Map") then
 			end
 			
 		end]]
-	
-		
-	end  
-	if workspace.Map:FindFirstChild("Zones") then 
-		local mouse = player:GetMouse()
-		mouse.TargetFilter = workspace.Map:FindFirstChild("Zones")
+
+
+		end  
+		if workspace.Map:FindFirstChild("Zones") then 
+			local mouse = player:GetMouse()
+			mouse.TargetFilter = workspace.Map:FindFirstChild("Zones")
 		--[[for _,L in pairs( workspace.Map:FindFirstChild("Zones"):GetChildren()) do 
 			if L:IsA("BasePart") then  
 				--L.CanQuery = false 
 			end--
 			
 		end]]
-	end
-	
+		end
+
 	end
 end
 
@@ -3749,7 +3750,7 @@ function NDS()
 	if player.PlayerScripts:FindFirstChild("UnderwaterVisionLocalScript") then 
 		player.PlayerScripts.UnderwaterVisionLocalScript.Enabled = false
 		--wait(5)
-	--	player.PlayerScripts.UnderwaterVisionLocalScript.WaterAtmosphere.Haze = 0
+		--	player.PlayerScripts.UnderwaterVisionLocalScript.WaterAtmosphere.Haze = 0
 		--player.PlayerScripts.UnderwaterVisionLocalScript.WaterAtmosphere.Density = 0
 		--game.Lighting.WaterAtmosphere.Haze = 0
 		--game.Lighting.WaterAtmosphere.Density = 0
