@@ -1770,7 +1770,7 @@ function guias()
 		Button.BackgroundColor3 = Color3.fromRGB(255, 85, 0) for _,tpa in pairs(tp_prison) do button2(tpa) end plus+=5 
 		Button.BackgroundColor3 = Color3.fromRGB(255, 255, 0) for _,tpa in pairs(tp_safe) do button2(tpa) end plus+=5 
 		Button.BackgroundColor3 = Color3.fromRGB(255, 0, 0) for _,tpa in pairs(tp_gas) do button2(tpa) end plus+=5 
-		Button.BackgroundColor3 = Color3.fromRGB(255, 255, 255) for _,tpa in pairs(tp_mansion) do button2(tpa) end plus+=5 
+		Button.BackgroundColor3 = Color3.fromRGB(179, 179, 179) for _,tpa in pairs(tp_mansion) do button2(tpa) end plus+=5 
 		Button.BackgroundColor3 = Color3.fromRGB(170, 85, 255) for _,tpa in pairs(tp_school) do button2(tpa) end plus+=5
 
 		Button.BackgroundColor3 = Color3.fromRGB(85, 170, 255) for _,tpa in pairs(tp_factory) do button2(tpa) end plus+=5
@@ -1795,7 +1795,7 @@ function guias()
 				if Buttons.Text == "back"					 then tpval = Vector3.new(115, 24, 0)		game.lighting.save4.Value = tpval end	--Vector3.new(134, 24, 4)
 				if Buttons.Text == "side2"					 then tpval = Vector3.new(53, 23.5, -116) 	game.lighting.save4.Value = tpval end	--Vector3.new(54, 24, -125) 
 				if Buttons.Text == "ocean"					 then tpval = Vector3.new(177,1,-500) 		game.lighting.save4.Value = tpval end	--Vector3.new(12,1,327)
-				if Buttons.Text == "-100,000"				 then tpval = Vector3.new(-100,-40000,-100) 		game.lighting.save4.Value = tpval end
+				if Buttons.Text == "-100,000"				 then tpval = Vector3.new(155,-40000,-470) 		game.lighting.save4.Value = tpval end
 				if Buttons.Text == "back ghost"				 then tpval = Vector3.new(112.5,35.5,13)		game.lighting.save4.Value = tpval end	--Vector3.new(134, 24, 4)
 				if Buttons.Text == "side2 ghost"			 then tpval = Vector3.new(21.5, 35.5, -113) 	game.lighting.save4.Value = tpval end	--Vector3.new(54, 24, -125) 
 
@@ -3257,7 +3257,7 @@ function guias()
 			{ Id = "110703158553077", Name = "its true",  Color = Color3.fromRGB(170, 170, 127)  },
 			{ Id = "109608096496039", Name = "true heart",  Color = Color3.fromRGB(255, 170, 255)  },
 
-{ Id = "118926174910350", Name = "fright f",  Color = Color3.fromRGB(255, 170, 255)  },
+{ Id = "118926174910350", Name = "fright f",  Color = Color3.fromRGB(255, 0, 4)  },
 
 			
 			{ Id = "123881853795949", Name = "Chicken Wing",  Color = Color3.fromRGB(85, 255, 0)  },
