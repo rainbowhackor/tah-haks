@@ -189,7 +189,7 @@ if not game.Lighting:FindFirstChild("binds") then Instance.new("BoolValue",game.
 	CAS:BindAction("Zero Gravity", hax, false, Enum.KeyCode.H)
 	--	CAS:BindAction("Low Gravity2", hax, false, Enum.KeyCode.B)
 	CAS:BindAction("Default Gravity", hax, false, Enum.KeyCode.V)
-	--	CAS:BindAction("Jupiter Gravity", hax, false, Enum.KeyCode.J) 
+		CAS:BindAction("Jupiter Gravity", hax, false, Enum.KeyCode.J) 
 	L = Enum.KeyCode.R if Ruse == true then L = Enum.KeyCode.B end CAS:BindAction("Sit", hax, false, L)
 	--	CAS:BindAction("PlatformStand", hax, false, Enum.KeyCode.T) 
 	CAS:BindAction("Dance List", hax, false, Enum.KeyCode.Comma)
@@ -301,7 +301,7 @@ Press Z to Disable HA-]] end
 						tpval = game.Lighting.save4.Value tpvector() return  end)
 					if data then  warn("Errors:", data) end   end
 
-				if UserInputService:IsKeyDown(Enum.KeyCode.L) then Swim()  end
+				if UserInputService:IsKeyDown(Enum.KeyCode.G) then Swim()  end
 
 				--if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.V) then char.Humanoid.WalkSpeed = 16 end end 
 				--if input.UserInputType == Enum.UserInputType.MouseButton2 then if UserInputService:IsKeyDown(Enum.KeyCode.V) then char.Humanoid.WalkSpeed = 24 end end 
@@ -1744,6 +1744,7 @@ function guias()
 		--tp_dirt = { dirt_side_in = Vector3.new(45, 24, 108) ,dirt_back = Vector3.new(134, 24, 4) ,"dirt side2" = Vector3.new(54, 24, -125),}
 		tp_grass = {  "grass front","grass back","ocean",}
 		tp_factory = {  "fact in","fact dozer",}
+		tp_train = {  "train flood",}
 		tp_factory2 = {  "rakish in","fact tree","fact box","fact doc","fact top",}
 		tp_HQ = { "HQ middle","HQ top",}
 		tp_mansion = { "Back","trailer2",}
@@ -1766,19 +1767,25 @@ function guias()
 		end
 
 		Button.BackgroundColor3 = Color3.fromRGB(81, 55, 25) for _,tpa in pairs(tp_dirt) do button2(tpa) end plus+=5  
-		Button.BackgroundColor3 = Color3.fromRGB(0, 0, 255) for _,tpa in pairs(tp_spawn) do button2(tpa) end plus+=5 
+		
 		Button.BackgroundColor3 = Color3.fromRGB(255, 85, 0) for _,tpa in pairs(tp_prison) do button2(tpa) end plus+=5 
 		Button.BackgroundColor3 = Color3.fromRGB(255, 255, 0) for _,tpa in pairs(tp_safe) do button2(tpa) end plus+=5 
-		Button.BackgroundColor3 = Color3.fromRGB(255, 0, 0) for _,tpa in pairs(tp_gas) do button2(tpa) end plus+=5 
+		
+		Button.BackgroundColor3 = Color3.fromRGB(255, 0, 0) for _,tpa in pairs(tp_HQ) do button2(tpa) end  plus+=5  		
 		Button.BackgroundColor3 = Color3.fromRGB(179, 179, 179) for _,tpa in pairs(tp_mansion) do button2(tpa) end plus+=5 
 		Button.BackgroundColor3 = Color3.fromRGB(170, 85, 255) for _,tpa in pairs(tp_school) do button2(tpa) end plus+=5
-
+		
+Button.BackgroundColor3 = Color3.fromRGB(0, 0, 255) for _,tpa in pairs(tp_spawn) do button2(tpa) end plus+=5 
+		Button.BackgroundColor3 = Color3.fromRGB(255, 0, 0) for _,tpa in pairs(tp_gas) do button2(tpa) end plus+=5 
 		Button.BackgroundColor3 = Color3.fromRGB(85, 170, 255) for _,tpa in pairs(tp_factory) do button2(tpa) end plus+=5
-		Button.BackgroundColor3 = Color3.fromRGB(255, 0, 0) for _,tpa in pairs(tp_HQ) do button2(tpa) end  plus+=5  
+		
+		Button.BackgroundColor3 = Color3.fromRGB(168, 114, 52) for _,tpa in pairs(tp_train) do button2(tpa) end plus+=5  
 		Button.BackgroundColor3 = Color3.fromRGB(0, 170, 127) for _,tpa in pairs(tp_coast) do button2(tpa) end plus+=5 
+		
+		
+Button.BackgroundColor3 = Color3.fromRGB(85, 170, 255) for _,tpa in pairs(tp_factory2) do button2(tpa) end plus+=5
 		Button.BackgroundColor3 = Color3.fromRGB(0, 255, 0) for _,tpa in pairs(tp_farris) do button2(tpa) end plus+=5
-
-		Button.BackgroundColor3 = Color3.fromRGB(85, 170, 255) for _,tpa in pairs(tp_factory2) do button2(tpa) end plus+=5
+		
 		Button.BackgroundColor3 = Color3.fromRGB(170, 85, 255) for _,tpa in pairs(tp_school2) do button2(tpa) end plus+=5
 		Button.BackgroundColor3 = Color3.fromRGB(255, 0, 127) for _,tpa in pairs(tp_park) do button2(tpa) end plus+=5  
 		Button.BackgroundColor3 = Color3.fromRGB(255, 127, 0) for _,tpa in pairs(tp_rocket) do button2(tpa) end plus+=5 
@@ -1801,7 +1808,9 @@ function guias()
 
 				if Buttons.Text == "grass front"		 	 then tpval = Vector3.new(-123,47,3) end
 				if Buttons.Text == "grass back"				 then tpval = Vector3.new(112, 46, 10) end
-
+				
+				if Buttons.Text == "train flood"				 then tpval = Vector3.new(15, 72.5, 23.5) end 
+				
 				if Buttons.Text == "fact tree"				 then tpval = Vector3.new(69, 47, 40) end 
 				if Buttons.Text == "fact in"				 then tpval = Vector3.new(-17, 65, 29) end
 				if Buttons.Text == "fact dozer"				 then tpval = Vector3.new(18, 50, -58) end
@@ -1830,7 +1839,8 @@ function guias()
 				if Buttons.Text == "sign"					 then tpval = Vector3.new(-278, 193, 395) end
 
 				if Buttons.Text == "prison seat"			 then tpval = Vector3.new(32.4, 48.3, -8.4) end	
-				if Buttons.Text == "prison food"			 then tpval = Vector3.new(32, 63, -3.5) end
+				if Buttons.Text == "prison food"			 then tpval = Vector3.new(49.2, 63, -13.9) end
+			--	if Buttons.Text == "prison food"			 then tpval = Vector3.new(32, 63, -3.5) end
 				if Buttons.Text == "prison light"			 then tpval = Vector3.new(10, 138, 57) end  
 
 				if Buttons.Text == "school window"			 then tpval = Vector3.new(70, 70, 40) end 
@@ -2673,7 +2683,7 @@ function guias()
 		end)
 
 		This = "Force Reset button"
-		oof = Button:Clone() oof.Parent = Spaghetti oof.Text = "💥oof💥" oof.Position = UDim2.new(0.55,0 , 0,row18)  oof.BackgroundColor3 = Color3.fromRGB(175, 55, 0)   
+		oof = Button:Clone() oof.Parent = Spaghetti oof.Text = "💥oof💥" oof.Position = UDim2.new(0.55,0 , 0,row10)  oof.BackgroundColor3 = Color3.fromRGB(175, 55, 0)   
 		oof.MouseButton1Click:Connect(function() _G.FLing_Killed_Far() end)
 		oof.MouseButton2Click:Connect(function() _G.FLing_Killed() end)
 
@@ -2696,9 +2706,10 @@ function guias()
 				copychar2.BackgroundColor3 = Color3.fromRGB(0, 255, 0) else copychar2.BackgroundColor3 = Color3.fromRGB(85, 85, 85)  end
 		end)
 		ThisIs = {"click char for anims"}  charanim = false
-		per2 = Button:Clone() per2.Parent = Spaghetti per2.Text = "Anim ID" per2.Position = UDim2.new(0.05,0 , 0,row13)  per2.BackgroundColor3 = Color3.fromRGB(162, 0, 255)   
+		per2 = Button:Clone() per2.Parent = Spaghetti per2.Text = "Anim ID" per2.Position = UDim2.new(0.05,0 , 0,row6)  per2.BackgroundColor3 = Color3.fromRGB(162, 0, 255)   
 		per2.MouseButton1Click:Connect(function() charanim = not charanim
 			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
+			--StarterGui:SetCore("AvatarContextMenuTarget", nil)
 			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "copycharanim" then Ui:Remove() end end
 			if Begal.GuiHolder:FindFirstChild("copycharanim") then Begal.GuiHolder:FindFirstChild("copycharanim"):Remove() return end
 			copycharanim = Scroll:Clone() copycharanim.Parent = Begal.GuiHolder  copycharanim.Name = "copycharanim" copycharanim.BackgroundTransparency = .9 copycharanim.Position = UDim2.new(0.15, 0 , 0.3, 0)  copycharanim.Size = UDim2.new(0.1, 0 , 0.36, 0) 
@@ -2760,7 +2771,7 @@ function guias()
 		if not _G.animtable then _G.animtable = {} end
 
 		task.spawn(function() task.wait(3) 
-			local charclick = UserInputService.InputBegan:Connect(function(input, gameProcessed) local mouse = player:GetMouse()
+			local charclick = UserInputService.InputBegan:Connect(function(input ) local mouse = player:GetMouse()
 				if input.UserInputType == Enum.UserInputType.MouseButton1 then 
 					This = "is scripted very incorrectly, but still works"
 					if oval == true or charanim == true then 
@@ -3000,12 +3011,12 @@ function guias()
 
 
 
-		swimin.Position = UDim2.new(0.05,0 , 0,row6)
+		swimin.Position = UDim2.new(0.05,0 , 0,row13)
 
 		tpb.Position = UDim2.new(0.05,0 , 0,row11)
 		heavy1.Position = UDim2.new(0.5,0 , 0,row9)
 
-		Flag.Position = UDim2.new(0.5,0 , 0,row10)
+		Flag.Position = UDim2.new(0.5,0 , 0,row18)
 
 		--afling.Position = UDim2.new(0.05,0 , 0,row11)
 
@@ -3770,7 +3781,7 @@ function NDS()
 
 			then
 				--or p.Position == Vector3.new(-149.5, 27.5, 16.5) or p.Position == Vector3.new(-148.5, 27.5, 1.5) --or p.Position == Vector3.new(-115, 27.5, -66.5)  
-				noquake = Instance.new("Part",p.Parent) noquake.Anchored = true noquake.Color = p.Color 
+				noquake = Instance.new("Part",p.Parent) noquake.Anchored = true noquake.Color = p.Color noquake.CastShadow = false
 				noquake.Position = Vector3.new(p.Position.X,p.Position.Y-11.05,p.Position.Z) noquake.Size = Vector3.new(33,p.Size.Y,33) --noquake.BrickColor = BrickColor.new("Brown")
 				ghostblock = p:Clone() ghostblock.Parent = p.Parent ghostblock.Transparency = .85 ghostblock.CanCollide = false ghostblock.CastShadow = false ghostblock.CanQuery = false
 				if ghostblock.Position == Vector3.new(124.5, 27.5, 0.5) then ghostblock.Position = Vector3.new(129.5, 22.5, 0.5) ghostblock.Size = Vector3.new(1, 1, 15) ghostblock.Transparency = 0 end
@@ -3780,7 +3791,7 @@ function NDS()
 			if p.Position == Vector3.new(-149.5, 27.5, 16.5) or p.Position == Vector3.new(-148.5, 27.5, 1.5) 
 				or p.Position == Vector3.new(54.5, 27.5, -114)   
 			then
-				noquake = Instance.new("Part",p.Parent) noquake.Anchored = true noquake.Color = p.Color 
+				noquake = Instance.new("Part",p.Parent) noquake.Anchored = true noquake.Color = p.Color noquake.CastShadow = false
 				noquake.Position = Vector3.new(p.Position.X,p.Position.Y-11.05,p.Position.Z) noquake.Size = p.Size noquake.Orientation = p.Orientation --Vector3.new(33,p.Size.Y,33) 
 				ghostblock = p:Clone() ghostblock.Parent = p.Parent ghostblock.Transparency = .85 ghostblock.CanCollide = false ghostblock.CastShadow = false ghostblock.CanQuery = false
 				p.CanCollide=false --p.Position = Vector3.new(p.Position.X,p.Position.Y-22,p.Position.Z) --p.Size = Vector3.new(100,p.Size.Y,100) 
@@ -3788,7 +3799,7 @@ function NDS()
 			if  p.Position == Vector3.new(21.5, 38.5, -70)  --side2 ghost
 				or p.Position == Vector3.new(103.5, 38.5, 12.5) --back ghost 
 			then
-				noquake = Instance.new("Part",p.Parent) noquake.Anchored = true noquake.Color = p.Color 
+				noquake = Instance.new("Part",p.Parent) noquake.Anchored = true noquake.Color = p.Color noquake.CastShadow = false
 				noquake.Position = Vector3.new(p.Position.X,p.Position.Y-10.0,p.Position.Z) noquake.Size = p.Size noquake.Orientation = p.Orientation --Vector3.new(33,p.Size.Y,33) 
 				ghostblock = p:Clone() ghostblock.Parent = p.Parent ghostblock.Transparency = .85 ghostblock.CanCollide = false ghostblock.CastShadow = false ghostblock.CanQuery = false
 				p.Position = Vector3.new(p.Position.X,p.Position.Y+4.5,p.Position.Z) p.Size = Vector3.new(p.Size.X,2,p.Size.Z) 
