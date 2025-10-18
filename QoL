@@ -122,7 +122,7 @@ function ResetValues() an = 0 runan = 0 char = player.Character  ShowAction() ca
 			--cam()  
 			--NewCamera() 
 			OOF() 
-			game:GetService("StarterGui"):SetCore("AvatarContextMenuEnabled", false)
+			
 			return  end)
 		if success then-- print("no error:", data)
 		else  warn("Errors:", data) end
@@ -2735,6 +2735,11 @@ Button.BackgroundColor3 = Color3.fromRGB(85, 170, 255) for _,tpa in pairs(tp_fac
 		ThisIs = {"click char for anims"}  charanim = false
 		per2 = Button:Clone() per2.Parent = Spaghetti per2.Text = "Anim ID" per2.Position = UDim2.new(0.05,0 , 0,row6)  per2.BackgroundColor3 = Color3.fromRGB(162, 0, 255)   
 		per2.MouseButton1Click:Connect(function() charanim = not charanim
+			if workspace:FindFirstChild("WeatherMachine") then 
+				if charanim == true then game:GetService("StarterGui"):SetCore("AvatarContextMenuEnabled", false) end
+				if charanim == false then game:GetService("StarterGui"):SetCore("AvatarContextMenuEnabled", true) end
+			end
+			
 			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
 			--StarterGui:SetCore("AvatarContextMenuTarget", nil)
 			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "copycharanim" then Ui:Remove() end end
@@ -2803,7 +2808,7 @@ Button.BackgroundColor3 = Color3.fromRGB(85, 170, 255) for _,tpa in pairs(tp_fac
 					This = "is scripted very incorrectly, but still works"
 					if oval == true or charanim == true then 
 						if mouse.Target.Parent ~= nil then Cmodel = mouse.Target.Parent  Cmodel.Archivable = true  --cha:MoveTo(Cmodel.Head.Position)
-							print("animstealer clicked on = "..Cmodel)
+							print("animstealer clicked on = "..Cmodel.Name)
 							if charanim == true then 
 								if Cmodel:FindFirstChildWhichIsA("Humanoid") then the_Humanoid = Cmodel:FindFirstChildWhichIsA("Humanoid")  animas = the_Humanoid:GetPlayingAnimationTracks() end
 								if Cmodel.Parent:FindFirstChildWhichIsA("Humanoid") then the_Humanoid = Cmodel.Parent:FindFirstChildWhichIsA("Humanoid")  animas = the_Humanoid:GetPlayingAnimationTracks() end
