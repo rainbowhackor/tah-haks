@@ -122,7 +122,7 @@ function ResetValues() an = 0 runan = 0 char = player.Character  ShowAction() ca
 			--cam()  
 			--NewCamera() 
 			OOF() 
-			
+			NDS()
 			return  end)
 		if success then-- print("no error:", data)
 		else  warn("Errors:", data) end
@@ -1141,7 +1141,7 @@ function RainbowStarSword() --( glow sticks for dancing ) OH MY GAH THIS LOOKS S
 
 	The = {" Rainbow Color Changing "} if Ruse == false then
 		colorcwrap2 = coroutine.create(function() while workspace:FindFirstChild("RainbowStarSwords") do RunService.RenderStepped:Wait() if starfolder.SmoothColor.Value == false then
-					task.wait(math.random(35,70)/100) end rlight.Color = ColorChanging.Value rSparkles.SparkleColor = ColorChanging.Value end end) coroutine.resume(colorcwrap2)
+					task.wait(math.random(35,70)/100) end rlight.Color = Color3.fromRGB(255,255,255) rSparkles.SparkleColor = ColorChanging.Value end end) coroutine.resume(colorcwrap2)
 	end
 	--[[The = {" Rainbow Light Colors "}
 	lightcwrap = coroutine.create(function()  
@@ -1851,8 +1851,9 @@ Button.BackgroundColor3 = Color3.fromRGB(85, 170, 255) for _,tpa in pairs(tp_fac
 				if Buttons.Text == "sign"					 then tpval = Vector3.new(-278, 193, 395) end
 
 				if Buttons.Text == "prison seat"			 then tpval = Vector3.new(32.4, 48.3, -8.4) end	
-				if Buttons.Text == "prison food"			 then tpval = Vector3.new(49.2, 63, -13.9) end
-			--	if Buttons.Text == "prison food"			 then tpval = Vector3.new(32, 63, -3.5) end
+				if Buttons.Text == "prison food"			 then tpval = Vector3.new(32, 63, 12) end
+			--too acid	if Buttons.Text == "prison food"			 then tpval = Vector3.new(49.2, 63, -13.9) end
+			--too dark	if Buttons.Text == "prison food"			 then tpval = Vector3.new(32, 63, -3.5) end
 				if Buttons.Text == "prison light"			 then tpval = Vector3.new(10, 138, 57) end  
 
 				if Buttons.Text == "school window"			 then tpval = Vector3.new(70, 70, 40) end 
@@ -3802,7 +3803,9 @@ function NDS()
 	end
 	--if not workspace:FindFirstChild("WeatherMachine") then return end
 	if workspace:FindFirstChild("OceanDrive") then return end
-	for _, p in pairs(workspace:GetDescendants()) do   
+	if workspace:FindFirstChild("WeatherMachine") then 
+		for _, p in pairs(workspace:GetDescendants()) do   
+			if p.Name == "RTDPortal" then p:Remove() end
 		if p:IsA("BasePart") then
 			--if p.Transparency > .96 and p.CanCollide == false and not p:FindFirstChildWhichIsA("ClickDetector") then p.CanQuery = false end
 			if p.BrickColor == BrickColor.new("Reddish brown") or p.BrickColor == BrickColor.new("Dark green") then p.CastShadow = false p.CanCollide = true end
@@ -3844,7 +3847,7 @@ function NDS()
 
 	oceanfloors = Instance.new("Part") oceanfloors.Name = "OceanDrive" oceanfloors.BrickColor = BrickColor.new("Sand blue") oceanfloors.Anchored = true 
 
-	if workspace:FindFirstChild("WeatherMachine") then 
+	
 		floor = Instance.new("Folder",workspace) floor.Name = "oceanfloors"
 		ThisIs = {"drive on ocean floor"} oceanfloor1 = oceanfloors:Clone() oceanfloor1.Parent = floor oceanfloor1.Position = Vector3.new(-30, -27.5, -77) oceanfloor1.Size = Vector3.new(777, 77, 461)  --531) -112
 		oceanfloor2 = oceanfloors:Clone() oceanfloor2.Parent = floor oceanfloor2.Position = Vector3.new(-30, -33, 297) oceanfloor2.Size = Vector3.new(777, 66, 287) 
@@ -3867,11 +3870,14 @@ function NDS()
 		--UserSettings():GetService("UserGameSettings").MasterVolume = .2
 
 		if game.Lighting:FindFirstChildWhichIsA("Atmosphere") then game.Lighting:FindFirstChildWhichIsA("Atmosphere"):Remove() end
-		game.Lighting.ChildAdded:Connect(function(ar) wait()   
+		--[[game.Lighting.ChildAdded:Connect(function(ar) wait()   
 			if ar:IsA("Atmosphere") then ar:Remove() end
 			if game.Lighting:FindFirstChildWhichIsA("Atmosphere") then game.Lighting:FindFirstChildWhichIsA("Atmosphere"):Remove() end
-		end)
-
+		end)]]
+		fog = coroutine.create(function() repeat wait(.5)--RunService.RenderStepped:Wait()
+				game.Lighting.FogEnd = 111111
+			until not workspace:FindFirstChild("WeatherMachine") 
+		end) coroutine.resume(fog)
 
 
 		--if
@@ -3882,13 +3888,13 @@ function NDS()
 		game.Lighting:FindFirstChildWhichIsA("Sky").SkyboxRt = "rbxassetid://15502509398"
 		game.Lighting:FindFirstChildWhichIsA("Sky").SkyboxUp = "rbxassetid://15502511911"
 
-	end
-	--voidfloor = oceanfloors:Clone() voidfloor.Parent = workspace voidfloor.Position = Vector3.new(-100, -40002, -100) voidfloor.Size = Vector3.new(66, 2, 66)  voidfloor.BrickColor = BrickColor.new("Black")
-
+	
+	voidfloor = oceanfloors:Clone() voidfloor.Parent = workspace voidfloor.Position = Vector3.new(-155, -40002, -470) voidfloor.Size = Vector3.new(66, 2, 66)  voidfloor.BrickColor = BrickColor.new("Black")
+end
 
 end
 
-NDS()
+--NDS()
 
 
 
