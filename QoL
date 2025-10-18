@@ -122,6 +122,7 @@ function ResetValues() an = 0 runan = 0 char = player.Character  ShowAction() ca
 			--cam()  
 			--NewCamera() 
 			OOF() 
+			game:GetService("StarterGui"):SetCore("AvatarContextMenuEnabled", false)
 			return  end)
 		if success then-- print("no error:", data)
 		else  warn("Errors:", data) end
@@ -327,8 +328,8 @@ end
 
 nofling = false
 function AntiFlingPlayable() 
-	The = {"First video Sakpot posts as soon as he gets my favorite executor working is 2O minutes of fling killing people on NDS, what a smack in the face :) "}
-	ThisIs = {"more anti fling methods"}--these have not been tested against fling hackers yet
+	
+	ThisIs = {"more anti fling methods"}
 	for _,v in pairs(workspace:GetDescendants()) do 
 		if v:IsA("BasePart") and not v:IsDescendantOf(char) then if v.Name == "HumanoidRootPart" or v.Name == "Torso" or v.Name == "UpperTorso" or v.Name == "LowerTorso" or v.Name == "Head" then v.CanCollide = false end end --I'm assuming that the hacker makes their RootPart spin really fast to smack you, depending on how good your client ping is you might be able to walk through the hacker without being flinged
 		if v:IsA("BasePart") and v.Parent:IsA("Model") and v.Parent:FindFirstChild("HumanoidRootPart") and not v:IsDescendantOf(char) then v.CanCollide = false end --I'm assuming that this makes you walk through the hacker without being flinged
@@ -339,14 +340,18 @@ function AntiFlingPlayable()
 	ThisIs = {"noclip... yes, it took me 6 years to realize that I can use noclip to walk through the fling hackers"}
 	nofling = not nofling RunService.Stepped:connect(function() 
 		if nofling == true then 
-			if char.Humanoid.Sit == true or char.Humanoid.PlatformStand == true or char.Humanoid.Health<1 then 
+			if char.Humanoid.Sit == true or char.Humanoid.PlatformStand == true or char.Humanoid.Health<2 then 
 				nofling = false char.Humanoid.Sit = false char.Humanoid.PlatformStand = false game.StarterGui:SetCore("SendNotification", {Title="nofling off"; Text= "" ; Duration=2;}) end
 			for _,v in pairs(char:GetChildren()) do if v:IsA("BasePart") then 
-					if v.Name == "HumanoidRootPart" or v.Name == "Torso" or v.Name == "UpperTorso" or v.Name == "LowerTorso" then v.CanCollide = false end end end end 
-	end) if nofling == true then game.StarterGui:SetCore("SendNotification", {Title="nofling"; Text= "" ; Duration=2;}) else 
+					if v.Name == "HumanoidRootPart" or v.Name == "Torso" or v.Name == "UpperTorso" or v.Name == "LowerTorso"  or v.Name == "Head" then 
+						v.CanCollide = false end end end end 
+	end) 
+	if nofling == true then game.StarterGui:SetCore("SendNotification", {Title="nofling"; Text= "" ; Duration=2;}) end
+		if nofling == false then
 		game.StarterGui:SetCore("SendNotification", {Title="nofling off"; Text= "" ; Duration=2;})  for _,v in pairs(char:GetChildren()) do if v:IsA("BasePart") then v.CanTouch = not v.CanTouch
-				if v.Name == "HumanoidRootPart" or v.Name == "Torso" or v.Name == "UpperTorso" or v.Name == "LowerTorso" then v.CanCollide = true end end end wait(.5) char.HumanoidRootPart.CanCollide = true 
-	end
+				if v.Name == "HumanoidRootPart" or v.Name == "Torso" or v.Name == "UpperTorso" or v.Name == "LowerTorso" or v.Name == "Head" then 
+					v.CanCollide = true end end end wait(.5) char.HumanoidRootPart.CanCollide = true 
+	end 
 end
 
 mover = nil bayblade = nil bayblade2 = nil smack = nil rotat = nil wind = nil 
@@ -2660,8 +2665,8 @@ Button.BackgroundColor3 = Color3.fromRGB(85, 170, 255) for _,tpa in pairs(tp_fac
 				uFailed = Button:Clone() uFailed.Parent = list uFailed.Text = Ls.DisplayName uFailed.Size = UDim2.new(0.95,0 , 0,nan) uFailed.Position = UDim2.new(0.05, 0 , 0, plus) plus+=nan
 				--uFailed = Button:Clone() uFailed.Parent = list uFailed.Text = Ls.CharacterAppearanceId uFailed.Size = UDim2.new(0.95,0 , 0,nan) uFailed.Position = UDim2.new(0.05, 0 , 0, plus) plus+=nan plus+=5 
 				local bFailed = Button:Clone() bFailed.Parent = list  bFailed.Text = Ls.CharacterAppearanceId bFailed.Size = UDim2.new(0.95,0 , 0,nan) bFailed.Position = UDim2.new(0.05, 0 , 0, plus) plus+=nan plus+=5 
-				bFailed.MouseButton1Click:Connect(function(player) setclipboard(tostring(bFailed.Text)) 
-					game:GetService("GuiService"):InspectPlayerFromUserId(Ls.CharacterAppearanceId)
+				bFailed.MouseButton1Click:Connect(function(player) setclipboard(tostring(bFailed.Text)) end)
+				bFailed.MouseButton2Click:Connect(function(player) game:GetService("GuiService"):InspectPlayerFromUserId(Ls.CharacterAppearanceId) end)
 					--[[local GuiService = game:GetService("GuiService")
 					local Players = game:GetService("Players")
 
@@ -2673,8 +2678,8 @@ Button.BackgroundColor3 = Color3.fromRGB(85, 170, 255) for _,tpa in pairs(tp_fac
 					if success then
 						GuiService:InspectPlayerFromUserId(userId)
 					end]]
-					
-				end)
+				
+				
 			end 
 		end)
 		toolate2 = Button:Clone() toolate2.Parent = Spaghetti toolate2.Text = "toolate2" toolate2.Position = UDim2.new(0.05,0 , 0,row21) toolate2.BackgroundColor3 = Color3.fromRGB(0, 0, 0)   
@@ -2695,10 +2700,8 @@ Button.BackgroundColor3 = Color3.fromRGB(85, 170, 255) for _,tpa in pairs(tp_fac
 				uFailed = Button:Clone() uFailed.Parent = list2 if Ls:FindFirstChild("realname") then uFailed.Text = Ls.realname.Value end uFailed.Size = UDim2.new(0.95,0 , 0,nan) uFailed.Position = UDim2.new(0, 0 , 0, plus) plus+=nan 
 				uFailed = Button:Clone() uFailed.Parent = list2 if Ls:FindFirstChild("nickname") then uFailed.Text = Ls.nickname.Value end uFailed.Size = UDim2.new(0.95,0 , 0,nan) uFailed.Position = UDim2.new(0, 0 , 0, plus) plus+=nan
 				local cFailed = Button:Clone() cFailed.Parent = list2 if Ls:FindFirstChild("id") then cFailed.Text = Ls.id.Value end cFailed.Size = UDim2.new(0.95,0 , 0,nan) cFailed.Position = UDim2.new(0, 0 , 0, plus) plus+=nan plus+=5 
-				cFailed.MouseButton1Click:Connect(function(player) setclipboard(tostring(cFailed.Text))  
-					game:GetService("GuiService"):InspectPlayerFromUserId(Ls.id.Value)
-					
-				end)
+				cFailed.MouseButton1Click:Connect(function(player) setclipboard(tostring(cFailed.Text))   end)
+				cFailed.MouseButton2Click:Connect(function(player)game:GetService("GuiService"):InspectPlayerFromUserId(Ls.id.Value) end)
 				--local delete = Button:Clone() cFailed.Parent = list2 if Ls:FindFirstChild("id") then cFailed.Text = Ls.id.Value end cFailed.Size = UDim2.new(0.95,0 , 0,nan) cFailed.Position = UDim2.new(0, 0 , 0, plus) plus+=nan plus+=5 
 			end 
 		end)
