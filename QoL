@@ -187,7 +187,7 @@ if not game.Lighting:FindFirstChild("binds") then Instance.new("BoolValue",game.
 	CAS:BindAction("Low", hax, false, Enum.KeyCode.X)
 	--	CAS:BindAction("HAX", hax, false, Enum.KeyCode.G)
 	--CAS:BindAction("Mirror", hax, false, Enum.KeyCode.E)
-	--CAS:BindAction("Anti Fling HAX", hax, false, Enum.KeyCode.F)
+	CAS:BindAction("Anti Fling HAX", hax, false, Enum.KeyCode.F)
 	--CAS:BindAction("Rainbow Nova", hax, false, Enum.KeyCode.F)
 	--CAS:BindAction("RAINBOW STAR SWORDS", hax, false, Enum.KeyCode.U)
 	--	CAS:BindAction("Dog Walk", hax, false, Enum.KeyCode.K)
@@ -302,6 +302,7 @@ Press Z to Disable HA-]] end
 			if UserInputService:IsKeyDown(Enum.KeyCode.T) then player.Character.Humanoid.PlatformStand = not player.Character.Humanoid.PlatformStand actiontext.Text = "PlatformStand" end
 
 			if UserInputService:IsKeyDown(Enum.KeyCode.F) then AntiFling()  end
+			
 			if UserInputService:IsKeyDown(Enum.KeyCode.U) then local success, data = pcall(function()
 					tpval = game.Lighting.save4.Value tpvector() return  end)
 				if data then  warn("Errors:", data) end   end
@@ -319,12 +320,33 @@ Press Z to Disable HA-]] end
 end
 
 
-function AntiFling() 
+function AntiFling()   if Ruse == false then 
+	
 	player.Character.HumanoidRootPart.Anchored = not player.Character.HumanoidRootPart.Anchored 
 	ThisIs = [[ Unbelievable! Fling hackers ruined my day plenty of times, but you know what they say "after a storm comes a rainbow"
 				because I wouldn't have made this single line of code without them hackers, and this line of code is the reason this entire script exists... ]]
 	--funny part is roblox ran all of MY executors out of business, so now i have no defence against fortnite hackers who pull executors out of their as, and fling me. Good Job Roblox...
+		
+	else 
+		if workspace:FindFirstChild("ancdance") then  workspace:FindFirstChild("ancdance"):Remove() return end
+		if not workspace:FindFirstChild("ancdance") then 
+			local p = Instance.new("Model",workspace) p.Name = "ancdance"
+		end
+		local v = char.HumanoidRootPart	 if workspace.ancdance:FindFirstChild(v.Name) then workspace.ancdance:FindFirstChild(v.Name):Remove() return end
+		if not workspace.ancdance:FindFirstChild(v.Name) then 
+			local p = Instance.new("Part") p.Anchored = true p.CanCollide = false p.CanQuery = false p.CanTouch = false p.Transparency = 1 p.Parent = workspace.ancdance p.Size = v.Size p.Name = v.Name p.CFrame = v.CFrame 
+			local pa = Instance.new("Attachment") pa.Parent = p pa.Name = "Cen"
+		--	if check.Value == "rop" then local w = Instance.new("RopeConstraint") w.Parent = p w.Attachment0 = v.Cen w.Attachment1 = p.Cen w.Length = 0 end
 
+			--if check.Value == "pos" then local w = Instance.new("AlignPosition") w.Parent = p w.Attachment0 = v.Cen w.Attachment1 = p.Cen  w.RigidityEnabled = true w.ReactionForceEnabled = true end
+
+			--if check.Value == "ori" then
+				local w = Instance.new("AlignOrientation") w.Parent = p w.Attachment0 = v.Cen w.Attachment1 = p.Cen w.RigidityEnabled = true w.ReactionTorqueEnabled = true 
+				local wa = Instance.new("AlignPosition") wa.Parent = p wa.Attachment0 = v.Cen wa.Attachment1 = p.Cen  wa.RigidityEnabled = true wa.ReactionForceEnabled = true end
+		--end
+		end
+		
+		
 	for _,v in pairs(char:GetChildren()) do if v:IsA("BasePart") then v.Velocity = Vector3.new(0,0,0) v.RotVelocity = Vector3.new(0,0,0) end end
 	if player.Character.HumanoidRootPart.Anchored == true then game.StarterGui:SetCore("SendNotification", {Title="anchored"; Text= "" ; Duration=2;}) else
 		game.StarterGui:SetCore("SendNotification", {Title="unanchored"; Text= "" ; Duration=2;}) end 
@@ -1363,7 +1385,7 @@ function AnimSet()
 		--	idle1.AnimationId = WolfSwimIdle 		idle2.AnimationId = CartoonSwimIdle --astroidle  idle2.AnimationId =  "http://www.roblox.com/asset/?id=891621366"
 		jump.AnimationId = StyleJump 			fall.AnimationId = adiniball1	
 		swim.AnimationId = WolfSwim			 	swimidle.AnimationId = WolfSwimIdle 
-		run.AnimationId = Confident_Walk 		walk.AnimationId = Ninja_walk
+		run.AnimationId =  "http://www.roblox.com/asset/?id=656118852"		walk.AnimationId = Confident_Walk  
 		sit.AnimationId = WolfSwimIdle
 		char.Animate.toolnone:FindFirstChild("ToolNoneAnim").AnimationId = "rbxassetid://14366558676"
 	end
@@ -2093,7 +2115,12 @@ function guias()
 					return end
 			end)
 
-
+			delplay = Button:Clone() delplay.Parent = gaminglist delplay.Text = "delplay "
+			delplay.MouseButton1Click:Connect(function() for _,anc in pairs(game.Players:GetDescendants()) do if not anc:IsAncestorOf(player)  then anc:Remove()  end end end)
+			
+			delchar = Button:Clone() delchar.Parent = gaminglist delchar.Text = "delchars "
+			delchar.MouseButton1Click:Connect(function() for _,play in pairs(game.Players:GetChildren()) do if  play ~= player then play.Character:Remove()  end end end)
+			
 
 			premover = Button:Clone() premover.Parent = gaminglist premover.Text = "remove broken" premover.BackgroundColor3 = Color3.fromRGB(170, 0, 0)
 			premover.MouseButton1Click:Connect(function() for _,fpart in pairs(workspace.Structure:GetDescendants()) do if fpart:IsA("BasePart") then --and not fpart:FindFirstChildWhichIsA("Weld") and not fpart:FindFirstChildWhichIsA("Snap") and not fpart:FindFirstChildWhichIsA("Rotate") and not fpart:FindFirstChildWhichIsA("RotateP")  then 
@@ -2336,11 +2363,12 @@ function guias()
 			inviscam.MouseButton1Click:Connect(function() player.DevCameraOcclusionMode = Enum.DevCameraOcclusionMode.Invisicam end)
 			inviscam.MouseButton2Click:Connect(function() player.DevCameraOcclusionMode = Enum.DevCameraOcclusionMode.Zoom  end)
 
-			sito = Button:Clone() sito.Parent = masslist sito.Text = "sit" 
+			--[[sito = Button:Clone() sito.Parent = masslist sito.Text = "sit" 
 			sito.MouseButton1Click:Connect(function() char.Humanoid.Sit = not char.Humanoid.Sit  end)
-			sito.MouseButton2Click:Connect(function() char.Humanoid.PlatformStand = not char.Humanoid.PlatformStand  end)
+			sito.MouseButton2Click:Connect(function() char.Humanoid.PlatformStand = not char.Humanoid.PlatformStand  end)]]
 
-
+			ttdcol = Button:Clone() ttdcol.Parent = masslist ttdcol.Text = "ttd collide" 
+			ttdcol.MouseButton1Click:Connect(function()  TTD() end) 
 
 
 
@@ -3287,7 +3315,8 @@ function guias()
 			--{ Id = "78773506370628", Name = "smuwug2",  Color = Color3.fromRGB(85, 255, 0)  },
 			{ Id = "108466807801186", Name = "springy",  Color = Color3.fromRGB(85, 255, 0)  }, 
 
-			{ Id = "75625820126017", Name = "Louisiana-Jigg",  Color = Color3.fromRGB(0, 85, 127)  }, 
+			{ Id = "75625820126017", Name = "Louisiana-Jigg",  Color = Color3.fromRGB(0, 85, 127)  },    
+			{ Id = "125646873823019", Name = "Louisiana-Jigg2",  Color = Color3.fromRGB(0, 85, 127)  }, 
 			{ Id = "81442470330880", Name = "ShuffleS",  Color = Color3.fromRGB(170, 0, 0)  },
 			{ Id = "80025911045333", Name = "lovesick",  Color = Color3.fromRGB(170, 85, 255)  },
 			{ Id = "111374273230179", Name = "Ramb",  Color = Color3.fromRGB(255, 255, 0)  },
