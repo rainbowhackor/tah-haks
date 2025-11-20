@@ -165,6 +165,7 @@ if not game.Lighting:FindFirstChild("binds") then Instance.new("BoolValue",game.
 					elseif actionName == "Jupiter Gravity" then workspace.Gravity = 111111 actiontext.Text = "Jupiter Gravity"
 					elseif actionName == "Low2" then workspace.Gravity = 5 char.Humanoid.JumpPower = 11 actiontext.Text = "Low Gravity2" 
 					elseif actionName == "Low" then workspace.Gravity = 15 char.Humanoid.JumpPower = 17 actiontext.Text = "Low Gravity" --if ME == true then char.Humanoid.WalkSpeed = 11 end
+					elseif actionName == "Low55" then workspace.Gravity = 55   actiontext.Text = "Low Gravity"
 					elseif actionName == "Sit" then --player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" 
 					elseif actionName == "PlatformStand" then player.Character.Humanoid.PlatformStand = not player.Character.Humanoid.PlatformStand actiontext.Text = "PlatformStand"
 					elseif actionName == "Dance List" then player.PlayerGui.MAMALUIGI.Button["TIME TO DIY 3"].Enabled = not player.PlayerGui.MAMALUIGI.Button["TIME TO DIY 3"].Enabled actiontext.Text = "Dance"
@@ -184,7 +185,8 @@ if not game.Lighting:FindFirstChild("binds") then Instance.new("BoolValue",game.
 	--CAS:BindAction("Controls", hax, false, Enum.KeyCode.Y)
 	--	CAS:BindAction("Toggle Keybinds", hax, false, Enum.KeyCode.Z)
 	--CAS:BindAction("Toggle tp", hax, false, Enum.KeyCode.Y)
-	CAS:BindAction("Low", hax, false, Enum.KeyCode.X)
+	CAS:BindAction("Low55", hax, false, Enum.KeyCode.X)
+	CAS:BindAction("Low", hax, false, Enum.KeyCode.M)
 	--	CAS:BindAction("HAX", hax, false, Enum.KeyCode.G)
 	--CAS:BindAction("Mirror", hax, false, Enum.KeyCode.E)
 	CAS:BindAction("Anti Fling HAX", hax, false, Enum.KeyCode.F)
@@ -195,7 +197,7 @@ if not game.Lighting:FindFirstChild("binds") then Instance.new("BoolValue",game.
 	--	CAS:BindAction("Low Gravity2", hax, false, Enum.KeyCode.B)
 	CAS:BindAction("Default Gravity", hax, false, Enum.KeyCode.V)
 	CAS:BindAction("Jupiter Gravity", hax, false, Enum.KeyCode.J) 
-	L = Enum.KeyCode.R if Ruse == true then L = Enum.KeyCode.B end CAS:BindAction("Sit", hax, false, L)
+	L = Enum.KeyCode.R if Ruse == true then L = Enum.KeyCode.M end CAS:BindAction("Sit", hax, false, L)
 	--	CAS:BindAction("PlatformStand", hax, false, Enum.KeyCode.T) 
 	CAS:BindAction("Dance List", hax, false, Enum.KeyCode.Comma)
 	CAS:BindAction("AirBlock", hax, false, Enum.KeyCode.M)
@@ -296,9 +298,9 @@ Press Z to Disable HA-]] end
 						if workspace:FindFirstChildWhichIsA("BrickColorValue") then return end 
 						player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" 
 					end end]]
-			if UserInputService:IsKeyDown(Enum.KeyCode.B) then if Ruse == true then 
+		--[[] ]	if UserInputService:IsKeyDown(Enum.KeyCode.B) then if Ruse == true then 
 					player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" 
-				end end
+				end end]]
 			if UserInputService:IsKeyDown(Enum.KeyCode.T) then player.Character.Humanoid.PlatformStand = not player.Character.Humanoid.PlatformStand actiontext.Text = "PlatformStand" end
 
 			if UserInputService:IsKeyDown(Enum.KeyCode.F) then AntiFling()  end
@@ -341,8 +343,8 @@ function AntiFling()   if Ruse == false then
 			--if check.Value == "pos" then local w = Instance.new("AlignPosition") w.Parent = p w.Attachment0 = v.Cen w.Attachment1 = p.Cen  w.RigidityEnabled = true w.ReactionForceEnabled = true end
 
 			--if check.Value == "ori" then
-				local w = Instance.new("AlignOrientation") w.Parent = p w.Attachment0 = v.Cen w.Attachment1 = p.Cen w.RigidityEnabled = true w.ReactionTorqueEnabled = true 
-				local wa = Instance.new("AlignPosition") wa.Parent = p wa.Attachment0 = v.Cen wa.Attachment1 = p.Cen  wa.RigidityEnabled = true wa.ReactionForceEnabled = true end
+				local w = Instance.new("AlignOrientation") w.Parent = p w.Attachment0 = v.Center w.Attachment1 = p.Cen w.RigidityEnabled = true w.ReactionTorqueEnabled = true 
+				local wa = Instance.new("AlignPosition") wa.Parent = p wa.Attachment0 = v.Center wa.Attachment1 = p.Cen  wa.RigidityEnabled = true wa.ReactionForceEnabled = true end
 		--end
 		end
 		
@@ -669,8 +671,9 @@ function CharSettings() humy = char:WaitForChild("Humanoid") humy.UseJumpPower =
 	--	if char:FindFirstChild[["Accessory (beast)"]] then  end
 	for _,target in pairs(char:GetDescendants()) do
 		if target:IsA("MeshPart") then 
-			if target.MeshId == "rbxassetid://16931221073" then target.Parent:Remove() end
-			if target.MeshId == "rbxassetid://17899996187" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false end
+			if target.MeshId == "rbxassetid://16931221073" then target.Parent:Remove() end-- box
+			if target.MeshId == "rbxassetid://17899996187" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false end --krby
+			if target.MeshId == "rbxassetid://95880964398198" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false end --egg
 		end
 	end
 
