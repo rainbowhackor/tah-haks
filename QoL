@@ -672,8 +672,12 @@ function CharSettings() humy = char:WaitForChild("Humanoid") humy.UseJumpPower =
 	for _,target in pairs(char:GetDescendants()) do
 		if target:IsA("MeshPart") then 
 			if target.MeshId == "rbxassetid://16931221073" then target.Parent:Remove() end-- box
-			if target.MeshId == "rbxassetid://17899996187" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false end --krby
-			if target.MeshId == "rbxassetid://95880964398198" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false end --egg
+			
+			if target.MeshId == "rbxassetid://17899996187" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false 
+				f= Instance.new("SelectionBox",target) f.Adornee = target f.Transparency = .7 f.Color3 = Color3.fromRGB(98, 98, 98) f.LineThickness = .1 end --krby
+			if target.MeshId == "rbxassetid://95880964398198" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false 
+				f= Instance.new("SelectionBox",target) f.Adornee = target f.Transparency = .7 f.Color3 = Color3.fromRGB(98, 98, 98) f.LineThickness = .1 end --egg
+			
 		end
 	end
 
@@ -2904,29 +2908,29 @@ function guias()
 		rejoin = Button:Clone() rejoin.Parent = Spaghetti rejoin.Text = "Rejoin" rejoin.Position = UDim2.new(0.05,0 , 0,row27) rejoin.BackgroundColor3 = Color3.fromRGB(170, 0, 0)   
 		rejoin.MouseButton1Click:Connect(function() game:GetService("TeleportService"):Teleport(game.PlaceId, player) end)
 		
-		fl1 = Button:Clone() fl1.Parent = Spaghetti fl1.Text = "fl1" fl1.Position = UDim2.new(0.05,0 , 0,row28) fl1.BackgroundColor3 = Color3.fromRGB(184, 123, 0)   
-		fl1.MouseButton1Click:Connect(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/fedoratums/Base-Script/Base-Script/fedoratum%20punch%20fling",true))()   end)
+	--	fl1 = Button:Clone() fl1.Parent = Spaghetti fl1.Text = "fl1" fl1.Position = UDim2.new(0.05,0 , 0,row28) fl1.BackgroundColor3 = Color3.fromRGB(184, 123, 0)   
+	--	fl1.MouseButton1Click:Connect(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/fedoratums/Base-Script/Base-Script/fedoratum%20punch%20fling",true))()   end)
 		
-		fl2 = Button:Clone() fl2.Parent = Spaghetti fl2.Text = "fl2" fl2.Position = UDim2.new(0.5,0 , 0,row28) fl2.BackgroundColor3 = Color3.fromRGB(184, 123, 0)   
-		fl2.MouseButton1Click:Connect(function() loadstring(game:HttpGet("https://paste-drop.com/paste/Ap2dMbPJ4e",true))()  end)
+	--	fl2 = Button:Clone() fl2.Parent = Spaghetti fl2.Text = "fl2" fl2.Position = UDim2.new(0.5,0 , 0,row28) fl2.BackgroundColor3 = Color3.fromRGB(184, 123, 0)   
+	----	fl2.MouseButton1Click:Connect(function() loadstring(game:HttpGet("https://paste-drop.com/paste/Ap2dMbPJ4e",true))()  end)
 		
-		fl3 = Button:Clone() fl3.Parent = Spaghetti fl3.Text = "fl3" fl3.Position = UDim2.new(0.05,0 , 0,row29) fl3.BackgroundColor3 = Color3.fromRGB(184, 123, 0)   
-		fl3.MouseButton1Click:Connect(function() loadstring(game:HttpGet(('https://raw.githubusercontent.com/0Ben1/fe/main/obf_rf6iQURzu1fqrytcnLBAvW34C9N55kS9g9G3CKz086rC47M6632sEd4ZZYB0AYgV.lua.txt'),true))() end)
+	--	fl3 = Button:Clone() fl3.Parent = Spaghetti fl3.Text = "fl3" fl3.Position = UDim2.new(0.05,0 , 0,row29) fl3.BackgroundColor3 = Color3.fromRGB(184, 123, 0)   
+	--	fl3.MouseButton1Click:Connect(function() loadstring(game:HttpGet(('https://raw.githubusercontent.com/0Ben1/fe/main/obf_rf6iQURzu1fqrytcnLBAvW34C9N55kS9g9G3CKz086rC47M6632sEd4ZZYB0AYgV.lua.txt'),true))() end)
 		
-		fl4 = Button:Clone() fl4.Parent = Spaghetti fl4.Text = "fl4" fl4.Position = UDim2.new(0.5,0 , 0,row29) fl4.BackgroundColor3 = Color3.fromRGB(184, 123, 0)   
-		fl4.MouseButton1Click:Connect(function() loadstring(game:HttpGet(('https://pastefy.ga/GvnHVjT5/raw'),true))() end)
+	--	fl4 = Button:Clone() fl4.Parent = Spaghetti fl4.Text = "fl4" fl4.Position = UDim2.new(0.5,0 , 0,row29) fl4.BackgroundColor3 = Color3.fromRGB(184, 123, 0)   
+	--	fl4.MouseButton1Click:Connect(function() loadstring(game:HttpGet(('https://pastefy.ga/GvnHVjT5/raw'),true))() end)
 		
 		egor = Button:Clone() egor.Parent = Spaghetti egor.Text = "egor" egor.Position = UDim2.new(0.05,0 , 0,row30) egor.BackgroundColor3 = Color3.fromRGB(184, 123, 0)   
 		egor.MouseButton1Click:Connect(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/GithubMagical/Roblox-Egor/refs/heads/main/lua%20v2", true))() end)
 		
-		egor2 = Button:Clone() egor2.Parent = Spaghetti egor2.Text = "egor2 " egor2.Position = UDim2.new(0.5,0 , 0,row30) egor2.BackgroundColor3 = Color3.fromRGB(184, 123, 0)   
-		egor2.MouseButton1Click:Connect(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/loldo-g/RobloxEgorScript/refs/heads/main/script.lua"))() end)
+	--	egor2 = Button:Clone() egor2.Parent = Spaghetti egor2.Text = "egor2 " egor2.Position = UDim2.new(0.5,0 , 0,row30) egor2.BackgroundColor3 = Color3.fromRGB(184, 123, 0)   
+	--	egor2.MouseButton1Click:Connect(function() loadstring(game:HttpGet("https://raw.githubusercontent.com/loldo-g/RobloxEgorScript/refs/heads/main/script.lua"))() end)
 		
-		coolk = Button:Clone() coolk.Parent = Spaghetti coolk.Text = "coolk" coolk.Position = UDim2.new(0.05,0 , 0,row31) coolk.BackgroundColor3 = Color3.fromRGB(184, 123, 0)   
-		coolk.MouseButton1Click:Connect(function() loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-coolkid-gui-15453"))() end)
+	--	coolk = Button:Clone() coolk.Parent = Spaghetti coolk.Text = "coolk" coolk.Position = UDim2.new(0.05,0 , 0,row31) coolk.BackgroundColor3 = Color3.fromRGB(184, 123, 0)   
+	--	coolk.MouseButton1Click:Connect(function() loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-coolkid-gui-15453"))() end)
 
-		coolk2 = Button:Clone() coolk2.Parent = Spaghetti coolk2.Text = "coolk2 " coolk2.Position = UDim2.new(0.5,0 , 0,row31) coolk2.BackgroundColor3 = Color3.fromRGB(184, 123, 0)   
-		coolk2.MouseButton1Click:Connect(function() loadstring(game:HttpGet("https://obj.wearedevs.net/205803/scripts/Coolkid%20gui%20v1.lua"))() end)
+	--	coolk2 = Button:Clone() coolk2.Parent = Spaghetti coolk2.Text = "coolk2 " coolk2.Position = UDim2.new(0.5,0 , 0,row31) coolk2.BackgroundColor3 = Color3.fromRGB(184, 123, 0)   
+	--	coolk2.MouseButton1Click:Connect(function() loadstring(game:HttpGet("https://obj.wearedevs.net/205803/scripts/Coolkid%20gui%20v1.lua"))() end)
 	 
 		ju = Button:Clone() ju.Parent = Spaghetti ju.Text = "jump" ju.Position = UDim2.new(0.05,0 , 0,row32) ju.BackgroundColor3 = Color3.fromRGB(184, 123, 0)   
 		ju.MouseButton1Click:Connect(function() loadstring(game:HttpGet("https://obj.wearedevs.net/2/scripts/Infinite%20Jump.lua"))() end)
