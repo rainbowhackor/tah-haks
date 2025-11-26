@@ -159,13 +159,13 @@ if not game.Lighting:FindFirstChild("binds") then Instance.new("BoolValue",game.
 					elseif actionName == "Anti Fling HAX" then --AntiFling() 
 					elseif actionName == "RAINBOW STAR SWORDS" then RainbowStarSword()
 					elseif actionName == "Dog Walk" then Swim() --dog walk only works with werewolf swim animation
-					elseif actionName == "Default Gravity" then workspace.Gravity = 196.2 char.Humanoid.JumpPower = 50 actiontext.Text = "Default Gravity" if Spaghetti and Spaghetti:FindFirstChild("fps 60") then Spaghetti:FindFirstChild("fps 60").fps.Value = 900 end
+					elseif actionName == "Default Gravity" then workspace.Gravity = 96.2 char.Humanoid.JumpPower = 50 actiontext.Text = "Default Gravity" end--if Spaghetti and Spaghetti:FindFirstChild("fps 60") then Spaghetti:FindFirstChild("fps 60").fps.Value = 900 end
 					elseif actionName == "Zero Gravity" then workspace.Gravity = 0 actiontext.Text = "Zero Gravity"
 					elseif actionName == "Moon Gravity" then workspace.Gravity = 32.41 actiontext.Text = "Moon Gravity" char.Humanoid.JumpPower = 25 char.Humanoid.JumpHeight = 11
 					elseif actionName == "Jupiter Gravity" then workspace.Gravity = 111111 actiontext.Text = "Jupiter Gravity"
 					elseif actionName == "Low2" then workspace.Gravity = 5 char.Humanoid.JumpPower = 11 actiontext.Text = "Low Gravity2" 
 					elseif actionName == "Low" then workspace.Gravity = 15 char.Humanoid.JumpPower = 17 actiontext.Text = "Low Gravity" --if ME == true then char.Humanoid.WalkSpeed = 11 end
-					elseif actionName == "Low55" then workspace.Gravity = 55   actiontext.Text = "Low Gravity"
+					elseif actionName == "Low55" then workspace.Gravity = 15   actiontext.Text = "Low Gravity"
 					elseif actionName == "Sit" then --player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" 
 					elseif actionName == "PlatformStand" then player.Character.Humanoid.PlatformStand = not player.Character.Humanoid.PlatformStand actiontext.Text = "PlatformStand"
 					elseif actionName == "Dance List" then player.PlayerGui.MAMALUIGI.Button["TIME TO DIY 3"].Enabled = not player.PlayerGui.MAMALUIGI.Button["TIME TO DIY 3"].Enabled actiontext.Text = "Dance"
@@ -674,9 +674,9 @@ function CharSettings() humy = char:WaitForChild("Humanoid") humy.UseJumpPower =
 			if target.MeshId == "rbxassetid://16931221073" then target.Parent:Remove() end-- box
 			
 			if target.MeshId == "rbxassetid://17899996187" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false 
-				f= Instance.new("SelectionBox",target) f.Adornee = target f.Transparency = .7 f.Color3 = Color3.fromRGB(98, 98, 98) f.LineThickness = .1 end --krby
+				f= Instance.new("SelectionBox",target) f.Adornee = target f.Transparency = .7 f.Color3 = Color3.fromRGB(255, 170, 0) f.LineThickness = .07 end --krby
 			if target.MeshId == "rbxassetid://95880964398198" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false 
-				f= Instance.new("SelectionBox",target) f.Adornee = target f.Transparency = .7 f.Color3 = Color3.fromRGB(98, 98, 98) f.LineThickness = .1 end --egg
+				f= Instance.new("SelectionBox",target) f.Adornee = target f.Transparency = .7 f.Color3 = Color3.fromRGB(255, 170, 0) f.LineThickness = .07 end --egg
 			
 		end
 	end
