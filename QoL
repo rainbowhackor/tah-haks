@@ -159,7 +159,7 @@ if not game.Lighting:FindFirstChild("binds") then Instance.new("BoolValue",game.
 					elseif actionName == "Anti Fling HAX" then --AntiFling() 
 					elseif actionName == "RAINBOW STAR SWORDS" then RainbowStarSword()
 					elseif actionName == "Dog Walk" then Swim() --dog walk only works with werewolf swim animation
-					elseif actionName == "Default Gravity" then workspace.Gravity = 96.2 char.Humanoid.JumpPower = 50 actiontext.Text = "Default Gravity" end--if Spaghetti and Spaghetti:FindFirstChild("fps 60") then Spaghetti:FindFirstChild("fps 60").fps.Value = 900 end
+					elseif actionName == "Default Gravity" then workspace.Gravity = 96.2 char.Humanoid.JumpPower = 50 actiontext.Text = "Default Gravity" --if Spaghetti and Spaghetti:FindFirstChild("fps 60") then Spaghetti:FindFirstChild("fps 60").fps.Value = 900 end
 					elseif actionName == "Zero Gravity" then workspace.Gravity = 0 actiontext.Text = "Zero Gravity"
 					elseif actionName == "Moon Gravity" then workspace.Gravity = 32.41 actiontext.Text = "Moon Gravity" char.Humanoid.JumpPower = 25 char.Humanoid.JumpHeight = 11
 					elseif actionName == "Jupiter Gravity" then workspace.Gravity = 111111 actiontext.Text = "Jupiter Gravity"
