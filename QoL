@@ -661,6 +661,14 @@ function CharSettings() humy = char:WaitForChild("Humanoid") humy.UseJumpPower =
 	if char:FindFirstChild("Meshes/Chocolate Donut Rainbow LimitedAccessory") or char:FindFirstChild("SnowQueenNecklace") then 
 		--camm = -1.25  
 		--ME=true 
+		for _, ro in pairs(char:GetChildren()) do --if ro:IsA("BasePart") then ro.Material = Enum.Material.SmoothPlastic end  
+			if ro:IsA("MeshPart") and ro.Name ~= "Head" then  ro.TextureID = "" 
+				for _, ro2 in pairs(ro:GetChildren()) do 
+					if ro2:IsA("SurfaceAppearance") then ro2:Remove() end 
+				end
+			end  
+		end 
+		
 		an=169402 AnimSet()task.wait(1) an=0 runan=1
 		if not game.Lighting:FindFirstChildWhichIsA("ColorCorrectionEffect") then colcor=Instance.new("ColorCorrectionEffect",game.Lighting) colcor.Name = "morecolor" game.Lighting:FindFirstChildWhichIsA("ColorCorrectionEffect").Saturation = 0.4 end
 	end
@@ -674,9 +682,9 @@ function CharSettings() humy = char:WaitForChild("Humanoid") humy.UseJumpPower =
 			if target.MeshId == "rbxassetid://16931221073" then target.Parent:Remove() end-- box
 
 			if target.MeshId == "rbxassetid://17899996187" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false 
-				f= Instance.new("SelectionBox",target) f.Adornee = target f.Transparency = .7 f.Color3 = Color3.fromRGB(255, 170, 0) f.LineThickness = .07 end --krby
+				f= Instance.new("SelectionBox",target) f.Adornee = target f.Transparency = .9 f.Color3 = Color3.fromRGB(0, 255, 0) f.LineThickness = .07 end --krby
 			if target.MeshId == "rbxassetid://95880964398198" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false 
-				f= Instance.new("SelectionBox",target) f.Adornee = target f.Transparency = .7 f.Color3 = Color3.fromRGB(255, 170, 0) f.LineThickness = .07 end --egg
+				f= Instance.new("SelectionBox",target) f.Adornee = target f.Transparency = .9 f.Color3 = Color3.fromRGB(0, 170, 0) f.LineThickness = .07 end --egg
 
 		end
 	end
@@ -2307,7 +2315,7 @@ function guias()
 		end)
 
 		ThisIs = {"Lazy"} 
-		Lazy = Button:Clone() Lazy.Parent = Spaghetti Lazy.Text = "Lazy" Lazy.Position = UDim2.new(0.05,0 , 0,row9)  Lazy.BackgroundColor3 = Color3.fromRGB(255, 0, 127)   
+		Lazy = Button:Clone() Lazy.Parent = Spaghetti Lazy.Text = "Lazy" Lazy.Position = UDim2.new(0.05,0 , 0,row10)  Lazy.BackgroundColor3 = Color3.fromRGB(255, 0, 127)   
 		Lazy.MouseButton1Click:Connect(function()
 			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
 			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "lazylist" then Ui:Remove() end end
@@ -2387,7 +2395,8 @@ function guias()
 			ttdcol = Button:Clone() ttdcol.Parent = masslist ttdcol.Text = "ttd collide" 
 			ttdcol.MouseButton1Click:Connect(function()  TTD() end) 
 
-
+			res = Button:Clone() res.Parent = masslist res.Text = "reset grass" 
+			res.MouseButton1Click:Connect(function()  for _, part in pairs(workspace:GetDescendants()  ) do if part:IsA("BasePart") and part.Size == Vector3.new(164,.4,159) then part.CFrame = CFrame.new( -6.5,44.2,-7)  * CFrame.Angles(0,math.rad(90),0) end end end) 
 
 
 		end)  
@@ -2449,7 +2458,7 @@ function guias()
 		invcam.MouseButton1Click:Connect(function()   end) ]]
 
 		ThisIs = {"show players v1"}	--6-2
-		esp = Button:Clone() esp.Parent = Spaghetti esp.Text = "esp" esp.Position = UDim2.new(0.05,0 , 0,row10)  esp.BackgroundColor3 = Color3.fromRGB(0, 170, 255)  
+		esp = Button:Clone() esp.Parent = Spaghetti esp.Text = "esp" esp.Position = UDim2.new(0.05,0 , 0,row9)  esp.BackgroundColor3 = Color3.fromRGB(0, 170, 255)  
 		esp.MouseButton1Click:Connect(function() 
 			if not char:FindFirstChild("iSeeYou") then 
 				Instance.new("Model",workspace).Name = "hiden"
@@ -2760,7 +2769,7 @@ function guias()
 		end)
 
 		This = "Force Reset button"
-		oof = Button:Clone() oof.Parent = Spaghetti oof.Text = "💥oof💥" oof.Position = UDim2.new(0.55,0 , 0,row10)  oof.BackgroundColor3 = Color3.fromRGB(175, 55, 0)   
+		oof = Button:Clone() oof.Parent = Spaghetti oof.Text = "💥oof💥" oof.Position = UDim2.new(0.55,0 , 0,row9)  oof.BackgroundColor3 = Color3.fromRGB(175, 55, 0)   
 		oof.MouseButton1Click:Connect(function() _G.flingup() end)
 		oof.MouseButton2Click:Connect(function() _G.FLing_Killed() end)
 
@@ -3135,7 +3144,7 @@ function guias()
 		swimin.Position = UDim2.new(0.05,0 , 0,row13)
 
 		tpb.Position = UDim2.new(0.05,0 , 0,row11)
-		heavy1.Position = UDim2.new(0.5,0 , 0,row9)
+		heavy1.Position = UDim2.new(0.5,0 , 0,row10)
 
 		Flag.Position = UDim2.new(0.5,0 , 0,row18)
 
