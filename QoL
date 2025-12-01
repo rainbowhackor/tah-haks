@@ -668,7 +668,7 @@ function CharSettings() humy = char:WaitForChild("Humanoid") humy.UseJumpPower =
 				end
 			end  
 		end 
-		
+
 		an=169402 AnimSet()task.wait(1) an=0 runan=1
 		if not game.Lighting:FindFirstChildWhichIsA("ColorCorrectionEffect") then colcor=Instance.new("ColorCorrectionEffect",game.Lighting) colcor.Name = "morecolor" game.Lighting:FindFirstChildWhichIsA("ColorCorrectionEffect").Saturation = 0.4 end
 	end
@@ -2336,20 +2336,10 @@ function guias()
 			ran2.MouseWheelForward:Connect(function() char.Humanoid.WalkSpeed = 200 end)
 			ran2.MouseWheelBackward:Connect(function() char.Humanoid.WalkSpeed = 50 end)
 
+			dis = Button:Clone() dis.Parent = masslist dis.Text = "disaster" 
+			dis.MouseButton1Click:Connect(function() dis.Text = char.SurvivalTag.Value wait(2) dis.Text = "disaster"  end) 
 
-			jum = Button:Clone() jum.Parent = masslist jum.Text = "Jum  7.2, CH, 15, 22" jum.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
-			jum.MouseButton1Click:Connect(function() char.Humanoid.JumpPower = 50 char.Humanoid.JumpHeight = 7.2 end)
-			jum.MouseButton2Click:Connect(function() char.Humanoid.JumpPower = 50 * char.Humanoid.BodyHeightScale.Value  char.Humanoid.JumpHeight = 7.2 * char.Humanoid.BodyHeightScale.Value end)
-			jum.MouseWheelForward:Connect(function() char.Humanoid.JumpHeight = 15 end)
-			jum.MouseWheelBackward:Connect(function() char.Humanoid.JumpHeight = 22 end)
-			--[[jum2 = Button:Clone() jum2.Parent = masslist jum2.Text = "Jum  / character height" jum2.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
-			jum2.MouseButton1Click:Connect(function() char.Humanoid.JumpPower = 50 * char.Humanoid.BodyHeightScale.Value  char.Humanoid.JumpHeight = 7.2 * char.Humanoid.BodyHeightScale.Value end)
-			jump1 = Button:Clone() jump1.Parent = masslist jump1.Text = "jump 10 , 15" jump1.BackgroundColor3 = Color3.fromRGB(127, 90, 59)
-			jump1.MouseButton1Click:Connect(function() char.Humanoid.JumpHeight = 10 end)
-			jump1.MouseButton2Click:Connect(function() char.Humanoid.JumpHeight = 15 end)
-			jump2 = Button:Clone() jump2.Parent = masslist jump2.Text = "jump 20 , 25" jump2.BackgroundColor3 = Color3.fromRGB(127, 90, 59)
-			jump2.MouseButton1Click:Connect(function() char.Humanoid.JumpHeight = 20 end)
-			jump2.MouseButton2Click:Connect(function() char.Humanoid.JumpHeight = 25 end)]]
+			
 
 
 			gravs = Button:Clone() gravs.Parent = masslist gravs.Text = "G 11 22 5" 
@@ -2398,7 +2388,20 @@ function guias()
 			res = Button:Clone() res.Parent = masslist res.Text = "reset grass" 
 			res.MouseButton1Click:Connect(function()  for _, part in pairs(workspace:GetDescendants()  ) do if part:IsA("BasePart") and part.Size == Vector3.new(164,.4,159) then part.CFrame = CFrame.new( -6.5,44.2,-7)  * CFrame.Angles(0,math.rad(90),0) end end end) 
 
-
+jum = Button:Clone() jum.Parent = masslist jum.Text = "Jum  7.2, CH, 15, 22" jum.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
+			jum.MouseButton1Click:Connect(function() char.Humanoid.JumpPower = 50 char.Humanoid.JumpHeight = 7.2 end)
+			jum.MouseButton2Click:Connect(function() char.Humanoid.JumpPower = 50 * char.Humanoid.BodyHeightScale.Value  char.Humanoid.JumpHeight = 7.2 * char.Humanoid.BodyHeightScale.Value end)
+			jum.MouseWheelForward:Connect(function() char.Humanoid.JumpHeight = 15 end)
+			jum.MouseWheelBackward:Connect(function() char.Humanoid.JumpHeight = 22 end)
+			--[[jum2 = Button:Clone() jum2.Parent = masslist jum2.Text = "Jum  / character height" jum2.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
+			jum2.MouseButton1Click:Connect(function() char.Humanoid.JumpPower = 50 * char.Humanoid.BodyHeightScale.Value  char.Humanoid.JumpHeight = 7.2 * char.Humanoid.BodyHeightScale.Value end)
+			jump1 = Button:Clone() jump1.Parent = masslist jump1.Text = "jump 10 , 15" jump1.BackgroundColor3 = Color3.fromRGB(127, 90, 59)
+			jump1.MouseButton1Click:Connect(function() char.Humanoid.JumpHeight = 10 end)
+			jump1.MouseButton2Click:Connect(function() char.Humanoid.JumpHeight = 15 end)
+			jump2 = Button:Clone() jump2.Parent = masslist jump2.Text = "jump 20 , 25" jump2.BackgroundColor3 = Color3.fromRGB(127, 90, 59)
+			jump2.MouseButton1Click:Connect(function() char.Humanoid.JumpHeight = 20 end)
+			jump2.MouseButton2Click:Connect(function() char.Humanoid.JumpHeight = 25 end)]]
+			
 		end)  
 
 
@@ -3189,15 +3192,15 @@ function guias()
 		function hatme(tha) rbutton = Button:Clone() rbutton.Parent = myhatist rbutton.Size =  UDim2.new(0.95,0 , 0,15) 
 			rbutton.TextXAlignment = Enum.TextXAlignment.Left rbutton.Text = tha rbutton.BackgroundTransparency = .6  rbutton.Name = "A" --waerd= Instance.new("BoolValue",rbutton) waerd.Name = "wearing"
 		end 
-		 
+
 
 		function hat3() nil2 = Instance.new("TextLabel") nil2.Name = "Button" nil2.Parent = myhatist nil2.Size =  UDim2.new(0.95,0 , 0,07) nil2.Text = "" nil2.BackgroundTransparency = 1 end
 		dirt1s = { "float dirt1",  "hai1 pony 2", "hai1 pony b" , }
 		dirt2s = {  "hai2 bl", "hai2 p" ,"hai2 br" , "flowers" ,"ear1"  , }
 		dirt3s = { "hai4" ,"ribbon" ,"pear", "hai pr" ,"hai3" ,"cat fluf" , "hai5",  "hai5b" , "hai6" }
-		
-			
-		
+
+
+
 		fairys = {    "Fairy Winter", "Fairy Spring", "Fairy Beach", "Fairy PeaGold", "Fairy Fall", "Fairy St Patricks", }-- for _,tha in pairs(fairys) do hat2(tha) end
 		mewings = { "Wings Murica", "Wings Murica2", "Wings Galaxy", "Wings Gold" , } 
 		neckbling = { "Snow Queen", "Chain SUS", "Chain Troll", "Chain OOF",    }  
@@ -3310,7 +3313,7 @@ function guias()
 						HatMesh = Instance.new("SpecialMesh",Hat)  
 						HatAtt = Instance.new("Attachment",Hat) HatAtt.Name = "HatAttachment" 
 						hweld = Instance.new("Weld",Hat) hweld.Part0=Hat --hweld.Part1 = char.Head hweld.C1 = char.Head.FaceFrontAttachment.CFrame hweld.Enabled = false
-						
+
 						--17504262483, 11836227663
 						--rbxassetid://4983110225 plat
 						--hai 133932909316305,90880833433541,80326429185239,18869177287,81965434753875,132918315740187,,
@@ -3322,8 +3325,8 @@ function guias()
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0, 0.827, -0.413)   end
 						if Buttons.Text == "hai1 pony b" then HatMesh.MeshId = "rbxassetid://11830104662" HatMesh.TextureId = "rbxassetid://8852353202" HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0, 0.827, -0.413)   end
-						
-						
+
+
 						if Buttons.Text == "hai2 bl" then HatMesh.MeshId = "rbxassetid://14606169590" HatMesh.TextureId = "http://www.roblox.com/asset/?id=12884126459" HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(-0.01, 0.378, -0.016)   end
 						if Buttons.Text == "hai2 p" then HatMesh.MeshId = "rbxassetid://14606169590" HatMesh.TextureId = "http://www.roblox.com/asset/?id=12884129965" HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
@@ -3344,24 +3347,24 @@ function guias()
 
 						if Buttons.Text == "hai pr" then HatMesh.MeshId = "rbxassetid://14490180480" HatMesh.TextureId = "rbxassetid://14490184855" HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "FaceCenterAttachment" HatAtt.Position = Vector3.new(-0.002, 0.023, -0)  HatAtt.Orientation = Vector3.new(0, 90, 0)  end
-						
+
 						if Buttons.Text == "hai4" then HatMesh.MeshId = "rbxassetid://13619957051" HatMesh.TextureId = "http://www.roblox.com/asset/?id=12884129965" HatMesh.Scale=Vector3.new(.83,.83,.83)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(-0.046, 0.502, -0.043)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end 
 						--if Buttons.Text == "ton" then HatMesh.MeshId = "rbxassetid://10823990177" HatMesh.TextureId = "rbxassetid://10823990273" HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
 						--	HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(0.022, 0.314, -0.003)  HatAtt.Orientation = Vector3.new(0, 90, 0)  end  
 						if Buttons.Text == "cat fluf" then HatMesh.MeshId = "rbxassetid://7189858606" HatMesh.TextureId = "rbxassetid://7189858659" HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
 							HatAtt.Name = "HatAttachment" HatAtt.Position = Vector3.new(0.004, -0.183, -0.004)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
-						
+
 						if Buttons.Text == "hai5" then HatMesh.MeshId = "rbxassetid://16692362631" HatMesh.TextureId = "rbxassetid://11358714930" HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0.011, 0.412, 0)  HatAtt.Orientation = Vector3.new(0, 90, 0)  end
 						if Buttons.Text == "hai5b" then HatMesh.MeshId = "rbxassetid://16692362631" HatMesh.TextureId = "http://www.roblox.com/asset/?id=15469710327" HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0.011, 0.412, 0)  HatAtt.Orientation = Vector3.new(0, 90, 0)  end
 						if Buttons.Text == "hai6" then HatMesh.MeshId = "rbxassetid://13489987658" HatMesh.TextureId = "http://www.roblox.com/asset/?id=11413134615" HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0.003, 0.321, -0.039)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
-						
-						
-						
-						
+
+
+
+
 						if Buttons.Text == "Fairy St Patricks" then HatMesh.MeshId = "http://www.roblox.com/asset/?id=226143404" HatMesh.TextureId = "http://www.roblox.com/asset/?id=226143506"  HatMesh.Scale=Vector3.new(.25	, .25, .25)
 							HatAtt.Name = "RightCollarAttachment" HatAtt.Position = Vector3.new(-0.2, -1.54, -0.1) hatspark = Instance.new("Sparkles",Hat) hatspark.SparkleColor = Color3.fromRGB(0, 170, 0) end
 						if Buttons.Text == "Fairy Winter" then HatMesh.MeshId = "http://www.roblox.com/asset/?id=128216670" HatMesh.TextureId = "http://www.roblox.com/asset/?id=141740743" 
@@ -3551,7 +3554,7 @@ function guias()
 						gal2 = {"hai2 bl", "flowers", "ear1" }  
 						gal3 = {"hai3", "ribbon" , "pear" }  
 						gal4 = {  "float dirt1",  "hai pr",  "cat fluf"  }  
-						
+
 						function hatme2(tha) Accessory = Instance.new("Accessory",char) Accessory.Name = tha va = Instance.new("BoolValue",Accessory) va.Name = "me"
 							Hat = Instance.new("Part",Accessory) Hat.Name = "Handle" Hat.Size = Vector3.new(0.1, 0.1, 0.1) Hat.CanCollide = false Hat.Massless = true Hat.CanQuery = false
 							HatMesh = Instance.new("SpecialMesh",Hat) HatAtt = Instance.new("Attachment",Hat) hweld = Instance.new("Weld",Hat) hweld.Part0=Hat
@@ -3611,14 +3614,14 @@ function guias()
 								HatAtt.Name = "RightCollarAttachment" HatAtt.Position = Vector3.new(-0.2, -1.54, -0.1) hatspark = Instance.new("Sparkles",Hat) hatspark.SparkleColor = Color3.fromRGB(0, 170, 0) end
 							if Accessory.Name == "Chain Troll" then HatAtt.Name = "NeckAttachment" HatAtt.Position = Vector3.new(0, 0.5, -0) 
 								HatMesh.MeshId = "http://www.roblox.com/asset/?id=398629732" HatMesh.TextureId = "http://www.roblox.com/asset/?id=398627694" end
-							
-							
-						 
-							
-							
-							
-							
-							
+
+
+
+
+
+
+
+
 							wide = char.Humanoid.BodyWidthScale.Value tall = char.Humanoid.BodyHeightScale.Value thicc = char.Humanoid.BodyDepthScale.Value hedas = char.Humanoid.HeadScale.Value 
 							for _,v in pairs(char:GetChildren()) do
 								FoundAttachment = v:FindFirstChild(HatAtt.Name) 
@@ -3643,23 +3646,23 @@ function guias()
 							if not char.LowerTorso:FindFirstChild("Decal") then 
 								bel = Instance.new("Decal",char.LowerTorso) bel.Texture = "rbxassetid://91169003778096"
 								bel = Instance.new("Decal",char.LowerTorso) bel.Texture = "rbxassetid://18713397525" --crac small
-								
+
 								bel = Instance.new("Decal",char.LowerTorso) bel.Texture = "rbxassetid://91169003778096" bel.Face = Enum.NormalId.Bottom
 								bel = Instance.new("Decal",char.LowerTorso) bel.Texture = "rbxassetid://91169003778096" bel.Face = Enum.NormalId.Bottom
-								
+
 								bel = Instance.new("Decal",char.LowerTorso) bel.Texture = "rbxassetid://91169003778096" bel.Face = Enum.NormalId.Back
 								bel = Instance.new("Decal",char.LowerTorso) bel.Texture = "rbxassetid://124539244244105" bel.Face = Enum.NormalId.Back -- crac big
 								bel = Instance.new("Decal",char.LowerTorso) bel.Texture = "rbxassetid://18713397525" bel.Face = Enum.NormalId.Back --crac small
-								
-								
+
+
 								bel = Instance.new("Decal",char.UpperTorso) bel.Texture = "rbxassetid://91169003778096"
 								bel = Instance.new("Decal",char.UpperTorso) bel.Texture = "rbxassetid://91169003778096" bel.Face = Enum.NormalId.Back
 								bel = Instance.new("Decal",char.UpperTorso) bel.Texture = "rbxassetid://18713397525"   --crac small
 								bel = Instance.new("Decal",char.UpperTorso) bel.Texture = "rbxassetid://18713397525" bel.Face = Enum.NormalId.Back --crac small
-								
+
 							end
 						end
-						
+
 						if Buttons.Text == "refresh" then if myhatist:FindFirstChildWhichIsA("Pants") then char:FindFirstChildWhichIsA("Pants").PantsTemplate = myhatist:FindFirstChildWhichIsA("Pants").PantsTemplate end if myhatist:FindFirstChildWhichIsA("Shirt") then char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = myhatist:FindFirstChildWhichIsA("Shirt").ShirtTemplate end
 							for _,shad in pairs(char:GetChildren()) do if shad:IsA("Accessory") and shad:FindFirstChildWhichIsA("BasePart") then if not shad:FindFirstChild("me") then shad:FindFirstChildWhichIsA("BasePart").Transparency = 0 end if shad:FindFirstChild("me") then shad:Remove() end end end
 						end
@@ -3669,7 +3672,7 @@ function guias()
 						end	
 						if Buttons.Text == "nothing" then  
 							for _,shad in pairs(char:GetChildren()) do if shad:IsA("Accessory") and shad:FindFirstChildWhichIsA("BasePart") then if not shad:FindFirstChild("me") then shad:FindFirstChildWhichIsA("BasePart").Transparency = 1 end if shad:FindFirstChild("me") then shad:Remove() end end end
-						 for _,tha in pairs(gal1) do hatme2(tha) end
+							for _,tha in pairs(gal1) do hatme2(tha) end
 						end	
 						if Buttons.Text == "gal2" then  
 							for _,shad in pairs(char:GetChildren()) do if shad:IsA("Accessory") and shad:FindFirstChildWhichIsA("BasePart") then if not shad:FindFirstChild("me") then shad:FindFirstChildWhichIsA("BasePart").Transparency = 1 end if shad:FindFirstChild("me") then shad:Remove() end end end
@@ -3683,7 +3686,7 @@ function guias()
 							for _,shad in pairs(char:GetChildren()) do if shad:IsA("Accessory") and shad:FindFirstChildWhichIsA("BasePart") then if not shad:FindFirstChild("me") then shad:FindFirstChildWhichIsA("BasePart").Transparency = 1 end if shad:FindFirstChild("me") then shad:Remove() end end end
 							for _,tha in pairs(gal4) do hatme2(tha) end
 						end	
-						
+
 						--[[if Buttons.Text == "Diamond" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "http://www.roblox.com/asset/?id=7235268670" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "http://www.roblox.com/asset/?id=7235234641"
 							for _,shad in pairs(char:GetChildren()) do if shad:IsA("Accessory") and shad:FindFirstChildWhichIsA("BasePart") then if not shad:FindFirstChild("me") then shad:FindFirstChildWhichIsA("BasePart").Transparency = 1 end if shad:FindFirstChild("me") then shad:Remove() end end end
 							if workspace.GlowyHats and workspace.GlowyHats:FindFirstChild("Fed Manyullyn") then workspace.GlowyHats:FindFirstChild("Fed Manyullyn"):Remove() end
@@ -3700,19 +3703,19 @@ function guias()
 							for _,tha in pairs(monyay2) do hatme2(tha) end
 						end	]]
 						if Buttons.Text == "belly s" then   
-							
-							 
-								bel()  
+
+
+							bel()  
 						end	
 						if Buttons.Text == "Wolf clo" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "http://www.roblox.com/asset/?id=6851982960" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "http://www.roblox.com/asset/?id=8219508887" end
 						if Buttons.Text == "clo1" then char:FindFirstChildWhichIsA("Pants").PantsTemplate =  "http://www.roblox.com/asset/?id=15100022603" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "http://www.roblox.com/asset/?id=131004016764723" end
 						if Buttons.Text == "clo2" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "rbxassetid://10719267706" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "rbxassetid://137631918411915" end
 						if Buttons.Text == "clo3" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "rbxassetid://136667289149763" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "rbxassetid://138034839236097" end
-						
+
 						if Buttons.Text == "clo4" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "rbxassetid://136667289149763" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "rbxassetid://9965111089" end
-					 
+
 					end
-							 
+
 				end)
 			end
 		end
@@ -3727,7 +3730,7 @@ function guias()
 			facelist = Scroll:Clone() facelist.Parent = Begal.GuiHolder  facelist.Name = "facelist" facelist.BackgroundTransparency = 1 facelist.Position = UDim2.new(0.15, 0 , 0.3, 0)  facelist.Size = UDim2.new(0.15, 0 , 0.36, 0)
 			gridding = Instance.new("UIGridLayout",facelist) gridding.CellPadding = UDim2.new(0,1,0,1) gridding.CellSize = UDim2.new(.3,0, 190/33/2/66,0)
 
-			 
+
 			--in game id ={  rbxassetid://5905952640  ,  rbxassetid://6115951590 , rbxassetid://10022561666  , rbxassetid://137631918411915  ,    ,}
 			--cloID = {  81142835335078 ,10719267723, 16571308530, 16571336224, 	16571329991, 6794259587, 
 			--	5905952640, 6115951607 , 111829062610201  ,  15740536166 , 3411796913 , 15256474467, 12922853470 , 117156435954399,  17631917239,       6415207970,  7903215561,  8582045072,  97127613626768, 7726998895,  
@@ -3750,8 +3753,8 @@ function guias()
 				end)
 			end
 		end)
-		
-		  
+
+
 		ThisIs = {"ski"} --no one can see this, it's just mental assurance  
 		faces1 = Button:Clone() faces1.Parent = Spaghetti faces1.Text = "skin" faces1.Position = UDim2.new(0.5,0 , 0,row23) faces1.BackgroundColor3 = Color3.fromRGB(241, 179, 161)   
 		faces1.MouseButton1Click:Connect(function()
@@ -3780,9 +3783,9 @@ function guias()
 			for _, faces in pairs(faceID) do local face = FaceButton:Clone() face.Parent = facelist face.Image = "http://www.roblox.com/asset?id="..faces face.MouseButton1Click:Connect(function()
 					if char.Head:FindFirstChild("face") then char.Head.face.Texture = face.Image else if not char:FindFirstChild("FakeHead") then NewHead1() end FakeHead.face.Texture = face.Image end end) end
 		end)]]
-		
-		
-		
+
+
+
 
 		ThisIs = {"Dance Gui"}  --ALL YOUR EMOETS ARE BELONG TO ME!  I AM DE CAPITAN NOWW!!								 thank roblox for limiting to 8 emotes, now I make hack to do ALL emotes
 		local PINGU = Instance.new("ScreenGui",Begal) PINGU.Name = "TIME TO DIY 3" PINGU.Enabled = false
@@ -4038,7 +4041,7 @@ function guias()
 
 
 
-			
+
 
 
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
@@ -4085,9 +4088,9 @@ function guias()
 			{ Id = "3576747102", Name = "AroundT",  Color = Color3.fromRGB(93, 0, 255)  },
 			{ Id = "5915776835", Name = "Highwave",  Color = Color3.fromRGB(170, 85, 127)  },
 			{ Id = "18855603653", Name = "your last"  ,  Color = Color3.fromRGB(0, 255, 255)  },
-			
-			
-			
+
+
+
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
 
@@ -4096,23 +4099,23 @@ function guias()
 
 			{ Id = "97847706148165", Name = "cara 1" ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = "78276416047037", Name = "zero 3",  Color = Color3.fromRGB(0, 255, 81)  },
-			
+
 			{ Id = "104785070751226", Name = "lay" ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = "109717883004818", Name = "hip2",  Color = Color3.fromRGB(0, 255, 81)  },
-			
+
 			{ Id = "138595801943699", Name = "peacef" ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = "101817558016805", Name = "drop it",  Color = Color3.fromRGB(0, 255, 81)  },
-			
+
 			{ Id = "101541647570351", Name = "hula4" ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = "135915367893892", Name = "zero 2b",  Color = Color3.fromRGB(0, 255, 81)  },
-			
+
 			{ Id = "119630730265659", Name = "Wiggle s" ,  Color = Color3.fromRGB(0, 170, 255)  },
-			 
-			
-			
-			
-			
-			
+
+
+
+
+
+
 			--	{ Id = "139750331539521", Name = "wu no",  Color = Color3.fromRGB(170, 170, 0)  },
 
 
