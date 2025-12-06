@@ -624,16 +624,16 @@ end]]
 
 
 function delski() if  char:FindFirstChild("Meshes/Chocolate Donut Rainbow LimitedAccessory") or char:FindFirstChild("SnowQueenNecklace")  or char.LowerTorso.MeshId == "rbxassetid://102444473034465" or char.LowerTorso.MeshId == "rbxassetid://102444473034465"   then 
-	for _, ro in pairs(char:GetChildren()) do --if ro:IsA("BasePart") then ro.Material = Enum.Material.SmoothPlastic end  
-		if ro:IsA("MeshPart") and ro.Name ~= "Head" and ro.Name ~= "Fake Head 😩" then  ro.TextureID = ""  --ro.Material = Enum.Material.RoofShingles
-			for _, ro2 in pairs(ro:GetChildren()) do 
-				if ro2:IsA("SurfaceAppearance") then ro2:Remove() end 
-			end
-			 
-			--sk = workspace.ski["0 s1 ski23"]:FindFirstChildWhichIsA("SurfaceAppearance"):Clone() sk.Parent = ro --	sk.Color = char.Head.Color
-		end  
+		for _, ro in pairs(char:GetChildren()) do --if ro:IsA("BasePart") then ro.Material = Enum.Material.SmoothPlastic end  
+			if ro:IsA("MeshPart") and ro.Name ~= "Head" and ro.Name ~= "Fake Head 😩" then  ro.TextureID = ""  --ro.Material = Enum.Material.RoofShingles
+				for _, ro2 in pairs(ro:GetChildren()) do 
+					if ro2:IsA("SurfaceAppearance") then ro2:Remove() end 
+				end
+
+				--sk = workspace.ski["0 s1 ski23"]:FindFirstChildWhichIsA("SurfaceAppearance"):Clone() sk.Parent = ro --	sk.Color = char.Head.Color
+			end  
+		end
 	end
-end
 end
 
 function SEAT() if workspace:FindFirstChild("seater") then workspace:FindFirstChild("seater"):Remove() return end 
@@ -2458,6 +2458,58 @@ function guias()
 		runsp.FocusLost:Connect(function() runsp.Text = runsp.Text:gsub('[^%d.]', ''); char.Humanoid.WalkSpeed = (runsp.Text) end)  
 
 
+
+
+		ThisIs = {"Import Layered"}	 
+
+		laeyers = Button:Clone() laeyers.Parent = Spaghetti laeyers.Text = "Layers" laeyers.Position = UDim2.new(0.5,0 , 0,row21)  laeyers.BackgroundColor3 = Color3.fromRGB(0, 170, 255)  
+		laeyers.MouseButton1Click:Connect(function() 
+
+			if not game.Lighting:FindFirstChild("layers") then 
+				poobaa = Instance.new("Folder",game.Lighting) poobaa.Name = "layers"
+				Instance.new("Model",poobaa).Name = "fit1"
+				Instance.new("Model",poobaa).Name = "fit2"
+				Instance.new("Model",poobaa).Name = "fit3"
+				Instance.new("Model",poobaa).Name = "fit4"
+			end 
+
+			if char:FindFirstChild("White cat paws") and not game.Lighting.layers.fit1:FindFirstChild("White cat paws") then  char:FindFirstChild("White cat paws"):Clone().Parent = game.Lighting.layers.fit1 end
+			if char:FindFirstChild("Accessory (Cat)") and not game.Lighting.layers.fit1:FindFirstChild("Accessory (Cat)") then  char:FindFirstChild("Accessory (Cat)"):Clone().Parent = game.Lighting.layers.fit1 end
+			if char:FindFirstChild("Accessory (Generated Accessory)") and not game.Lighting.layers.fit1:FindFirstChild("Accessory (Generated Accessory)") then  char:FindFirstChild("Accessory (Generated Accessory)"):Clone().Parent = game.Lighting.layers.fit1 end
+
+
+
+
+			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
+			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "lazylist" then Ui:Remove() end end
+			if Begal.GuiHolder:FindFirstChild("lazylist") then Begal.GuiHolder:FindFirstChild("lazylist"):Remove() return end
+			local masslist = notScroll:Clone() masslist.Parent = Begal.GuiHolder  masslist.Name = "lazylist" masslist.BackgroundTransparency = 1 masslist.Position = UDim2.new(0.15, 0 , 0.3, 0)  masslist.Size = UDim2.new(0.1, 0 , 0.36, 0)
+			listing = Instance.new("UIListLayout",masslist) listing.Padding = UDim.new(0,1)
+
+			plus = 15 Button.BackgroundColor3 = Color3.fromRGB(85, 85, 127) Button.Size = UDim2.new(0.95,0 , 0,15) Button.TextXAlignment = Enum.TextXAlignment.Left Button.BackgroundTransparency = .5
+
+			ran = Button:Clone() ran.Parent = masslist ran.Text = "fit 1" 
+			ran.MouseButton1Click:Connect(function() 
+				for _,bruh in pairs(game.Lighting.layers.fit1:GetChildren()) do 
+					if not char:FindFirstChild(bruh.Name) then
+						bruh:Clone().Parent = char bruh.Handle.AccessoryWeld.Part1 = char.Head  
+					end 
+				end
+			end) 
+			ran2 = Button:Clone() ran2.Parent = masslist ran2.Text = " " 
+			ran2.MouseButton1Click:Connect(function()    end) 
+
+			dis = Button:Clone() dis.Parent = masslist dis.Text = " " 
+			dis.MouseButton1Click:Connect(function() dis.Text = char.SurvivalTag.Value wait(2) dis.Text = "disaster"  end) 
+
+
+		end) 
+		laeyers.MouseButton2Click:Connect(function()  end) 
+
+
+
+
+
 		ThisIs = {"fps cap"} 
 		--[[fpsc = TextBox:Clone() fpsc.Parent = Spaghetti fpsc.PlaceholderText = "fps 60" fpsc.Position = UDim2.new(0.5,0 , 0,row27)  fpsc.BackgroundColor3 = Color3.fromRGB(170, 0, 255)  
 		--runsp:GetPropertyChangedSignal("Text"):Connect(function() runsp.Text = runsp.Text:gsub('[^%d.]', ''); char.Humanoid.WalkSpeed = (runsp.Text) end)  
@@ -3230,7 +3282,7 @@ function guias()
 
 		--if ME == true or Ruse == true then 
 		--mychars = { "Wolf",  "Diamond", "moneyaAYYe","moneyaAYYe2","Nil", , "gal1", "gal2" ,"gal3", "gal4", }   for _,tha in pairs(mychars) do hatme(tha) end 
-		mychars = { "Wolf","refresh", "nothing","belly s", "Wolf clo",  "clo1", "clo2" ,"clo3", "clo4","no clo" }   for _,tha in pairs(mychars) do hatme(tha) end 
+		mychars = { "Wolf","refresh", "nothing",   "clo1", "clo2" ,"clo3", "clo4","clo5", "clo6" ,"clo7","no clo", "belly s",}   for _,tha in pairs(mychars) do hatme(tha) end 
 		--end
 
 		hat_groups = {dirt1s,dirt2s,dirt3s,  fairys,mewings,neckbling,meh1,meh2,tails,firehorn,crowns,federation,hairs} for _,that in pairs(hat_groups) do for _,tha in pairs(that) do Button.BackgroundColor3 = Color3.fromRGB(170, 85, 255) hat2(tha) end    hat3() end 
@@ -3668,6 +3720,7 @@ function guias()
 
 								bel = Instance.new("Decal",char.LowerTorso) bel.Texture = "rbxassetid://91169003778096" bel.Face = Enum.NormalId.Back	bel.Name = "bel back" 	
 								bel = Instance.new("Decal",char.LowerTorso) bel.Texture = "rbxassetid://124539244244105" bel.Face = Enum.NormalId.Back bel.Name = "c big back" -- crac big 
+								bel = Instance.new("Decal",char.LowerTorso) bel.Texture = "rbxassetid://124539244244105" bel.Face = Enum.NormalId.Back bel.Name = "c big back" 
 								--bel = Instance.new("Decal",char.LowerTorso) bel.Texture = "rbxassetid://124539244244105" bel.Face = Enum.NormalId.Back bel.Name = "c big back" -- crac big 
 								bel = Instance.new("Decal",char.LowerTorso) bel.Texture = "rbxassetid://124539244244105" bel.Face = Enum.NormalId.Front bel.Name = "c big front" -- crac big 
 								--bel = Instance.new("Decal",char.LowerTorso) bel.Texture = "rbxassetid://18713397525" bel.Face = Enum.NormalId.Back  bel.Name = "c smal back"--crac small
@@ -3737,7 +3790,11 @@ function guias()
 
 						if Buttons.Text == "clo4" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "rbxassetid://136667289149763" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "rbxassetid://9965111089" end
 						if Buttons.Text == "no clo" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "" end
+						if Buttons.Text == "clo5" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "http://www.roblox.com/asset/?id=16124985124" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "rbxassetid://123548586467786" end
+						if Buttons.Text == "clo6" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "rbxassetid://136379601149273" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "rbxassetid://136379601149273" end
+						if Buttons.Text == "clo7" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "rbxassetid://133500297240788" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "rbxassetid://133500297240788" end
 
+						
 					end
 
 				end)
@@ -3759,9 +3816,9 @@ function guias()
 			--cloID = {  81142835335078 ,10719267723, 16571308530, 16571336224, 	16571329991, 6794259587, 
 			--	5905952640, 6115951607 , 111829062610201  ,  15740536166 , 3411796913 , 15256474467, 12922853470 , 117156435954399,  17631917239,       6415207970,  7903215561,  8582045072,  97127613626768, 7726998895,  
 			--	6290381070,  9129025190 ,  10022561683  , 6454370739,  9965111103,  18409358876, 16433611219,  4657243939,  5257576419,  8578239692,    }
-			cloID = {  137631918411915 ,10719267706, 16571308499, 16571336212, 	16571329969, 6794259585, 
+			cloID = {   131269505180260, 136379601149273, 137631918411915 ,10719267706, 16571308499, 16571336212, 	16571329969, 6794259585, 
 				5905952640, 6115951590 , 136667289149763  ,  15740536137 , 3411796891 , 15256474450, 12922853452 , 86311794346046,  17631917218,       6415207955,  7903215548,  8582045069,  83074494937484, 7726998870,  
-				6290381047,  9129025180 ,  10022561666  , 6454370707,  9965111089,   18409358813, 16433611209,  4657243927,  5257576269,  8578239685,    }
+				6290381047,  9129025180 ,  10022561666  , 6454370707,  9965111089,   18409358813, 16433611209,  4657243927,  5257576269,  8578239685, 16124985124, 123548586467786, 133500297240788 ,  }
 			--combo =  p 111829062610201  s 91075312279952 , 
 			--combo =  p 10719267723   s 81142835335078 
 			--combo =  p http://www.roblox.com/asset/?id=15100022603  s http://www.roblox.com/asset/?id=131004016764723 ,  pink
@@ -4031,7 +4088,7 @@ function guias()
 			{ Id = "107878126791437", Name = "mufasa",  Color = Color3.fromRGB(86, 86, 0)  },
 			{ Id = "109608096496039", Name = "true heart",  Color = Color3.fromRGB(255, 170, 255)  },
 			{ Id = "125646873823019", Name = "Louisiana-Jigg2",  Color = Color3.fromRGB(0, 85, 127)  }, 
-			
+
 
 			{ Id = "123881853795949", Name = "Chicken Wing",  Color = Color3.fromRGB(85, 255, 0)  },
 			--{ Id = "82438623948539", Name = "Shuffle E",  Color = Color3.fromRGB(0, 0, 255)  },
@@ -4156,7 +4213,7 @@ function guias()
 
 			{ Id = "139045750018252", Name = "SPEEEED shake " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = "74941409284905", Name = "feelin myself " ,  Color = Color3.fromRGB(0, 170, 255)  },
-			
+
 			{ Id = "73159417679302", Name = "FRICK" ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = "118492862930593", Name = "sit fav " ,  Color = Color3.fromRGB(0, 170, 255)  },
 
