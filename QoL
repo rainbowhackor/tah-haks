@@ -4241,7 +4241,7 @@ function guias()
 			{ Id = "129802318248541", Name = "sharp more " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = "122303328580178", Name = "sharp dance " ,  Color = Color3.fromRGB(0, 170, 255)  },
 
-			{ Id = "76314635574102", Name = "hoola " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = "76314635574102", Name = "hoola no" ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = "140559415793416", Name = " SENTA POCA" ,  Color = Color3.fromRGB(0, 170, 255)  },
 
 			{ Id = "111750641961932", Name = " 3Shake That Thin" ,  Color = Color3.fromRGB(0, 170, 255)  },
@@ -4250,9 +4250,17 @@ function guias()
 			{ Id = "139045750018252", Name = "SPEEEED shake " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = "74941409284905", Name = "feelin myself " ,  Color = Color3.fromRGB(0, 170, 255)  },
 
-			{ Id = "73159417679302", Name = "FRICK" ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = "107354998205291", Name = "hoop" ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = "118492862930593", Name = "sit fav " ,  Color = Color3.fromRGB(0, 170, 255)  },
-
+			
+			{ Id = "72074295131591", Name = "worm" ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = "80423577521166", Name = "drop hot " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			
+			{ Id = "129956683216211", Name = "needy" ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = "126432234744925", Name = "needy2 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			
+			{ Id = "105466362615490", Name = "fox" ,  Color = Color3.fromRGB(0, 170, 255)  },  --87011165040436
+			{ Id = "134885577802333", Name = "sway5 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			--	{ Id = "139750331539521", Name = "wu no",  Color = Color3.fromRGB(170, 170, 0)  },
 
 
