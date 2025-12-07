@@ -777,13 +777,7 @@ function reglow1()--client sided, no one can see this
 	for _,t in pairs(workspace.GlowyHats:GetDescendants()) do if t.Name == "GlowyHat" then t.Mesh.VertexColor = Vector3.new(valg/2, valg/2, valg/2) end end
 end
 
-function NewHead1() if char:FindFirstChild("FakeHead") then char:FindFirstChild("FakeHead"):Remove() char.Head.Transparency = 0 for _,shad in pairs(char.Head.OriginalSize:GetDescendants()) do shad.Parent = char.Head end return end
-	FakeHead = Instance.new("Part",char) FakeHead.Name = "FakeHead" FakeHead.Size = char.Head.Size 
-	FakeHead.CanCollide = false FakeHead.Massless = true FakeHead.CanQuery = false FakeHead.Color = char.Head.Color char.Head.Transparency = 1
-	HatMesh = Instance.new("SpecialMesh",FakeHead) hweld = Instance.new("Weld",FakeHead) hweld.Part0=FakeHead hweld.Part1=char.Head 
-	FakeFace = Instance.new("Decal",FakeHead) FakeFace.Face = Enum.NormalId.Front FakeFace.Name = "face" 
-	for _,shad in pairs(char.Head:GetChildren()) do if shad:IsA("Decal") then shad.Parent = char.Head.OriginalSize end end 
-end
+
 
 ThisIs = {" Character Effects "} --no one can see these effects  
 function OriginalHealLight() if char.UpperTorso:FindFirstChild("HealLight0") then char.UpperTorso.HealLight0:Remove() return end Original_HealLight:Clone().Parent = char.UpperTorso end
@@ -2422,22 +2416,7 @@ function guias()
 
 
 
-		ThisIs = {"Faces"} --no one can see this, it's just mental assurance  
-		--[[faces1 = Button:Clone() faces1.Parent = Spaghetti faces1.Text = "Face" faces1.Position = UDim2.new(0.05,0 , 0,row15) faces1.BackgroundColor3 = Color3.fromRGB(255, 255, 0)   
-		faces1.MouseButton1Click:Connect(function()
-			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
-			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "facelist" then Ui:Remove() end end
-			if Begal.GuiHolder:FindFirstChild("facelist") then Begal.GuiHolder:FindFirstChild("facelist"):Remove() return end
-			facelist = Scroll:Clone() facelist.Parent = Begal.GuiHolder  facelist.Name = "facelist" facelist.BackgroundTransparency = 1 facelist.Position = UDim2.new(0.15, 0 , 0.3, 0)  facelist.Size = UDim2.new(0.15, 0 , 0.36, 0)
-			gridding = Instance.new("UIGridLayout",facelist) gridding.CellPadding = UDim2.new(0,1,0,1) gridding.CellSize = UDim2.new(.3,0, 190/33/2/66,0)
-
-			if not char.Head:FindFirstChild("face") and not char:FindFirstChild("FakeHead") then NewHead1() end
-			--faceID={494291269,26019070,42070576,1665629400, 16652251,20052135,398676450,180660043,26343188		   ,128992838,209995252,21024661,2409285794,406000958,236399287,116042990,258198928,29532363,49045351,28878297,29296146,244160766,10907541,7699174,7074729,14861743,10831558,66330106,391496223,15432080,15177601,11956548,110207437,}
-			faceID = {494290547,26018945,42070872,1868469550,629930519,20052028,398676207,179693472,26343132,6343843123,127959433,209712379,21024598,2409281591,405705854,236455674,115978221,258192246,29532362,49045252,28878210,29296097,243755928,10747810,7699086,7074712,14861556,10747371,66329524,629933140,15431991,15177471,11956455,108209955,}
-			for _, faces in pairs(faceID) do local face = FaceButton:Clone() face.Parent = facelist face.Image = "http://www.roblox.com/asset?id="..faces face.MouseButton1Click:Connect(function()
-					if char.Head:FindFirstChild("face") then char.Head.face.Texture = face.Image else if not char:FindFirstChild("FakeHead") then NewHead1() end FakeHead.face.Texture = face.Image end end) end
-		end)
-		faces1.MouseButton2Click:Connect(function() NewHead1() end)]]
+		 
 
 
 
@@ -2460,51 +2439,7 @@ function guias()
 
 
 
-		ThisIs = {"Import Layered"}	 
-
-		laeyers = Button:Clone() laeyers.Parent = Spaghetti laeyers.Text = "Layers" laeyers.Position = UDim2.new(0.5,0 , 0,row21)  laeyers.BackgroundColor3 = Color3.fromRGB(0, 170, 255)  
-		laeyers.MouseButton1Click:Connect(function() 
-
-			if not game.Lighting:FindFirstChild("layers") then 
-				poobaa = Instance.new("Folder",game.Lighting) poobaa.Name = "layers"
-				Instance.new("Model",poobaa).Name = "fit1"
-				Instance.new("Model",poobaa).Name = "fit2"
-				Instance.new("Model",poobaa).Name = "fit3"
-				Instance.new("Model",poobaa).Name = "fit4"
-			end 
-
-			if char:FindFirstChild("White cat paws") and not game.Lighting.layers.fit1:FindFirstChild("White cat paws") then  char:FindFirstChild("White cat paws"):Clone().Parent = game.Lighting.layers.fit1 end
-			if char:FindFirstChild("Accessory (Cat)") and not game.Lighting.layers.fit1:FindFirstChild("Accessory (Cat)") then  char:FindFirstChild("Accessory (Cat)"):Clone().Parent = game.Lighting.layers.fit1 end
-			if char:FindFirstChild("Accessory (Generated Accessory)") and not game.Lighting.layers.fit1:FindFirstChild("Accessory (Generated Accessory)") then  char:FindFirstChild("Accessory (Generated Accessory)"):Clone().Parent = game.Lighting.layers.fit1 end
-
-
-
-
-			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
-			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "lazylist" then Ui:Remove() end end
-			if Begal.GuiHolder:FindFirstChild("lazylist") then Begal.GuiHolder:FindFirstChild("lazylist"):Remove() return end
-			local masslist = notScroll:Clone() masslist.Parent = Begal.GuiHolder  masslist.Name = "lazylist" masslist.BackgroundTransparency = 1 masslist.Position = UDim2.new(0.15, 0 , 0.3, 0)  masslist.Size = UDim2.new(0.1, 0 , 0.36, 0)
-			listing = Instance.new("UIListLayout",masslist) listing.Padding = UDim.new(0,1)
-
-			plus = 15 Button.BackgroundColor3 = Color3.fromRGB(85, 85, 127) Button.Size = UDim2.new(0.95,0 , 0,15) Button.TextXAlignment = Enum.TextXAlignment.Left Button.BackgroundTransparency = .5
-
-			ran = Button:Clone() ran.Parent = masslist ran.Text = "fit 1" 
-			ran.MouseButton1Click:Connect(function() 
-				for _,bruh in pairs(game.Lighting.layers.fit1:GetChildren()) do 
-					if not char:FindFirstChild(bruh.Name) then
-						bruh:Clone().Parent = char bruh.Handle.AccessoryWeld.Part1 = char.Head  
-					end 
-				end
-			end) 
-			ran2 = Button:Clone() ran2.Parent = masslist ran2.Text = " " 
-			ran2.MouseButton1Click:Connect(function()    end) 
-
-			dis = Button:Clone() dis.Parent = masslist dis.Text = " " 
-			dis.MouseButton1Click:Connect(function() dis.Text = char.SurvivalTag.Value wait(2) dis.Text = "disaster"  end) 
-
-
-		end) 
-		laeyers.MouseButton2Click:Connect(function()  end) 
+		
 
 
 
@@ -2774,14 +2709,14 @@ function guias()
 		afling.MouseButton1Click:Connect(function() AntiFlingPlayable() end)
 
 		This = {"HipHeight"} -- client side
-		--wheight = Button:Clone() wheight.Parent = Spaghetti wheight.Text = "hiphi" wheight.Position = UDim2.new(0.5,0 , 0,row20) wheight.BackgroundColor3 = Color3.fromRGB(255, 255, 255)  
+		--wheight = Button:Clone() wheight.Parent = Spaghetti wheight.Text = "hiphi" wheight.Position = UDim2.new(0.5,0 , 0, ) wheight.BackgroundColor3 = Color3.fromRGB(255, 255, 255)  
 		--wheight.MouseButton1Click:Connect(function() char.Humanoid.HipHeight -= .25 wheight.Text = math.floor(char.Humanoid.HipHeight*100)/100 end) 
 		--wheight.MouseButton2Click:Connect(function() char.Humanoid.HipHeight += .25 wheight.Text = math.floor(char.Humanoid.HipHeight*100)/100 end) 
 
 
 		This = {"get player info. Not even gonna lie to you, this is for my ### game"} 
 		--if purv = true then --  what? you expect me to talk to trans kawaii traps when i can just yoink their gyatt? 
-		toolate = Button:Clone() toolate.Parent = Spaghetti toolate.Text = "toolate" toolate.Position = UDim2.new(0.05,0 , 0,row20) toolate.BackgroundColor3 = Color3.fromRGB(0, 0, 0)   
+		toolate = Button:Clone() toolate.Parent = Spaghetti toolate.Text = "toolate"   toolate.BackgroundColor3 = Color3.fromRGB(0, 0, 0)   
 		toolate.MouseButton1Click:Connect(function()
 			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
 			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "list" then Ui:Remove() end end
@@ -2846,7 +2781,7 @@ function guias()
 
 		added=0 -- *cough *cough (catalog tester)  *cough (outfit games)  *cough (saveinstance)  *cough (aint no party like a-
 		if not game.Lighting:FindFirstChild("oof") then local wa = Instance.new("Model",game.Lighting) wa.Name = "oof" end
-		copychar = Button:Clone() copychar.Parent = Spaghetti copychar.Text = "Copy Me" copychar.Position = UDim2.new(0.05,0 , 0,row20) copychar.BackgroundColor3 = Color3.fromRGB(255, 0, 255)   
+		copychar = Button:Clone() copychar.Parent = Spaghetti copychar.Text = "Copy Me"    copychar.BackgroundColor3 = Color3.fromRGB(255, 0, 255)   
 		copychar.MouseButton1Click:Connect(function()
 			char.Archivable = true cha = char:Clone() cha.Parent = workspace wait(.5) --UserTag ViewTag=isa billboard  HDAdminStarterCharacter PlayerInspector=isa click
 			for _, p in pairs(cha:GetDescendants()) do   
@@ -2858,7 +2793,7 @@ function guias()
 		end)
 		--if not game.Lighting:FindFirstChild("click_char") then Instance.new("BoolValue") oval.Name = "click_char" oval.Value =
 		oval =  false  
-		copychar2 = Button:Clone() copychar2.Parent = Spaghetti copychar2.Text = "Copy Them" copychar2.Position = UDim2.new(0.5,0 , 0,row20) copychar2.BackgroundColor3 = Color3.fromRGB(85, 85, 85)   
+		copychar2 = Button:Clone() copychar2.Parent = Spaghetti copychar2.Text = "Copy Them"   copychar2.BackgroundColor3 = Color3.fromRGB(85, 85, 85)   
 		copychar2.MouseButton1Click:Connect(function() oval = not oval if oval == true then 
 				copychar2.BackgroundColor3 = Color3.fromRGB(0, 255, 0) else copychar2.BackgroundColor3 = Color3.fromRGB(85, 85, 85)  end
 		end)
@@ -3058,8 +2993,8 @@ function guias()
 			end
 		end)
 
-		This = "eeeEEEEWWWWW roblox bugged out and disabled everyones clothes, hey wait a second this isn't half bad, I think I'll add it "
-		fail = Button:Clone() fail.Parent = Spaghetti fail.Text = "nu p sk" fail.Position = UDim2.new(0.05,0 , 0,row24) fail.BackgroundColor3 = Color3.fromRGB(0, 0, 0)   
+		This = "eeeEEEEWWWWW roblox bugged out and disabled everyones clothes, hey wait a second this isn't half bad. I think I'll add it "
+		fail = Button:Clone() fail.Parent = Spaghetti fail.Text = "nu p sk" fail.Position = UDim2.new(0.5,0 , 0,row21) fail.BackgroundColor3 = Color3.fromRGB(0, 0, 0)   
 		fail.MouseButton2Click:Connect(function() char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "" char:FindFirstChildWhichIsA("Pants").PantsTemplate = "" end)
 		fail.MouseButton1Click:Connect(function() for _, ro in pairs(workspace:GetDescendants()) do --if ro:IsA("BasePart") then ro.Material = Enum.Material.SmoothPlastic end  
 				if ro:IsA("Shirt") and not ro:IsDescendantOf(char) then  ro.ShirtTemplate = "" end
@@ -3078,7 +3013,7 @@ function guias()
 
 
 		This = "ttd3"
-		ttd = Button:Clone() ttd.Parent = Spaghetti ttd.Text = "TTD 3" ttd.Position = UDim2.new(0.55,0 , 0,row19) ttd.BackgroundColor3 = Color3.fromRGB(255, 255, 0)   
+		ttd = Button:Clone() ttd.Parent = Spaghetti ttd.Text = "TTD 3" ttd.Position = UDim2.new(0.55,0 , 0,row24) ttd.BackgroundColor3 = Color3.fromRGB(255, 255, 0)   
 		ttd.MouseButton1Click:Connect(function() 
 
 
@@ -3106,7 +3041,7 @@ function guias()
 
 		This = "Save sky settings for you game"
 		savedL=0
-		ligh = Button:Clone() ligh.Parent = Spaghetti ligh.Text = "save Light" ligh.Position = UDim2.new(0.05,0 , 0,row21) ligh.BackgroundColor3 = Color3.fromRGB(255, 170, 0)   
+		ligh = Button:Clone() ligh.Parent = Spaghetti ligh.Text = "save Light" ligh.Position = UDim2.new(0.5,0 , 0,row25) ligh.BackgroundColor3 = Color3.fromRGB(255, 170, 0)   
 		ligh.MouseButton1Click:Connect(function() 
 			gLighting = game.Lighting
 			--if game.Lighting:FindFirstChild("savedLighting") then game.Lighting:FindFirstChild("savedLighting"):Remove() end 
@@ -3232,8 +3167,8 @@ function guias()
 
 		toolate.Position = UDim2.new(0.05,0 , 0,row18)
 		toolate2.Position = UDim2.new(0.05,0 , 0,row19)
-		copychar.Position = UDim2.new(0.05,0 , 0,row20)
-
+		copychar.Position = UDim2.new(0.05,0 , 0,row23)
+		copychar2.Position = UDim2.new(0.5,0 , 0,row23)
 
 		--wheight.Position = UDim2.new(0.5,0 , 0,row22)
 		--bhob.Position = UDim2.new(0.5,0 , 0,row23)
@@ -3246,7 +3181,7 @@ function guias()
 		hatWHY = Instance.new("ScreenGui",Begal) hatWHY.Name = "YOU hat" hatWHY.Enabled = false 
 		myhatist = Scroll:Clone() myhatist.Parent = hatWHY  myhatist.Name = "mine,mine,mine"  myhatist.Position = UDim2.new(0.85, 0 , 0.35, 0) myhatist.Size = UDim2.new(0.1, 0 , 0.6, 0)   myhatist.CanvasSize = UDim2.new(0, 0 , 6, 0)  
 		hateded = Instance.new("UIListLayout",myhatist)  hateded.Padding = UDim.new(0,0)
-		hatb = Button:Clone() hatb.Parent = Spaghetti hatb.Text = "hats" hatb.Position = UDim2.new(0.05,0 , 0,row22) hatb.BackgroundTransparency = .7 hatb.BackgroundColor3 = Color3.fromRGB(255, 85, 255) 
+		hatb = Button:Clone() hatb.Parent = Spaghetti hatb.Text = "chars" hatb.Position = UDim2.new(0.05,0 , 0,row20) hatb.BackgroundTransparency = .7 hatb.BackgroundColor3 = Color3.fromRGB(255, 85, 255) 
 
 		hatb.MouseButton1Click:Connect(function() hatWHY.Enabled = not hatWHY.Enabled
 			if workspace:FindFirstChild("WeatherMachine") then 
@@ -3792,7 +3727,7 @@ function guias()
 						if Buttons.Text == "no clo" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "" end
 						if Buttons.Text == "clo5" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "http://www.roblox.com/asset/?id=16124985124" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "rbxassetid://123548586467786" end
 						if Buttons.Text == "clo6" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "rbxassetid://136379601149273" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "rbxassetid://136379601149273" end
-						if Buttons.Text == "clo7" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "rbxassetid://133500297240788" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "rbxassetid://133500297240788" end
+						if Buttons.Text == "clo7" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "rbxassetid://131269505180260" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "rbxassetid://131269505180260" end
 
 						
 					end
@@ -3803,7 +3738,7 @@ function guias()
 
 
 		ThisIs = {"Clo2d"} --no one can see this, it's just mental assurance  
-		clo2d = Button:Clone() clo2d.Parent = Spaghetti clo2d.Text = "clo2d" clo2d.Position = UDim2.new(0.05,0 , 0,row23) clo2d.BackgroundColor3 = Color3.fromRGB(255, 170, 255)   
+		clo2d = Button:Clone() clo2d.Parent = Spaghetti clo2d.Text = "clo2d" clo2d.Position = UDim2.new(0.5,0 , 0,row19) clo2d.BackgroundColor3 = Color3.fromRGB(255, 170, 255)   
 		clo2d.MouseButton1Click:Connect(function()
 			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
 			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "facelist" then Ui:Remove() end end
@@ -3837,20 +3772,30 @@ function guias()
 
 
 		ThisIs = {"ski"} --no one can see this, it's just mental assurance  
-		faces1 = Button:Clone() faces1.Parent = Spaghetti faces1.Text = "skin" faces1.Position = UDim2.new(0.5,0 , 0,row23) faces1.BackgroundColor3 = Color3.fromRGB(241, 179, 161)   
+		faces1 = Button:Clone() faces1.Parent = Spaghetti faces1.Text = "skin" faces1.Position = UDim2.new(0.5,0 , 0,row20) faces1.BackgroundColor3 = Color3.fromRGB(241, 179, 161)   
 		faces1.MouseButton1Click:Connect(function()
 			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
-			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "facelist" then Ui:Remove() end end
-			if Begal.GuiHolder:FindFirstChild("facelist") then Begal.GuiHolder:FindFirstChild("facelist"):Remove() return end
-			facelist = Scroll:Clone() facelist.Parent = Begal.GuiHolder  facelist.Name = "facelist" facelist.BackgroundTransparency = 1 facelist.Position = UDim2.new(0.15, 0 , 0.3, 0)  facelist.Size = UDim2.new(0.15, 0 , 0.36, 0)
+			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "skinlist" then Ui:Remove() end end
+			if Begal.GuiHolder:FindFirstChild("skinlist") then Begal.GuiHolder:FindFirstChild("skinlist"):Remove() return end
+			facelist = Scroll:Clone() facelist.Parent = Begal.GuiHolder  facelist.Name = "skinlist" facelist.BackgroundTransparency = 1 facelist.Position = UDim2.new(0.15, 0 , 0.3, 0)  facelist.Size = UDim2.new(0.15, 0 , 0.36, 0)
 			gridding = Instance.new("UIGridLayout",facelist) gridding.CellPadding = UDim2.new(0,1,0,1) gridding.CellSize = UDim2.new(.3,0, 190/33/2/66,0)
 
 			faceID = { Color3.fromRGB(255, 188, 170 ),  Color3.fromRGB( 218, 163, 152 ),  Color3.fromRGB(253, 192, 177),  Color3.fromRGB(255, 184, 162),  Color3.fromRGB(241, 179, 161), Color3.fromRGB(239, 178, 159), Color3.fromRGB(218, 163, 145), Color3.fromRGB(218, 163, 152),   Color3.fromRGB(204, 142, 105), Color3.fromRGB(234, 184, 146),  }
 			for _, faces in pairs(faceID) do local face = FaceButton:Clone() face.Parent = facelist face.BackgroundTransparency = 0 face.BackgroundColor3 = faces face.MouseButton1Click:Connect(function()
 					for _, br in pairs(char:GetChildren()) do if br:IsA("BasePart") then br.Color = face.BackgroundColor3  end end  end) end
 		end)
-		--[[ThisIs = {"Faces"} --no one can see this, it's just mental assurance  
-		faces1 = Button:Clone() faces1.Parent = Spaghetti faces1.Text = "Face" faces1.Position = UDim2.new(0.5,0 , 0,row23) faces1.BackgroundColor3 = Color3.fromRGB(255, 255, 0)   
+		
+		
+		
+		function NewHead1() if char:FindFirstChild("FakeHead") then char:FindFirstChild("FakeHead"):Remove() char.Head.Transparency = 0 for _,shad in pairs(char.Head.OriginalSize:GetDescendants()) do shad.Parent = char.Head end return end
+			FakeHead = Instance.new("Part",char) FakeHead.Name = "FakeHead" FakeHead.Size = char.Head.Size 
+			FakeHead.CanCollide = false FakeHead.Massless = true FakeHead.CanQuery = false FakeHead.Color = char.Head.Color char.Head.Transparency = 1
+			HatMesh = Instance.new("SpecialMesh",FakeHead) hweld = Instance.new("Weld",FakeHead) hweld.Part0=FakeHead hweld.Part1=char.Head 
+			FakeFace = Instance.new("Decal",FakeHead) FakeFace.Face = Enum.NormalId.Front FakeFace.Name = "face" 
+			for _,shad in pairs(char.Head:GetChildren()) do if shad:IsA("Decal") then shad.Parent = char.Head.OriginalSize end end 
+		end
+		ThisIs = {"Faces"} --no one can see this, it's just mental assurance  
+		faces1 = Button:Clone() faces1.Parent = Spaghetti faces1.Text = "Face" faces1.Position = UDim2.new(0.05,0 , 0,row24) faces1.BackgroundColor3 = Color3.fromRGB(255, 255, 0)   
 		faces1.MouseButton1Click:Connect(function()
 			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
 			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "facelist" then Ui:Remove() end end
@@ -3859,11 +3804,102 @@ function guias()
 			gridding = Instance.new("UIGridLayout",facelist) gridding.CellPadding = UDim2.new(0,1,0,1) gridding.CellSize = UDim2.new(.3,0, 190/33/2/66,0)
 
 			if not char.Head:FindFirstChild("face") and not char:FindFirstChild("FakeHead") then NewHead1() end
+			ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "http://www.roblox.com/asset/?id=6784493669" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+					if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
+					dec= Instance.new("Decal",char.Head) dec:AddTag("face")  
+				m = dec:Clone() m.Texture = "http://www.roblox.com/asset/?id=6784493669"	m.Parent= FakeHead
+				e = dec:Clone() e.Texture = "rbxassetid://3428079000" e.ZIndex = 2 	e.Parent= FakeHead
+				mes = dec:Clone() mes.Texture = "http://www.roblox.com/asset/?id=243457340"    mes.Transparency = .5  mes.Parent= FakeHead
+				mes = dec:Clone() mes.Texture = "http://www.roblox.com/asset/?id=734276965"    mes.Transparency = .5	mes.Parent= FakeHead
+				mes = dec:Clone() mes.Texture = "http://www.roblox.com/asset/?id=137899280" mes.ZIndex = 2  mes.Transparency = .6	mes.Parent= FakeHead
+				blu = dec:Clone() blu.Texture = "http://www.roblox.com/asset/?id=389182271" blu.ZIndex = 2  blu.Transparency = .5	blu.Parent= FakeHead
+				swe = dec:Clone() swe.Texture = "http://www.roblox.com/asset/?id=3523959919" swe.ZIndex = 2  swe.Transparency = .6	swe.Parent= FakeHead
+				swe = dec:Clone() swe.Texture = "http://www.roblox.com/asset/?id=8561973534"    swe.Transparency = .4	swe.Parent= FakeHead
+			end) 
+			
 			--faceID={494291269,26019070,42070576,1665629400, 16652251,20052135,398676450,180660043,26343188		   ,128992838,209995252,21024661,2409285794,406000958,236399287,116042990,258198928,29532363,49045351,28878297,29296146,244160766,10907541,7699174,7074729,14861743,10831558,66330106,391496223,15432080,15177601,11956548,110207437,}
 			faceID = {494290547,26018945,42070872,1868469550,629930519,20052028,398676207,179693472,26343132,6343843123,127959433,209712379,21024598,2409281591,405705854,236455674,115978221,258192246,29532362,49045252,28878210,29296097,243755928,10747810,7699086,7074712,14861556,10747371,66329524,629933140,15431991,15177471,11956455,108209955,}
-			for _, faces in pairs(faceID) do local face = FaceButton:Clone() face.Parent = facelist face.Image = "http://www.roblox.com/asset?id="..faces face.MouseButton1Click:Connect(function()
-					if char.Head:FindFirstChild("face") then char.Head.face.Texture = face.Image else if not char:FindFirstChild("FakeHead") then NewHead1() end FakeHead.face.Texture = face.Image end end) end
-		end)]]
+			for _, faces in pairs(faceID) do
+				local face = FaceButton:Clone() face.Parent = facelist face.Image = "http://www.roblox.com/asset?id="..faces face.MouseButton1Click:Connect(function()
+					if char.Head:FindFirstChild("face") then char.Head.face.Texture = face.Image else if not char:FindFirstChild("FakeHead") then NewHead1() end FakeHead.face.Texture = face.Image end end) 
+				if faces == 1 then  end
+			end
+			
+		end)
+		faces1.MouseButton2Click:Connect(function()
+			NewHead1()
+		end)
+		
+		
+		
+		
+		ThisIs = {"Import Layered"}	 
+
+		laeyers = Button:Clone() laeyers.Parent = Spaghetti laeyers.Text = "Layers" laeyers.Position = UDim2.new(0.05,0 , 0,row21)  laeyers.BackgroundColor3 = Color3.fromRGB(0, 170, 255)  
+		laeyers.MouseButton1Click:Connect(function() 
+
+			if not game.Lighting:FindFirstChild("layers") then 
+				poobaa = Instance.new("Folder",game.Lighting) poobaa.Name = "layers"
+				Instance.new("Model",poobaa).Name = "fit1"
+				Instance.new("Model",poobaa).Name = "fit2"
+				Instance.new("Model",poobaa).Name = "fit3"
+				Instance.new("Model",poobaa).Name = "fit4"
+			end 
+
+			if char:FindFirstChild("White cat paws") and not game.Lighting.layers.fit1:FindFirstChild("White cat paws") then  char:FindFirstChild("White cat paws"):Clone().Parent = game.Lighting.layers.fit1 end
+			if char:FindFirstChild("Accessory (Cat)") and not game.Lighting.layers.fit1:FindFirstChild("Accessory (Cat)") then  char:FindFirstChild("Accessory (Cat)"):Clone().Parent = game.Lighting.layers.fit1 end
+			if char:FindFirstChild("Accessory (Generated Accessory)") and not game.Lighting.layers.fit1:FindFirstChild("Accessory (Generated Accessory)") then  char:FindFirstChild("Accessory (Generated Accessory)"):Clone().Parent = game.Lighting.layers.fit1 end
+
+
+
+
+			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
+			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "pis" then Ui:Remove() end end
+			if Begal.GuiHolder:FindFirstChild("pis") then Begal.GuiHolder:FindFirstChild("pis"):Remove() return end
+			local list = notScroll:Clone() list.Parent = Begal.GuiHolder  list.Name = "pis" list.BackgroundTransparency = 1 list.Position = UDim2.new(0.15, 0 , 0.3, 0)  list.Size = UDim2.new(0.1, 0 , 0.36, 0)
+			listing = Instance.new("UIListLayout",list) listing.Padding = UDim.new(0,1)
+
+			plus = 15 Button.BackgroundColor3 = Color3.fromRGB(85, 85, 127) Button.Size = UDim2.new(0.95,0 , 0,15) Button.TextXAlignment = Enum.TextXAlignment.Left Button.BackgroundTransparency = .5
+
+			ran = Button:Clone() ran.Parent = list ran.Text = "fit 1" 
+			ran.MouseButton1Click:Connect(function() 
+				for _,bruh in pairs(game.Lighting.layers.fit1:GetChildren()) do 
+					if not char:FindFirstChild(bruh.Name) then 
+						--[[-bruh:Clone().Parent = char   bruh.Handle.AccessoryWeld.Part1 = char.Head  ]]this = "You dumb fuck, you changed the stored weld not the character weld "
+						hat = bruh:Clone() hat.Parent = char   hat.Handle.AccessoryWeld.Part1 = char.Head  
+					end 
+				end
+			end) 
+			ran2 = Button:Clone() ran2.Parent = list ran2.Text = " " 
+			ran2.MouseButton1Click:Connect(function()    end) 
+
+			dis = Button:Clone() dis.Parent = list dis.Text = " " 
+			dis.MouseButton1Click:Connect(function() dis.Text = char.SurvivalTag.Value wait(2) dis.Text = "disaster"  end) 
+
+			p1 = Button:Clone() p1.Parent = list p1.Text = "paw hand chib " 
+			p1.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (Cat)") then char:FindFirstChild("Accessory (Cat)"):Remove() return end  
+				hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (Cat)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head   end) 
+			p2 = Button:Clone() p2.Parent = list p2.Text = "paw foot " 
+			p2.MouseButton1Click:Connect(function()  if char:FindFirstChild("White cat paws") then char:FindFirstChild("White cat paws"):Remove() return end  
+				hat= game.Lighting.layers.fit1:FindFirstChild("White cat paws"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head   end) 
+			b0 = Button:Clone() b0.Parent = list b0.Text = "bik0 " 
+			b0.MouseButton1Click:Connect(function()
+				--[[if not char:FindFirstChild("Accessory (Generated Accessory)") then
+					hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (Generated Accessory)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head  else 
+					char:FindFirstChild("Accessory (Generated Accessory)"):Remove() end  ]]
+				if char:FindFirstChild("Accessory (Generated Accessory)") then char:FindFirstChild("Accessory (Generated Accessory)"):Remove() return end  
+				hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (Generated Accessory)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head 
+			end) 
+
+		end) 
+		laeyers.MouseButton2Click:Connect(function()  end) 
+		
+		
+		
+		
+		
+		
 
 
 
