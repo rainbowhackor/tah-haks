@@ -671,22 +671,23 @@ colcor = nil
 function CharSettings()
 	delski()
 	humy = char:WaitForChild("Humanoid") humy.UseJumpPower = false humy.AutoJumpEnabled = false game.StarterGui:SetCore("SendNotification", {Title="UseJumpPower = false"; Text= "JumpHeight better for gravity" ; Duration=5;})
+	if char.Head.MeshId == "https://assetdelivery.roblox.com/v1/asset/?id=14640466175" then char.Head.FaceFrontAttachment.Position = Vector3.new(0, -0.052, -0.523) end
 	workspace.Camera.CameraType = Enum.CameraType.Custom workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
 	humy:GetPropertyChangedSignal("Sit"):Connect(function() wait() if humy.Sit == true then GetUp() end end)
 	humy:GetPropertyChangedSignal("PlatformStand"):Connect(function() wait() if humy.PlatformStand == true then GetUp() end end)
 	if char:FindFirstChild("Meshes/Chocolate Donut Rainbow LimitedAccessory") or char:FindFirstChild("SnowQueenNecklace") then 
 		--camm = -1.25  
 		--ME=true 
-		for _, ro in pairs(char:GetChildren()) do --if ro:IsA("BasePart") then ro.Material = Enum.Material.SmoothPlastic end  
+		--[[for _, ro in pairs(char:GetChildren()) do --if ro:IsA("BasePart") then ro.Material = Enum.Material.SmoothPlastic end  
 			if ro:IsA("MeshPart") and ro.Name ~= "Head" then  ro.TextureID = "" 
 				for _, ro2 in pairs(ro:GetChildren()) do 
 					if ro2:IsA("SurfaceAppearance") then ro2:Remove() end 
 				end
 			end  
-		end 
+		end ]]
 
 		an=169402 AnimSet()task.wait(1) an=0 runan=1
-		if not game.Lighting:FindFirstChildWhichIsA("ColorCorrectionEffect") then colcor=Instance.new("ColorCorrectionEffect",game.Lighting) colcor.Name = "morecolor" game.Lighting:FindFirstChildWhichIsA("ColorCorrectionEffect").Saturation = 0.4 end
+		if not game.Lighting:FindFirstChildWhichIsA("ColorCorrectionEffect") then colcor=Instance.new("ColorCorrectionEffect",game.Lighting) colcor.Name = "morecolor" game.Lighting:FindFirstChildWhichIsA("ColorCorrectionEffect").Saturation = 0.2 end
 	end
 
 
@@ -3198,12 +3199,15 @@ function guias()
 
 
 		function hat3() nil2 = Instance.new("TextLabel") nil2.Name = "Button" nil2.Parent = myhatist nil2.Size =  UDim2.new(0.95,0 , 0,07) nil2.Text = "" nil2.BackgroundTransparency = 1 end
-		dirt1s = { "float dirt1",  "hai1 pony 2", "hai1 pony b" , }
-		dirt2s = {  "hai2 bl", "hai2 p" ,"hai2 br" , "flowers" ,"ear1"  , }
-		dirt3s = { "hai4" ,"ribbon" ,"pear", "hai pr" ,"hai3" ,"cat fluf" , "hai5",  "hai5b" , "hai6" }
-
-
-
+		princess = { "hai pr" ,"ribbon" ,"pear","flowers", "float dirt1",}
+		twin = {     "hai big curl" ,"cat band", "bang swept","bang side" }
+		gamerGril = {  "hai paper" , "headphone n", "bang swept","bang side"}
+		dirt4 = {   "hai1 pony 2" , "hai2 bl"  ,"cat fluf", "ear1"  , } ---"hai2 p" ,"hai2 br", "hai1 pony b" ,"hai4", "hai5",  "hai5b" 
+		dirt5 = {    "hai curl"  , "hai fluf",   }
+		
+		
+		
+		
 		fairys = {    "Fairy Winter", "Fairy Spring", "Fairy Beach", "Fairy PeaGold", "Fairy Fall", "Fairy St Patricks", }-- for _,tha in pairs(fairys) do hat2(tha) end
 		mewings = { "Wings Murica", "Wings Murica2", "Wings Galaxy", "Wings Gold" , } 
 		neckbling = { "Snow Queen", "Chain SUS", "Chain Troll", "Chain OOF",    }  
@@ -3220,7 +3224,12 @@ function guias()
 		mychars = { "Wolf","refresh", "nothing",   "clo1", "clo2" ,"clo3", "clo4","clo5", "clo6" ,"clo7","no clo", "belly s",}   for _,tha in pairs(mychars) do hatme(tha) end 
 		--end
 
-		hat_groups = {dirt1s,dirt2s,dirt3s,  fairys,mewings,neckbling,meh1,meh2,tails,firehorn,crowns,federation,hairs} for _,that in pairs(hat_groups) do for _,tha in pairs(that) do Button.BackgroundColor3 = Color3.fromRGB(170, 85, 255) hat2(tha) end    hat3() end 
+		hat_groups = { princess ,twin,gamerGril,dirt4,dirt5,  fairys,mewings,neckbling,meh1,meh2,tails,firehorn,crowns,federation,hairs} 
+		for _,that in pairs(hat_groups) do
+			for _,tha in pairs(that) do
+				Button.BackgroundColor3 = Color3.fromRGB(170, 85, 255) hat2(tha)
+			end    hat3()
+		end 
 
 		for _, Buttons in pairs(myhatist:GetChildren()) do if Buttons:IsA("TextButton") then
 				if Buttons.Text == "Fairy St Patricks" then Buttons.BackgroundColor3 = Color3.fromRGB(0, 210, 0) 
@@ -3322,50 +3331,72 @@ function guias()
 						--hai 133932909316305,90880833433541,80326429185239,18869177287,81965434753875,132918315740187,,
 						-- to get  = pink ribbon fishnet    jean top combo srink, shirt bro, leg shackle
 						--       
-						if Buttons.Text == "float dirt1" then HatMesh.MeshId = "rbxassetid://17158901460" HatMesh.TextureId = "http://www.roblox.com/asset/?id=17504231367"  HatMesh.Scale=Vector3.new(0.69, 1.106, 0.92)
+						if Buttons.Text == "float dirt1" then HatMesh.MeshId = "rbxassetid://17158901460" HatMesh.TextureId = "http://www.roblox.com/asset/?id=17504231367"  HatMesh.Scale=Vector3.new(0.89, 1.106, 0.92)
 							HatAtt.Name = "WaistCenterAttachment" HatAtt.Position = Vector3.new(0.003, -0.536, -0.002)    end
-						if Buttons.Text == "hai1 pony 2" then HatMesh.MeshId = "rbxassetid://11830104662" HatMesh.TextureId = "rbxassetid://9509751121" HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
+						if Buttons.Text == "hai1 pony 2" then HatMesh.MeshId = "rbxassetid://11830104662" HatMesh.TextureId = "rbxassetid://9509751121"-- HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0, 0.827, -0.413)   end
-						if Buttons.Text == "hai1 pony b" then HatMesh.MeshId = "rbxassetid://11830104662" HatMesh.TextureId = "rbxassetid://8852353202" HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
+						if Buttons.Text == "hai1 pony b" then HatMesh.MeshId = "rbxassetid://11830104662" HatMesh.TextureId = "rbxassetid://8852353202" --HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0, 0.827, -0.413)   end
 
 
-						if Buttons.Text == "hai2 bl" then HatMesh.MeshId = "rbxassetid://14606169590" HatMesh.TextureId = "http://www.roblox.com/asset/?id=12884126459" HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
+						if Buttons.Text == "hai2 bl" then HatMesh.MeshId = "rbxassetid://14606169590" HatMesh.TextureId = "http://www.roblox.com/asset/?id=12884126459"-- HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(-0.01, 0.378, -0.016)   end
-						if Buttons.Text == "hai2 p" then HatMesh.MeshId = "rbxassetid://14606169590" HatMesh.TextureId = "http://www.roblox.com/asset/?id=12884129965" HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
+						if Buttons.Text == "hai2 p" then HatMesh.MeshId = "rbxassetid://14606169590" HatMesh.TextureId = "http://www.roblox.com/asset/?id=12884129965" --HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(-0.01, 0.378, -0.016)   end
-						if Buttons.Text == "hai2 br" then HatMesh.MeshId = "rbxassetid://14606169590" HatMesh.TextureId = "http://www.roblox.com/asset/?id=12884128839" HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
+						if Buttons.Text == "hai2 br" then HatMesh.MeshId = "rbxassetid://14606169590" HatMesh.TextureId = "http://www.roblox.com/asset/?id=12884128839" --HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(-0.01, 0.378, -0.016)   end
-						if Buttons.Text == "flowers" then HatMesh.MeshId = "rbxassetid://7053396711" HatMesh.TextureId = "http://www.roblox.com/asset/?id=7053396394" HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
+						if Buttons.Text == "flowers" then HatMesh.MeshId = "rbxassetid://7053396711" HatMesh.TextureId = "http://www.roblox.com/asset/?id=7053396394" --HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
 							HatAtt.Name = "HatAttachment" HatAtt.Position = Vector3.new(0.556, 0.135, -0.004)  HatAtt.Orientation = Vector3.new(0,  91.997, 0)  end --0, 0.429, 0.046      0.556, 0.135, -0.004  ori= 0, 91.997, 0
-						if Buttons.Text == "ear1" then HatMesh.MeshId = "rbxassetid://6330245734" HatMesh.TextureId = "http://www.roblox.com/asset/?id=6330260562" HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
+						if Buttons.Text == "ear1" then HatMesh.MeshId = "rbxassetid://6330245734" HatMesh.TextureId = "http://www.roblox.com/asset/?id=6330260562" --HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
 							HatAtt.Name = "HatAttachment" HatAtt.Position = Vector3.new(-0, -0.21, -0.056)  HatAtt.Orientation = Vector3.new(0,  180, 0)  end  
 
-						if Buttons.Text == "hai3" then HatMesh.MeshId = "rbxassetid://14355756723" HatMesh.TextureId = "http://www.roblox.com/asset/?id=14185933263" HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
+						if Buttons.Text == "hai curl" then HatMesh.MeshId = "rbxassetid://14355756723" HatMesh.TextureId = "http://www.roblox.com/asset/?id=14185933263" --HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(-0.068, 0.511, -0.002)  HatAtt.Orientation = Vector3.new(0, 90, 0)  end  
-						if Buttons.Text == "ribbon" then HatMesh.MeshId = "rbxassetid://16202673676" HatMesh.TextureId = "http://www.roblox.com/asset/?id=16202662294" HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
+						if Buttons.Text == "ribbon" then HatMesh.MeshId = "rbxassetid://16202673676" HatMesh.TextureId = "http://www.roblox.com/asset/?id=16202662294" --HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
 							HatAtt.Name = "HatAttachment" HatAtt.Position = Vector3.new(-0.384, 0.107, -0.562)  HatAtt.Orientation = Vector3.new(0, 180, 0)  end  
-						if Buttons.Text == "pear" then HatMesh.MeshId = "rbxassetid://16348263319" HatMesh.TextureId = "rbxassetid://16339159612" HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
+						if Buttons.Text == "pear" then HatMesh.MeshId = "rbxassetid://16348263319" HatMesh.TextureId = "rbxassetid://16339159612" --HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
 							HatAtt.Name = "HatAttachment" HatAtt.Position = Vector3.new(-0, 0.053, -0.109)  HatAtt.Orientation = Vector3.new(0, 180, 0)  end 
 
-						if Buttons.Text == "hai pr" then HatMesh.MeshId = "rbxassetid://14490180480" HatMesh.TextureId = "rbxassetid://14490184855" HatMesh.Scale=Vector3.new(.9,.9,.9)
-							HatAtt.Name = "FaceCenterAttachment" HatAtt.Position = Vector3.new(-0.002, 0.023, -0)  HatAtt.Orientation = Vector3.new(0, 90, 0)  end
+						if Buttons.Text == "hai pr" then HatMesh.MeshId = "rbxassetid://14490180480" HatMesh.TextureId = "rbxassetid://14490184855" HatMesh.Scale=Vector3.new(.92,.92,.92)
+							HatAtt.Name = "FaceCenterAttachment" HatAtt.Position = Vector3.new(-0.003, 0.025, -0)  HatAtt.Orientation = Vector3.new(0, 90, 0)  end
 
-						if Buttons.Text == "hai4" then HatMesh.MeshId = "rbxassetid://13619957051" HatMesh.TextureId = "http://www.roblox.com/asset/?id=12884129965" HatMesh.Scale=Vector3.new(.83,.83,.83)
+						if Buttons.Text == "hai4" then HatMesh.MeshId = "rbxassetid://13619957051" HatMesh.TextureId = "http://www.roblox.com/asset/?id=12884129965" --HatMesh.Scale=Vector3.new(.83,.83,.83)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(-0.046, 0.502, -0.043)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end 
 						--if Buttons.Text == "ton" then HatMesh.MeshId = "rbxassetid://10823990177" HatMesh.TextureId = "rbxassetid://10823990273" HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
 						--	HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(0.022, 0.314, -0.003)  HatAtt.Orientation = Vector3.new(0, 90, 0)  end  
-						if Buttons.Text == "cat fluf" then HatMesh.MeshId = "rbxassetid://7189858606" HatMesh.TextureId = "rbxassetid://7189858659" HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
+						if Buttons.Text == "cat fluf" then HatMesh.MeshId = "rbxassetid://7189858606" HatMesh.TextureId = "rbxassetid://7189858659" --HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
 							HatAtt.Name = "HatAttachment" HatAtt.Position = Vector3.new(0.004, -0.183, -0.004)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
 
-						if Buttons.Text == "hai5" then HatMesh.MeshId = "rbxassetid://16692362631" HatMesh.TextureId = "rbxassetid://11358714930" HatMesh.Scale=Vector3.new(.9,.9,.9)
+						if Buttons.Text == "hai5" then HatMesh.MeshId = "rbxassetid://16692362631" HatMesh.TextureId = "rbxassetid://11358714930"-- HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0.011, 0.412, 0)  HatAtt.Orientation = Vector3.new(0, 90, 0)  end
-						if Buttons.Text == "hai5b" then HatMesh.MeshId = "rbxassetid://16692362631" HatMesh.TextureId = "http://www.roblox.com/asset/?id=15469710327" HatMesh.Scale=Vector3.new(.9,.9,.9)
+						if Buttons.Text == "hai5b" then HatMesh.MeshId = "rbxassetid://16692362631" HatMesh.TextureId = "http://www.roblox.com/asset/?id=15469710327"-- HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0.011, 0.412, 0)  HatAtt.Orientation = Vector3.new(0, 90, 0)  end
-						if Buttons.Text == "hai6" then HatMesh.MeshId = "rbxassetid://13489987658" HatMesh.TextureId = "http://www.roblox.com/asset/?id=11413134615" HatMesh.Scale=Vector3.new(.9,.9,.9)
+						if Buttons.Text == "hai fluf" then HatMesh.MeshId = "rbxassetid://13489987658" HatMesh.TextureId = "http://www.roblox.com/asset/?id=11413134615" --HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0.003, 0.321, -0.039)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
-
-
+						
+						um = "    HatAtt.Position  =  AccessoryWeld.C0     or    Handle.Attachment.Position.OriginalPosition    "
+						
+						if Buttons.Text == "cat band" then HatMesh.MeshId = "rbxassetid://14204644567" HatMesh.TextureId = "rbxassetid://14205792734" --HatMesh.Scale=Vector3.new(.9,.9,.9)
+							HatAtt.Name = "HatAttachment" HatAtt.Position = Vector3.new(-0.011, 0.031, -0.077)  HatAtt.Orientation = Vector3.new(0, 180, 0)  end
+						if Buttons.Text == "hai big curl" then HatMesh.MeshId = "rbxassetid://15775589845" HatMesh.TextureId = "rbxassetid://15775589906"-- HatMesh.Scale=Vector3.new(.9,.9,.9)
+							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(-0.022, 0.585, 0)  HatAtt.Orientation = Vector3.new(0, 90, 0)  end
+						 
+						if Buttons.Text == "bang swept" then HatMesh.MeshId = "rbxassetid://6963528552" HatMesh.TextureId = "rbxassetid://6322812499"-- HatMesh.Scale=Vector3.new(.9,.9,.9)
+							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(0.035, -0.262, -0.121)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
+						if Buttons.Text == "bang side" then HatMesh.MeshId = "rbxassetid://5945976587" HatMesh.TextureId = "rbxassetid://6322812499" --HatMesh.Scale=Vector3.new(.9,.9,.9)
+							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(-0.002, -0.167, -0.287)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
+						
+						if Buttons.Text == "hai paper" then HatMesh.MeshId = "rbxassetid://15655702576" HatMesh.TextureId = "http://www.roblox.com/asset/?id=15655681473" --HatMesh.Scale=Vector3.new(.9,.9,.9)
+							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0, 0.57, -0.08)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
+						if Buttons.Text == "headphone n" then HatMesh.MeshId = "rbxassetid://116789217672048" HatMesh.TextureId = "http://www.roblox.com/asset/?id=124529608517543" --HatMesh.Scale=Vector3.new(.9,.9,.9)
+							HatAtt.Name = "HatAttachment" HatAtt.Position = Vector3.new(-0, 0.266, 0.272)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
+						
+						
+						 
+						
+						
+						
+						
 
 
 						if Buttons.Text == "Fairy St Patricks" then HatMesh.MeshId = "http://www.roblox.com/asset/?id=226143404" HatMesh.TextureId = "http://www.roblox.com/asset/?id=226143506"  HatMesh.Scale=Vector3.new(.25	, .25, .25)
@@ -3524,7 +3555,8 @@ function guias()
 							HatMesh.MeshId = "rbxassetid://4888127394" HatMesh.TextureId = "rbxassetid://4888088716" end 
 
 						wide = char.Humanoid.BodyWidthScale.Value tall = char.Humanoid.BodyHeightScale.Value thicc = char.Humanoid.BodyDepthScale.Value hedas = char.Humanoid.HeadScale.Value 
-
+						specialScale = 1
+						if char.Head.MeshId == "https://assetdelivery.roblox.com/v1/asset/?id=14640466175" then specialScale = .92 end
 						for _,v in pairs(char:GetChildren()) do
 							FoundAttachment = v:FindFirstChild(HatAtt.Name) 
 							if FoundAttachment then hweld.Part1 = FoundAttachment.Parent hweld.C1 = FoundAttachment.CFrame hweld.Enabled = true 
@@ -3532,7 +3564,7 @@ function guias()
 								if FoundAttachment.Parent.Name == "LeftHand" or FoundAttachment.Parent.Name == "RightHand" or FoundAttachment.Parent.Name == "LeftLowerArm" or FoundAttachment.Parent.Name == "RightLowerArm" then 
 									--do nothing
 								elseif FoundAttachment.Parent.Name == "Head" then 
-									HatMesh.Scale=Vector3.new(HatMesh.Scale.X*hedas, HatMesh.Scale.Y*hedas, HatMesh.Scale.Z*hedas)
+									HatMesh.Scale=Vector3.new(HatMesh.Scale.X*hedas * specialScale, HatMesh.Scale.Y*hedas * specialScale, HatMesh.Scale.Z*hedas * specialScale)
 									HatAtt.Position=Vector3.new(HatAtt.Position.X*hedas, HatAtt.Position.Y*hedas, HatAtt.Position.Z*hedas) 
 								else 
 									HatMesh.Scale=Vector3.new(HatMesh.Scale.X*wide, HatMesh.Scale.Y*tall, HatMesh.Scale.Z*thicc)
@@ -3541,6 +3573,10 @@ function guias()
 								hweld.C0 = HatAtt.CFrame
 							end
 						end
+						
+						 
+						
+						
 					end	
 
 					if Buttons.Name == "A" then 
@@ -3625,7 +3661,12 @@ function guias()
 
 
 
-							wide = char.Humanoid.BodyWidthScale.Value tall = char.Humanoid.BodyHeightScale.Value thicc = char.Humanoid.BodyDepthScale.Value hedas = char.Humanoid.HeadScale.Value 
+							wide = char.Humanoid.BodyWidthScale.Value tall = char.Humanoid.BodyHeightScale.Value thicc = char.Humanoid.BodyDepthScale.Value 
+							
+							specialScale = 1
+							if char.Head.MeshId == "https://assetdelivery.roblox.com/v1/asset/?id=14640466175" then specialScale = .92 end
+							hedas = char.Humanoid.HeadScale.Value   
+							
 							for _,v in pairs(char:GetChildren()) do
 								FoundAttachment = v:FindFirstChild(HatAtt.Name) 
 								if FoundAttachment then hweld.Part1 = FoundAttachment.Parent hweld.C1 = FoundAttachment.CFrame hweld.Enabled = true 
@@ -3633,7 +3674,7 @@ function guias()
 									if FoundAttachment.Parent.Name == "LeftHand" or FoundAttachment.Parent.Name == "RightHand" or FoundAttachment.Parent.Name == "LeftLowerArm" or FoundAttachment.Parent.Name == "RightLowerArm" then 
 										--do nothing
 									elseif FoundAttachment.Parent.Name == "Head" then 
-										HatMesh.Scale=Vector3.new(HatMesh.Scale.X*hedas, HatMesh.Scale.Y*hedas, HatMesh.Scale.Z*hedas)
+										HatMesh.Scale=Vector3.new(HatMesh.Scale.X*hedas * specialScale, HatMesh.Scale.Y*hedas * specialScale, HatMesh.Scale.Z*hedas * specialScale)
 										HatAtt.Position=Vector3.new(HatAtt.Position.X*hedas, HatAtt.Position.Y*hedas, HatAtt.Position.Z*hedas) 
 									else 
 										HatMesh.Scale=Vector3.new(HatMesh.Scale.X*wide, HatMesh.Scale.Y*tall, HatMesh.Scale.Z*thicc)
@@ -3675,15 +3716,28 @@ function guias()
 						--sbel2 backup rbxassetid://83208957324495
 						--back rbxassetid://18656573483
 						if Buttons.Text == "refresh" then if myhatist:FindFirstChildWhichIsA("Pants") then char:FindFirstChildWhichIsA("Pants").PantsTemplate = myhatist:FindFirstChildWhichIsA("Pants").PantsTemplate end if myhatist:FindFirstChildWhichIsA("Shirt") then char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = myhatist:FindFirstChildWhichIsA("Shirt").ShirtTemplate end
-							for _,shad in pairs(char:GetChildren()) do if shad:IsA("Accessory") and shad:FindFirstChildWhichIsA("BasePart") then if not shad:FindFirstChild("me") then shad:FindFirstChildWhichIsA("BasePart").Transparency = 0 end if shad:FindFirstChild("me") then shad:Remove() end end end
+							for _,shad in pairs(char:GetChildren()) do 
+								if shad:IsA("Accessory") and shad:FindFirstChildWhichIsA("BasePart") then 
+									if not shad:FindFirstChild("me") then shad:FindFirstChildWhichIsA("BasePart").Transparency = 0 end 
+									if shad:FindFirstChild("me") then shad:Remove() end 
+									if shad:FindFirstChildWhichIsA("BasePart"):FindFirstChildWhichIsA("WrapLayer") then shad:FindFirstChildWhichIsA("BasePart"):FindFirstChildWhichIsA("WrapLayer").Enabled = true end
+								end 
+							end
 						end
+						if Buttons.Text == "nothing" then  
+							for _,shad in pairs(char:GetChildren()) do
+								if shad:IsA("Accessory") and shad:FindFirstChildWhichIsA("BasePart") then 
+									if not shad:FindFirstChild("me") then shad:FindFirstChildWhichIsA("BasePart").Transparency = 1 end 
+									if shad:FindFirstChild("me") then shad:Remove() end
+									if shad:FindFirstChildWhichIsA("BasePart"):FindFirstChildWhichIsA("WrapLayer") then shad:FindFirstChildWhichIsA("BasePart"):FindFirstChildWhichIsA("WrapLayer").Enabled = false end
+								end
+							end
+							 
+						end	
+						
 						if Buttons.Text == "Wolf" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "http://www.roblox.com/asset/?id=6851982960" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "http://www.roblox.com/asset/?id=8219508887"
 							for _,shad in pairs(char:GetChildren()) do if shad:IsA("Accessory") and shad:FindFirstChildWhichIsA("BasePart") then if not shad:FindFirstChild("me") then shad:FindFirstChildWhichIsA("BasePart").Transparency = 1 end if shad:FindFirstChild("me") then shad:Remove() end end end
 							for _,tha in pairs(wolfy) do hatme2(tha) end
-						end	
-						if Buttons.Text == "nothing" then  
-							for _,shad in pairs(char:GetChildren()) do if shad:IsA("Accessory") and shad:FindFirstChildWhichIsA("BasePart") then if not shad:FindFirstChild("me") then shad:FindFirstChildWhichIsA("BasePart").Transparency = 1 end if shad:FindFirstChild("me") then shad:Remove() end end end
-							for _,tha in pairs(gal1) do hatme2(tha) end
 						end	
 						if Buttons.Text == "gal2" then  
 							for _,shad in pairs(char:GetChildren()) do if shad:IsA("Accessory") and shad:FindFirstChildWhichIsA("BasePart") then if not shad:FindFirstChild("me") then shad:FindFirstChildWhichIsA("BasePart").Transparency = 1 end if shad:FindFirstChild("me") then shad:Remove() end end end
@@ -3802,28 +3856,228 @@ function guias()
 			if Begal.GuiHolder:FindFirstChild("facelist") then Begal.GuiHolder:FindFirstChild("facelist"):Remove() return end
 			facelist = Scroll:Clone() facelist.Parent = Begal.GuiHolder  facelist.Name = "facelist" facelist.BackgroundTransparency = 1 facelist.Position = UDim2.new(0.15, 0 , 0.3, 0)  facelist.Size = UDim2.new(0.15, 0 , 0.36, 0)
 			gridding = Instance.new("UIGridLayout",facelist) gridding.CellPadding = UDim2.new(0,1,0,1) gridding.CellSize = UDim2.new(.3,0, 190/33/2/66,0)
-
+			
+			
+			
+			dec= Instance.new("Decal") dec:AddTag("face") 
+			function faceExtras1() 
+				brow = dec:Clone() brow.Texture = "http://www.roblox.com/asset/?id=3690850835" 	brow.Parent= FakeHead	brow.Name = "brow"
+				brow = dec:Clone() brow.Texture = "http://www.roblox.com/asset/?id=3690852846" 	brow.Parent= FakeHead	brow.Name = "brow"
+				blu = dec:Clone() blu.Texture = "http://www.roblox.com/asset/?id=389182271" blu.ZIndex = 2  blu.Transparency = .5	blu.Parent= FakeHead	blu.Name = "blu"
+				swe = dec:Clone() swe.Texture = "http://www.roblox.com/asset/?id=3523959919" swe.ZIndex = 2  swe.Transparency = .6	swe.Parent= FakeHead	swe.Name = "swe"
+				swe = dec:Clone() swe.Texture = "http://www.roblox.com/asset/?id=8561973534"    swe.Transparency = .4	swe.Parent= FakeHead	swe.Name = "swe"
+			end
+			function mes1() 
+				mes = dec:Clone() mes.Texture = "http://www.roblox.com/asset/?id=243457340"    mes.Transparency = .5  mes.Parent= FakeHead	mes.Name = "mes"
+				mes = dec:Clone() mes.Texture = "http://www.roblox.com/asset/?id=734276965"    mes.Transparency = .5	mes.Parent= FakeHead	mes.Name = "mes"
+				mes = dec:Clone() mes.Texture = "http://www.roblox.com/asset/?id=137899280" mes.ZIndex = 2  mes.Transparency = .6	mes.Parent= FakeHead	mes.Name = "mes"
+			end
+			
+			local ext = FaceButton:Clone() ext.Parent = facelist ext.Image = "http://www.roblox.com/asset/?id=389182271" ext.MouseButton1Click:Connect(function() faceExtras1() end) 
+			local mesy1 = FaceButton:Clone() mesy1.Parent = facelist mesy1.Image = "http://www.roblox.com/asset/?id=734276965" mesy1.MouseButton1Click:Connect(function() mes1()  end) 
+			mesy1.MouseButton2Click:Connect(function() for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") and faces.Name == "mes" then faces:Remove() end end  end)
+			
+			
+			
+			
 			if not char.Head:FindFirstChild("face") and not char:FindFirstChild("FakeHead") then NewHead1() end
-			ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "http://www.roblox.com/asset/?id=6784493669" ace1.MouseButton1Click:Connect(function()
+			
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "rbxassetid://3428079000" ace1.MouseButton1Click:Connect(function()
 				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
 					if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
-					dec= Instance.new("Decal",char.Head) dec:AddTag("face")  
-				m = dec:Clone() m.Texture = "http://www.roblox.com/asset/?id=6784493669"	m.Parent= FakeHead
-				e = dec:Clone() e.Texture = "rbxassetid://3428079000" e.ZIndex = 2 	e.Parent= FakeHead
-				mes = dec:Clone() mes.Texture = "http://www.roblox.com/asset/?id=243457340"    mes.Transparency = .5  mes.Parent= FakeHead
-				mes = dec:Clone() mes.Texture = "http://www.roblox.com/asset/?id=734276965"    mes.Transparency = .5	mes.Parent= FakeHead
-				mes = dec:Clone() mes.Texture = "http://www.roblox.com/asset/?id=137899280" mes.ZIndex = 2  mes.Transparency = .6	mes.Parent= FakeHead
-				blu = dec:Clone() blu.Texture = "http://www.roblox.com/asset/?id=389182271" blu.ZIndex = 2  blu.Transparency = .5	blu.Parent= FakeHead
-				swe = dec:Clone() swe.Texture = "http://www.roblox.com/asset/?id=3523959919" swe.ZIndex = 2  swe.Transparency = .6	swe.Parent= FakeHead
-				swe = dec:Clone() swe.Texture = "http://www.roblox.com/asset/?id=8561973534"    swe.Transparency = .4	swe.Parent= FakeHead
+				m = dec:Clone() m.Texture = "http://www.roblox.com/asset/?id=6784493669"	m.Parent= FakeHead m.Name = "mouth"
+				e = dec:Clone() e.Texture = "rbxassetid://3428079000" e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
+				faceExtras1() 
+			end)  
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "rbxassetid://3428079000" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
+				m = dec:Clone() m.Texture = "rbxassetid://6376349202"	m.Parent= FakeHead m.Name = "mouth"
+				e = dec:Clone() e.Texture = "rbxassetid://3428079000" e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
+				faceExtras1()
+			end)  
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "rbxassetid://3428079000" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
+				m = dec:Clone() m.Texture = "http://www.roblox.com/asset/?id=3965054455"	m.Parent= FakeHead m.Name = "mouth"
+				e = dec:Clone() e.Texture = "rbxassetid://3428079000" e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
+				faceExtras1()
 			end) 
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "rbxassetid://3428079000" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
+				m = dec:Clone() m.Texture = "http://www.roblox.com/asset/?id=3619612124"	m.Parent= FakeHead m.Name = "mouth"
+				e = dec:Clone() e.Texture = "rbxassetid://3428079000" e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
+				faceExtras1()
+			end) 
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "rbxassetid://3428079000" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
+				m = dec:Clone() m.Texture = "http://www.roblox.com/asset/?id=2661147529"	m.Parent= FakeHead m.Name = "mouth"
+				e = dec:Clone() e.Texture = "rbxassetid://3428079000" e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
+				faceExtras1()
+			end) 
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "rbxassetid://3428079000" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
+				m = dec:Clone() m.Texture = "http://www.roblox.com/asset/?id=3619597293"	m.Parent= FakeHead m.Name = "mouth"
+				e = dec:Clone() e.Texture = "rbxassetid://3428079000" e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
+				faceExtras1()
+			end) 
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "rbxassetid://3428079000" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
+				m = dec:Clone() m.Texture = "rbxassetid://6376348817"	m.Parent= FakeHead m.Name = "mouth"
+				e = dec:Clone() e.Texture = "rbxassetid://3428079000" e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
+				faceExtras1()
+			end) 
+			
+			
+			
+			
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "http://www.roblox.com/asset/?id=7806022869" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
+				m = dec:Clone() m.Texture = "http://www.roblox.com/asset/?id=7806022869"	m.Parent= FakeHead m.Name = "face" 
+				faceExtras1()
+ 			end) 
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "http://www.roblox.com/asset/?id=4880833769" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
+				m = dec:Clone() m.Texture = "http://www.roblox.com/asset/?id=4880833769"	m.Parent= FakeHead m.Name = "face" 
+				faceExtras1()
+			end) 
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "http://www.roblox.com/asset/?id=10410437784" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
+				m = dec:Clone() m.Texture = "http://www.roblox.com/asset/?id=10410437784"	m.Parent= FakeHead m.Name = "face" 
+				faceExtras1()
+			end) 
+
+			
+		 
+			
+			
+			 
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "http://www.roblox.com/asset/?id=6557874235" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end 
+				m = dec:Clone() m.Texture = "http://www.roblox.com/asset/?id=6784493669"	m.Parent= FakeHead m.Name = "mouth"
+				e = dec:Clone() e.Texture = "http://www.roblox.com/asset/?id=6557874235" e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
+				faceExtras1()
+			end)  
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "http://www.roblox.com/asset/?id=6557874235" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
+				m = dec:Clone() m.Texture = "rbxassetid://6376349202"	m.Parent= FakeHead m.Name = "mouth"
+				e = dec:Clone() e.Texture = "http://www.roblox.com/asset/?id=6557874235" e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
+				faceExtras1()
+			end)  
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "http://www.roblox.com/asset/?id=6557874235" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
+				m = dec:Clone() m.Texture = "http://www.roblox.com/asset/?id=3965054455"	m.Parent= FakeHead m.Name = "mouth"
+				e = dec:Clone() e.Texture = "http://www.roblox.com/asset/?id=6557874235" e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
+				faceExtras1()
+			end) 
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "rbxassetid://3428079000" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
+				m = dec:Clone() m.Texture = "http://www.roblox.com/asset/?id=3619612124"	m.Parent= FakeHead m.Name = "mouth"
+				e = dec:Clone() e.Texture = "http://www.roblox.com/asset/?id=6557874235" e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
+				faceExtras1()
+			end) 
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "rbxassetid://3428079000" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
+				m = dec:Clone() m.Texture = "http://www.roblox.com/asset/?id=2661147529"	m.Parent= FakeHead m.Name = "mouth"
+				e = dec:Clone() e.Texture = "http://www.roblox.com/asset/?id=6557874235" e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
+				faceExtras1()
+			end) 
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "rbxassetid://3428079000" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
+				m = dec:Clone() m.Texture = "http://www.roblox.com/asset/?id=3619597293"	m.Parent= FakeHead m.Name = "mouth"
+				e = dec:Clone() e.Texture = "http://www.roblox.com/asset/?id=6557874235" e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
+				faceExtras1()
+			end) 
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "rbxassetid://3428079000" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
+				m = dec:Clone() m.Texture = "rbxassetid://6376348817"	m.Parent= FakeHead m.Name = "mouth"
+				e = dec:Clone() e.Texture = "http://www.roblox.com/asset/?id=6557874235" e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
+				faceExtras1()
+			end)
+			
+			
+			
+			
+			 
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "http://www.roblox.com/asset/?id=6557874235" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end 
+				m = dec:Clone() m.Texture = "http://www.roblox.com/asset/?id=6784493669"	m.Parent= FakeHead m.Name = "mouth"
+				e = dec:Clone() e.Texture = "http://www.roblox.com/asset/?id=6687453409" e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
+				faceExtras1()
+			end)  
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "http://www.roblox.com/asset/?id=6557874235" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
+				m = dec:Clone() m.Texture = "rbxassetid://6376349202"	m.Parent= FakeHead m.Name = "mouth"
+				e = dec:Clone() e.Texture = "http://www.roblox.com/asset/?id=6687453409" e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
+				faceExtras1()
+			end)  
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "http://www.roblox.com/asset/?id=6557874235" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
+				m = dec:Clone() m.Texture = "http://www.roblox.com/asset/?id=3965054455"	m.Parent= FakeHead m.Name = "mouth"
+				e = dec:Clone() e.Texture = "http://www.roblox.com/asset/?id=6687453409" e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
+				faceExtras1()
+			end) 
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "rbxassetid://3428079000" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
+				m = dec:Clone() m.Texture = "http://www.roblox.com/asset/?id=3619612124"	m.Parent= FakeHead m.Name = "mouth"
+				e = dec:Clone() e.Texture = "http://www.roblox.com/asset/?id=6687453409" e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
+				faceExtras1()
+			end) 
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "rbxassetid://3428079000" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
+				m = dec:Clone() m.Texture = "http://www.roblox.com/asset/?id=2661147529"	m.Parent= FakeHead m.Name = "mouth"
+				e = dec:Clone() e.Texture = "http://www.roblox.com/asset/?id=6687453409" e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
+				faceExtras1()
+			end) 
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "rbxassetid://3428079000" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
+				m = dec:Clone() m.Texture = "http://www.roblox.com/asset/?id=3619597293"	m.Parent= FakeHead m.Name = "mouth"
+				e = dec:Clone() e.Texture = "http://www.roblox.com/asset/?id=6687453409" e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
+				faceExtras1()
+			end) 
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "rbxassetid://3428079000" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
+				m = dec:Clone() m.Texture = "rbxassetid://6376348817"	m.Parent= FakeHead m.Name = "mouth"
+				e = dec:Clone() e.Texture = "http://www.roblox.com/asset/?id=6687453409" e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
+				faceExtras1()
+			end)
+			
+			
+			
+			
+			
 			
 			--faceID={494291269,26019070,42070576,1665629400, 16652251,20052135,398676450,180660043,26343188		   ,128992838,209995252,21024661,2409285794,406000958,236399287,116042990,258198928,29532363,49045351,28878297,29296146,244160766,10907541,7699174,7074729,14861743,10831558,66330106,391496223,15432080,15177601,11956548,110207437,}
 			faceID = {494290547,26018945,42070872,1868469550,629930519,20052028,398676207,179693472,26343132,6343843123,127959433,209712379,21024598,2409281591,405705854,236455674,115978221,258192246,29532362,49045252,28878210,29296097,243755928,10747810,7699086,7074712,14861556,10747371,66329524,629933140,15431991,15177471,11956455,108209955,}
 			for _, faces in pairs(faceID) do
 				local face = FaceButton:Clone() face.Parent = facelist face.Image = "http://www.roblox.com/asset?id="..faces face.MouseButton1Click:Connect(function()
-					if char.Head:FindFirstChild("face") then char.Head.face.Texture = face.Image else if not char:FindFirstChild("FakeHead") then NewHead1() end FakeHead.face.Texture = face.Image end end) 
-				if faces == 1 then  end
+					--if char.Head:FindFirstChild("face") then char.Head.face.Texture = face.Image else if not char:FindFirstChild("FakeHead") then NewHead1() end FakeHead.face.Texture = face.Image end 
+					--if faces == 1 then    end
+					for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+					dec= Instance.new("Decal") dec:AddTag("face")   m = dec:Clone() m.Texture = face.Image	m.Parent= FakeHead m.Name = "face"
+					
+				end) 	
 			end
 			
 		end)
