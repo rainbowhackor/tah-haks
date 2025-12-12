@@ -2336,18 +2336,18 @@ function guias()
 
 			plus = 15 Button.BackgroundColor3 = Color3.fromRGB(85, 85, 127) Button.Size = UDim2.new(0.95,0 , 0,15) Button.TextXAlignment = Enum.TextXAlignment.Left Button.BackgroundTransparency = .5
 
-			ran = Button:Clone() ran.Parent = masslist ran.Text = "Run  CH, 80, 16, 120" 
+			ran = Button:Clone() ran.Parent = masslist ran.Text = "Run  CH, 80, 16, 120" ran.BackgroundColor3 = Color3.fromRGB(170, 85, 127)
 			ran.MouseButton1Click:Connect(function() char.Humanoid.WalkSpeed = char.Humanoid.HipHeight * 7.634  end)
 			ran.MouseButton2Click:Connect(function() char.Humanoid.WalkSpeed = 80 end)
 			ran.MouseWheelForward:Connect(function() char.Humanoid.WalkSpeed = 16 end)
 			ran.MouseWheelBackward:Connect(function() char.Humanoid.WalkSpeed = 120 end)
-			ran2 = Button:Clone() ran2.Parent = masslist ran2.Text = "Run  160, 250, 200, 50" 
-			ran2.MouseButton1Click:Connect(function() char.Humanoid.WalkSpeed = 160  end)
+			ran2 = Button:Clone() ran2.Parent = masslist ran2.Text = "Run  333, 250, 200, 290" ran2.BackgroundColor3 = Color3.fromRGB(141, 0, 212)
+			ran2.MouseButton1Click:Connect(function() char.Humanoid.WalkSpeed = 333  end)
 			ran2.MouseButton2Click:Connect(function() char.Humanoid.WalkSpeed = 250 end)
 			ran2.MouseWheelForward:Connect(function() char.Humanoid.WalkSpeed = 200 end)
-			ran2.MouseWheelBackward:Connect(function() char.Humanoid.WalkSpeed = 50 end)
+			ran2.MouseWheelBackward:Connect(function() char.Humanoid.WalkSpeed = 290 end)
 
-			dis = Button:Clone() dis.Parent = masslist dis.Text = "disaster" 
+			dis = Button:Clone() dis.Parent = masslist dis.Text = "disaster" dis.BackgroundColor3 = Color3.fromRGB(85, 85, 0)
 			dis.MouseButton1Click:Connect(function() dis.Text = char.SurvivalTag.Value wait(2) dis.Text = "disaster"  end) 
 
 
@@ -2380,11 +2380,13 @@ function guias()
 			times.MouseWheelForward:Connect(function() game.Lighting.ClockTime = 13 end)
 			times.MouseWheelBackward:Connect(function() game.Lighting.ClockTime = 16 end)
 
-			Mass24 = Button:Clone() Mass24.Parent = masslist Mass24.Text = "Glacier ,  Ice Ball" Mass24.BackgroundColor3 = Color3.fromRGB(85, 170, 255)
+			Mass24 = Button:Clone() Mass24.Parent = masslist Mass24.Text = "Glacier ,  Ice Ball, n" Mass24.BackgroundColor3 = Color3.fromRGB(85, 170, 255)
 			Mass24.MouseButton2Click:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100) end end end)
 			--Mass1 = Button:Clone() Mass1.Parent = masslist Mass1.Text = "Glacier" 
 			Mass24.MouseButton1Click:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) end end end)
-
+			Mass24.MouseWheelForward:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = nil end end end)
+			
+			
 			inviscam = Button:Clone() inviscam.Parent = masslist inviscam.Text = "invisicam" 
 			inviscam.MouseButton1Click:Connect(function() player.DevCameraOcclusionMode = Enum.DevCameraOcclusionMode.Invisicam end)
 			inviscam.MouseButton2Click:Connect(function() player.DevCameraOcclusionMode = Enum.DevCameraOcclusionMode.Zoom  end)
@@ -3894,6 +3896,20 @@ function guias()
 			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "rbxassetid://3428079000" ace1.MouseButton1Click:Connect(function()
 				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
 				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
+				m = dec:Clone() m.Texture = "rbxassetid://2801751501"	m.Parent= FakeHead m.Name = "mouth"
+				e = dec:Clone() e.Texture = "rbxassetid://3428079000" e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
+				faceExtras1()
+			end) 
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "rbxassetid://3428079000" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
+				m = dec:Clone() m.Texture = "rbxassetid://2801742053"	m.Parent= FakeHead m.Name = "mouth"
+				e = dec:Clone() e.Texture = "rbxassetid://3428079000" e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
+				faceExtras1()
+			end) 
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "rbxassetid://3428079000" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
 				m = dec:Clone() m.Texture = "http://www.roblox.com/asset/?id=3965054455"	m.Parent= FakeHead m.Name = "mouth"
 				e = dec:Clone() e.Texture = "rbxassetid://3428079000" e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
 				faceExtras1()
@@ -3954,7 +3970,21 @@ function guias()
 				e = dec:Clone() e.Texture = "http://www.roblox.com/asset/?id=6557874235" e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
 				faceExtras1()
 			end)  
-			   
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "http://www.roblox.com/asset/?id=6557874235" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
+				m = dec:Clone() m.Texture = "rbxassetid://2801751501"	m.Parent= FakeHead m.Name = "mouth"
+				e = dec:Clone() e.Texture = "http://www.roblox.com/asset/?id=6557874235" e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
+				faceExtras1()
+			end) 
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "http://www.roblox.com/asset/?id=6557874235" ace1.MouseButton1Click:Connect(function()
+				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
+				m = dec:Clone() m.Texture = "rbxassetid://2801742053"	m.Parent= FakeHead m.Name = "mouth"
+				e = dec:Clone() e.Texture = "http://www.roblox.com/asset/?id=6557874235" e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
+				faceExtras1()
+			end) 
+			
 			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "http://www.roblox.com/asset/?id=6557874235" ace1.MouseButton1Click:Connect(function()
 				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
 				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
