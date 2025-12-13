@@ -2349,14 +2349,15 @@ function guias()
 
 			dis = Button:Clone() dis.Parent = masslist dis.Text = "disaster" dis.BackgroundColor3 = Color3.fromRGB(85, 85, 0)
 			dis.MouseButton1Click:Connect(function() dis.Text = char.SurvivalTag.Value wait(2) dis.Text = "disaster"  end) 
-			dis.MouseButton2Click:Connect(function() char.PartCollide.CanCollide = not char.PartCollide.CanCollide end)
-			dis.MouseButton2Click:Connect(function() char.CollidePart.CanCollide = not char.CollidePart.CanCollide end)
+			dis.MouseButton2Click:Connect(function() char.PartCollision.CanCollide = not char.PartCollision.CanCollide char.Humanoid.Sit = char.PartCollision.CanCollide end)
+			dis.MouseButton2Click:Connect(function() char.CollisionPart.CanCollide = not char.CollisionPart.CanCollide end)
 
 
-			gravs = Button:Clone() gravs.Parent = masslist gravs.Text = "G 11 22 5" 
+			gravs = Button:Clone() gravs.Parent = masslist gravs.Text = "G 11 22 5 2" 
 			gravs.MouseButton1Click:Connect(function() workspace.Gravity = 11 end)
 			gravs.MouseButton2Click:Connect(function() workspace.Gravity = 22 end)
 			gravs.MouseWheelForward:Connect(function() workspace.Gravity = 5 end)
+			gravs.MouseWheelBackward:Connect(function() workspace.Gravity = 2 end)
 			gravs2 = Button:Clone() gravs2.Parent = masslist gravs2.Text = "G 55 , 33" 
 			gravs2.MouseButton1Click:Connect(function() workspace.Gravity = 55 end)
 			gravs2.MouseButton2Click:Connect(function() workspace.Gravity = 33 end)
