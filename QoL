@@ -3202,11 +3202,11 @@ function guias()
 
 
 		function hat3() nil2 = Instance.new("TextLabel") nil2.Name = "Button" nil2.Parent = myhatist nil2.Size =  UDim2.new(0.95,0 , 0,07) nil2.Text = "" nil2.BackgroundTransparency = 1 end
-		princess = { "hai pr" ,"ribbon" ,"pear","flowers", "float dirt1",}
-		twin = {     "hai big curl" ,"cat band", "bang swept","bang side" }
-		gamerGril = {  "hai paper" , "headphone n", "bang swept","bang side"}
+		princess = { "hai pr" ,"ribbon" ,"pear","flowers", "float dirt1","hai sworl" , }
+		twin = {     "hai big curl" ,"cat band", "bang swept2","bang side2" }
+		gamerGril = {  "hai paper" , "headphone n", }
 		dirt4 = {   "hai1 pony 2" , "hai2 bl"  ,"cat fluf", "ear1"  , } ---"hai2 p" ,"hai2 br", "hai1 pony b" ,"hai4", "hai5",  "hai5b" 
-		dirt5 = {    "hai curl"  , "hai fluf", "hai sworl"   }
+		dirt5 = {    "hai curl"  , "hai fluf", "bang swept","bang side" }
 		
 		
 		
@@ -3388,6 +3388,11 @@ function guias()
 							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(0.035, -0.262, -0.121)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
 						if Buttons.Text == "bang side" then HatMesh.MeshId = "rbxassetid://5945976587" HatMesh.TextureId = "rbxassetid://6322812499" --HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(-0.002, -0.167, -0.287)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
+						
+						if Buttons.Text == "bang swept2" then HatMesh.MeshId = "rbxassetid://6963528552" HatMesh.TextureId = "rbxassetid://6322812499"-- HatMesh.Scale=Vector3.new(.9,.9,.9)
+							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(0.035, -0.12, -0.06)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
+						if Buttons.Text == "bang side2" then HatMesh.MeshId = "rbxassetid://5945976587" HatMesh.TextureId = "rbxassetid://6322812499" --HatMesh.Scale=Vector3.new(.9,.9,.9)
+							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(-0.002, -0.06, -0.15)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
 						
 						if Buttons.Text == "hai paper" then HatMesh.MeshId = "rbxassetid://15655702576" HatMesh.TextureId = "http://www.roblox.com/asset/?id=15655681473" --HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0, 0.57, -0.08)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
