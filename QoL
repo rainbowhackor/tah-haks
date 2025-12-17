@@ -3390,9 +3390,9 @@ function guias()
 							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(-0.002, -0.167, -0.287)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
 						
 						if Buttons.Text == "bang swept2" then HatMesh.MeshId = "rbxassetid://6963528552" HatMesh.TextureId = "rbxassetid://6322812499"-- HatMesh.Scale=Vector3.new(.9,.9,.9)
-							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(0.035, -0.02, -0.00)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
+							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(0.035, -0.262, 0.121)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
 						if Buttons.Text == "bang side2" then HatMesh.MeshId = "rbxassetid://5945976587" HatMesh.TextureId = "rbxassetid://6322812499" --HatMesh.Scale=Vector3.new(.9,.9,.9)
-							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(-0.002, -0.00, -0.05)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
+							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(-0.002, 0.167, 0.287)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
 						
 						if Buttons.Text == "hai paper" then HatMesh.MeshId = "rbxassetid://15655702576" HatMesh.TextureId = "http://www.roblox.com/asset/?id=15655681473" --HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0, 0.57, -0.08)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
@@ -3402,7 +3402,7 @@ function guias()
 						if Buttons.Text == "hai sworl" then HatMesh.MeshId = "rbxassetid://17637209360" HatMesh.TextureId = "http://www.roblox.com/asset/?id=11089084282" --HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0.001, 0.577, 0.028)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
 						if Buttons.Text == "Pink Bow" then HatMesh.MeshId = "rbxassetid://9235653313" HatMesh.TextureId = "rbxassetid://9235653495" --HatMesh.Scale=Vector3.new(.9,.9,.9)
-							HatAtt.Name = "HatAttachment" HatAtt.Position = Vector3.new(0.001, -0.179, -0.285)  HatAtt.Orientation = Vector3.new(15.533, 180, 0)  end
+							HatAtt.Name = "HatAttachment" HatAtt.Position = Vector3.new(0.001, -0.079, -0.285)  HatAtt.Orientation = Vector3.new(15.533, 180, 0)  end
 
 						 
 						
