@@ -3390,9 +3390,9 @@ function guias()
 							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(-0.002, -0.167, -0.287)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
 						
 						if Buttons.Text == "bang swept2" then HatMesh.MeshId = "rbxassetid://6963528552" HatMesh.TextureId = "rbxassetid://6322812499"-- HatMesh.Scale=Vector3.new(.9,.9,.9)
-							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(0.035, -0.262, 0.121)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
+							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(0.035, -0.212, 0.121)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
 						if Buttons.Text == "bang side2" then HatMesh.MeshId = "rbxassetid://5945976587" HatMesh.TextureId = "rbxassetid://6322812499" --HatMesh.Scale=Vector3.new(.9,.9,.9)
-							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(-0.002, 0.167, 0.287)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
+							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(-0.002, 0.0, 0.187)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
 						
 						if Buttons.Text == "hai paper" then HatMesh.MeshId = "rbxassetid://15655702576" HatMesh.TextureId = "http://www.roblox.com/asset/?id=15655681473" --HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0, 0.57, -0.08)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
@@ -3402,7 +3402,7 @@ function guias()
 						if Buttons.Text == "hai sworl" then HatMesh.MeshId = "rbxassetid://17637209360" HatMesh.TextureId = "http://www.roblox.com/asset/?id=11089084282" --HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0.001, 0.577, 0.028)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
 						if Buttons.Text == "Pink Bow" then HatMesh.MeshId = "rbxassetid://9235653313" HatMesh.TextureId = "rbxassetid://9235653495" --HatMesh.Scale=Vector3.new(.9,.9,.9)
-							HatAtt.Name = "HatAttachment" HatAtt.Position = Vector3.new(0.001, -0.079, -0.285)  HatAtt.Orientation = Vector3.new(15.533, 180, 0)  end
+							HatAtt.Name = "HatAttachment" HatAtt.Position = Vector3.new(0.001, -0.279, -0.285)  HatAtt.Orientation = Vector3.new(15.533, 180, 0)  end
 
 						 
 						
@@ -4240,7 +4240,12 @@ function guias()
 			if char:FindFirstChild("White cat paws") and not game.Lighting.layers.fit1:FindFirstChild("White cat paws") then  char:FindFirstChild("White cat paws"):Clone().Parent = game.Lighting.layers.fit1 end
 			if char:FindFirstChild("Accessory (Cat)") and not game.Lighting.layers.fit1:FindFirstChild("Accessory (Cat)") then  char:FindFirstChild("Accessory (Cat)"):Clone().Parent = game.Lighting.layers.fit1 end
 			if char:FindFirstChild("Accessory (Generated Accessory)") and not game.Lighting.layers.fit1:FindFirstChild("Accessory (Generated Accessory)") then  char:FindFirstChild("Accessory (Generated Accessory)"):Clone().Parent = game.Lighting.layers.fit1 end
-
+			
+			if char:FindFirstChild("Accessory (ribbon p)") and not game.Lighting.layers.fit1:FindFirstChild("Accessory (ribbon p)") then  char:FindFirstChild("Accessory (ribbon p)"):Clone().Parent = game.Lighting.layers.fit1 end
+			if char:FindFirstChild("Accessory (♾️ White goth lace fishnet stockings)") and not game.Lighting.layers.fit1:FindFirstChild("Accessory (♾️ White goth lace fishnet stockings)") then 
+				char:FindFirstChild("Accessory (♾️ White goth lace fishnet stockings)"):FindFirstChildWhichIsA("BasePart"):FindFirstChildWhichIsA("WrapLayer").Order = -1
+				char:FindFirstChild("Accessory (♾️ White goth lace fishnet stockings)"):Clone().Parent = game.Lighting.layers.fit1 end
+			
 
 
 
@@ -4281,7 +4286,12 @@ function guias()
 				if char:FindFirstChild("Accessory (Generated Accessory)") then char:FindFirstChild("Accessory (Generated Accessory)"):Remove() return end  
 				hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (Generated Accessory)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head 
 			end) 
-
+			r1 = Button:Clone() r1.Parent = list r1.Text = "nets" 
+			r1.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (♾️ White goth lace fishnet stockings)") then char:FindFirstChild("Accessory (♾️ White goth lace fishnet stockings)"):Remove() return end  
+				hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (♾️ White goth lace fishnet stockings)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head   end) 
+			n1 = Button:Clone() n1.Parent = list n1.Text = "ribbon p " 
+			n1.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (ribbon p)") then char:FindFirstChild("Accessory (ribbon p)"):Remove() return end  
+				hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (ribbon p)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head   end) 
 		end) 
 		laeyers.MouseButton2Click:Connect(function()  end) 
 		
