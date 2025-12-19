@@ -3392,7 +3392,7 @@ function guias()
 						if Buttons.Text == "bang swept2" then HatMesh.MeshId = "rbxassetid://6963528552" HatMesh.TextureId = "rbxassetid://6322812499"-- HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(0.035, -0.212, 0.121)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
 						if Buttons.Text == "bang side2" then HatMesh.MeshId = "rbxassetid://5945976587" HatMesh.TextureId = "rbxassetid://6322812499" --HatMesh.Scale=Vector3.new(.9,.9,.9)
-							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(-0.002, 0.0, 0.187)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
+							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(-0.002, 0.2, 0.027)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
 						
 						if Buttons.Text == "hai paper" then HatMesh.MeshId = "rbxassetid://15655702576" HatMesh.TextureId = "http://www.roblox.com/asset/?id=15655681473" --HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0, 0.57, -0.08)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
@@ -3402,7 +3402,7 @@ function guias()
 						if Buttons.Text == "hai sworl" then HatMesh.MeshId = "rbxassetid://17637209360" HatMesh.TextureId = "http://www.roblox.com/asset/?id=11089084282" --HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0.001, 0.577, 0.028)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
 						if Buttons.Text == "Pink Bow" then HatMesh.MeshId = "rbxassetid://9235653313" HatMesh.TextureId = "rbxassetid://9235653495" --HatMesh.Scale=Vector3.new(.9,.9,.9)
-							HatAtt.Name = "HatAttachment" HatAtt.Position = Vector3.new(0.001, -0.279, -0.285)  HatAtt.Orientation = Vector3.new(15.533, 180, 0)  end
+							HatAtt.Name = "HatAttachment" HatAtt.Position = Vector3.new(0.001, -0.479, -0.285)  HatAtt.Orientation = Vector3.new(15.533, 180, 0)  end
 
 						 
 						
@@ -4239,6 +4239,8 @@ function guias()
 
 			if char:FindFirstChild("White cat paws") and not game.Lighting.layers.fit1:FindFirstChild("White cat paws") then  char:FindFirstChild("White cat paws"):Clone().Parent = game.Lighting.layers.fit1 end
 			if char:FindFirstChild("Accessory (Cat)") and not game.Lighting.layers.fit1:FindFirstChild("Accessory (Cat)") then  char:FindFirstChild("Accessory (Cat)"):Clone().Parent = game.Lighting.layers.fit1 end
+			if char:FindFirstChild("Accessory (Black Cat Feet)") and not game.Lighting.layers.fit1:FindFirstChild("Accessory (Black Cat Feet)") then  char:FindFirstChild("Accessory (Black Cat Feet)"):Clone().Parent = game.Lighting.layers.fit1 end
+			
 			if char:FindFirstChild("Accessory (Generated Accessory)") and not game.Lighting.layers.fit1:FindFirstChild("Accessory (Generated Accessory)") then  char:FindFirstChild("Accessory (Generated Accessory)"):Clone().Parent = game.Lighting.layers.fit1 end
 			
 			if char:FindFirstChild("Accessory (ribbon p)") and not game.Lighting.layers.fit1:FindFirstChild("Accessory (ribbon p)") then  char:FindFirstChild("Accessory (ribbon p)"):Clone().Parent = game.Lighting.layers.fit1 end
@@ -4252,7 +4254,7 @@ function guias()
 			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
 			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "pis" then Ui:Remove() end end
 			if Begal.GuiHolder:FindFirstChild("pis") then Begal.GuiHolder:FindFirstChild("pis"):Remove() return end
-			local list = notScroll:Clone() list.Parent = Begal.GuiHolder  list.Name = "pis" list.BackgroundTransparency = 1 list.Position = UDim2.new(0.15, 0 , 0.3, 0)  list.Size = UDim2.new(0.1, 0 , 0.36, 0)
+			local list = Scroll:Clone() list.Parent = Begal.GuiHolder  list.Name = "pis" list.BackgroundTransparency = 1 list.Position = UDim2.new(0.15, 0 , 0.3, 0)  list.Size = UDim2.new(0.1, 0 , 0.36, 0)
 			listing = Instance.new("UIListLayout",list) listing.Padding = UDim.new(0,1)
 
 			plus = 15 Button.BackgroundColor3 = Color3.fromRGB(85, 85, 127) Button.Size = UDim2.new(0.95,0 , 0,15) Button.TextXAlignment = Enum.TextXAlignment.Left Button.BackgroundTransparency = .5
@@ -4261,7 +4263,7 @@ function guias()
 			ran.MouseButton1Click:Connect(function() 
 				for _,bruh in pairs(game.Lighting.layers.fit1:GetChildren()) do 
 					if not char:FindFirstChild(bruh.Name) then 
-						--[[-bruh:Clone().Parent = char   bruh.Handle.AccessoryWeld.Part1 = char.Head  ]]this = "You dumb fuck, you changed the stored weld not the character weld "
+						--[[-bruh:Clone().Parent = char   bruh.Handle.AccessoryWeld.Part1 = char.Head  ]]this = "You dumb fukk, you changed the stored weld not the character weld   and it took a minute for it to void the error because destroy height was set to -50,000"
 						hat = bruh:Clone() hat.Parent = char   hat.Handle.AccessoryWeld.Part1 = char.Head  
 					end 
 				end
@@ -4269,15 +4271,21 @@ function guias()
 			ran2 = Button:Clone() ran2.Parent = list ran2.Text = " " 
 			ran2.MouseButton1Click:Connect(function()    end) 
 
-			dis = Button:Clone() dis.Parent = list dis.Text = " " 
-			dis.MouseButton1Click:Connect(function() dis.Text = char.SurvivalTag.Value wait(2) dis.Text = "disaster"  end) 
-
+			
+			
+			p0 = Button:Clone() p0.Parent = list p0.Text = "paw foot chib " 
+			p0.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (Black Cat Feet)") then char:FindFirstChild("Accessory (Black Cat Feet)"):Remove() return end  
+				hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (Black Cat Feet)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head   end) 
 			p1 = Button:Clone() p1.Parent = list p1.Text = "paw hand chib " 
 			p1.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (Cat)") then char:FindFirstChild("Accessory (Cat)"):Remove() return end  
 				hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (Cat)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head   end) 
 			p2 = Button:Clone() p2.Parent = list p2.Text = "paw foot " 
 			p2.MouseButton1Click:Connect(function()  if char:FindFirstChild("White cat paws") then char:FindFirstChild("White cat paws"):Remove() return end  
 				hat= game.Lighting.layers.fit1:FindFirstChild("White cat paws"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head   end) 
+			
+			dis = Button:Clone() dis.Parent = list dis.Text = " " 
+			dis.MouseButton1Click:Connect(function() dis.Text = char.SurvivalTag.Value wait(2) dis.Text = "disaster"  end) 
+			
 			b0 = Button:Clone() b0.Parent = list b0.Text = "bik0 " 
 			b0.MouseButton1Click:Connect(function()
 				--[[if not char:FindFirstChild("Accessory (Generated Accessory)") then
@@ -4292,6 +4300,55 @@ function guias()
 			n1 = Button:Clone() n1.Parent = list n1.Text = "ribbon p " 
 			n1.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (ribbon p)") then char:FindFirstChild("Accessory (ribbon p)"):Remove() return end  
 				hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (ribbon p)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head   end) 
+			
+			ran2 = Button:Clone() ran2.Parent = list ran2.Text = " " 
+			ran2.MouseButton1Click:Connect(function()    end) 
+			
+			
+			p0p = Button:Clone() p0p.Parent = list p0p.Text = "paw foot chib p" 
+			p0p.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (Black Cat Feet)") then char:FindFirstChild("Accessory (Black Cat Feet)"):Remove() return end  
+				hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (Black Cat Feet)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head hat.Handle.TextureID = "rbxassetid://12647749485" wait(2) hat.Handle.SurfaceAppearance:Remove()   end) 
+			p1p = Button:Clone() p1p.Parent = list p1p.Text = "paw hand chib p" 
+			p1p.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (Cat)") then char:FindFirstChild("Accessory (Cat)"):Remove() return end  
+				hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (Cat)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head hat.Handle.TextureID = "rbxassetid://12647749485" wait(2) hat.Handle.SurfaceAppearance:Remove()  end) 
+			p2p = Button:Clone() p2p.Parent = list p2p.Text = "paw foot p" 
+			p2p.MouseButton1Click:Connect(function()  if char:FindFirstChild("White cat paws") then char:FindFirstChild("White cat paws"):Remove() return end  
+				hat= game.Lighting.layers.fit1:FindFirstChild("White cat paws"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head hat.Handle.TextureID = "rbxassetid://12647749485"  end) 
+			
+			ran2 = Button:Clone() ran2.Parent = list ran2.Text = " " 
+			ran2.MouseButton1Click:Connect(function()    end) 
+			
+			p0br = Button:Clone() p0br.Parent = list p0br.Text = "paw foot chib br" 
+			p0br.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (Black Cat Feet)") then char:FindFirstChild("Accessory (Black Cat Feet)"):Remove() return end  
+				hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (Black Cat Feet)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head hat.Handle.TextureID = "rbxassetid://15695913110" wait(2) hat.Handle.SurfaceAppearance:Remove()   end) 
+			p1br = Button:Clone() p1br.Parent = list p1br.Text = "paw hand chib br" 
+			p1br.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (Cat)") then char:FindFirstChild("Accessory (Cat)"):Remove() return end  
+				hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (Cat)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head hat.Handle.TextureID = "rbxassetid://15689023005" wait(2) hat.Handle.SurfaceAppearance:Remove()  end) 
+			p2br = Button:Clone() p2br.Parent = list p2br.Text = "paw foot br" 
+			p2br.MouseButton1Click:Connect(function()  if char:FindFirstChild("White cat paws") then char:FindFirstChild("White cat paws"):Remove() return end  
+				hat= game.Lighting.layers.fit1:FindFirstChild("White cat paws"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head hat.Handle.TextureID = "rbxassetid://15689023005"  end) 
+			p2br2 = Button:Clone() p2br2.Parent = list p2br2.Text = "paw foot br2" 
+			p2br2.MouseButton1Click:Connect(function()  if char:FindFirstChild("White cat paws") then char:FindFirstChild("White cat paws"):Remove() return end  
+				hat= game.Lighting.layers.fit1:FindFirstChild("White cat paws"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head hat.Handle.TextureID = "rbxassetid://12647743165"  end) 
+			
+			ran2 = Button:Clone() ran2.Parent = list ran2.Text = " " 
+			ran2.MouseButton1Click:Connect(function()    end) 
+
+			p0b = Button:Clone() p0b.Parent = list p0b.Text = "paw foot chib b" 
+			p0b.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (Black Cat Feet)") then char:FindFirstChild("Accessory (Black Cat Feet)"):Remove() return end  
+				hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (Black Cat Feet)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head hat.Handle.TextureID = "rbxassetid://15695912871" wait(2) hat.Handle.SurfaceAppearance:Remove()   end) 
+			p1b = Button:Clone() p1b.Parent = list p1b.Text = "paw hand chib b" 
+			p1b.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (Cat)") then char:FindFirstChild("Accessory (Cat)"):Remove() return end  
+				hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (Cat)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head hat.Handle.TextureID = "rbxassetid://15689023144" wait(2) hat.Handle.SurfaceAppearance:Remove()  end) 
+			p2b = Button:Clone() p2b.Parent = list p2b.Text = "paw foot b" 
+			p2b.MouseButton1Click:Connect(function()  if char:FindFirstChild("White cat paws") then char:FindFirstChild("White cat paws"):Remove() return end  
+				hat= game.Lighting.layers.fit1:FindFirstChild("White cat paws"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head hat.Handle.TextureID = "rbxassetid://12647742078"  end) 
+			
+			
+			p0brc = Button:Clone() p0brc.Parent = list p0brc.Text = "colmap paw foot chib br" 
+			p0brc.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (Black Cat Feet)") then char:FindFirstChild("Accessory (Black Cat Feet)"):Remove() return end  
+				hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (Black Cat Feet)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head hat.Handle.TextureID = "rbxassetid://15695913110"   hat.Handle.SurfaceAppearance.ColorMap = "rbxassetid://15695913110"  end) 
+
 		end) 
 		laeyers.MouseButton2Click:Connect(function()  end) 
 		
