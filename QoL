@@ -2412,10 +2412,33 @@ function guias()
 			ttddb.MouseButton1Click:Connect(function() --[[ for _, pla in pairs(game.Players:GetChildren()) do 
 					if pla:IsA("Player") then for _, backp in pairs(game.Players:GetChildren()) do 
 						  end end]] 
-				for _, pla in pairs(game.Players:GetDescendants()) do if pla.Parent.Name == "Backpack" then pla:Remove() end end
-				end) 
+				--for _, pla in pairs(game.Players:GetDescendants()) do if pla.Parent.Name == "Backpack" then pla:Remove() end end
+				for _, pla in pairs(game.Players:GetDescendants()) do if pla ~= nil then if pla.ClassName == "StarterGear" then pla:Remove() end end end
+				for _, pla in pairs(game.Players:GetDescendants()) do if pla ~= nil then if pla.ClassName == "Backpack" then pla:Remove() end end end
+			end) 
+			ttddb.MouseButton2Click:Connect(function()  
+				for _, pla in pairs(game.Players:GetDescendants()) do if pla:IsA("StarterGear") then pla:Remove() end end 
+				for _, pla in pairs(game.Players:GetDescendants()) do if pla:IsA("Backpack")   then pla:Remove() end end 
+			end)
 			
-			jum = Button:Clone() jum.Parent = masslist jum.Text = "Jum  7.2, CH, 15, 22" jum.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
+			ttdd = Button:Clone() ttdd.Parent = masslist ttdd.Text = "ttd del " 
+			ttdd.MouseButton1Click:Connect(function()  for _, part in pairs(workspace:GetDescendants()  ) do 
+					if part.Name == "RELICSxyz Boombox" or part.Name == "AudioEmitter" or part.Name == "Nametag"   then part:Remove()  end end end) 
+			
+			ttddp = Button:Clone() ttddp.Parent = masslist ttddp.Text = "ttd del play" 
+			ttddp.MouseButton1Click:Connect(function()
+				rthe = Instance.new("Model" ) rthe.Name = "hiden"
+				for _, person in pairs(game.Players:GetChildren()) do
+					if person ~= player then 
+					iSeeYou = person.Character iSeeYou.Parent = rthe
+						end
+					 end
+			end)
+			ttddp.MouseButton2Click:Connect(function()
+				for _, personw in pairs(rthe:GetChildren()) do personw.Parent = workspace end
+			end)
+
+		 		jum = Button:Clone() jum.Parent = masslist jum.Text = "Jum  7.2, CH, 15, 22" jum.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
 			jum.MouseButton1Click:Connect(function() char.Humanoid.JumpPower = 50 char.Humanoid.JumpHeight = 7.2 end)
 			jum.MouseButton2Click:Connect(function() char.Humanoid.JumpPower = 50 * char.Humanoid.BodyHeightScale.Value  char.Humanoid.JumpHeight = 7.2 * char.Humanoid.BodyHeightScale.Value end)
 			jum.MouseWheelForward:Connect(function() char.Humanoid.JumpHeight = 15 end)
