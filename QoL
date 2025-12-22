@@ -3242,7 +3242,7 @@ function guias()
 		twin = {     "hai big curl" ,"cat band", "bang swept2","bang side2" }
 		gamerGril = {  "hai paper" , "headphone n","Pink Bow", }
 		dirt4 = {   "hai1 pony 2" , "hai2 bl"  ,"cat fluf", "ear1"  , } ---"hai2 p" ,"hai2 br", "hai1 pony b" ,"hai4", "hai5",  "hai5b" 
-		dirt5 = {    "hai curl"  , "hai fluf", "bang swept","bang side" }
+		dirt5 = {    "hai pig"  ,"hai curl"  , "hai fluf", "bang swept","bang side" }
 		
 		
 		
@@ -3396,7 +3396,7 @@ function guias()
 						if Buttons.Text == "pear" then HatMesh.MeshId = "rbxassetid://16348263319" HatMesh.TextureId = "rbxassetid://16339159612" --HatMesh.Scale=Vector3.new(0.895, 0.895, 0.895)
 							HatAtt.Name = "HatAttachment" HatAtt.Position = Vector3.new(-0, 0.053, -0.109)  HatAtt.Orientation = Vector3.new(0, 180, 0)  end 
 
-						if Buttons.Text == "hai pr" then HatMesh.MeshId = "rbxassetid://14490180480" HatMesh.TextureId = "rbxassetid://14490184855" HatMesh.Scale=Vector3.new(.92,.92,.92)
+						if Buttons.Text == "hai pr" then HatMesh.MeshId = "rbxassetid://14490180480" HatMesh.TextureId = "rbxassetid://14490184855" HatMesh.Scale=Vector3.new(.95,.95,.95)
 							HatAtt.Name = "FaceCenterAttachment" HatAtt.Position = Vector3.new(-0.003, 0.025, -0)  HatAtt.Orientation = Vector3.new(0, 90, 0)  end
 
 						if Buttons.Text == "hai4" then HatMesh.MeshId = "rbxassetid://13619957051" HatMesh.TextureId = "http://www.roblox.com/asset/?id=12884129965" --HatMesh.Scale=Vector3.new(.83,.83,.83)
@@ -3428,7 +3428,7 @@ function guias()
 						if Buttons.Text == "bang swept2" then HatMesh.MeshId = "rbxassetid://6963528552" HatMesh.TextureId = "rbxassetid://6322812499"-- HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(0.035, -0.212, 0.121)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
 						if Buttons.Text == "bang side2" then HatMesh.MeshId = "rbxassetid://5945976587" HatMesh.TextureId = "rbxassetid://6322812499" --HatMesh.Scale=Vector3.new(.9,.9,.9)
-							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(-0.002, -0.2, 0.027)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
+							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(-0.002, -0.25, 0.127)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
 						
 						if Buttons.Text == "hai paper" then HatMesh.MeshId = "rbxassetid://15655702576" HatMesh.TextureId = "http://www.roblox.com/asset/?id=15655681473" --HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0, 0.57, -0.08)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
@@ -3440,7 +3440,8 @@ function guias()
 						if Buttons.Text == "Pink Bow" then HatMesh.MeshId = "rbxassetid://9235653313" HatMesh.TextureId = "rbxassetid://9235653495" --HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "HatAttachment" HatAtt.Position = Vector3.new(0.001, -0.379, -0.285)  HatAtt.Orientation = Vector3.new(15.533, 180, 0)  end
 
-						 
+						if Buttons.Text == "hai pig" then HatMesh.MeshId = "rbxassetid://15000865820" HatMesh.TextureId = "rbxassetid://14648503238" --HatMesh.Scale=Vector3.new(.9,.9,.9)
+							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0.002, 0.533, 0.047)  HatAtt.Orientation = Vector3.new(0, 180, 0)  end
 						
 						
 						
@@ -4397,7 +4398,10 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			p2b = Button:Clone() p2b.Parent = list p2b.Text = "bl paw foot " 	p0b.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			p2b.MouseButton1Click:Connect(function()  if char:FindFirstChild("White cat paws") then char:FindFirstChild("White cat paws"):Remove() return end  
 				hat= game.Lighting.layers.fit1:FindFirstChild("White cat paws"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head hat.Handle.TextureID = "rbxassetid://12647742078"  end) 
-			
+			bl4p = Button:Clone() bl4p.Parent = list bl4p.Text = "bl bik0 " 
+			bl4p.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (Generated Accessory)") then char:FindFirstChild("Accessory (Generated Accessory)"):Remove() return end  
+				hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (Generated Accessory)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head 
+				hat.Handle.TextureID = "rbxassetid://12647742078"  hat.Handle.SurfaceAppearance:Remove()  	end) 
 			 
 			
 			Button.BackgroundColor3 = Color3.fromRGB(79, 50, 20)
@@ -4410,10 +4414,19 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			p2br = Button:Clone() p2br.Parent = list p2br.Text = "br paw foot " 
 			p2br.MouseButton1Click:Connect(function()  if char:FindFirstChild("White cat paws") then char:FindFirstChild("White cat paws"):Remove() return end  
 				hat= game.Lighting.layers.fit1:FindFirstChild("White cat paws"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head hat.Handle.TextureID = "rbxassetid://15689023005"  end) 
+			bl41p = Button:Clone() bl41p.Parent = list bl41p.Text = "bl bik0 " 
+			bl41p.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (Generated Accessory)") then char:FindFirstChild("Accessory (Generated Accessory)"):Remove() return end  
+				hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (Generated Accessory)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head 
+				hat.Handle.TextureID = "rbxassetid://15689023005"  hat.Handle.SurfaceAppearance:Remove()  	end) 
+			
+			Button.BackgroundColor3 = Color3.fromRGB(124, 78, 32)
 			p2br2 = Button:Clone() p2br2.Parent = list p2br2.Text = "paw foot br v2" 
 			p2br2.MouseButton1Click:Connect(function()  if char:FindFirstChild("White cat paws") then char:FindFirstChild("White cat paws"):Remove() return end  
 				hat= game.Lighting.layers.fit1:FindFirstChild("White cat paws"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head hat.Handle.TextureID = "rbxassetid://12647743165"  end) 
-		
+			bl4p2 = Button:Clone() bl4p2.Parent = list bl4p2.Text = "bl bik0 " 
+			bl4p2.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (Generated Accessory)") then char:FindFirstChild("Accessory (Generated Accessory)"):Remove() return end  
+				hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (Generated Accessory)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head 
+				hat.Handle.TextureID = "rbxassetid://12647743165"  hat.Handle.SurfaceAppearance:Remove()  	end) 
 			--p0brc = Button:Clone() p0brc.Parent = list p0brc.Text = "colmap paw foot chib br" 
 			--p0brc.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (Black Cat Feet)") then char:FindFirstChild("Accessory (Black Cat Feet)"):Remove() return end  
 			--	hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (Black Cat Feet)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head hat.Handle.TextureID = "rbxassetid://15695913110"   hat.Handle.SurfaceAppearance.ColorMap = "rbxassetid://15695913110"  end) 
@@ -4759,9 +4772,9 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			{ Id = "114441389535366", Name = "cara cat  " ,  Color = Color3.fromRGB(0, 170, 255)  },
 
 			{ Id = "114351251896640", Name = "rewind " ,  Color = Color3.fromRGB(0, 170, 255)  },
-			{ Id = "70565675819600", Name = "hip motor " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = "134885577802333", Name = "sway5 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 
-			{ Id = "133338464112430", Name = "hips dupe " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = "124487350993833", Name = " phuthon " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = "140245986767335", Name = "zero2 2 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 
 			{ Id = "129802318248541", Name = "sharp more " ,  Color = Color3.fromRGB(0, 170, 255)  },
@@ -4777,16 +4790,19 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			{ Id = "74941409284905", Name = "feelin myself " ,  Color = Color3.fromRGB(0, 170, 255)  },
 
 			{ Id = "107354998205291", Name = "hoop" ,  Color = Color3.fromRGB(0, 170, 255)  },
-			{ Id = "118492862930593", Name = "sit fav " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = "78892987395715", Name = "m pede " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			
 			{ Id = "72074295131591", Name = "worm" ,  Color = Color3.fromRGB(0, 170, 255)  },
-			{ Id = "80423577521166", Name = "drop hot " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = "94426899754674", Name = "AOY " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			
-			{ Id = "129956683216211", Name = "needy" ,  Color = Color3.fromRGB(0, 170, 255)  },
-			{ Id = "124487350993833", Name = "phuthon " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = "79593952411827", Name = "jum " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = "85600000248740", Name = " FOFF" ,  Color = Color3.fromRGB(0, 170, 255)  },
 			
 			{ Id = "105466362615490", Name = "fox" ,  Color = Color3.fromRGB(0, 170, 255)  },  --87011165040436
-			{ Id = "134885577802333", Name = "sway5 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = "118492862930593", Name = "sit fav " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			
+			{ Id = "99511059984451", Name = "FIN " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 99511059984451", Name = "  " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			--	{ Id = "139750331539521", Name = "wu no",  Color = Color3.fromRGB(170, 170, 0)  },
 
 
