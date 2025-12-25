@@ -3429,7 +3429,7 @@ function guias()
 						if Buttons.Text == "bang swept2" then HatMesh.MeshId = "rbxassetid://6963528552" HatMesh.TextureId = "rbxassetid://6322812499"-- HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(0.035, -0.212, 0.121)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
 						if Buttons.Text == "bang side2" then HatMesh.MeshId = "rbxassetid://5945976587" HatMesh.TextureId = "rbxassetid://6322812499" --HatMesh.Scale=Vector3.new(.9,.9,.9)
-							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(-0.002, -0.2, -0.047)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
+							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(-0.002, -0.1, -0.047)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
 						
 						if Buttons.Text == "hai paper" then HatMesh.MeshId = "rbxassetid://15655702576" HatMesh.TextureId = "http://www.roblox.com/asset/?id=15655681473" --HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0, 0.57, -0.08)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
@@ -3768,17 +3768,20 @@ function guias()
 						--sbel2 backup rbxassetid://83208957324495
 						--back rbxassetid://18656573483
 						
-						 
+						
 						if Buttons.Text == "shadpl" then if char:FindFirstChild("HeartShutterSunGlasses") then 
-								char:FindFirstChild("HeartShutterSunGlasses").Handle.TextureID = "rbxassetid://9235653495" 
+								--char:FindFirstChild("HeartShutterSunGlasses").Handle.TextureID = "rbxassetid://9235653495" 
+								char:FindFirstChild("HeartShutterSunGlasses").Handle:FindFirstChildWhichIsA("SpecialMesh").TextureId = "rbxassetid://9235653495" 
 							end
 						end
 						if Buttons.Text == "shadpa" then if char:FindFirstChild("HeartShutterSunGlasses") then 
-								char:FindFirstChild("HeartShutterSunGlasses").Handle.TextureID = "rbxassetid://96379382109164" 
+								--char:FindFirstChild("HeartShutterSunGlasses").Handle.TextureID = "rbxassetid://96379382109164" 
+								char:FindFirstChild("HeartShutterSunGlasses").Handle:FindFirstChildWhichIsA("SpecialMesh").TextureId = "rbxassetid://96379382109164" 
 							end
 						end
 						if Buttons.Text == "shad r" then if char:FindFirstChild("HeartShutterSunGlasses") then 
-								char:FindFirstChild("HeartShutterSunGlasses").Handle.TextureID = "rbxassetid://553852327" 
+								--char:FindFirstChild("HeartShutterSunGlasses").Handle.TextureID = "rbxassetid://553852327" 
+								char:FindFirstChild("HeartShutterSunGlasses").Handle:FindFirstChildWhichIsA("SpecialMesh").TextureId = "rbxassetid://553852327" 
 							end
 						end
 						
@@ -4692,13 +4695,13 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			{ Id = "83702306317443", Name = "Mannrobics",  Color = Color3.fromRGB(170, 170, 127)  },
 
 			{ Id = "75633008404400", Name = "criss cross",  Color = Color3.fromRGB(144, 0, 170)  },--no this is not potato { Id = "94705135359914", Name = "potato",  Color = Color3.fromRGB(144, 0, 170)  },
-
-
+			{ Id = "79008332815618", Name = "potato",  Color = Color3.fromRGB(144, 0, 170)  },
+			
 
 
 			{ Id = "101020675113442", Name = "Sm Moves",  Color = Color3.fromRGB(0, 0, 255)  },
-			{ Id = "136110760748930", Name = "wiggle",  Color = Color3.fromRGB(170, 170, 127)  },
-			{ Id = "110703158553077", Name = "its true",  Color = Color3.fromRGB(170, 170, 127)  },
+			--{ Id = "136110760748930", Name = "wiggle",  Color = Color3.fromRGB(170, 170, 127)  },
+			--{ Id = "110703158553077", Name = "its true",  Color = Color3.fromRGB(170, 170, 127)  },
 
 			--{ Id = "122588181027551", Name = "Engineer",  Color = Color3.fromRGB(255, 170, 255)  },
 
@@ -4740,8 +4743,7 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 
 			{ Id = "3570535774", Name = "TopRock" ,  Color = Color3.fromRGB(170, 255, 0)  },
 			{ Id = "14901369589", Name = "ShutDown",  Color = Color3.fromRGB(170, 85, 255)  },
-			--{ Id = "18933761755", Name = "ABCD",  Color = Color3.fromRGB(0, 0, 255)  },
-			--{ Id = "18855609889", Name = "BP what?" ,  Color = Color3.fromRGB(206, 0, 255)  },
+			
 
 			{ Id = "6797938823", Name = "Under" ,  Color = Color3.fromRGB(0, 255, 255)  },
 
@@ -4761,12 +4763,20 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 
 			{ Id = "3576747102", Name = "AroundT",  Color = Color3.fromRGB(93, 0, 255)  },
 			{ Id = "5915776835", Name = "Highwave",  Color = Color3.fromRGB(170, 85, 127)  },
+			
 			{ Id = "18855603653", Name = "your last"  ,  Color = Color3.fromRGB(0, 255, 255)  },
-
-
+			{ Id = "3716636630", Name = "Monkey"  ,  Color = Color3.fromRGB(255, 85, 255)  },
+			 
+			{ Id = "18933761755", Name = "ABCD",  Color = Color3.fromRGB(0, 0, 255)  },
+			{ Id = "18855609889", Name = "BP what?" ,  Color = Color3.fromRGB(206, 0, 255)  },
+			
+			
 
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
+			
+			
+			
 
 			{ Id = "134420026335824", Name = "phut1",  Color = Color3.fromRGB(170, 0, 255)  },
 			{ Id = "113368003702195", Name = "zero 2",  Color = Color3.fromRGB(0, 31, 170)  },
@@ -4820,7 +4830,10 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			{ Id = "118492862930593", Name = "sit fav " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			
 			{ Id = "99511059984451", Name = "FIN " ,  Color = Color3.fromRGB(0, 170, 255)  },
-			{ Id = " 99511059984451", Name = "  " ,  Color = Color3.fromRGB(0, 170, 255)  },
+{ Id = " 74250424719407", Name = " myum " ,  Color = Color3.fromRGB(0, 170, 255)  },
+
+{ Id = " 132363180483478", Name = " bum " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 117178670618756", Name = " myy " ,  Color = Color3.fromRGB(0, 170, 255)  },	
 			--	{ Id = "139750331539521", Name = "wu no",  Color = Color3.fromRGB(170, 170, 0)  },
 
 
