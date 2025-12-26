@@ -3429,7 +3429,7 @@ function guias()
 						if Buttons.Text == "bang swept2" then HatMesh.MeshId = "rbxassetid://6963528552" HatMesh.TextureId = "rbxassetid://6322812499"-- HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(0.035, -0.212, 0.121)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
 						if Buttons.Text == "bang side2" then HatMesh.MeshId = "rbxassetid://5945976587" HatMesh.TextureId = "rbxassetid://6322812499" --HatMesh.Scale=Vector3.new(.9,.9,.9)
-							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(-0.002, -0.1, -0.047)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
+							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(-0.002, -0.05, -0.067)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
 						
 						if Buttons.Text == "hai paper" then HatMesh.MeshId = "rbxassetid://15655702576" HatMesh.TextureId = "http://www.roblox.com/asset/?id=15655681473" --HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0, 0.57, -0.08)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
@@ -3771,17 +3771,17 @@ function guias()
 						
 						if Buttons.Text == "shadpl" then if char:FindFirstChild("HeartShutterSunGlasses") then 
 								--char:FindFirstChild("HeartShutterSunGlasses").Handle.TextureID = "rbxassetid://9235653495" 
-								char:FindFirstChild("HeartShutterSunGlasses").Handle:FindFirstChildWhichIsA("SpecialMesh").TextureId = "rbxassetid://9235653495" 
+								char:FindFirstChild("HeartShutterSunGlasses"):FindFirstChildWhichIsA("BasePart"):FindFirstChildWhichIsA("SpecialMesh").TextureId = "rbxassetid://9235653495" 
 							end
 						end
 						if Buttons.Text == "shadpa" then if char:FindFirstChild("HeartShutterSunGlasses") then 
 								--char:FindFirstChild("HeartShutterSunGlasses").Handle.TextureID = "rbxassetid://96379382109164" 
-								char:FindFirstChild("HeartShutterSunGlasses").Handle:FindFirstChildWhichIsA("SpecialMesh").TextureId = "rbxassetid://96379382109164" 
+								char:FindFirstChild("HeartShutterSunGlasses"):FindFirstChildWhichIsA("BasePart"):FindFirstChildWhichIsA("SpecialMesh").TextureId = "rbxassetid://96379382109164" 
 							end
 						end
 						if Buttons.Text == "shad r" then if char:FindFirstChild("HeartShutterSunGlasses") then 
 								--char:FindFirstChild("HeartShutterSunGlasses").Handle.TextureID = "rbxassetid://553852327" 
-								char:FindFirstChild("HeartShutterSunGlasses").Handle:FindFirstChildWhichIsA("SpecialMesh").TextureId = "rbxassetid://553852327" 
+								char:FindFirstChild("HeartShutterSunGlasses"):FindFirstChildWhichIsA("BasePart"):FindFirstChildWhichIsA("SpecialMesh").TextureId = "rbxassetid://553852327" 
 							end
 						end
 						
@@ -4790,7 +4790,7 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			{ Id = "138595801943699", Name = "peacef" ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = "101817558016805", Name = "drop it",  Color = Color3.fromRGB(0, 255, 81)  },
 
-			{ Id = "106264689858536", Name = " phut2" ,  Color = Color3.fromRGB(0, 170, 255)  },
+			--{ Id = "106264689858536", Name = " phut2" ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = "135915367893892", Name = "zero 2b",  Color = Color3.fromRGB(0, 255, 81)  },
 
 			{ Id = "119630730265659", Name = "Wiggle s" ,  Color = Color3.fromRGB(0, 170, 255)  },
