@@ -3242,8 +3242,8 @@ function guias()
 		princess = { "hai pr" ,"ribbon" ,"pear","flowers","Pink Bow", "float dirt1","hai sworl" , }
 		twin = {     "hai big curl" ,"cat band", "bang swept2","bang side2" }
 		gamerGril = {  "hai paper" , "headphone n", }
-		dirt4 = {   "hai1 pony 2" , "hai2 bl"  ,"cat fluf", "ear1"  , } ---"hai2 p" ,"hai2 br", "hai1 pony b" ,"hai4", "hai5",  "hai5b" 
-		dirt5 = {    "hai pig"  ,"hai curl"  , "hai fluf", "bang swept","bang side" , "shadpl","shadpa" ,"shad r" }
+		dirt4 = {   "hai1 pony 2" , "hai2 bl"  ,"cat fluf", "ear1"  , } ---"hai2 p" ,"hai2 br", "hai1 pony b" ,"hai4", "hai5",  "hai5b"  "shadpl","shadpa" ,"shad r"
+		dirt5 = {    "hai pig"  ,"hai curl"  , "hai fluf", "bang swept","bang side" , }
 		
 		
 		
@@ -3769,7 +3769,7 @@ function guias()
 						--back rbxassetid://18656573483
 						
 						
-						if Buttons.Text == "shadpl" then if char:FindFirstChild("HeartShutterSunGlasses") then 
+						--[[if Buttons.Text == "shadpl" then if char:FindFirstChild("HeartShutterSunGlasses") then 
 								char:FindFirstChild("HeartShutterSunGlasses").Handle.TextureID = "rbxassetid://9235653495" 
 								--char:FindFirstChild("HeartShutterSunGlasses"):FindFirstChildWhichIsA("BasePart"):FindFirstChildWhichIsA("SpecialMesh").TextureId = "rbxassetid://9235653495" 
 							end
@@ -3783,7 +3783,7 @@ function guias()
 								char:FindFirstChild("HeartShutterSunGlasses").Handle.TextureID = "rbxassetid://553852327" 
 								char:FindFirstChild("HeartShutterSunGlasses"):FindFirstChildWhichIsA("BasePart"):FindFirstChildWhichIsA("SpecialMesh").TextureId = "rbxassetid://553852327" 
 							end
-						end
+						end]]
 						
 						if Buttons.Text == "refresh" then if myhatist:FindFirstChildWhichIsA("Pants") then char:FindFirstChildWhichIsA("Pants").PantsTemplate = myhatist:FindFirstChildWhichIsA("Pants").PantsTemplate end if myhatist:FindFirstChildWhichIsA("Shirt") then char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = myhatist:FindFirstChildWhichIsA("Shirt").ShirtTemplate end
 							for _,shad in pairs(char:GetChildren()) do 
@@ -4295,8 +4295,8 @@ function guias()
 				Instance.new("Model",poobaa).Name = "fit4"
 			end 
 
-			if char:FindFirstChild("White cat paws") and not game.Lighting.layers.fit1:FindFirstChild("White cat paws") then  char:FindFirstChild("White cat paws"):Clone().Parent = game.Lighting.layers.fit1 end
-			if char:FindFirstChild("Accessory (Cat)") and not game.Lighting.layers.fit1:FindFirstChild("Accessory (Cat)") then  char:FindFirstChild("Accessory (Cat)"):Clone().Parent = game.Lighting.layers.fit1 end
+			if char:FindFirstChild("White cat paws") and not game.Lighting.layers.fit1:FindFirstChild("White cat paws") then  char:FindFirstChild("White cat paws"):Clone().Parent = game.Lighting.layers.fit1    game.Lighting.layers.fit1:FindFirstChild("White cat paws").Transparency = 0  end
+			if char:FindFirstChild("Accessory (Cat)") and not game.Lighting.layers.fit1:FindFirstChild("Accessory (Cat)") then  char:FindFirstChild("Accessory (Cat)"):Clone().Parent = game.Lighting.layers.fit1    game.Lighting.layers.fit1:FindFirstChild("Accessory (Cat)").Transparency = 0 end
 			if char:FindFirstChild("Accessory (Black Cat Feet)") and not game.Lighting.layers.fit1:FindFirstChild("Accessory (Black Cat Feet)") then  char:FindFirstChild("Accessory (Black Cat Feet)"):Clone().Parent = game.Lighting.layers.fit1 end
 			
 			if char:FindFirstChild("Accessory (Generated Accessory)") and not game.Lighting.layers.fit1:FindFirstChild("Accessory (Generated Accessory)") then  char:FindFirstChild("Accessory (Generated Accessory)"):Clone().Parent = game.Lighting.layers.fit1 end
@@ -4379,6 +4379,10 @@ function guias()
 				hat.Handle.TextureID = "rbxassetid://9235653495"  hat.Handle.SurfaceAppearance:Remove() 
 			end) 
 			
+			
+			--char:FindFirstChild("HeartShutterSunGlasses").Handle.TextureID = "rbxassetid://9235653495" 
+			--char:FindFirstChild("HeartShutterSunGlasses"):FindFirstChildWhichIsA("BasePart"):FindFirstChildWhichIsA("SpecialMesh").TextureId = "rbxassetid://9235653495" 
+	 
 			Button.BackgroundColor3 = Color3.fromRGB(253, 198, 255)
 			ff1p = Button:Clone() ff1p.Parent = list ff1p.Text = "pa chib foot " 
 			ff1p.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (Black Cat Feet)") then char:FindFirstChild("Accessory (Black Cat Feet)"):Remove() return end  
@@ -4394,6 +4398,13 @@ function guias()
 				hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (Generated Accessory)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head 
 				hat.Handle.TextureID = "rbxassetid://96379382109164"  hat.Handle.SurfaceAppearance:Remove() 
 			end) 
+			
+			shpl = Button:Clone() shpl.Parent = list shpl.Text = "pl shade" 
+			shpl.MouseButton1Click:Connect(function() char:FindFirstChild("HeartShutterSunGlasses").Handle.TextureID = "rbxassetid://9235653495"  end) 
+			shpa = Button:Clone() shpa.Parent = list shpa.Text = "pa shade" 
+			shpa.MouseButton1Click:Connect(function() char:FindFirstChild("HeartShutterSunGlasses").Handle.TextureID = "rbxassetid://96379382109164"  end) 
+			shr = Button:Clone() shr.Parent = list shr.Text = "ra shade" 
+			shr.MouseButton1Click:Connect(function() char:FindFirstChild("HeartShutterSunGlasses").Handle.TextureID = "rbxassetid://553852327"  end) 
 			
 			Button.BackgroundColor3 = Color3.fromRGB(255, 170, 255)
 		--	p0p = Button:Clone() p0p.Parent = list p0p.Text = "paw foot chib p" 
