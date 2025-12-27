@@ -327,7 +327,7 @@ function AntiFling()   if Ruse == false then
 		player.Character.HumanoidRootPart.Anchored = not player.Character.HumanoidRootPart.Anchored 
 		ThisIs = [[ Unbelievable! Fling hackers ruined my day plenty of times, but you know what they say "after a storm comes a rainbow"
 				because I wouldn't have made this single line of code without them hackers, and this line of code is the reason this entire script exists... ]]
-		--funny part is roblox ran all of MY executors out of business, so now i have no defence against fortnite hackers who pull executors out of their as, and fling me. Good Job Roblox...
+		--funny part is roblox ran all of MY executors out of business, so now i have no defence against fortnite hackers who pull executors out of their as and fling me. Good Job Roblox...
 
 	else 
 		if workspace:FindFirstChild("ancdance") then  workspace:FindFirstChild("ancdance"):Remove() return end
@@ -359,11 +359,11 @@ function AntiFlingPlayable()
 
 	ThisIs = {"more anti fling methods"}
 	for _,v in pairs(workspace:GetDescendants()) do 
-		if v:IsA("BasePart") and not v:IsDescendantOf(char) then if v.Name == "HumanoidRootPart" or v.Name == "Torso" or v.Name == "UpperTorso" or v.Name == "LowerTorso" or v.Name == "Head" then v.CanCollide = false end end --I'm assuming that the hacker makes their RootPart spin really fast to smack you, depending on how good your client ping is you might be able to walk through the hacker without being flinged
-		if v:IsA("BasePart") and v.Parent:IsA("Model") and v.Parent:FindFirstChild("HumanoidRootPart") and not v:IsDescendantOf(char) then v.CanCollide = false end --I'm assuming that this makes you walk through the hacker without being flinged
+		if v:IsA("BasePart") and not v:IsDescendantOf(char) then if v.Name == "HumanoidRootPart" or v.Name == "Torso" or v.Name == "UpperTorso" or v.Name == "LowerTorso" or v.Name == "Head" then v.CanCollide = false end end 
+		if v:IsA("BasePart") and v.Parent:IsA("Model") and v.Parent:FindFirstChild("HumanoidRootPart") and not v:IsDescendantOf(char) then v.CanCollide = false end 
 	end 
-	for _,v in pairs(char:GetChildren()) do if v:IsA("BasePart") then v.Velocity = Vector3.new(0,0,0) v.RotVelocity = Vector3.new(0,0,0) v.CanTouch = not v.CanTouch end end -- you will stop flying to space, might still take fall damage -- create velocity magnetude tween to negate fall damage
-	--ThisIs = {"Blast Protection V"} for _,v in pairs(char:GetChildren()) do if v:IsA("BasePart") then v.CustomPhysicalProperties = PhysicalProperties.new(100, 1, 0, .3, 1) end end --this multiplies your character mass by 14O, I am tiny so this isn't a consistant form of antifling  
+	for _,v in pairs(char:GetChildren()) do if v:IsA("BasePart") then v.Velocity = Vector3.new(0,0,0) v.RotVelocity = Vector3.new(0,0,0) v.CanTouch = not v.CanTouch end end  
+	--ThisIs = {"Blast Protection V"} for _,v in pairs(char:GetChildren()) do if v:IsA("BasePart") then v.CustomPhysicalProperties = PhysicalProperties.new(100, 1, 0, .3, 1) end end  
 	--RunService.Stepped:connect(function() if nofling then char.Humanoid:ChangeState(11) end end)
 	ThisIs = {"noclip... yes, it took me 6 years to realize that I can use noclip to walk through the fling hackers"}
 	nofling = not nofling RunService.Stepped:connect(function() 
@@ -634,6 +634,10 @@ function delski() if  char:FindFirstChild("Meshes/Chocolate Donut Rainbow Limite
 			end  
 		end
 	end
+	if    char.LowerTorso.MeshId == "rbxassetid://102444473034465" or char.LowerTorso.MeshId == "rbxassetid://102444473034465"   then 
+
+	for _, br in pairs(char:GetChildren()) do if br:IsA("BasePart") then br.Color = Color3.fromRGB(208, 156, 135)   end end   
+ end
 end
 
 function SEAT() if workspace:FindFirstChild("seater") then workspace:FindFirstChild("seater"):Remove() return end 
@@ -2325,14 +2329,19 @@ function guias()
 			Mass41.MouseButton1Click:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, .3, .5, 1, 1) end end end)
 
 		end)
-
+		
+		
+		
+		
+		
+		
 		ThisIs = {"Lazy"} 
 		Lazy = Button:Clone() Lazy.Parent = Spaghetti Lazy.Text = "Lazy" Lazy.Position = UDim2.new(0.05,0 , 0,row10)  Lazy.BackgroundColor3 = Color3.fromRGB(255, 0, 127)   
 		Lazy.MouseButton1Click:Connect(function()
 			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
 			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "lazylist" then Ui:Remove() end end
 			if Begal.GuiHolder:FindFirstChild("lazylist") then Begal.GuiHolder:FindFirstChild("lazylist"):Remove() return end
-			local masslist = Scroll:Clone() masslist.Parent = Begal.GuiHolder  masslist.Name = "lazylist" masslist.BackgroundTransparency = 1 masslist.Position = UDim2.new(0.15, 0 , 0.3, 0)  masslist.Size = UDim2.new(0.1, 0 , 0.36, 0)
+			local masslist =notScroll:Clone() masslist.Parent = Begal.GuiHolder  masslist.Name = "lazylist" masslist.BackgroundTransparency = 1 masslist.Position = UDim2.new(0.15, 0 , 0.3, 0)  masslist.Size = UDim2.new(0.1, 0 , 0.36, 0)
 			listing = Instance.new("UIListLayout",masslist) listing.Padding = UDim.new(0,1)
 
 			plus = 15 Button.BackgroundColor3 = Color3.fromRGB(85, 85, 127) Button.Size = UDim2.new(0.95,0 , 0,15) Button.TextXAlignment = Enum.TextXAlignment.Left Button.BackgroundTransparency = .5
@@ -2348,12 +2357,8 @@ function guias()
 			ran2.MouseWheelForward:Connect(function() char.Humanoid.WalkSpeed = 200 end)
 			ran2.MouseWheelBackward:Connect(function() char.Humanoid.WalkSpeed = 290 end)
 
-			dis = Button:Clone() dis.Parent = masslist dis.Text = "disaster" dis.BackgroundColor3 = Color3.fromRGB(146, 179, 0)
-			dis.MouseButton1Click:Connect(function() dis.Text = char.SurvivalTag.Value wait(2) dis.Text = "disaster"  end) 
-			dis.MouseButton2Click:Connect(function() char.PartCollision.CanCollide = not char.PartCollision.CanCollide char.Humanoid.Sit = char.PartCollision.CanCollide end)
-			dis.MouseButton2Click:Connect(function() char.CollisionPart.CanCollide = not char.CollisionPart.CanCollide end)
-
-
+			 
+			
 			gravs = Button:Clone() gravs.Parent = masslist gravs.Text = "G 11 22 5 2" 
 			gravs.MouseButton1Click:Connect(function() workspace.Gravity = 11 end)
 			gravs.MouseButton2Click:Connect(function() workspace.Gravity = 22 end)
@@ -2373,14 +2378,20 @@ function guias()
 			gravs5.MouseButton1Click:Connect(function() workspace.Gravity = 111 end)
 			gravs5.MouseButton2Click:Connect(function() workspace.Gravity = 222 end)
 			gravs5.MouseWheelForward:Connect(function() workspace.Gravity = 160 end)
+			gravs6 = Button:Clone() gravs6.Parent = masslist gravs6.Text = "G 1000 , 888, 250" 
+			gravs6.MouseButton1Click:Connect(function() workspace.Gravity = 1000 end)
+			gravs6.MouseButton2Click:Connect(function() workspace.Gravity = 888 end)
+			gravs6.MouseWheelForward:Connect(function() workspace.Gravity = 250 end)
 
 
+			dis = Button:Clone() dis.Parent = masslist dis.Text = "disaster" dis.BackgroundColor3 = Color3.fromRGB(170, 0, 255)
+			dis.MouseButton1Click:Connect(function() dis.Text = char.SurvivalTag.Value wait(2) dis.Text = "disaster"  end) 
+			dis.MouseButton2Click:Connect(function() char.PartCollision.CanCollide = not char.PartCollision.CanCollide char.Humanoid.Sit = char.PartCollision.CanCollide end)
+			dis.MouseButton2Click:Connect(function() char.CollisionPart.CanCollide = not char.CollisionPart.CanCollide end)
 
-			times = Button:Clone() times.Parent = masslist times.Text = "time  17.8 , 2 , 13 , 16" times.BackgroundColor3 = Color3.fromRGB(170, 0, 255)
-			times.MouseButton1Click:Connect(function() game.Lighting.ClockTime = 17.8  end)
-			times.MouseButton2Click:Connect(function() game.Lighting.ClockTime = 2 end)
-			times.MouseWheelForward:Connect(function() game.Lighting.ClockTime = 13 end)
-			times.MouseWheelBackward:Connect(function() game.Lighting.ClockTime = 16 end)
+falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld.BackgroundColor3 = Color3.fromRGB(0, 156, 0)
+			falld.MouseButton1Click:Connect(function()  player.falldamage.Value = not player.falldamage.Value
+				if player.falldamage.Value == true then  falld.BackgroundColor3 = Color3.fromRGB(0, 156, 0) else  falld.BackgroundColor3 = Color3.fromRGB(156,0 , 0) end end)
 
 			Mass24 = Button:Clone() Mass24.Parent = masslist Mass24.Text = "Glacier ,  Ice Ball, n" Mass24.BackgroundColor3 = Color3.fromRGB(85, 170, 255)
 			Mass24.MouseButton2Click:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100) end end end)
@@ -2389,9 +2400,7 @@ function guias()
 			Mass24.MouseWheelForward:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = nil end end end)
 			
 			
-			inviscam = Button:Clone() inviscam.Parent = masslist inviscam.Text = "invisicam" 
-			inviscam.MouseButton1Click:Connect(function() player.DevCameraOcclusionMode = Enum.DevCameraOcclusionMode.Invisicam end)
-			inviscam.MouseButton2Click:Connect(function() player.DevCameraOcclusionMode = Enum.DevCameraOcclusionMode.Zoom  end)
+		
 
 			--[[sito = Button:Clone() sito.Parent = masslist sito.Text = "sit" 
 			sito.MouseButton1Click:Connect(function() char.Humanoid.Sit = not char.Humanoid.Sit  end)
@@ -2399,9 +2408,49 @@ function guias()
 
 			
 			
-			falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld.BackgroundColor3 = Color3.fromRGB(0, 156, 0)
-			falld.MouseButton1Click:Connect(function()  player.falldamage.Value = not player.falldamage.Value
-				if player.falldamage.Value == true then  falld.BackgroundColor3 = Color3.fromRGB(0, 156, 0) else  falld.BackgroundColor3 = Color3.fromRGB(156,0 , 0) end end) 
+			
+			
+
+		 		jum = Button:Clone() jum.Parent = masslist jum.Text = "Jum  7.2, CH, 15, 22" jum.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
+			jum.MouseButton1Click:Connect(function() char.Humanoid.JumpPower = 50 char.Humanoid.JumpHeight = 7.2 end)
+			jum.MouseButton2Click:Connect(function() char.Humanoid.JumpPower = 50 * char.Humanoid.BodyHeightScale.Value  char.Humanoid.JumpHeight = 7.2 * char.Humanoid.BodyHeightScale.Value end)
+			jum.MouseWheelForward:Connect(function() char.Humanoid.JumpHeight = 15 end)
+			jum.MouseWheelBackward:Connect(function() char.Humanoid.JumpHeight = 22 end)
+			--[[jum2 = Button:Clone() jum2.Parent = masslist jum2.Text = "Jum  / character height" jum2.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
+			jum2.MouseButton1Click:Connect(function() char.Humanoid.JumpPower = 50 * char.Humanoid.BodyHeightScale.Value  char.Humanoid.JumpHeight = 7.2 * char.Humanoid.BodyHeightScale.Value end)
+			jump1 = Button:Clone() jump1.Parent = masslist jump1.Text = "jump 10 , 15" jump1.BackgroundColor3 = Color3.fromRGB(127, 90, 59)
+			jump1.MouseButton1Click:Connect(function() char.Humanoid.JumpHeight = 10 end)
+			jump1.MouseButton2Click:Connect(function() char.Humanoid.JumpHeight = 15 end)
+			jump2 = Button:Clone() jump2.Parent = masslist jump2.Text = "jump 20 , 25" jump2.BackgroundColor3 = Color3.fromRGB(127, 90, 59)
+			jump2.MouseButton1Click:Connect(function() char.Humanoid.JumpHeight = 20 end)
+			jump2.MouseButton2Click:Connect(function() char.Humanoid.JumpHeight = 25 end)]]
+
+		end)  
+		Lazy.MouseButton2Click:Connect(function()
+			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
+			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "lazylist2" then Ui:Remove() end end
+			if Begal.GuiHolder:FindFirstChild("lazylist2") then Begal.GuiHolder:FindFirstChild("lazylist2"):Remove() return end
+			local masslist = notScroll:Clone() masslist.Parent = Begal.GuiHolder  masslist.Name = "lazylist2" masslist.BackgroundTransparency = 1 masslist.Position = UDim2.new(0.15, 0 , 0.3, 0)  masslist.Size = UDim2.new(0.1, 0 , 0.36, 0)
+			listing = Instance.new("UIListLayout",masslist) listing.Padding = UDim.new(0,1)
+
+			plus = 15 Button.BackgroundColor3 = Color3.fromRGB(85, 85, 127) Button.Size = UDim2.new(0.95,0 , 0,15) Button.TextXAlignment = Enum.TextXAlignment.Left Button.BackgroundTransparency = .5
+			
+			
+			
+			times = Button:Clone() times.Parent = masslist times.Text = "time  17.8 , 2 , 13 , 16" times.BackgroundColor3 = Color3.fromRGB(170, 0, 255)
+			times.MouseButton1Click:Connect(function() game.Lighting.ClockTime = 17.8  end)
+			times.MouseButton2Click:Connect(function() game.Lighting.ClockTime = 2 end)
+			times.MouseWheelForward:Connect(function() game.Lighting.ClockTime = 13 end)
+			times.MouseWheelBackward:Connect(function() game.Lighting.ClockTime = 16 end)
+			times2 = Button:Clone() times2.Parent = masslist times2.Text = "time  10.4 , 12 , 9 , 7" times2.BackgroundColor3 = Color3.fromRGB(170, 0, 255)
+			times2.MouseButton1Click:Connect(function() game.Lighting.ClockTime = 10.4  end)
+			times2.MouseButton2Click:Connect(function() game.Lighting.ClockTime = 12 end)
+			times2.MouseWheelForward:Connect(function() game.Lighting.ClockTime = 9 end)
+			times2.MouseWheelBackward:Connect(function() game.Lighting.ClockTime = 7 end)
+			
+			 	inviscam = Button:Clone() inviscam.Parent = masslist inviscam.Text = "invisicam" 
+			inviscam.MouseButton1Click:Connect(function() player.DevCameraOcclusionMode = Enum.DevCameraOcclusionMode.Invisicam end)
+			inviscam.MouseButton2Click:Connect(function() player.DevCameraOcclusionMode = Enum.DevCameraOcclusionMode.Zoom  end)
 			
 			res = Button:Clone() res.Parent = masslist res.Text = "reset grass" 
 			res.MouseButton1Click:Connect(function()  for _, part in pairs(workspace:GetDescendants()  ) do if part:IsA("BasePart") and part.Size == Vector3.new(164,.4,159) then part.CFrame = CFrame.new( -6.5,44.2,-7)  * CFrame.Angles(0,math.rad(90),0) end end end) 
@@ -2438,23 +2487,9 @@ function guias()
 			ttddp.MouseButton2Click:Connect(function()
 				for _, personw in pairs(rthe:GetChildren()) do personw.Parent = workspace end
 			end)
-
-		 		jum = Button:Clone() jum.Parent = masslist jum.Text = "Jum  7.2, CH, 15, 22" jum.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
-			jum.MouseButton1Click:Connect(function() char.Humanoid.JumpPower = 50 char.Humanoid.JumpHeight = 7.2 end)
-			jum.MouseButton2Click:Connect(function() char.Humanoid.JumpPower = 50 * char.Humanoid.BodyHeightScale.Value  char.Humanoid.JumpHeight = 7.2 * char.Humanoid.BodyHeightScale.Value end)
-			jum.MouseWheelForward:Connect(function() char.Humanoid.JumpHeight = 15 end)
-			jum.MouseWheelBackward:Connect(function() char.Humanoid.JumpHeight = 22 end)
-			--[[jum2 = Button:Clone() jum2.Parent = masslist jum2.Text = "Jum  / character height" jum2.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
-			jum2.MouseButton1Click:Connect(function() char.Humanoid.JumpPower = 50 * char.Humanoid.BodyHeightScale.Value  char.Humanoid.JumpHeight = 7.2 * char.Humanoid.BodyHeightScale.Value end)
-			jump1 = Button:Clone() jump1.Parent = masslist jump1.Text = "jump 10 , 15" jump1.BackgroundColor3 = Color3.fromRGB(127, 90, 59)
-			jump1.MouseButton1Click:Connect(function() char.Humanoid.JumpHeight = 10 end)
-			jump1.MouseButton2Click:Connect(function() char.Humanoid.JumpHeight = 15 end)
-			jump2 = Button:Clone() jump2.Parent = masslist jump2.Text = "jump 20 , 25" jump2.BackgroundColor3 = Color3.fromRGB(127, 90, 59)
-			jump2.MouseButton1Click:Connect(function() char.Humanoid.JumpHeight = 20 end)
-			jump2.MouseButton2Click:Connect(function() char.Humanoid.JumpHeight = 25 end)]]
-
+			
+			
 		end)  
-
 
 
 		 
@@ -4787,7 +4822,7 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
 			
 			
-			
+			{ Id = "124487350993833", Name = " phuthon " ,  Color = Color3.fromRGB(0, 170, 255)  },
 
 			{ Id = "134420026335824", Name = "phut1",  Color = Color3.fromRGB(170, 0, 255)  },
 			{ Id = "113368003702195", Name = "zero 2",  Color = Color3.fromRGB(0, 31, 170)  },
@@ -4813,7 +4848,7 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			{ Id = "114351251896640", Name = "rewind " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = "134885577802333", Name = "sway5 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 
-			{ Id = "124487350993833", Name = " phuthon " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			
 			{ Id = "140245986767335", Name = "zero2 2 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 
 			{ Id = "129802318248541", Name = "sharp more " ,  Color = Color3.fromRGB(0, 170, 255)  },
@@ -5417,38 +5452,7 @@ end
 
 
 
-Updates=[[
-	anti fling era
-	v0  2022				anti fling, I dont like being fling killed in natural disaster survival
-	v1	6/14/23 - 8/9/23	goofy natural disaster survival hax, very fun
-	v2	1O/6/23 - 11/O9/23	dances gui v1, wow I can't believe I can use all of the emotes.
-	v3	12/16/23 - 12/25/23	dances gui v2, player walking, idle animations gui
-	
-	magnus savegame era
-	v4	12/25/23 - 1/28/24	inproved hax,  inproved hax more
-	v5	1/28/24 - 2/28/24	oh mah gahh bro i fixed so many game breaking bugs
-	v6	2/28/24 - 3/1O/24	MY RAINBOW PERIASTRONS? + hats + faces,	I should've made this 6 years ago!!!
-	v7	3/22/24	- 4/1/24	99% FIXED!!! Why do spawn(functions()) and wait() work perfectly in studio but is unplayable in game? "We do not care, just fix it"
-	
-	byfron anticheat era
-	v8	4/1/24	- 4/16/24	inspite of byfron-	added functions to assist in saving characters, because N SFW game, wow... that was way too late
-	v9	4/16/24 - 5/1/24	I KNEW I CHANGED LIGHTING TECHNOLOGY WITH A SCRIPT BEFORE!  stop gaslighting me roblox community!!!  ( note You cannot change lighting technology with a script unless you are using a modified version of roblox, now if only i had an exploited version of roblox studio, would be very usefull to script change lighting tech for the 100 maps i "barrowed"  )
-	v10	7/7/24 - 7/13/24	guis
-	v11	8/3/24 - 8/5/24		nil x 1OO
-	v12	9/26/24 - 10/10/24	inspite of byfron-	added functions to assist in saving smaller assets, because saving the entire game results in a corrupted file sometimes
-	
-	daily banning modified client users era		shoot I had made 50 alt accounts during this time for ttd3, good job roblox. 
-	v13	3/15/25 - 3/15/25	reformatted classic spammy tables for a more modern and efficient scripting, added _G functions to merge scripts from my game
-	v14 5/21/25 - 6/2/25	added pcall function to ignore a few errors because this script runs with default roblox local scripts, this entire script would break in games that customized the default roblox local scripts.
-	v15 6/8/25 - 6/16/25	inspite of byfron-	added animation id copier to export animations, because N SFW game, wow... that was way too late
-	v16 7/20/25 - 8/12/25	Lazy gui, switched to user input service keybinds because context action service was banned on some clients, altered TTD3
-	v17 8/17/25				inspite of byfron-	added INSERT ANIMATION ID FROM CATAOLOG, next to the animation copier, so you can save the animation to your computer, note that copy anim id to clipboard doesnt work in studio, so take your list of animations and put it into a modified client.
-	
-	and I got fling killed by 2 people the literal second that I joined natural disaster survival after taking a year break from it, WHAT THE HELL IS THIS?!? 
-	Roblox took away my anti fling defence and made the game worse by not allowing me to dance with my rainbow periastrons...
-	all because someone else was auto farming pets or aimboting? they clearly don't care about the fling trolls in nds, I wont spend my salary on a Lord of the Federation anymore because of this.
-	
-]]
+
 
 
 emotess = [[
@@ -5458,20 +5462,3 @@ emotess = [[
 
 
 
-
---[[ 
-NDS hax = loadstring(game:HttpGet("https://raw.githubusercontent.com/2dgeneralspam1/scripts-and-stuff/master/scripts/LoadstringUjHI6RQpz2o8", true))() 
-this is irrelivant now because it seems like StickMasterLuke replaced client fall damage with server fall damage, it only took 15 years my guy...
-I turned off fall damage so fast when I saw people get smacked to space by an invisible fling hacker that everyone thought I was flinging them when I survived
-ah bad times... I still don't understand why people fling hack to this day. 
-
-I still can't believe this entire script exists because I played 1OO,OOO rounds of Natural Disaster Survival and got tired of people fling killing me
-thanks to those jerks I can use my Rainbow Periastrons anywhere I go...
-
-it's weird how life works, 
-im over here minding my own business doing /sit + moon gravity (exploiting) and roblox takes away my fun because someone ELSE is using aimbot and auto farming?! 
-byfron anticheat has been here for 5 years and I STILL get fling killed in Natural Disaster Survival, WHAT WAS THE POINT OF TAKING AWAY MY BASIC DEFENCE?! >:(
-karma's a ##### tho because byfron exposed me to 3 game stealers that I NEVER WOULD'VE FOUND OR USED if roblox didn't patch my BASIC exploits.
-fling hackers ruining my experience lead to me stealing $1O,OOO,OOO worth of games, and creating this script which makes my roblox experience 1OOx better.
-
-]]
