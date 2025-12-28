@@ -2357,7 +2357,10 @@ function guias()
 			ran2.MouseWheelForward:Connect(function() char.Humanoid.WalkSpeed = 200 end)
 			ran2.MouseWheelBackward:Connect(function() char.Humanoid.WalkSpeed = 290 end)
 
-			 
+			 dis = Button:Clone() dis.Parent = masslist dis.Text = "disaster" dis.BackgroundColor3 = Color3.fromRGB(191, 191, 0)
+			dis.MouseButton1Click:Connect(function() dis.Text = char.SurvivalTag.Value wait(2) dis.Text = "disaster"  end) 
+			dis.MouseButton2Click:Connect(function() char.PartCollision.CanCollide = not char.PartCollision.CanCollide char.Humanoid.Sit = char.PartCollision.CanCollide end)
+			dis.MouseButton2Click:Connect(function() char.CollisionPart.CanCollide = not char.CollisionPart.CanCollide end)
 			
 			gravs = Button:Clone() gravs.Parent = masslist gravs.Text = "G 11 22 5 2" 
 			gravs.MouseButton1Click:Connect(function() workspace.Gravity = 11 end)
@@ -2384,10 +2387,7 @@ function guias()
 			gravs6.MouseWheelForward:Connect(function() workspace.Gravity = 250 end)
 
 
-			dis = Button:Clone() dis.Parent = masslist dis.Text = "disaster" dis.BackgroundColor3 = Color3.fromRGB(170, 0, 255)
-			dis.MouseButton1Click:Connect(function() dis.Text = char.SurvivalTag.Value wait(2) dis.Text = "disaster"  end) 
-			dis.MouseButton2Click:Connect(function() char.PartCollision.CanCollide = not char.PartCollision.CanCollide char.Humanoid.Sit = char.PartCollision.CanCollide end)
-			dis.MouseButton2Click:Connect(function() char.CollisionPart.CanCollide = not char.CollisionPart.CanCollide end)
+			
 
 falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld.BackgroundColor3 = Color3.fromRGB(0, 156, 0)
 			falld.MouseButton1Click:Connect(function()  player.falldamage.Value = not player.falldamage.Value
