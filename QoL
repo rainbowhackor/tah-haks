@@ -3275,7 +3275,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 
 		function hat3() nil2 = Instance.new("TextLabel") nil2.Name = "Button" nil2.Parent = myhatist nil2.Size =  UDim2.new(0.95,0 , 0,07) nil2.Text = "" nil2.BackgroundTransparency = 1 end
 		princess = { "hai pr" ,"ribbon" ,"pear","flowers","Pink Bow", "float dirt1","hai sworl" , }
-		twin = {     "hai big curl" ,"cat band", "bang swept2","bang side2" }
+		twin = {    "hai cara", "hai big curl" ,"cat band", "bang swept2","bang side2" }
 		gamerGril = {  "hai paper" , "headphone n", }
 		dirt4 = {   "hai1 pony 2" , "hai2 bl"  ,"cat fluf", "ear1"  , } ---"hai2 p" ,"hai2 br", "hai1 pony b" ,"hai4", "hai5",  "hai5b"  "shadpl","shadpa" ,"shad r"
 		dirt5 = {    "hai pig"  ,"hai curl"  , "hai fluf", "bang swept","bang side" , }
@@ -3296,7 +3296,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 
 		--if ME == true or Ruse == true then 
 		--mychars = { "Wolf",  "Diamond", "moneyaAYYe","moneyaAYYe2","Nil", , "gal1", "gal2" ,"gal3", "gal4", }   for _,tha in pairs(mychars) do hatme(tha) end 
-		mychars = { "Wolf","refresh", "nothing",   "clo1", "clo7", "clo6", "clo3",   "clo4" ,"clo2","no clo", "belly s",}   for _,tha in pairs(mychars) do hatme(tha) end 
+		mychars = {  "nothing", "no clo", "belly s",  "clo1", "clo t", "clo b", "clo7", "clo6", "clo3",   "clo4" ,"clo2" ,"refresh",}   for _,tha in pairs(mychars) do hatme(tha) end 
 		--end
 
 		hat_groups = { princess ,twin,gamerGril,dirt4,dirt5,  fairys,mewings,neckbling,meh1,meh2,tails,firehorn,crowns,federation,hairs} 
@@ -3480,7 +3480,14 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0.002, 0.633, 0.017)  HatAtt.Orientation = Vector3.new(0, 180, 0)  end
 						--if Buttons.Text == "hai pig" then HatMesh.MeshId = "rbxassetid://15000865820" HatMesh.TextureId = "rbxassetid://14648503238" --HatMesh.Scale=Vector3.new(.9,.9,.9)
 						--	HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0.002, 0.533, 0.047)  HatAtt.Orientation = Vector3.new(0, 180, 0)  end
+						
+						if Buttons.Text == "hai cara" then HatMesh.MeshId = "rbxassetid://121549793202030" HatMesh.TextureId = "rbxassetid://126552920416269"-- HatMesh.Scale=Vector3.new(.95,.95,.95)
+							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0.006, 0.34, -0.325)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
 
+						
+						
+						
+						
 						
 						
 						
@@ -3877,6 +3884,9 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 
 							bel()  
 						end	
+						if Buttons.Text == "clo b" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "rbxassetid://8770736859" end
+						if Buttons.Text == "clo t" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "http://www.roblox.com/asset/?id=7144143881" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "" end
+						
 						if Buttons.Text == "Wolf clo" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "http://www.roblox.com/asset/?id=6851982960" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "http://www.roblox.com/asset/?id=8219508887" end
 						if Buttons.Text == "clo1" then char:FindFirstChildWhichIsA("Pants").PantsTemplate =  "http://www.roblox.com/asset/?id=15100022603" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "http://www.roblox.com/asset/?id=131004016764723" end
 						if Buttons.Text == "clo2" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "rbxassetid://10719267706" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "rbxassetid://137631918411915" end
@@ -3888,7 +3898,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 						if Buttons.Text == "clo6" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "rbxassetid://136379601149273" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "rbxassetid://136379601149273" end
 						if Buttons.Text == "clo7" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "rbxassetid://131269505180260" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "rbxassetid://131269505180260" end
 
-						
+						 
 					end
 
 				end)
