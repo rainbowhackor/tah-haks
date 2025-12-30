@@ -5314,10 +5314,12 @@ function NDS()
 	if workspace:FindFirstChild("OceanDrive") then return end
 	if workspace:FindFirstChild("WeatherMachine") then 
 		for _, p in pairs(workspace:GetDescendants()) do   
-			if p.Name == "RTDPortal" then p:Remove() end
-			if p:IsA("BasePart") then
+			if p.Name == "RTDPortal" or p.Name == "BillboardTop10" or p.Name == "ForwardPortal"   then p:Remove() end
+			
+			if p:IsA("BasePart") then  p.CanTouch = false p.CanQuery = false 
 				--if p.Transparency > .96 and p.CanCollide == false and not p:FindFirstChildWhichIsA("ClickDetector") then p.CanQuery = false end
 				if p.BrickColor == BrickColor.new("Reddish brown") or p.BrickColor == BrickColor.new("Dark green") then p.CastShadow = false p.CanCollide = true end
+				if p.BrickColor == BrickColor.new("Bright blue") then p.Color = Color3.fromRGB( 0, 64, 96  ) p.Transparency = 0 end
 				--if p.BrickColor == BrickColor.new("Reddish brown") then p.CastShadow = false p.CanCollide = true end
 				--if p.BrickColor == BrickColor.new("Dark green") then p.CastShadow = false end
 				if p.Position == Vector3.new(46.5, 27.5, 112.5) or p.Position == Vector3.new(124.5, 27.5, 0.5) or p.Position == Vector3.new(119.5, 27.5, -56.5)
@@ -5352,9 +5354,13 @@ function NDS()
 				p.Locked = false 
 				--p.CanTouch = false --ya'know, I genuinely spent 24 hours trying to figure out why my character couldn't touch half the things in my games...
 			end 
+			
+			if p:IsA("TouchTransmitter") then 
+				p:Remove()
+			end
 		end 
 
-		oceanfloors = Instance.new("Part") oceanfloors.Name = "OceanDrive" oceanfloors.BrickColor = BrickColor.new("Sand blue") oceanfloors.Anchored = true 
+		oceanfloors = Instance.new("Part") oceanfloors.Name = "OceanDrive" oceanfloors.BrickColor = BrickColor.new("Earth green") oceanfloors.Anchored = true 
 
 
 		floor = Instance.new("Folder",workspace) floor.Name = "oceanfloors"
