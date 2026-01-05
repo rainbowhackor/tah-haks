@@ -2384,7 +2384,7 @@ function guias()
 			gravs6 = Button:Clone() gravs6.Parent = masslist gravs6.Text = "G 1000 , 888, 250" 
 			gravs6.MouseButton1Click:Connect(function() workspace.Gravity = 1000 end)
 			gravs6.MouseButton2Click:Connect(function() workspace.Gravity = 888 end)
-			gravs6.MouseWheelForward:Connect(function() workspace.Gravity = 250 end)
+			gravs6.MouseWheelForward:Connect(function() workspace.Gravity = 280 end)
 
 
 			
@@ -4879,7 +4879,7 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			{ Id = "72074295131591", Name = "worm" ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = "94426899754674", Name = "AOY " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			
-			{ Id = "79593952411827", Name = "jum " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = "96978416179927", Name = "HOLY " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = "85600000248740", Name = " FOFF" ,  Color = Color3.fromRGB(0, 170, 255)  },
 			
 			{ Id = "105466362615490", Name = "fox" ,  Color = Color3.fromRGB(0, 170, 255)  },  --87011165040436
