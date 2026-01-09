@@ -3296,7 +3296,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 
 		--if ME == true or Ruse == true then 
 		--mychars = { "Wolf",  "Diamond", "moneyaAYYe","moneyaAYYe2","Nil", , "gal1", "gal2" ,"gal3", "gal4", }   for _,tha in pairs(mychars) do hatme(tha) end 
-		mychars = {  "nothing", "no clo", "belly s",  "clo1", "clo t", "clo b", "clo7", "clo6", "clo3",   "clo4" ,"clo2" ,"refresh",}   for _,tha in pairs(mychars) do hatme(tha) end 
+		mychars = {  "nothing", "no clo", "belly s", "clo r", "clo t", "clo1",  "clo b", "clo7", "clo6", "clo3",   "clo4" ,"clo2" ,"refresh",}   for _,tha in pairs(mychars) do hatme(tha) end 
 		--end
 
 		hat_groups = { princess ,twin,gamerGril,dirt4,dirt5,  fairys,mewings,neckbling,meh1,meh2,tails,firehorn,crowns,federation,hairs} 
@@ -3884,8 +3884,9 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 
 							bel()  
 						end	
-						if Buttons.Text == "clo b" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "rbxassetid://8770736859" end
+						if Buttons.Text == "clo r" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "rbxassetid://7175643207" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "" end
 						if Buttons.Text == "clo t" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "http://www.roblox.com/asset/?id=7144143881" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "" end
+						if Buttons.Text == "clo b" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "rbxassetid://8770736859" end
 						
 						if Buttons.Text == "Wolf clo" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "http://www.roblox.com/asset/?id=6851982960" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "http://www.roblox.com/asset/?id=8219508887" end
 						if Buttons.Text == "clo1" then char:FindFirstChildWhichIsA("Pants").PantsTemplate =  "http://www.roblox.com/asset/?id=15100022603" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "http://www.roblox.com/asset/?id=131004016764723" end
@@ -3920,7 +3921,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			--cloID = {  81142835335078 ,10719267723, 16571308530, 16571336224, 	16571329991, 6794259587, 
 			--	5905952640, 6115951607 , 111829062610201  ,  15740536166 , 3411796913 , 15256474467, 12922853470 , 117156435954399,  17631917239,       6415207970,  7903215561,  8582045072,  97127613626768, 7726998895,  
 			--	6290381070,  9129025190 ,  10022561683  , 6454370739,  9965111103,  18409358876, 16433611219,  4657243939,  5257576419,  8578239692,    }
-			cloID = {   131269505180260, 136379601149273, 137631918411915 ,10719267706, 16571308499, 16571336212, 	16571329969, 6794259585, 
+			cloID = {   7175643207, 131269505180260, 136379601149273, 137631918411915 ,10719267706, 16571308499, 16571336212, 	16571329969, 6794259585, 
 				5905952640, 6115951590 , 136667289149763  ,  15740536137 , 3411796891 , 15256474450, 12922853452 , 86311794346046,  17631917218,       6415207955,  7903215548,  8582045069,  83074494937484, 7726998870,  
 				6290381047,  9129025180 ,  10022561666  , 6454370707,  9965111089,   18409358813, 16433611209,  4657243927,  5257576269,  8578239685, 16124985124, 123548586467786, 133500297240788 ,  }
 			--combo =  p 111829062610201  s 91075312279952 , 
