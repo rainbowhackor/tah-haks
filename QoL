@@ -282,8 +282,8 @@ Press Z to Disable HA-]] end
 			--if UserInputService:IsKeyDown(Enum.KeyCode.L) and UserInputService:IsKeyDown(Enum.KeyCode.N) then HIDE_LEGS() end--REMOVE_LEGS() end
 
 			local ThisIsServerSided = {"Animation Groups" }
-			if UserInputService:IsKeyDown(Enum.KeyCode.A) and UserInputService:IsKeyDown(Enum.KeyCode.X) then AnimSet() end 
-			if UserInputService:IsKeyDown(Enum.KeyCode.A) and UserInputService:IsKeyDown(Enum.KeyCode.B) then AnimRun() end 
+			--if UserInputService:IsKeyDown(Enum.KeyCode.A) and UserInputService:IsKeyDown(Enum.KeyCode.X) then AnimSet() end 
+			--if UserInputService:IsKeyDown(Enum.KeyCode.A) and UserInputService:IsKeyDown(Enum.KeyCode.B) then AnimRun() end 
 
 			if input.UserInputType == Enum.UserInputType.MouseButton1 then if UserInputService:IsKeyDown(Enum.KeyCode.E) then Mirror() end end 
 			if input.UserInputType == Enum.UserInputType.MouseButton2 then if UserInputService:IsKeyDown(Enum.KeyCode.E) then Mirror2() end end 
@@ -2552,7 +2552,13 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 					local invisible_spy = Instance.new("Part",workspace.hiden) invisible_spy.Anchored = true invisible_spy.CanCollide = false --invisible_spy.Transparency=.3
 					invisible_spy.Size = Vector3.new(2,2,2) invisible_spy.Material = Enum.Material.Neon invisible_spy.BrickColor = BrickColor.new("Alder") 
 					--end
-					invisible_spy.CFrame = iSeeYou.HumanoidRootPart.CFrame * CFrame.new(0,3,0)
+					invisible_spy.Position = iSeeYou.WorldPivot.Position  
+					if iSeeYou:FindFirstChild("Head") then 
+						invisible_spy.CFrame = iSeeYou.Head.CFrame * CFrame.new(0,3,0)
+					end 
+					if iSeeYou:FindFirstChild("HumanoidRootPart") then 
+						invisible_spy.CFrame = iSeeYou.HumanoidRootPart.CFrame * CFrame.new(0,3,0)
+						end 
 					--local look21 = Instance.new("Highlight", invisible_spy) look21.Name = "iSeeYou" look21.FillColor = Color3.fromRGB(0,255,85) look21.FillTransparency = .7  
 				end
 
@@ -2581,7 +2587,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 
 
 
-		if Ruse == false then
+		--if Ruse == false then
 			ThisIs = {"Sliding guis - Gravity, JumpHeight, WalkSpeed"}  --the old version
 			SliderG = Instance.new("Frame",Spaghetti) SliderG.Name = "Gravity" SliderG.Position = UDim2.new(0.05, 0 , 0, row7) SliderG.Size = UDim2.new(0.95,0 , 0,15) SliderG.BackgroundColor3 = Color3.fromRGB(0, 0, 0) SliderG.BackgroundTransparency = .85   SliderG.ZIndex=2 
 			SliderJ = Instance.new("Frame",Spaghetti) SliderJ.Name = "Jump" SliderJ.Position = UDim2.new(0.05, 0 , 0, row16) SliderJ.Size = UDim2.new(0.95,0 , 0,15) SliderJ.BackgroundColor3 = Color3.fromRGB(0, 0, 0) SliderJ.BackgroundTransparency = .85   SliderJ.ZIndex=2 
@@ -2689,7 +2695,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 				--local UserInputService = game:GetService("UserInputService")
 				Mouse.Move:Connect(function() if MouseisDown.Value == true then SetValueFromMousePos() end end)
 			end
-		end
+		--end
 
 
 		ThisIs = {"Manage Current Accessories"} 
@@ -2709,6 +2715,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			for _,hat in pairs(game.Lighting.charhat:GetChildren()) do if hat:IsA("Accessory") then table.insert(allhats,hat) end end
 			for _,h in pairs(allhats) do if h:IsA("Accessory") then 
 					eha = Button:Clone() eha.Parent = accesslist eha.Size = UDim2.new(0.95,0 , 0,15) eha.BackgroundTransparency = .55 eha.BackgroundColor3 = Color3.fromRGB(0, 127, 0) eha.TextSize = 10
+					if h:FindFirstChildWhichIsA("BasePart") and h:FindFirstChildWhichIsA("BasePart"):FindFirstChildWhichIsA("WrapLayer") then eha.BackgroundColor3 = Color3.fromRGB(255, 170, 0) end
 					if h:FindFirstChildWhichIsA("BasePart") and h:FindFirstChildWhichIsA("BasePart").Transparency == 1 then eha.BackgroundColor3 = Color3.fromRGB(0, 0, 0) end
 					if h.Parent == game.Lighting.charhat then eha.BackgroundColor3 = Color3.fromRGB(170, 0, 0) end
 					eha.TextXAlignment = Enum.TextXAlignment.Left eha.Text = h.Name eha.Position = UDim2.new(0.05,0 , 0,plus) plus=plus+15 
