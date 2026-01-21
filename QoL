@@ -1124,7 +1124,7 @@ function ColorBlind()
 	task.spawn(function() local fui = Instance.new("ScreenGui", player.PlayerGui.MAMALUIGI) fui.Name = "ColorBlind"
 		local ColorBlinding = Instance.new("Frame",fui) ColorBlinding.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 		ColorBlinding.Position = UDim2.new(0, 0,-.1,0 ) ColorBlinding.Size = UDim2.new(1, 0 , 1.1, 0) ColorBlinding.BackgroundTransparency = .9  
-		while ColorBlinding do
+		while ColorBlinding do 
 			for _,Colors in pairs(ColorBlindCycle) do 
 				BlindingTween = TweenService:Create(ColorBlinding,ColorBlindFade,{BackgroundColor3 = Colors}) BlindingTween:Play()	 BlindingTween.Completed:Wait() if not ColorBlinding then  return  end	
 			end
@@ -2282,13 +2282,13 @@ function guias()
 
 		--if ME == true or Ruse == true then
 		ThisIs = {"Crown 1-2"}  --client sided
-		Fed = Button:Clone() Fed.Parent = Spaghetti Fed.Text = "Fed" Fed.Position = UDim2.new(0.5,0 , 0,row13)  Fed.BackgroundColor3 = Color3.fromRGB(0, 0, 255)  
+	--[[	Fed = Button:Clone() Fed.Parent = Spaghetti Fed.Text = "Fed" Fed.Position = UDim2.new(0.5,0 , 0,row13)  Fed.BackgroundColor3 = Color3.fromRGB(0, 0, 255)  
 		Fed.MouseButton1Click:Connect(function() ctext = 1 Crown1()  end)
 		Fed.MouseButton2Click:Connect(function() ctext = 2 Crown1() end)
 		FedCustom = Button:Clone() FedCustom.Parent = Spaghetti FedCustom.Text = "Fed2" FedCustom.Position = UDim2.new(0.5,0 , 0,row14)  FedCustom.BackgroundColor3 = Color3.fromRGB(255, 85, 0)  
 		FedCustom.MouseButton1Click:Connect(function() ctext = 1 Crown2() end) 
 		FedCustom.MouseButton2Click:Connect(function() ctext = 2 Crown2() end) 
-		ThisIs = {"glow value for Crown"} 	 valg = 3
+		ThisIs = {"glow value for Crown"} 	 valg = 3]]
 		--glowvals = Button:Clone() glowvals.Parent = Spaghetti glowvals.Text = "glowV" glowvals.Position = UDim2.new(0.5,0 , 0,row15)  glowvals.BackgroundColor3 = Color3.fromRGB(0, 0, 127)   
 		--glowvals.MouseButton1Click:Connect(function() valg = valg + .5 reglow1() end) 
 		--glowvals.MouseButton2Click:Connect(function() valg = valg - .5 reglow1() end) 
@@ -2393,12 +2393,27 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			falld.MouseButton1Click:Connect(function()  player.falldamage.Value = not player.falldamage.Value
 				if player.falldamage.Value == true then  falld.BackgroundColor3 = Color3.fromRGB(0, 156, 0) else  falld.BackgroundColor3 = Color3.fromRGB(156,0 , 0) end end)
 
-			Mass24 = Button:Clone() Mass24.Parent = masslist Mass24.Text = "Glacier ,  Ice Ball, n" Mass24.BackgroundColor3 = Color3.fromRGB(85, 170, 255)
-			Mass24.MouseButton2Click:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100) end end end)
-			--Mass1 = Button:Clone() Mass1.Parent = masslist Mass1.Text = "Glacier" 
-			Mass24.MouseButton1Click:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) end end end)
-			Mass24.MouseWheelForward:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = nil end end end)
+			Mass24 = Button:Clone() Mass24.Parent = masslist Mass24.Text = "Glacier, Ice Ball, n, 10" Mass24.BackgroundColor3 = Color3.fromRGB(85, 170, 255)
+			--Mass24.MouseButton2Click:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100) end end end)
+			--Mass24.MouseButton1Click:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) end end end)
+			--Mass24.MouseWheelForward:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = nil end end end)
 			
+			Mass24.MouseButton1Click:Connect(function()  char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) 
+				if nds then if nds==true then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) end end  end end
+
+			end)
+			Mass24.MouseButton2Click:Connect(function()
+				char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100)  
+				if nds then if nds==true then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100) end end  end end
+			end)
+			
+			Mass24.MouseWheelForward:Connect(function()  char.HumanoidRootPart.CustomPhysicalProperties = nil
+				if nds then if nds==true then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(nil) end end  end end
+			end)
+			Mass24.MouseWheelBackward:Connect(function()  char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(10, 0, 1, 0, 0)
+				if nds then if nds==true then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(10, 0, 1, 0, 0) end end  end end
+			end)
+
 			
 		
 
@@ -2454,6 +2469,13 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			
 			res = Button:Clone() res.Parent = masslist res.Text = "reset grass" 
 			res.MouseButton1Click:Connect(function()  for _, part in pairs(workspace:GetDescendants()  ) do if part:IsA("BasePart") and part.Size == Vector3.new(164,.4,159) then part.CFrame = CFrame.new( -6.5,44.2,-7)  * CFrame.Angles(0,math.rad(90),0) end end end) 
+			
+			dli = Button:Clone() dli.Parent = masslist dli.Text = "del lights" 
+			dli.MouseButton1Click:Connect(function()  for _, part in pairs(workspace:GetDescendants()  ) do if part:IsA("Light")   then part:Remove()    end end end) 
+			
+			dn = Button:Clone() dn.Parent = masslist dn.Text = "del billboard" 
+			dn.MouseButton1Click:Connect(function()  for _, part in pairs(workspace:GetDescendants()  ) do if part:IsA("BillboardGui")   then part:Remove()    end end end) 
+			
 			
 			ttdcol = Button:Clone() ttdcol.Parent = masslist ttdcol.Text = "ttd collide" 
 			ttdcol.MouseButton1Click:Connect(function()  TTD() end) 
@@ -2511,7 +2533,11 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 		runsp = TextBox:Clone() runsp.Parent = Spaghetti runsp.PlaceholderText = "run "..char.Humanoid.WalkSpeed runsp.Position = UDim2.new(0.5,0 , 0,row21)  runsp.BackgroundColor3 = Color3.fromRGB(255, 85, 0)  
 		--runsp:GetPropertyChangedSignal("Text"):Connect(function() runsp.Text = runsp.Text:gsub('[^%d.]', ''); char.Humanoid.WalkSpeed = (runsp.Text) end)  
 		runsp.FocusLost:Connect(function() runsp.Text = runsp.Text:gsub('[^%d.]', ''); char.Humanoid.WalkSpeed = (runsp.Text) end)  
-
+		
+		ThisIs = {"jumpheight"} 
+		jsp = TextBox:Clone() jsp.Parent = Spaghetti jsp.PlaceholderText = "jum "..math.floor(char.Humanoid.JumpHeight) jsp.Position = UDim2.new(0.5,0 , 0,row22)  jsp.BackgroundColor3 = Color3.fromRGB(255, 85, 0)  
+		--runsp:GetPropertyChangedSignal("Text"):Connect(function() runsp.Text = runsp.Text:gsub('[^%d.]', ''); char.Humanoid.WalkSpeed = (runsp.Text) end)  
+		jsp.FocusLost:Connect(function() jsp.Text = jsp.Text:gsub('[^%d.]', ''); char.Humanoid.JumpHeight = (jsp.Text) end) 
 
 
 
@@ -2587,7 +2613,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 
 
 
-		--if Ruse == false then
+		if Ruse == false then
 			ThisIs = {"Sliding guis - Gravity, JumpHeight, WalkSpeed"}  --the old version
 			SliderG = Instance.new("Frame",Spaghetti) SliderG.Name = "Gravity" SliderG.Position = UDim2.new(0.05, 0 , 0, row7) SliderG.Size = UDim2.new(0.95,0 , 0,15) SliderG.BackgroundColor3 = Color3.fromRGB(0, 0, 0) SliderG.BackgroundTransparency = .85   SliderG.ZIndex=2 
 			SliderJ = Instance.new("Frame",Spaghetti) SliderJ.Name = "Jump" SliderJ.Position = UDim2.new(0.05, 0 , 0, row16) SliderJ.Size = UDim2.new(0.95,0 , 0,15) SliderJ.BackgroundColor3 = Color3.fromRGB(0, 0, 0) SliderJ.BackgroundTransparency = .85   SliderJ.ZIndex=2 
@@ -2604,7 +2630,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 				--	local MouseButton = Instance.new("TextButton",Slide) MouseButton.Name = "MouseButton" MouseButton.Position = UDim2.new(0.0, 0 , 0.0, 0) MouseButton.Size = UDim2.new(1,0 , 1,0)   MouseButton.BackgroundTransparency = 1   MouseButton.ZIndex=1
 				local MouseButton = Button:Clone() MouseButton.Parent = Slide MouseButton.Text=Slide.Name MouseButton.Name = "MouseButton" MouseButton.Size = UDim2.new(1,0 , 1,0) MouseButton.Position = UDim2.new(0.0, 0 , 0.0, 0) MouseButton.BackgroundTransparency = 1 MouseButton.ZIndex=1
 				local Max = Instance.new("NumberValue",Slide) Max.Name = "Max" --Max.Value = 100
-				if Slide.Name == "Gravity" then Max.Value = 100 end if Slide.Name == "Jump" then Max.Value = 90 end if Slide.Name == "Run" then Max.Value = 250 end if Slide.Name == "Walk" then Max.Value = 32 end
+				if Slide.Name == "Gravity" then Max.Value = 100 end if Slide.Name == "Jump" then Max.Value = 90 end if Slide.Name == "Run" then Max.Value = 253 end if Slide.Name == "Walk" then Max.Value = 32 end
 				local Value1 = Instance.new("NumberValue",Slide) Value1.Name = "Value1" Value1.Value = 7.2
 				local MouseisOn = Instance.new("BoolValue",Slide) MouseisOn.Value = false MouseisOn.Name = "MouseisOn"
 				local MouseisDown = Instance.new("BoolValue",Slide) MouseisDown.Value = false MouseisDown.Name = "MouseisDown"
@@ -2637,7 +2663,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 					Sliding:TweenSize(UDim2.new(NewValue/Max.Value,0,1,0),Enum.EasingDirection.Out,Enum.EasingStyle.Quad,0.1,true,nil)
 					Point.ValueLabel.TextLabel.Text = NewValue *1--* ValueLabelMultiply.Value
 					if Slide.Name == "Gravity" then workspace.Gravity = NewValue end 
-					if Slide.Name == "Jump" then char.Humanoid.JumpHeight = NewValue/2 char.Humanoid.JumpPower = NewValue end
+				if Slide.Name == "Jump" then char.Humanoid.JumpHeight = NewValue/2 char.Humanoid.JumpPower = NewValue   Point.ValueLabel.TextLabel.Text = NewValue/2 end
 					if Slide.Name == "Run" then char.Humanoid.WalkSpeed = NewValue end 
 					if Slide.Name == "Walk" then char.Humanoid.WalkSpeed = NewValue end 
 				end
@@ -2695,8 +2721,14 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 				--local UserInputService = game:GetService("UserInputService")
 				Mouse.Move:Connect(function() if MouseisDown.Value == true then SetValueFromMousePos() end end)
 			end
-		--end
-
+		end
+		
+		
+		
+		
+		
+		
+		
 
 		ThisIs = {"Manage Current Accessories"} 
 		hats = Button:Clone() hats.Parent = Spaghetti hats.Text = "nil" hats.Position = UDim2.new(0.5,0 , 0,row11)  hats.BackgroundColor3 = Color3.fromRGB(255, 0, 127)  
@@ -3264,7 +3296,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 		hatWHY = Instance.new("ScreenGui",Begal) hatWHY.Name = "YOU hat" hatWHY.Enabled = false 
 		myhatist = Scroll:Clone() myhatist.Parent = hatWHY  myhatist.Name = "mine,mine,mine"  myhatist.Position = UDim2.new(0.85, 0 , 0.35, 0) myhatist.Size = UDim2.new(0.1, 0 , 0.6, 0)   myhatist.CanvasSize = UDim2.new(0, 0 , 6, 0)  
 		hateded = Instance.new("UIListLayout",myhatist)  hateded.Padding = UDim.new(0,0)
-		hatb = Button:Clone() hatb.Parent = Spaghetti hatb.Text = "chars" hatb.Position = UDim2.new(0.05,0 , 0,row20) hatb.BackgroundTransparency = .7 hatb.BackgroundColor3 = Color3.fromRGB(255, 85, 255) 
+		hatb = Button:Clone() hatb.Parent = Spaghetti hatb.Text = "chars" hatb.Position = UDim2.new(0.5,0 , 0,row13) hatb.BackgroundTransparency = .7 hatb.BackgroundColor3 = Color3.fromRGB(255, 85, 255) 
 
 		hatb.MouseButton1Click:Connect(function() hatWHY.Enabled = not hatWHY.Enabled
 			if workspace:FindFirstChild("WeatherMachine") then 
@@ -4337,7 +4369,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 		
 		ThisIs = {"Import Layered"}	 
 
-		laeyers = Button:Clone() laeyers.Parent = Spaghetti laeyers.Text = "Layers" laeyers.Position = UDim2.new(0.05,0 , 0,row21)  laeyers.BackgroundColor3 = Color3.fromRGB(0, 170, 255)  
+		laeyers = Button:Clone() laeyers.Parent = Spaghetti laeyers.Text = "Layers" laeyers.Position = UDim2.new(0.5,0 , 0,row14)  laeyers.BackgroundColor3 = Color3.fromRGB(0, 170, 255)  
 		laeyers.MouseButton1Click:Connect(function() 
 
 			if not game.Lighting:FindFirstChild("layers") then 
@@ -5305,7 +5337,7 @@ end
 TTD()
 
 
-
+nds=false
 
 
 ThisIsClientSided = {"Walk on ghost dirt", "Drive on ocean"}
@@ -5321,10 +5353,13 @@ function NDS()
 	--if not workspace:FindFirstChild("WeatherMachine") then return end
 	if workspace:FindFirstChild("OceanDrive") then return end
 	if workspace:FindFirstChild("WeatherMachine") then 
-		for _, p in pairs(workspace:GetDescendants()) do   
+		nds=true
+		for _, p in pairs(workspace:GetDescendants()) do  
+			
 			if p.Name == "RTDPortal" or p.Name == "BillboardTop10" or p.Name == "ForwardPortal"   then p:Remove() end
 			
-			if p:IsA("BasePart") then  p.CanTouch = false p.CanQuery = false 
+			if p:IsA("BasePart") then  p.CanQuery = false 
+				--if p:IsA("Seat") or  p.CanTouch = false
 				--if p.Transparency > .96 and p.CanCollide == false and not p:FindFirstChildWhichIsA("ClickDetector") then p.CanQuery = false end
 				if p.BrickColor == BrickColor.new("Reddish brown") or p.BrickColor == BrickColor.new("Dark green") then p.CastShadow = false p.CanCollide = true end
 				if p.BrickColor == BrickColor.new("Bright blue") then p.Color = Color3.fromRGB( 0, 64, 96  ) p.Transparency = 0 end
