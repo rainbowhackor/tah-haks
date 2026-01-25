@@ -2338,6 +2338,9 @@ function guias()
 		ThisIs = {"Lazy"} 
 		Lazy = Button:Clone() Lazy.Parent = Spaghetti Lazy.Text = "Lazy" Lazy.Position = UDim2.new(0.05,0 , 0,row10)  Lazy.BackgroundColor3 = Color3.fromRGB(255, 0, 127)   
 		Lazy.MouseButton1Click:Connect(function()
+			
+			Fake = true if char:FindFirstChild("fake clo") then  Fake= false end
+			
 			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
 			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "lazylist" then Ui:Remove() end end
 			if Begal.GuiHolder:FindFirstChild("lazylist") then Begal.GuiHolder:FindFirstChild("lazylist"):Remove() return end
@@ -2399,19 +2402,19 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			--Mass24.MouseWheelForward:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = nil end end end)
 			
 			Mass24.MouseButton1Click:Connect(function()  char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) 
-				if nds then if nds==true then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) end end  end end
+				if Fake then if Fake==false then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) end end  end end
 
 			end)
 			Mass24.MouseButton2Click:Connect(function()
 				char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100)  
-				if nds then if nds==true then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100) end end  end end
+				if Fake then if Fake==false then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100) end end  end end
 			end)
 			
 			Mass24.MouseWheelForward:Connect(function()  char.HumanoidRootPart.CustomPhysicalProperties = nil
-				if nds then if nds==true then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(nil) end end  end end
+				if Fake then if Fake==false then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(nil) end end  end end
 			end)
-			Mass24.MouseWheelBackward:Connect(function()  char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(10, 0, 1, 0, 0)
-				if nds then if nds==true then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(10, 0, 1, 0, 0) end end  end end
+			Mass24.MouseWheelBackward:Connect(function()  char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(5, 0, 1, 0, 0)
+				if Fake then if Fake==false then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(5, 0, 1, 0, 0) end end  end end
 			end)
 
 			
