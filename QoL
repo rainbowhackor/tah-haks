@@ -2365,6 +2365,11 @@ function guias()
 			dis.MouseButton2Click:Connect(function() char.PartCollision.CanCollide = not char.PartCollision.CanCollide char.Humanoid.Sit = char.PartCollision.CanCollide end)
 			dis.MouseButton2Click:Connect(function() char.CollisionPart.CanCollide = not char.CollisionPart.CanCollide end)
 			
+		--[[ 	flin = Button:Clone() flin.Parent = masslist flin.Text = "flin" flin.BackgroundColor3 = Color3.fromRGB(85, 0, 127)
+			flin.MouseButton1Click:Connect(function() char.HumanoidRootPart.AssemblyAngularVelocity --.AssemblyLinearVelocity = Vector3.new(100,0,0)	   end) 
+			flin.MouseButton2Click:Connect(function() char.PartCollision.CanCollide = not char.PartCollision.CanCollide char.Humanoid.Sit = char.PartCollision.CanCollide end)
+			flin.MouseButton2Click:Connect(function() char.CollisionPart.CanCollide = not char.CollisionPart.CanCollide end)]]
+			
 			gravs = Button:Clone() gravs.Parent = masslist gravs.Text = "G 11 22 5 2" 
 			gravs.MouseButton1Click:Connect(function() workspace.Gravity = 11 end)
 			gravs.MouseButton2Click:Connect(function() workspace.Gravity = 22 end)
@@ -2414,7 +2419,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 				if Fake then if Fake==true then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(nil) end end  end end
 			end)
 			Mass24.MouseWheelBackward:Connect(function()  char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(1, 0, 1, 0, 0)
-				if Fake then if Fake==true then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(5, 0, 1, 0, 0) end end  end end
+				if Fake then if Fake==true then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(1, 0, 1, 0, 0) end end  end end
 			end)
 
 			
