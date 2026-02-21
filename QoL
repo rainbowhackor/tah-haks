@@ -635,8 +635,9 @@ function delski() if  char:FindFirstChild("Meshes/Chocolate Donut Rainbow Limite
 		end
 	end
 	if    char.LowerTorso.MeshId == "rbxassetid://102444473034465" or char.LowerTorso.MeshId == "rbxassetid://102444473034465"   then 
-
-	for _, br in pairs(char:GetChildren()) do if br:IsA("BasePart") then br.Color = Color3.fromRGB(208, 156, 135)   end end   
+		if not workspace:FindFirstChildWhichIsA("BrickColorValue") then 
+			for _, br in pairs(char:GetChildren()) do if br:IsA("BasePart") then br.Color = Color3.fromRGB(208, 156, 135)   end end  
+			end
  end
 end
 
@@ -2020,7 +2021,9 @@ function guias()
 		end)
 
 		ThisIs = {"camera Y-Axis"} -- because i'm half the default size  
-		Cam = Button:Clone() Cam.Parent = Spaghetti Cam.Text = "camY"..math.floor(_G.camm * 100)/100 Cam.Position = UDim2.new(0.5,0 , 0,row6) Cam.BackgroundColor3 = Color3.fromRGB(119, 0, 255)  
+		Cam = Button:Clone() Cam.Parent = Spaghetti 
+		--Cam.Text = "camY"..math.floor(_G.camm * 100)/100 C
+		Cam.Position = UDim2.new(0.5,0 , 0,row6) Cam.BackgroundColor3 = Color3.fromRGB(119, 0, 255)  
 		Cam.MouseButton1Click:Connect(function() _G.camm +=-.25 Cam.Text = "camY"..math.floor(_G.camm * 100)/100 NewCamera() end)
 		Cam.MouseButton2Click:Connect(function() _G.camm +=.25 Cam.Text = "camY"..math.floor(_G.camm * 100)/100 NewCamera() end)
 		--Cam.MouseWheelForward:Connect(function() camm = 0 Cam.Text = "camY"..math.floor(camm * 100)/100 NewCamera() end)
@@ -2619,9 +2622,9 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 		end) 
 
 
+  
 
-
-		if Ruse == false then
+		if Ruse == false or workspace:FindFirstChild("Baseplate") then
 			ThisIs = {"Sliding guis - Gravity, JumpHeight, WalkSpeed"}  --the old version
 			SliderG = Instance.new("Frame",Spaghetti) SliderG.Name = "Gravity" SliderG.Position = UDim2.new(0.05, 0 , 0, row7) SliderG.Size = UDim2.new(0.95,0 , 0,15) SliderG.BackgroundColor3 = Color3.fromRGB(0, 0, 0) SliderG.BackgroundTransparency = .85   SliderG.ZIndex=2 
 			SliderJ = Instance.new("Frame",Spaghetti) SliderJ.Name = "Jump" SliderJ.Position = UDim2.new(0.05, 0 , 0, row16) SliderJ.Size = UDim2.new(0.95,0 , 0,15) SliderJ.BackgroundColor3 = Color3.fromRGB(0, 0, 0) SliderJ.BackgroundTransparency = .85   SliderJ.ZIndex=2 
@@ -3343,7 +3346,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 
 		--if ME == true or Ruse == true then 
 		--mychars = { "Wolf",  "Diamond", "moneyaAYYe","moneyaAYYe2","Nil", , "gal1", "gal2" ,"gal3", "gal4", }   for _,tha in pairs(mychars) do hatme(tha) end 
-		mychars = {  "nothing", "no clo", "belly s", "clo r", "clo t", "clo1",  "clo b", "clo7", "clo6", "clo3",   "clo4" ,"clo2" ,"refresh",}   for _,tha in pairs(mychars) do hatme(tha) end 
+		mychars = {  "nothing", "no clo", "belly s", "selly", "bel no", "clo r", "clo t", "clo1",  "clo b", "clo7", "clo6", "clo3",   "clo4"   ,"refresh",}   for _,tha in pairs(mychars) do hatme(tha) end 
 		--end
 
 		hat_groups = { princess ,twin,gamerGril,dirt4,dirt5,  fairys,mewings,neckbling,meh1,meh2,tails,firehorn,crowns,federation,hairs} 
@@ -3828,7 +3831,9 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 						--if char:FindFirstChildWhichIsA("ShirtGraphic") then char:FindFirstChildWhichIsA("ShirtGraphic"):Remove() end
 						function bel()  
 							if not char:FindFirstChildWhichIsA("ShirtGraphic") then Instance.new("ShirtGraphic",char) end char:FindFirstChildWhichIsA("ShirtGraphic").Graphic = "rbxassetid://91169003778096"  
-							if not char.LowerTorso:FindFirstChild("Decal") then deca = Instance.new("Decal") deca.Color3 = Color3.fromRGB(254, 199, 199)
+							--if not char.LowerTorso:FindFirstChild("Decal") then 
+							for _,v in pairs(char:GetDescendants()) do if v:IsA("Decal") and v:HasTag("bell") then v:Remove() end end 
+								deca = Instance.new("Decal",char.LowerTorso) deca.Color3 = Color3.fromRGB(254, 199, 199) deca:AddTag("bell")
 								bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://91169003778096" bel.Name = "bel" 
 								bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://18713397525" bel.Name = "c smal"--crac small
 
@@ -3851,8 +3856,42 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 								bel = deca:Clone() bel.Parent = char.UpperTorso  bel.Texture = "rbxassetid://18713397525"   bel.Name = "c smal" --crac small
 								bel = deca:Clone() bel.Parent = char.UpperTorso  bel.Texture = "rbxassetid://18713397525" bel.Face = Enum.NormalId.Back  bel.Name = "c smal back"---crac small
 
-							end
+							--end
 						end
+						
+						function bels()  
+							if not char:FindFirstChildWhichIsA("ShirtGraphic") then Instance.new("ShirtGraphic",char) end char:FindFirstChildWhichIsA("ShirtGraphic").Graphic = "rbxassetid://91169003778096"  
+							--if not char.LowerTorso:FindFirstChild("Decal") then 
+							for _,v in pairs(char:GetDescendants()) do if v:IsA("Decal") and v:HasTag("bell") then v:Remove() end end 
+							deca = Instance.new("Decal",char.LowerTorso) deca.Color3 = Color3.fromRGB(254, 199, 199) deca:AddTag("bell")
+							bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://91169003778096" bel.Name = "bel" 
+							bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://18713397525" bel.Name = "c smal"--crac small
+
+							bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://91169003778096" bel.Face = Enum.NormalId.Bottom  bel.Name = "bel bottom" 
+							--bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://91169003778096" bel.Face = Enum.NormalId.Bottom  bel.Name = "bel bottom" 
+
+							 bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://91169003778096" bel.Face = Enum.NormalId.Back	bel.Name = "bel back" 	 
+							--bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://124539244244105" bel.Face = Enum.NormalId.Back bel.Name = "c big back" -- crac big  
+							--bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://18713397525" bel.Face = Enum.NormalId.Back  bel.Name = "c smal back"--crac small
+							--bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://18713397525" bel.Face = Enum.NormalId.Bottom  bel.Name = "c smal bottom"--crac small
+							bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://18713397525" bel.Face = Enum.NormalId.Bottom  bel.Name = "c smal bottom"--crac small
+
+							--bel = Instance.new("Decal",char.UpperTorso) bel.Texture = "rbxassetid://91169003778096"	 bel.Name = "bel" 
+							--bel = Instance.new("Decal",char.UpperTorso) bel.Texture = "rbxassetid://91169003778096" bel.Face = Enum.NormalId.Back	bel.Name = "bel back" 
+							bel = deca:Clone() bel.Parent = char.UpperTorso  bel.Texture = "rbxassetid://18656573483" bel.Face = Enum.NormalId.Back	bel.Name = "back back" 
+							bel = deca:Clone() bel.Parent = char.UpperTorso bel.Texture = "rbxassetid://18656573483" bel.Name = "back front" 
+							bel = deca:Clone() bel.Parent = char.UpperTorso  bel.Texture = "rbxassetid://18713397525"   bel.Name = "c smal" --crac small
+							bel = deca:Clone() bel.Parent = char.UpperTorso  bel.Texture = "rbxassetid://18713397525" bel.Face = Enum.NormalId.Back  bel.Name = "c smal back"---crac small
+
+							--end
+						end
+						
+						function beln()  
+							if not char:FindFirstChildWhichIsA("ShirtGraphic") then Instance.new("ShirtGraphic",char) end char:FindFirstChildWhichIsA("ShirtGraphic").Graphic = "rbxassetid://91169003778096"  
+							--if not char.LowerTorso:FindFirstChild("Decal") then 
+							for _,v in pairs(char:GetDescendants()) do if v:IsA("Decal") and v:HasTag("bell") then v:Remove() end end 
+						end
+						
 						--sbel2 rbxassetid://81538381090896
 						--sbel2 backup rbxassetid://83208957324495
 						--back rbxassetid://18656573483
@@ -3926,10 +3965,14 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 							for _,shad in pairs(char:GetChildren()) do if shad:IsA("Accessory") and shad:FindFirstChildWhichIsA("BasePart") then if not shad:FindFirstChild("me") then shad:FindFirstChildWhichIsA("BasePart").Transparency = 1 end if shad:FindFirstChild("me") then shad:Remove() end end end
 							for _,tha in pairs(monyay2) do hatme2(tha) end
 						end	]]
-						if Buttons.Text == "belly s" then   
-
-
+						if Buttons.Text == "belly s" then    
 							bel()  
+						end	
+						if Buttons.Text == "selly" then    
+							bels()  
+						end	
+						if Buttons.Text == "bel no" then    
+							beln()  
 						end	
 						if Buttons.Text == "clo r" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "rbxassetid://7175643207" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "" end
 						if Buttons.Text == "clo t" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "http://www.roblox.com/asset/?id=7144143881" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "" end
@@ -4769,7 +4812,8 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			{ Id = "80126109220878", Name = "Boogie",  Color = Color3.fromRGB(170, 0, 0)  },
 			{ Id = "94825102596214", Name = "frolic",  Color = Color3.fromRGB(255, 255, 0)  },
 			{ Id = "120970343961976", Name = "electro",  Color = Color3.fromRGB(144, 0, 170)  },
-			{ Id = "139109930448132", Name = "smuwug1",  Color = Color3.fromRGB(255, 128, 0)  },
+			{ Id = "136079923684452", Name = "smuwug1",  Color = Color3.fromRGB(255, 128, 0)  },
+			--{ Id = "139109930448132", Name = "smuwug1",  Color = Color3.fromRGB(255, 128, 0)  },
 			--{ Id = "78773506370628", Name = "smuwug2",  Color = Color3.fromRGB(85, 255, 0)  },
 			{ Id = "108466807801186", Name = "springy",  Color = Color3.fromRGB(85, 255, 0)  }, 
 
@@ -4897,13 +4941,13 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			--{ Id = "106264689858536", Name = " phut2" ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = "135915367893892", Name = "zero 2b",  Color = Color3.fromRGB(0, 255, 81)  },
 
-			{ Id = "119630730265659", Name = "Wiggle s" ,  Color = Color3.fromRGB(0, 170, 255)  },
-			{ Id = "82084697174280", Name = "peace2 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = "107433600203738", Name = "1" ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = "120061939060268", Name = "2 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 
 			{ Id = "96969299311463", Name = "hip behind " ,  Color = Color3.fromRGB(0, 170, 255)  },
-			{ Id = "114441389535366", Name = "cara cat  " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = "115663351458368", Name = "3 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 
-			{ Id = "114351251896640", Name = "rewind " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = "105569687262661", Name = "4 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = "134885577802333", Name = "sway5 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 
 			
@@ -4924,23 +4968,33 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			{ Id = "107354998205291", Name = "hoop" ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = "78892987395715", Name = "m pede " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			
-			{ Id = "72074295131591", Name = "worm" ,  Color = Color3.fromRGB(0, 170, 255)  },
-			{ Id = "94426899754674", Name = "AOY " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = "85683238246324", Name = "5" ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = "92793127096324", Name = "6 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			
-			{ Id = "96978416179927", Name = "HOLY " ,  Color = Color3.fromRGB(0, 170, 255)  },
-			{ Id = "85600000248740", Name = " FOFF" ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = "129614696948735", Name = "7 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = "103165416370113", Name = " 8" ,  Color = Color3.fromRGB(0, 170, 255)  },
 			
 			{ Id = "105466362615490", Name = "fox" ,  Color = Color3.fromRGB(0, 170, 255)  },  --87011165040436
 			{ Id = "118492862930593", Name = "sit fav " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			
 			{ Id = "99511059984451", Name = "FIN " ,  Color = Color3.fromRGB(0, 170, 255)  },
-{ Id = " 74250424719407", Name = " myum " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 83110569495266", Name = " 9 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 
-{ Id = " 132363180483478", Name = " bum " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 137241986971463", Name = " 10 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 117178670618756", Name = " myy " ,  Color = Color3.fromRGB(0, 170, 255)  },	
 			--	{ Id = "139750331539521", Name = "wu no",  Color = Color3.fromRGB(170, 170, 0)  },
-
-
+			
+			{ Id = " 105650910334517", Name = " 11 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 113068846591404", Name = " 12 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 78399752279764", Name = " 13 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 136328557103483", Name = " 14 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 120872100779589", Name = " 15 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 77615198579929", Name = " 16 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 96433891638075", Name = " 17 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 77633791202080", Name = " 18 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 94193852132874", Name = " 19 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 86116089509108", Name = " 20 " ,  Color = Color3.fromRGB(0, 170, 255)  }, 
+			
 
 			--{ Id = "77444612920420", Name = "wu3",  Color = Color3.fromRGB(170, 170, 0)  },
 			--{ Id = "74278105103260", Name = "wu aura",  Color = Color3.fromRGB(170, 170, 0)  },
