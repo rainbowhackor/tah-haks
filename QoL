@@ -4972,15 +4972,15 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			{ Id = "92793127096324", Name = "6 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			
 			{ Id = "129614696948735", Name = "7 " ,  Color = Color3.fromRGB(0, 170, 255)  },
-			{ Id = "103165416370113", Name = " 8" ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = "95983712200119", Name = " 8" ,  Color = Color3.fromRGB(0, 170, 255)  },
 			
 			{ Id = "105466362615490", Name = "fox" ,  Color = Color3.fromRGB(0, 170, 255)  },  --87011165040436
 			{ Id = "118492862930593", Name = "sit fav " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			
 			{ Id = "99511059984451", Name = "FIN " ,  Color = Color3.fromRGB(0, 170, 255)  },
-			{ Id = " 83110569495266", Name = " 9 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 133539659698206", Name = " 9 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 
-			{ Id = " 137241986971463", Name = " 10 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 122687826333406", Name = " 10 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 117178670618756", Name = " myy " ,  Color = Color3.fromRGB(0, 170, 255)  },	
 			--	{ Id = "139750331539521", Name = "wu no",  Color = Color3.fromRGB(170, 170, 0)  },
 			
@@ -4993,7 +4993,18 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			{ Id = " 96433891638075", Name = " 17 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 77633791202080", Name = " 18 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 94193852132874", Name = " 19 " ,  Color = Color3.fromRGB(0, 170, 255)  },
-			{ Id = " 86116089509108", Name = " 20 " ,  Color = Color3.fromRGB(0, 170, 255)  }, 
+			{ Id = " 72428556931833", Name = " 20 " ,  Color = Color3.fromRGB(0, 170, 255)  }, 
+			
+			{ Id = " 116172068593756", Name = " 21 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 90616540886712", Name = " 22 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 117441621973481", Name = " 23 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 78307392284659", Name = " 24 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 74351461914568", Name = " 25 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 135520965740535", Name = " 26 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 77313365658166", Name = " 27 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 72562031822028", Name = " 28 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 109773069081025", Name = " 29 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 92676225398249", Name = " 30 " ,  Color = Color3.fromRGB(0, 170, 255)  }, 
 			
 
 			--{ Id = "77444612920420", Name = "wu3",  Color = Color3.fromRGB(170, 170, 0)  },
