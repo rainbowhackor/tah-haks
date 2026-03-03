@@ -4995,16 +4995,16 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			{ Id = " 94193852132874", Name = " 19 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 72428556931833", Name = " 20 " ,  Color = Color3.fromRGB(0, 170, 255)  }, 
 			
-			{ Id = " 116172068593756", Name = " 21 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 000 ", Name = " 21 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 90616540886712", Name = " 22 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 117441621973481", Name = " 23 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 78307392284659", Name = " 24 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 74351461914568", Name = " 25 " ,  Color = Color3.fromRGB(0, 170, 255)  },
-			{ Id = " 135520965740535", Name = " 26 " ,  Color = Color3.fromRGB(0, 170, 255)  },
-			{ Id = " 77313365658166", Name = " 27 " ,  Color = Color3.fromRGB(0, 170, 255)  },
-			{ Id = " 72562031822028", Name = " 28 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 000 ", Name = " 26 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 000 ", Name = " 27 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 000 ", Name = " 28 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 109773069081025", Name = " 29 " ,  Color = Color3.fromRGB(0, 170, 255)  },
-			{ Id = " 92676225398249", Name = " 30 " ,  Color = Color3.fromRGB(0, 170, 255)  }, 
+			{ Id = " 000 ", Name = " 30 " ,  Color = Color3.fromRGB(0, 170, 255)  }, 
 			
 
 			--{ Id = "77444612920420", Name = "wu3",  Color = Color3.fromRGB(170, 170, 0)  },
@@ -5341,7 +5341,8 @@ function TTD()
 					or L.Name == "FireVFX" or L.Name == "Meshes/DA_Cylinder.015" or L.Name == "Meshes/DA_Cylinder.017"  or L.Name == "Meshes/DA_Plane"  or L.Name == "Cylinder.003" or L.Name =="Meshes/stone head" or L.Name == "Meshes/sdasa_Plane.001"
 					or L.Name == "Meshes/tokyo bench_Cube.064" or L.Name == "Meshes/tokyo bench_Cube.063" or L.Name == "Meshes/tokyo_Cube.207" or L.Name == "Rocks" or L.Name == "Rock" or L.Name == "rock"
 					or L.Name == "Meshes/Bush_Cylinder.001" or L.Name == "Meshes/Bush_Sphere.003"  or L.Name == "Rock.002"  or L.Name == "tikitorch" or L.Name == "Tiki Hut_Seats" 
-					or L.Name == "Shrine_01" or L.Name == "Shrine_02"  or L.Name == "Shrine_03"  or L.Name == "Cooler" or L.Name == "Tiki Hut_Seats" 
+					or L.Name == "Shrine_01" or L.Name == "Shrine_02"  or L.Name == "Shrine_03"  or L.Name == "Cooler" or 
+					L.Name == "Plane.164" or L.Name == "Circle.010" or  L.Name == "Building 3.004"
 				then if L:IsA("BasePart") then L.CanCollide = false end
 				end
 				if L.Name == "Meshes/tokyo_Cube.248" or L.Name == "Meshes/tokyo_Cube.207" then
@@ -5351,10 +5352,14 @@ function TTD()
 						L.CanCollide = false end
 				end
 				if L:IsA("MeshPart") then 
-					if L.MeshId == "rbxassetid://17814036182" or L.MeshId == "rbxassetid://17814036882" or L.MeshId == "rbxassetid://17814036743"  then 
+					if L.MeshId == "rbxassetid://17814036182" or L.MeshId == "rbxassetid://17814036882" or L.MeshId == "rbxassetid://17814036743" or L.MeshId == "rbxassetid://18709871243"  then 
 						L.CanCollide = false end
 				end
-				if L.Name == "Lamp post" or L.Name == "Tiki"  or L.Name == "Beach_chair"  or L.Name == "BeachStore"  or L.Name == "border" or L.Name == "Fence" or L.Name == "Crate" or L.Name == "Cart" or L.Name == "Box" or L.Name == "Barrel" or L.Name == "Pine Tree" or L.Name == "Lantern" or L.Name == "bench"then
+				if L.Name == "Lamp post" or L.Name == "Tiki"  or L.Name == "Beach_chair"  or L.Name == "BeachStore"  or 
+					L.Name == "border" or L.Name == "Fence" or L.Name == "Crate" or L.Name == "Cart" or L.Name == "Box" or
+					L.Name == "Barrel" or L.Name == "Pine Tree" or L.Name == "Lantern" or L.Name == "bench" or L.Name == "Olive Tree" or
+					L.Name == "Broken pillar" or L.Name == "MediumBuilding" or L.Name == "Stable" or L.Name == "bucket"  or L.Name == "SWING"
+				then
 					for _,p in pairs( L:GetDescendants()) do 
 						if p:IsA("BasePart") then  
 							p.CanCollide = false end
@@ -5377,6 +5382,13 @@ function TTD()
 
 					end
 				end
+				if L:IsA("Light") then L.Shadows = false L.Range = 0 L.Brightness = 0  end
+				if L:IsA("ParticleEmitter") then L.Rate = 1    end
+
+				if L.Name == "Cherry Blossom Effect" or  L.Name =="Autumn Decor" then L:Remove() end
+				
+				
+				
 		--[[	if L.Name == "ground tower" or L.Name == "main tower"  or L.Name == "secondary towers"  or L.Name == "Lava particles" or L.Name == "Part" or L.Name == "Shop" then
 				if L.Parent.Name == "Volcano" then L:Remove() end
 			end]]
@@ -5404,6 +5416,29 @@ function TTD()
 		end]]
 		end
 
+		for _,target in pairs(char:GetDescendants()) do
+			if target:IsA("MeshPart") then 
+				if target.MeshId == "rbxassetid://16931221073" then target.Parent:Remove() end-- box
+
+				if target.MeshId == "rbxassetid://17899996187" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false 
+					f= Instance.new("SelectionBox",target) f.Adornee = target f.Transparency = .9 f.Color3 = Color3.fromRGB(0, 255, 0) f.LineThickness = .07 end --krby
+				
+				if target.MeshId == "rbxassetid://95880964398198" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false end
+				if target.MeshId == "rbxassetid://15412035527" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false end
+				if target.MeshId == "rbxassetid://95880964398198" then target.Transparency = 1 end
+
+			end
+		end
+		
+		if char:FindFirstChild("GreenPixie") then  
+			char:FindFirstChild("GreenPixie"):FindFirstChildWhichIsA("BasePart").Transparency = 1
+		end
+		char.Humanoid.JumpHeight =  11
+		char.Humanoid.WalkSpeed =  60
+		char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) 
+
+		
+		
 	end
 end
 
