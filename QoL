@@ -2490,6 +2490,8 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			
 			ttdcol = Button:Clone() ttdcol.Parent = masslist ttdcol.Text = "ttd collide" 
 			ttdcol.MouseButton1Click:Connect(function()  TTD() end) 
+			ttdcol.MouseButton2Click:Connect(function()  TTD2() end)
+			
 			
 			ttddb = Button:Clone() ttddb.Parent = masslist ttddb.Text = "ttd del backpack" 
 			ttddb.MouseButton1Click:Connect(function() --[[ for _, pla in pairs(game.Players:GetChildren()) do 
@@ -5325,24 +5327,27 @@ end)
 
 this = "TTD map settings"
 function TTD() 
+	
 	if workspace:FindFirstChild("NPC") then 
 		workspace:FindFirstChild("NPC"):Remove()
 	end
 	if workspace:FindFirstChild("Map") then 
-		if workspace.Map:FindFirstChild("Leaderboards") then workspace.Map:FindFirstChild("Leaderboards"):Remove() end
-		if workspace.Map:FindFirstChild("Other") then workspace.Map:FindFirstChild("Other"):Remove() end
-		if workspace.Map:FindFirstChild("Teleporters") then workspace.Map:FindFirstChild("Teleporters"):Remove() end
+		jar=workspace.Map
+		if jar:FindFirstChild("Leaderboards") then jar:FindFirstChild("Leaderboards"):Remove() end
+		if jar:FindFirstChild("Other") then jar:FindFirstChild("Other"):Remove() end
+		if jar:FindFirstChild("Teleporters") then jar:FindFirstChild("Teleporters"):Remove() end
 		--if workspace.Map:FindFirstChild("MainIsland") then workspace.Map:FindFirstChild("MainIsland").Name = "Island" end
 		--if workspace.Map:FindFirstChild("MainIsland") then workspace.Map:FindFirstChild("MainIsland"):Remove() end -- They accidentally duplicated the map in this version of TTD3
-		if workspace.Map:FindFirstChild("MainIsland") then 
-			for _,L in pairs( workspace.Map:FindFirstChild("MainIsland"):GetDescendants()) do 
+		if jar:FindFirstChild("MainIsland") then 
+			for _,L in pairs( jar:FindFirstChild("MainIsland"):GetDescendants()) do 
 				if L.Name == "SoccerField" then L:Remove() end
 				if L.Name == "Meshes/Palm Trees V2_Plane.001" or L.Name == "Meshes/Palm Trees V2_Plane.003" or L.Name == "Meshes/ad_Cylinder" or L.Name == "Meshes/ewe_Cylinder.006" or L.Name == "Meshes/ad_Icosphere.006" or L.Name == "Meshes/e_Plane.001 (1)" or L.Name == "Meshes/e_Icosphere.011"  
 					or L.Name == "FireVFX" or L.Name == "Meshes/DA_Cylinder.015" or L.Name == "Meshes/DA_Cylinder.017"  or L.Name == "Meshes/DA_Plane"  or L.Name == "Cylinder.003" or L.Name =="Meshes/stone head" or L.Name == "Meshes/sdasa_Plane.001"
 					or L.Name == "Meshes/tokyo bench_Cube.064" or L.Name == "Meshes/tokyo bench_Cube.063" or L.Name == "Meshes/tokyo_Cube.207" or L.Name == "Rocks" or L.Name == "Rock" or L.Name == "rock"
 					or L.Name == "Meshes/Bush_Cylinder.001" or L.Name == "Meshes/Bush_Sphere.003"  or L.Name == "Rock.002"  or L.Name == "tikitorch" or L.Name == "Tiki Hut_Seats" 
 					or L.Name == "Shrine_01" or L.Name == "Shrine_02"  or L.Name == "Shrine_03"  or L.Name == "Cooler" or 
-					L.Name == "Plane.164" or L.Name == "Circle.010" or  L.Name == "Building 3.004"
+					L.Name == "Plane.164" or L.Name == "Circle.010" or L.Name == "Circle.047" or    
+					L.Name == "Bottom.001" or  L.Name == "Top.001"
 				then if L:IsA("BasePart") then L.CanCollide = false end
 				end
 				if L.Name == "Meshes/tokyo_Cube.248" or L.Name == "Meshes/tokyo_Cube.207" then
@@ -5352,13 +5357,15 @@ function TTD()
 						L.CanCollide = false end
 				end
 				if L:IsA("MeshPart") then 
-					if L.MeshId == "rbxassetid://17814036182" or L.MeshId == "rbxassetid://17814036882" or L.MeshId == "rbxassetid://17814036743" or L.MeshId == "rbxassetid://18709871243"  then 
+					if L.MeshId == "rbxassetid://17814036182" or L.MeshId == "rbxassetid://17814036882" or L.MeshId == "rbxassetid://17814036743" 
+						or L.MeshId == "rbxassetid://18709871243"  then 
 						L.CanCollide = false end
 				end
 				if L.Name == "Lamp post" or L.Name == "Tiki"  or L.Name == "Beach_chair"  or L.Name == "BeachStore"  or 
 					L.Name == "border" or L.Name == "Fence" or L.Name == "Crate" or L.Name == "Cart" or L.Name == "Box" or
 					L.Name == "Barrel" or L.Name == "Pine Tree" or L.Name == "Lantern" or L.Name == "bench" or L.Name == "Olive Tree" or
 					L.Name == "Broken pillar" or L.Name == "MediumBuilding" or L.Name == "Stable" or L.Name == "bucket"  or L.Name == "SWING"
+					or L.Name == "Camp Fires" or L.Name == "Tents" or L.Name == "Building3"
 				then
 					for _,p in pairs( L:GetDescendants()) do 
 						if p:IsA("BasePart") then  
@@ -5385,8 +5392,8 @@ function TTD()
 				if L:IsA("Light") then L.Shadows = false L.Range = 0 L.Brightness = 0  end
 				if L:IsA("ParticleEmitter") then L.Rate = 1    end
 
-				if L.Name == "Cherry Blossom Effect" or  L.Name =="Autumn Decor" then L:Remove() end
-				
+				if L.Name == "Cherry Blossom Effect" or  L.Name =="Autumn Decor" or  L.Name =="SmokeVFX" then L:Remove() end
+				if L.Name == "Meshes/basero2cky3333_Plane.076" then L.Size = Vector3.new(55.465, 23.778, 361.15) end
 				
 				
 		--[[	if L.Name == "ground tower" or L.Name == "main tower"  or L.Name == "secondary towers"  or L.Name == "Lava particles" or L.Name == "Part" or L.Name == "Shop" then
@@ -5405,9 +5412,9 @@ function TTD()
 
 
 		end  
-		if workspace.Map:FindFirstChild("Zones") then 
+		if jar:FindFirstChild("Zones") then 
 			local mouse = player:GetMouse()
-			mouse.TargetFilter = workspace.Map:FindFirstChild("Zones")
+			mouse.TargetFilter = jar:FindFirstChild("Zones")
 		--[[for _,L in pairs( workspace.Map:FindFirstChild("Zones"):GetChildren()) do 
 			if L:IsA("BasePart") then  
 				--L.CanQuery = false 
@@ -5436,11 +5443,78 @@ function TTD()
 		char.Humanoid.JumpHeight =  11
 		char.Humanoid.WalkSpeed =  60
 		char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) 
-
 		
+		floors = Instance.new("Folder",jar) floors.Name = "collisionfloors"
+		collisionfloor = Instance.new("Part") collisionfloor.Name = "OceanDrive" collisionfloor.BrickColor = BrickColor.new("Earth green") collisionfloor.Anchored = true collisionfloor.Transparency = 1
+		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-57, 131.5, 1182) collisionfloor2.Size = Vector3.new(237, 2, 300) 
+		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-57, 130.5, 1182) collisionfloor2.Size = Vector3.new(237, 2, 300) 
+		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-57, 129.5, 1182) collisionfloor2.Size = Vector3.new(237, 2, 300) 
+		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-57, 128.5, 1182) collisionfloor2.Size = Vector3.new(237, 2, 300) 
+		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-57, 127.5, 1182) collisionfloor2.Size = Vector3.new(237, 2, 300) 
+		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-57, 122.5, 1182) collisionfloor2.Size = Vector3.new(237, 2, 300) 
+		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-57, 117.5, 1182) collisionfloor2.Size = Vector3.new(237, 2, 300) 
+
+		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-185, 131.5, 1182) collisionfloor2.Size = Vector3.new(166, 2, 300) collisionfloor2.Transparency = .8 collisionfloor2.Color = Color3.fromRGB(107, 131, 80)
+		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-185, 131.5, 1444) collisionfloor2.Size = Vector3.new(166, 2, 224) collisionfloor2.Transparency = .8 collisionfloor2.Color = Color3.fromRGB(212, 168, 107)
 		
 	end
 end
+
+tcol = false
+function TTD2() 
+
+	tcol = not tcol
+	 
+			for _,L in pairs( workspace:GetDescendants()) do 
+				if L.Name == "SoccerField" then L:Remove() end
+				if L.Name == "Meshes/Palm Trees V2_Plane.001" or L.Name == "Meshes/Palm Trees V2_Plane.003" or L.Name == "Meshes/ad_Cylinder" or L.Name == "Meshes/ewe_Cylinder.006" or L.Name == "Meshes/ad_Icosphere.006" or L.Name == "Meshes/e_Plane.001 (1)" or L.Name == "Meshes/e_Icosphere.011"  
+					or L.Name == "FireVFX" or L.Name == "Meshes/DA_Cylinder.015" or L.Name == "Meshes/DA_Cylinder.017"  or L.Name == "Meshes/DA_Plane"  or L.Name == "Cylinder.003" or L.Name =="Meshes/stone head" or L.Name == "Meshes/sdasa_Plane.001"
+					or L.Name == "Meshes/tokyo bench_Cube.064" or L.Name == "Meshes/tokyo bench_Cube.063" or L.Name == "Meshes/tokyo_Cube.207" or L.Name == "Rocks" or L.Name == "Rock" or L.Name == "rock"
+					or L.Name == "Meshes/Bush_Cylinder.001" or L.Name == "Meshes/Bush_Sphere.003"  or L.Name == "Rock.002"  or L.Name == "tikitorch" or L.Name == "Tiki Hut_Seats" 
+					or L.Name == "Shrine_01" or L.Name == "Shrine_02"  or L.Name == "Shrine_03"  or L.Name == "Cooler" or 
+					L.Name == "Plane.164" or L.Name == "Circle.010" or L.Name == "Circle.047" or    
+					L.Name == "Bottom.001" or  L.Name == "Top.001"
+		then if L:IsA("BasePart") then L.CanCollide = tcol end
+				end
+				 
+				if L:IsA("BasePart") then if L.Color == Color3.fromRGB(99, 79, 63) then 
+				L.CanCollide = tcol end
+				end
+				if L:IsA("MeshPart") then 
+					if L.MeshId == "rbxassetid://17814036182" or L.MeshId == "rbxassetid://17814036882" or L.MeshId == "rbxassetid://17814036743" 
+						or L.MeshId == "rbxassetid://18709871243"  then 
+				L.CanCollide = tcol end
+				end
+				if L.Name == "Lamp post" or L.Name == "Tiki"  or L.Name == "Beach_chair"  or L.Name == "BeachStore"  or 
+					L.Name == "border" or L.Name == "Fence" or L.Name == "Crate" or L.Name == "Cart" or L.Name == "Box" or
+					L.Name == "Barrel" or L.Name == "Pine Tree" or L.Name == "Lantern" or L.Name == "bench" or L.Name == "Olive Tree" or
+					L.Name == "Broken pillar" or L.Name == "MediumBuilding" or L.Name == "Stable" or L.Name == "bucket"  or L.Name == "SWING"
+					or L.Name == "Camp Fires" or L.Name == "Tents" or L.Name == "Building3"
+				then
+					for _,p in pairs( L:GetDescendants()) do 
+						if p:IsA("BasePart") then  
+					p.CanCollide = tcol end
+
+					end
+				end
+				if L.Name == "gate" then 
+					for _,p in pairs( L.Parent:GetDescendants()) do 
+						if p:IsA("BasePart") then  
+					p.CanCollide = tcol end
+
+					end
+				end
+				 
+			end
+		 
+	 
+end
+
+
+
+
+
+
 
 TTD()
 
