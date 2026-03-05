@@ -540,12 +540,18 @@ function climb() climbing = not climbing if climbing == true then
 
 stand = nil 
 function AirBlock() 
+	if game.Workspace:FindFirstChild("standin") then game.Workspace:FindFirstChild("standin"):Remove() end
 	if game.Workspace:FindFirstChild("standin") then game.Workspace:FindFirstChild("standin"):Remove() return end
 	stand = Instance.new("Part",workspace) stand.Anchored = true stand.Name = "standin" stand.Size = Vector3.new(3,1,3) stand.Transparency = .85 
-	if char:FindFirstChild("LeftFoot") then stand.Position = char.LeftFoot.Position - Vector3.new(0,1,0) end 
+	if char:FindFirstChild("LeftFoot") then stand.Position = char.LeftFoot.Position - Vector3.new(0,.9,0) end 
 	if char.Humanoid.Sit == true then stand.Position = char.HumanoidRootPart.Position - Vector3.new(0,1,0) end
 	if char.Humanoid.PlatformStand == true then stand.Position = char.HumanoidRootPart.Position - Vector3.new(0,1,0) end 
+	
+	stand = Instance.new("Part",workspace) stand.Anchored = true stand.Name = "standin" stand.Size = Vector3.new(170,3,170) stand.Transparency = .85 
+	if char:FindFirstChild("LeftFoot") then stand.Position = char.LeftFoot.Position + Vector3.new(0,11,0) end  
+
 end
+
 
 function REMOVE_LEGS()-- i feel like this only works with higher level executors, or roblox patched this
 	for _,v in pairs(char:GetChildren()) do
@@ -2409,19 +2415,35 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			--Mass24.MouseButton1Click:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) end end end)
 			--Mass24.MouseWheelForward:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = nil end end end)
 			
-			Mass24.MouseButton1Click:Connect(function()  char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) 
+			Mass24.MouseButton1Click:Connect(function() 
+				if char.HumanoidRootPart:FindFirstChild("Mass") then char.HumanoidRootPart.Mass:Remove() end
+				part = Instance.new("Part",char.HumanoidRootPart) part.Size = Vector3.new(1.6, 2, 1) part.Transparency = 1 part.CanCollide = true	   part.CanQuery = false
+				part.Name = "Mass"  part.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100)
+				wel = Instance.new("Weld",part) wel.Part0 = part wel.Part1 = char.HumanoidRootPart
+				--char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) 
 				if Fake then if Fake==true then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) end end  end end
 
 			end)
 			Mass24.MouseButton2Click:Connect(function()
-				char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100)  
+				if char.HumanoidRootPart:FindFirstChild("Mass") then char.HumanoidRootPart.Mass:Remove() end
+				part = Instance.new("Part",char.HumanoidRootPart) part.Size = Vector3.new(1.6, 2, 1) part.Transparency = 1 part.CanCollide = true	  part.CanQuery = false
+				part.Name = "Mass" part.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100)
+				wel = Instance.new("Weld",part) wel.Part0 = part wel.Part1 = char.HumanoidRootPart
+				--char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100)  
 				if Fake then if Fake==true then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100) end end  end end
 			end)
 			
-			Mass24.MouseWheelForward:Connect(function()  char.HumanoidRootPart.CustomPhysicalProperties = nil
+			Mass24.MouseWheelForward:Connect(function()  
+				if char.HumanoidRootPart:FindFirstChild("Mass") then char.HumanoidRootPart.Mass:Remove() end
+				--char.HumanoidRootPart.CustomPhysicalProperties = nil
 				if Fake then if Fake==true then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(nil) end end  end end
 			end)
-			Mass24.MouseWheelBackward:Connect(function()  char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(1, 0, 1, 0, 0)
+			Mass24.MouseWheelBackward:Connect(function()  
+				if char.HumanoidRootPart:FindFirstChild("Mass") then char.HumanoidRootPart.Mass:Remove() end
+				part = Instance.new("Part",char.HumanoidRootPart) part.Size = Vector3.new(1.6, 2, 1) part.Transparency = 1 part.CanCollide = true	  part.CanQuery = false
+				part.Name = "Mass"  part.CustomPhysicalProperties = PhysicalProperties.new(1, 0, 1, 0, 0)
+				wel = Instance.new("Weld",part) wel.Part0 = part wel.Part1 = char.HumanoidRootPart
+				--char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(1, 0, 1, 0, 0)
 				if Fake then if Fake==true then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(1, 0, 1, 0, 0) end end  end end
 			end)
 
@@ -5395,7 +5417,6 @@ function TTD()
 				if L.Name == "Cherry Blossom Effect" or  L.Name =="Autumn Decor" or  L.Name =="SmokeVFX" then L:Remove() end
 				if L.Name == "Meshes/basero2cky3333_Plane.076" then L.Size = Vector3.new(55.465, 23.778, 361.15) end
 				
-				
 		--[[	if L.Name == "ground tower" or L.Name == "main tower"  or L.Name == "secondary towers"  or L.Name == "Lava particles" or L.Name == "Part" or L.Name == "Shop" then
 				if L.Parent.Name == "Volcano" then L:Remove() end
 			end]]
@@ -5412,6 +5433,28 @@ function TTD()
 
 
 		end  
+		
+		floors = Instance.new("Folder",jar) floors.Name = "collisionfloors"
+		collisionfloor = Instance.new("Part") collisionfloor.Name = "collision floor" collisionfloor.BrickColor = BrickColor.new("Earth green") collisionfloor.Anchored = true collisionfloor.Transparency = 1
+		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-57, 131.5, 1182) collisionfloor2.Size = Vector3.new(237, 2, 300) 
+		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-57, 130.5, 1182) collisionfloor2.Size = Vector3.new(237, 2, 300) 
+		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-57, 129.5, 1182) collisionfloor2.Size = Vector3.new(237, 2, 300) 
+		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-57, 128.5, 1182) collisionfloor2.Size = Vector3.new(237, 2, 300) 
+		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-57, 127.5, 1182) collisionfloor2.Size = Vector3.new(237, 2, 300) 
+		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-57, 122.5, 1182) collisionfloor2.Size = Vector3.new(237, 2, 300) 
+		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-57, 117.5, 1182) collisionfloor2.Size = Vector3.new(237, 2, 300) 
+		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-57, 111.5, 1182) collisionfloor2.Size = Vector3.new(237, 4, 300) 
+
+		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-185, 131.5, 1182) collisionfloor2.Size = Vector3.new(166, 2, 300) collisionfloor2.Transparency = .8 collisionfloor2.Color = Color3.fromRGB(107, 131, 80)
+		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-185, 131.5, 1444) collisionfloor2.Size = Vector3.new(166, 2, 224) collisionfloor2.Transparency = .8 collisionfloor2.Color = Color3.fromRGB(212, 168, 107)
+		
+		this = "getting meshpart position didnt work so spawn new part on meshpart then delete all parts inside of part "
+		--if L:IsA("BasePart") then if L.Position == Vector3.new(-117.768, 144.099, 1252.087) then L.CanCollide = false  end end
+		breakparts = collisionfloor:Clone() breakparts.Parent = floors breakparts.Position = Vector3.new(-116.5, 146.5, 1259.5) breakparts.Size = Vector3.new(7, 24, 7) breakparts.Transparency = .8 breakparts.Color = Color3.fromRGB(76, 76, 76) breakparts.CanCollide = false
+		for _,target in pairs(workspace:GetPartsInPart(breakparts )) do target:Remove() 	end
+		
+		
+		
 		if jar:FindFirstChild("Zones") then 
 			local mouse = player:GetMouse()
 			mouse.TargetFilter = jar:FindFirstChild("Zones")
@@ -5422,6 +5465,10 @@ function TTD()
 			
 		end]]
 		end
+		
+		
+		
+		
 
 		for _,target in pairs(char:GetDescendants()) do
 			if target:IsA("MeshPart") then 
@@ -5429,33 +5476,21 @@ function TTD()
 
 				if target.MeshId == "rbxassetid://17899996187" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false 
 					f= Instance.new("SelectionBox",target) f.Adornee = target f.Transparency = .9 f.Color3 = Color3.fromRGB(0, 255, 0) f.LineThickness = .07 end --krby
-				
+
 				if target.MeshId == "rbxassetid://95880964398198" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false end
 				if target.MeshId == "rbxassetid://15412035527" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false end
 				if target.MeshId == "rbxassetid://95880964398198" then target.Transparency = 1 end
 
 			end
 		end
-		
+
 		if char:FindFirstChild("GreenPixie") then  
 			char:FindFirstChild("GreenPixie"):FindFirstChildWhichIsA("BasePart").Transparency = 1
 		end
 		char.Humanoid.JumpHeight =  11
 		char.Humanoid.WalkSpeed =  60
 		char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) 
-		
-		floors = Instance.new("Folder",jar) floors.Name = "collisionfloors"
-		collisionfloor = Instance.new("Part") collisionfloor.Name = "OceanDrive" collisionfloor.BrickColor = BrickColor.new("Earth green") collisionfloor.Anchored = true collisionfloor.Transparency = 1
-		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-57, 131.5, 1182) collisionfloor2.Size = Vector3.new(237, 2, 300) 
-		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-57, 130.5, 1182) collisionfloor2.Size = Vector3.new(237, 2, 300) 
-		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-57, 129.5, 1182) collisionfloor2.Size = Vector3.new(237, 2, 300) 
-		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-57, 128.5, 1182) collisionfloor2.Size = Vector3.new(237, 2, 300) 
-		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-57, 127.5, 1182) collisionfloor2.Size = Vector3.new(237, 2, 300) 
-		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-57, 122.5, 1182) collisionfloor2.Size = Vector3.new(237, 2, 300) 
-		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-57, 117.5, 1182) collisionfloor2.Size = Vector3.new(237, 2, 300) 
 
-		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-185, 131.5, 1182) collisionfloor2.Size = Vector3.new(166, 2, 300) collisionfloor2.Transparency = .8 collisionfloor2.Color = Color3.fromRGB(107, 131, 80)
-		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-185, 131.5, 1444) collisionfloor2.Size = Vector3.new(166, 2, 224) collisionfloor2.Transparency = .8 collisionfloor2.Color = Color3.fromRGB(212, 168, 107)
 		
 	end
 end
