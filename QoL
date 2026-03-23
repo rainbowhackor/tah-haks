@@ -165,7 +165,7 @@ if not game.Lighting:FindFirstChild("binds") then Instance.new("BoolValue",game.
 					elseif actionName == "Jupiter Gravity" then workspace.Gravity = 111111 actiontext.Text = "Jupiter Gravity"
 					elseif actionName == "Low2" then workspace.Gravity = 5 char.Humanoid.JumpPower = 11 actiontext.Text = "Low Gravity2" 
 					elseif actionName == "Low" then workspace.Gravity = 15 char.Humanoid.JumpPower = 17 actiontext.Text = "Low Gravity" --if ME == true then char.Humanoid.WalkSpeed = 11 end
-					elseif actionName == "Low55" then workspace.Gravity = 15   actiontext.Text = "Low Gravity"
+					elseif actionName == "Low55" then Xg() 
 					elseif actionName == "Sit" then --player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" 
 					elseif actionName == "PlatformStand" then player.Character.Humanoid.PlatformStand = not player.Character.Humanoid.PlatformStand actiontext.Text = "PlatformStand"
 					elseif actionName == "Dance List" then player.PlayerGui.MAMALUIGI.Button["TIME TO DIY 3"].Enabled = not player.PlayerGui.MAMALUIGI.Button["TIME TO DIY 3"].Enabled actiontext.Text = "Dance"
@@ -175,17 +175,20 @@ if not game.Lighting:FindFirstChild("binds") then Instance.new("BoolValue",game.
 						if data then  warn("Errors:", data) end 
 					elseif actionName == "SEAT no nds tp" then SEAT() 
 					elseif actionName == "Mirror" then  Mirror() --char:PivotTo(char.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(180),0))
+					elseif actionName == "lookw" then X() 
+						
 					end
 				end 
 			end
 		end)
 	end 
+	CAS:BindAction("lookw", hax, false, Enum.KeyCode.X)
 	--CAS:BindAction("v1", hax, false, Enum.KeyCode.Y)
 	--CAS:BindAction("SEAT no nds tp", hax, false, Enum.KeyCode.Y)
 	--CAS:BindAction("Controls", hax, false, Enum.KeyCode.Y)
 	--	CAS:BindAction("Toggle Keybinds", hax, false, Enum.KeyCode.Z)
 	--CAS:BindAction("Toggle tp", hax, false, Enum.KeyCode.Y)
-	CAS:BindAction("Low55", hax, false, Enum.KeyCode.X)
+	--CAS:BindAction("Low55", hax, false, Enum.KeyCode.X)
 	CAS:BindAction("Low", hax, false, Enum.KeyCode.M)
 	--	CAS:BindAction("HAX", hax, false, Enum.KeyCode.G)
 	--CAS:BindAction("Mirror", hax, false, Enum.KeyCode.E)
@@ -322,6 +325,22 @@ Press Z to Disable HA-]] end
 end
 
 
+
+looking = true 
+function X()
+	looking = not looking
+	if looking == true then 
+		char["🌍 interaction"]["invis bodp"].enabled.Value = true
+	end
+	if looking == false then 
+		char["🌍 interaction"]["invis bodp"].enabled.Value = f
+	end
+	 
+end
+function Xg()
+	  
+	workspace.Gravity = 15   actiontext.Text = "Low Gravity"
+end
 function AntiFling()   if Ruse == false then 
 
 		player.Character.HumanoidRootPart.Anchored = not player.Character.HumanoidRootPart.Anchored 
@@ -1201,7 +1220,8 @@ function RainbowStarSword() --( glow sticks for dancing ) OH MY GAH THIS LOOKS S
 
 	rlight = Instance.new("PointLight",sword) rlight.Range = 20 rlight.Brightness = .5 --if game.Lighting.Technology == Enum.Technology.Future then rlight.Brightness = 1 end
 	rSparkles = Instance.new("Sparkles",sword)
-
+	rlight.ChildAdded:Connect(function() rlight:FindFirstChildWhichIsA("BasePart"):Remove() end)
+	
 	The = {" Rainbow Color Changing "} if Ruse == false then
 		colorcwrap2 = coroutine.create(function() while workspace:FindFirstChild("RainbowStarSwords") do RunService.RenderStepped:Wait() if starfolder.SmoothColor.Value == false then
 					task.wait(math.random(35,70)/100) end rlight.Color = Color3.fromRGB(255,255,255) rSparkles.SparkleColor = ColorChanging.Value end end) coroutine.resume(colorcwrap2)
@@ -2348,7 +2368,7 @@ function guias()
 		Lazy = Button:Clone() Lazy.Parent = Spaghetti Lazy.Text = "Lazy" Lazy.Position = UDim2.new(0.05,0 , 0,row10)  Lazy.BackgroundColor3 = Color3.fromRGB(255, 0, 127)   
 		Lazy.MouseButton1Click:Connect(function()
 			
-			Fake = true if char:FindFirstChild("fake clo") then  Fake= false end
+			
 			
 			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
 			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "lazylist" then Ui:Remove() end end
@@ -2414,37 +2434,62 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			--Mass24.MouseButton2Click:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100) end end end)
 			--Mass24.MouseButton1Click:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) end end end)
 			--Mass24.MouseWheelForward:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = nil end end end)
+			masspart = Instance.new("Part" ) masspart.Size = Vector3.new(1.6, 2, 1) masspart.Transparency = 1 masspart.CanCollide = true	   masspart.CanQuery = false
+			masspart.Name = "Mass"
+			wel = Instance.new("Weld",masspart)  wel.Part0 = masspart --wel.Part1 = char.HumanoidRootPart
 			
 			Mass24.MouseButton1Click:Connect(function() 
-				if char.HumanoidRootPart:FindFirstChild("Mass") then char.HumanoidRootPart.Mass:Remove() end
-				part = Instance.new("Part",char.HumanoidRootPart) part.Size = Vector3.new(1.6, 2, 1) part.Transparency = 1 part.CanCollide = true	   part.CanQuery = false
-				part.Name = "Mass"  part.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100)
-				wel = Instance.new("Weld",part) wel.Part0 = part wel.Part1 = char.HumanoidRootPart
-				--char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) 
-				if Fake then if Fake==true then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) end end  end end
+				xgame = false if char:FindFirstChild("fake clo") then  xgame= true end
+				 
+					if xgame == true then
+						if char.HumanoidRootPart:FindFirstChild("Mass") then char.HumanoidRootPart.Mass:Remove() end
+						mass = masspart:Clone() mass.Parent = char.HumanoidRootPart mass.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100)
+						mass.Weld.Part1 = char.HumanoidRootPart
+						--char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) 
+					end
+					
+					if xgame==false then 
+						for _, part in pairs(char:GetChildren()) do 
+							if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) end 
+						end 
+					end 
+				 
 
 			end)
 			Mass24.MouseButton2Click:Connect(function()
+				xgame = false if char:FindFirstChild("fake clo") then  xgame= true end
+				 
+					if xgame == true then
 				if char.HumanoidRootPart:FindFirstChild("Mass") then char.HumanoidRootPart.Mass:Remove() end
-				part = Instance.new("Part",char.HumanoidRootPart) part.Size = Vector3.new(1.6, 2, 1) part.Transparency = 1 part.CanCollide = true	  part.CanQuery = false
-				part.Name = "Mass" part.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100)
-				wel = Instance.new("Weld",part) wel.Part0 = part wel.Part1 = char.HumanoidRootPart
+						mass = masspart:Clone() mass.Parent = char.HumanoidRootPart mass.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100) 
+						mass.Weld.Part1 = char.HumanoidRootPart
+				 end
 				--char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100)  
-				if Fake then if Fake==true then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100) end end  end end
+						if xgame==false then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100) end end  end 
+					 
 			end)
 			
 			Mass24.MouseWheelForward:Connect(function()  
+				xgame = false if char:FindFirstChild("fake clo") then  xgame= true end
+				 
+					if xgame == true then
 				if char.HumanoidRootPart:FindFirstChild("Mass") then char.HumanoidRootPart.Mass:Remove() end
-				--char.HumanoidRootPart.CustomPhysicalProperties = nil
-				if Fake then if Fake==true then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(nil) end end  end end
+						--char.HumanoidRootPart.CustomPhysicalProperties = nil
+						end
+						if xgame==false then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(nil) end end  end 
+					 
 			end)
 			Mass24.MouseWheelBackward:Connect(function()  
+				xgame = false if char:FindFirstChild("fake clo") then  xgame= true end
+			 
+					if xgame == true then
 				if char.HumanoidRootPart:FindFirstChild("Mass") then char.HumanoidRootPart.Mass:Remove() end
-				part = Instance.new("Part",char.HumanoidRootPart) part.Size = Vector3.new(1.6, 2, 1) part.Transparency = 1 part.CanCollide = true	  part.CanQuery = false
-				part.Name = "Mass"  part.CustomPhysicalProperties = PhysicalProperties.new(1, 0, 1, 0, 0)
-				wel = Instance.new("Weld",part) wel.Part0 = part wel.Part1 = char.HumanoidRootPart
+						mass = masspart:Clone() mass.Parent = char.HumanoidRootPart mass.CustomPhysicalProperties = PhysicalProperties.new(1, 0, 1, 0, 0)
+						mass.Weld.Part1 = char.HumanoidRootPart
+				 end
 				--char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(1, 0, 1, 0, 0)
-				if Fake then if Fake==true then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(1, 0, 1, 0, 0) end end  end end
+						if xgame==false then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(1, 0, 1, 0, 0) end end  end 
+					 
 			end)
 
 			
@@ -5387,7 +5432,7 @@ function TTD()
 					L.Name == "border" or L.Name == "Fence" or L.Name == "Crate" or L.Name == "Cart" or L.Name == "Box" or
 					L.Name == "Barrel" or L.Name == "Pine Tree" or L.Name == "Lantern" or L.Name == "bench" or L.Name == "Olive Tree" or
 					L.Name == "Broken pillar" or L.Name == "MediumBuilding" or L.Name == "Stable" or L.Name == "bucket"  or L.Name == "SWING"
-					or L.Name == "Camp Fires" or L.Name == "Tents" or L.Name == "Building3"
+					or L.Name == "Camp Fires" or L.Name == "Tents" or L.Name == "Building3"  or L.Name == "MediumBuilding"
 				then
 					for _,p in pairs( L:GetDescendants()) do 
 						if p:IsA("BasePart") then  
@@ -5414,7 +5459,7 @@ function TTD()
 				if L:IsA("Light") then L.Shadows = false L.Range = 0 L.Brightness = 0  end
 				if L:IsA("ParticleEmitter") then L.Rate = 1    end
 
-				if L.Name == "Cherry Blossom Effect" or  L.Name =="Autumn Decor" or  L.Name =="SmokeVFX" then L:Remove() end
+				if L.Name == "Cherry Blossom Effect" or  L.Name =="Autumn Decor" or  L.Name =="SmokeVFX"   then L:Remove() end
 				if L.Name == "Meshes/basero2cky3333_Plane.076" then L.Size = Vector3.new(55.465, 23.778, 361.15) end
 				
 		--[[	if L.Name == "ground tower" or L.Name == "main tower"  or L.Name == "secondary towers"  or L.Name == "Lava particles" or L.Name == "Part" or L.Name == "Shop" then
@@ -5450,8 +5495,8 @@ function TTD()
 		
 		this = "getting meshpart position didnt work so spawn new part on meshpart then delete all parts inside of part "
 		--if L:IsA("BasePart") then if L.Position == Vector3.new(-117.768, 144.099, 1252.087) then L.CanCollide = false  end end
-		breakparts = collisionfloor:Clone() breakparts.Parent = floors breakparts.Position = Vector3.new(-116.5, 146.5, 1259.5) breakparts.Size = Vector3.new(7, 24, 7) breakparts.Transparency = .8 breakparts.Color = Color3.fromRGB(76, 76, 76) breakparts.CanCollide = false
-		for _,target in pairs(workspace:GetPartsInPart(breakparts )) do target:Remove() 	end
+		breakparts = collisionfloor:Clone() breakparts.Parent = floors breakparts.Position = Vector3.new(-116.5, 146.5, 1259.5) breakparts.Size = Vector3.new(9, 24, 9) breakparts.Transparency = .8 breakparts.Color = Color3.fromRGB(76, 76, 76) breakparts.CanCollide = false
+		for _,target in pairs(workspace:GetPartsInPart(breakparts )) do if target:IsA("MeshPart") then target:Remove() end 	end
 		
 		
 		
@@ -5489,7 +5534,8 @@ function TTD()
 		end
 		char.Humanoid.JumpHeight =  11
 		char.Humanoid.WalkSpeed =  60
-		char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) 
+		--char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) 
+		  for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) end end   
 
 		
 	end
