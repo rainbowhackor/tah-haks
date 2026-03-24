@@ -4880,7 +4880,7 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			{ Id = "94075411097215", Name = "Star",  Color = Color3.fromRGB(0, 0, 255)  },
 			{ Id = "80126109220878", Name = "Boogie",  Color = Color3.fromRGB(170, 0, 0)  },
 			{ Id = "94825102596214", Name = "frolic",  Color = Color3.fromRGB(255, 255, 0)  },
-			{ Id = "120970343961976", Name = "electro",  Color = Color3.fromRGB(144, 0, 170)  },
+			{ Id = "73459824218092", Name = "wanna",  Color = Color3.fromRGB(144, 0, 170)  },
 			{ Id = "136079923684452", Name = "smuwug1",  Color = Color3.fromRGB(255, 128, 0)  },
 			--{ Id = "139109930448132", Name = "smuwug1",  Color = Color3.fromRGB(255, 128, 0)  },
 			--{ Id = "78773506370628", Name = "smuwug2",  Color = Color3.fromRGB(85, 255, 0)  },
@@ -5038,7 +5038,7 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			{ Id = "78892987395715", Name = "m pede " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			
 			{ Id = "85683238246324", Name = "5" ,  Color = Color3.fromRGB(0, 170, 255)  },
-			{ Id = "92793127096324", Name = "6 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = "98818874157512", Name = "6 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			
 			{ Id = "129614696948735", Name = "7 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = "95983712200119", Name = " 8" ,  Color = Color3.fromRGB(0, 170, 255)  },
@@ -5049,13 +5049,13 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			{ Id = "99511059984451", Name = "FIN " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 133539659698206", Name = " 9 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 
-			{ Id = " 122687826333406", Name = " 10 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 122812523688079", Name = " 10 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 117178670618756", Name = " myy " ,  Color = Color3.fromRGB(0, 170, 255)  },	
 			--	{ Id = "139750331539521", Name = "wu no",  Color = Color3.fromRGB(170, 170, 0)  },
 			
 			{ Id = " 105650910334517", Name = " 11 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 113068846591404", Name = " 12 " ,  Color = Color3.fromRGB(0, 170, 255)  },
-			{ Id = " 78399752279764", Name = " 13 " ,  Color = Color3.fromRGB(0, 170, 255)  },
+			{ Id = " 110090708504143", Name = " 13 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 136328557103483", Name = " 14 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 120872100779589", Name = " 15 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 77615198579929", Name = " 16 " ,  Color = Color3.fromRGB(0, 170, 255)  },
@@ -5490,12 +5490,12 @@ function TTD()
 		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-57, 117.5, 1182) collisionfloor2.Size = Vector3.new(237, 2, 300) 
 		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-57, 111.5, 1182) collisionfloor2.Size = Vector3.new(237, 4, 300) 
 
-		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-185, 131.5, 1182) collisionfloor2.Size = Vector3.new(166, 2, 300) collisionfloor2.Transparency = .8 collisionfloor2.Color = Color3.fromRGB(107, 131, 80)
-		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-185, 131.5, 1444) collisionfloor2.Size = Vector3.new(166, 2, 224) collisionfloor2.Transparency = .8 collisionfloor2.Color = Color3.fromRGB(212, 168, 107)
+		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-244.5, 131.5, 1130.5) collisionfloor2.Size = Vector3.new(285, 2, 403) collisionfloor2.Transparency = .8 collisionfloor2.Color = Color3.fromRGB(107, 131, 80)
+		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-244.5, 131.5, 1487.5) collisionfloor2.Size = Vector3.new(285, 2, 311) collisionfloor2.Transparency = .8 collisionfloor2.Color = Color3.fromRGB(212, 168, 107)
 		
 		this = "getting meshpart position didnt work so spawn new part on meshpart then delete all parts inside of part "
 		--if L:IsA("BasePart") then if L.Position == Vector3.new(-117.768, 144.099, 1252.087) then L.CanCollide = false  end end
-		breakparts = collisionfloor:Clone() breakparts.Parent = floors breakparts.Position = Vector3.new(-116.5, 146.5, 1259.5) breakparts.Size = Vector3.new(9, 24, 9) breakparts.Transparency = .8 breakparts.Color = Color3.fromRGB(76, 76, 76) breakparts.CanCollide = false
+		breakparts = collisionfloor:Clone() breakparts.Parent = floors breakparts.Position = Vector3.new(-116.5, 146.5, 1259.5) breakparts.Size = Vector3.new(7, 24, 7) breakparts.Transparency = .8 breakparts.Color = Color3.fromRGB(76, 76, 76) breakparts.CanCollide = false
 		for _,target in pairs(workspace:GetPartsInPart(breakparts )) do if target:IsA("MeshPart") then target:Remove() end 	end
 		
 		
