@@ -5457,7 +5457,7 @@ function TTD()
 					end
 				end
 				if L:IsA("Light") then L.Shadows = false L.Range = 0 L.Brightness = 0  end
-				if L:IsA("ParticleEmitter") then L.Rate = 1    end
+				if L:IsA("ParticleEmitter") then L.Rate = math.random(3,13)/10    end
 
 				if L.Name == "Cherry Blossom Effect" or  L.Name =="Autumn Decor" or  L.Name =="SmokeVFX"   then L:Remove() end
 				if L.Name == "Meshes/basero2cky3333_Plane.076" then L.Size = Vector3.new(55.465, 23.778, 361.15) end
@@ -5496,8 +5496,8 @@ function TTD()
 		this = "getting meshpart position didnt work so spawn new part on meshpart then delete all parts inside of part "
 		--if L:IsA("BasePart") then if L.Position == Vector3.new(-117.768, 144.099, 1252.087) then L.CanCollide = false  end end
 		breakparts = collisionfloor:Clone() breakparts.Parent = floors breakparts.Position = Vector3.new(-116.5, 146.5, 1259.5) breakparts.Size = Vector3.new(7, 24, 7) breakparts.Transparency = .8 breakparts.Color = Color3.fromRGB(76, 76, 76) breakparts.CanCollide = false
-		for _,target in pairs(workspace:GetPartsInPart(breakparts )) do if target:IsA("MeshPart") then target:Remove() end 	end
-		
+		--for _,target in pairs(workspace:GetPartsInPart(breakparts )) do if target:IsA("MeshPart") then target:Remove() end 	end sky looked better on mobile
+		for _,target in pairs(workspace:GetPartsInPart(breakparts )) do  target:Remove()  	end
 		
 		
 		if jar:FindFirstChild("Zones") then 
@@ -5625,7 +5625,8 @@ function NDS()
 				--if p:IsA("Seat") or  p.CanTouch = false
 				--if p.Transparency > .96 and p.CanCollide == false and not p:FindFirstChildWhichIsA("ClickDetector") then p.CanQuery = false end
 				if p.BrickColor == BrickColor.new("Reddish brown") or p.BrickColor == BrickColor.new("Dark green") then p.CastShadow = false p.CanCollide = true end
-				if p.BrickColor == BrickColor.new("Bright blue") then p.Color = Color3.fromRGB( 0, 64, 96  ) p.Transparency = 0 end
+				--if p.BrickColor == BrickColor.new("Bright blue") then p.Color = Color3.fromRGB( 0, 64, 96  ) p.Transparency = 0 end
+				if p.Name == "WaterLevel"   then p.Color = Color3.fromRGB( 0, 64, 96  ) p.Transparency = 0 end
 				--if p.BrickColor == BrickColor.new("Reddish brown") then p.CastShadow = false p.CanCollide = true end
 				--if p.BrickColor == BrickColor.new("Dark green") then p.CastShadow = false end
 				if p.Position == Vector3.new(46.5, 27.5, 112.5) or p.Position == Vector3.new(124.5, 27.5, 0.5) or p.Position == Vector3.new(119.5, 27.5, -56.5)
