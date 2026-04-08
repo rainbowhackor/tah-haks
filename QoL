@@ -5417,6 +5417,7 @@ function TTD()
 					L.Name == "Bottom.001" or  L.Name == "Top.001"
 				then if L:IsA("BasePart") then L.CanCollide = false end
 				end
+				
 				if L.Name == "Meshes/tokyo_Cube.248" or L.Name == "Meshes/tokyo_Cube.207" then
 					L.CastShadow = false 
 				end
@@ -5432,7 +5433,8 @@ function TTD()
 					L.Name == "border" or L.Name == "Fence" or L.Name == "Crate" or L.Name == "Cart" or L.Name == "Box" or
 					L.Name == "Barrel" or L.Name == "Pine Tree" or L.Name == "Lantern" or L.Name == "bench" or L.Name == "Olive Tree" or
 					L.Name == "Broken pillar" or L.Name == "MediumBuilding" or L.Name == "Stable" or L.Name == "bucket"  or L.Name == "SWING"
-					or L.Name == "Camp Fires" or L.Name == "Tents" or L.Name == "Building3"  or L.Name == "MediumBuilding"
+					or L.Name == "Camp Fires" or L.Name == "Tents" or L.Name == "Building3"  or L.Name == "MediumBuilding" 
+					or L.Name == "BaseBldg1" or L.Name == "BaseBldg3" or L.Name == "BaseBldg2"  
 				then
 					for _,p in pairs( L:GetDescendants()) do 
 						if p:IsA("BasePart") then  
@@ -5447,6 +5449,9 @@ function TTD()
 
 					end
 				end
+				if L.Name == "Plane.099"  then 
+					if L:IsA("BasePart") then L.CanCollide = true end
+				end   
 				if L.Name == "Volcano" then 
 					for _,p in pairs( L:GetChildren()) do 
 						if p.Name == "ground tower" or p.Name == "ground small1" or p.Name == "ground" or p.Name == "ground small2" or p.Name == "main tower"  
@@ -5584,7 +5589,10 @@ function TTD2()
 					p.CanCollide = tcol end
 
 					end
-				end
+		end
+		if L.Name == "Plane.099"  then 
+			if L:IsA("BasePart") then L.CanCollide = true end
+		end 
 				 
 			end
 		 
@@ -5615,6 +5623,7 @@ function NDS()
 	end
 	--if not workspace:FindFirstChild("WeatherMachine") then return end
 	if workspace:FindFirstChild("OceanDrive") then return end
+	
 	if workspace:FindFirstChild("WeatherMachine") then 
 		nds=true
 		for _, p in pairs(workspace:GetDescendants()) do  
@@ -5626,7 +5635,7 @@ function NDS()
 				--if p.Transparency > .96 and p.CanCollide == false and not p:FindFirstChildWhichIsA("ClickDetector") then p.CanQuery = false end
 				if p.BrickColor == BrickColor.new("Reddish brown") or p.BrickColor == BrickColor.new("Dark green") then p.CastShadow = false p.CanCollide = true end
 				--if p.BrickColor == BrickColor.new("Bright blue") then p.Color = Color3.fromRGB( 0, 64, 96  ) p.Transparency = 0 end
-				if p.Name == "WaterLevel"   then p.Color = Color3.fromRGB( 0, 64, 96  ) p.Transparency = 0 end
+				if p.Name == "WaterLevel"   then p.Color = Color3.fromRGB( 0, 64, 96  ) p.Transparency = 0  p.CastShadow = false end
 				--if p.BrickColor == BrickColor.new("Reddish brown") then p.CastShadow = false p.CanCollide = true end
 				--if p.BrickColor == BrickColor.new("Dark green") then p.CastShadow = false end
 				if p.Position == Vector3.new(46.5, 27.5, 112.5) or p.Position == Vector3.new(124.5, 27.5, 0.5) or p.Position == Vector3.new(119.5, 27.5, -56.5)
@@ -5676,7 +5685,7 @@ function NDS()
 		--oceanfloor3 = oceanfloors:Clone() oceanfloor3.Shape = Enum.PartType.Wedge oceanfloor3.Parent = floor oceanfloor3.Orientation = Vector3.new(0, -180, 0) oceanfloor3.Position = Vector3.new(-30, 5.5, 182) oceanfloor3.Size = Vector3.new(777 ,11 ,57)
 		--oceanfloor4 = oceanfloors:Clone() oceanfloor4.Shape = Enum.PartType.Wedge oceanfloor4.Parent = floor oceanfloor4.Orientation = Vector3.new(0, 0, 0) oceanfloor4.Position = Vector3.new(-30, 5.5, -336) oceanfloor4.Size = Vector3.new(777 ,11 ,57)
 		oceanfloor5 = oceanfloors:Clone() oceanfloor5.Parent = floor oceanfloor5.Position = Vector3.new(-30, -33, -451) oceanfloor5.Size = Vector3.new(2000, 66, 2000) 
-		workspace.WaterLevel.CastShadow = false
+		--if workspace:FindFirstChild(WaterLevel)  workspace.WaterLevel.CastShadow = false
 
 		UserSettings().GameSettings.ComputerCameraMovementMode = Enum.ComputerCameraMovementMode.CameraToggle
 		UserSettings():GetService("UserGameSettings").ComputerCameraMovementMode = Enum.ComputerCameraMovementMode.Classic --HOLY #### THAT ACTUALLY WORKED! (Follow camera is not ideal for mobile emulator)
