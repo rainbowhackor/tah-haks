@@ -2435,14 +2435,14 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			--Mass24.MouseButton1Click:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) end end end)
 			--Mass24.MouseWheelForward:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = nil end end end)
 			masspart = Instance.new("Part" ) masspart.Size = Vector3.new(1.6, 2, 1) masspart.Transparency = 1 masspart.CanCollide = true	   masspart.CanQuery = false
-			masspart.Name = "Mass"
+			masspart.Name = "mass"
 			wel = Instance.new("Weld",masspart)  wel.Part0 = masspart --wel.Part1 = char.HumanoidRootPart
 			
 			Mass24.MouseButton1Click:Connect(function() 
 				xgame = false if char:FindFirstChild("fake clo") then  xgame= true end
 				 
 					if xgame == true then
-						if char.HumanoidRootPart:FindFirstChild("Mass") then char.HumanoidRootPart.Mass:Remove() end
+						if char.HumanoidRootPart:FindFirstChild("mass") then char.HumanoidRootPart.mass:Remove() end
 						mass = masspart:Clone() mass.Parent = char.HumanoidRootPart mass.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100)
 						mass.Weld.Part1 = char.HumanoidRootPart
 						--char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) 
@@ -2460,7 +2460,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 				xgame = false if char:FindFirstChild("fake clo") then  xgame= true end
 				 
 					if xgame == true then
-				if char.HumanoidRootPart:FindFirstChild("Mass") then char.HumanoidRootPart.Mass:Remove() end
+				if char.HumanoidRootPart:FindFirstChild("mass") then char.HumanoidRootPart.mass:Remove() end
 						mass = masspart:Clone() mass.Parent = char.HumanoidRootPart mass.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100) 
 						mass.Weld.Part1 = char.HumanoidRootPart
 				 end
@@ -2473,7 +2473,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 				xgame = false if char:FindFirstChild("fake clo") then  xgame= true end
 				 
 					if xgame == true then
-				if char.HumanoidRootPart:FindFirstChild("Mass") then char.HumanoidRootPart.Mass:Remove() end
+					if char.HumanoidRootPart:FindFirstChild("mass") then char.HumanoidRootPart.mass:Remove() end
 						--char.HumanoidRootPart.CustomPhysicalProperties = nil
 						end
 						if xgame==false then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(nil) end end  end 
@@ -2483,7 +2483,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 				xgame = false if char:FindFirstChild("fake clo") then  xgame= true end
 			 
 					if xgame == true then
-				if char.HumanoidRootPart:FindFirstChild("Mass") then char.HumanoidRootPart.Mass:Remove() end
+					if char.HumanoidRootPart:FindFirstChild("mass") then char.HumanoidRootPart.mass:Remove() end
 						mass = masspart:Clone() mass.Parent = char.HumanoidRootPart mass.CustomPhysicalProperties = PhysicalProperties.new(1, 0, 1, 0, 0)
 						mass.Weld.Part1 = char.HumanoidRootPart
 				 end
@@ -2590,6 +2590,10 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 				for _, personw in pairs(rthe:GetChildren()) do personw.Parent = workspace end
 			end)
 			
+			vis = Button:Clone() vis.Parent = masslist vis.Text = "vis char" 
+			vis.MouseButton1Click:Connect(function()   
+				for _, pla in pairs(char:GetChildren()) do if pla:IsA("BasePart") then   pla.Transparency = 0 end end   
+			end) 
 			
 		end)  
 
@@ -2661,6 +2665,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 					invisible_spy.Position = iSeeYou.WorldPivot.Position  
 					if iSeeYou:FindFirstChild("Head") then 
 						invisible_spy.CFrame = iSeeYou.Head.CFrame * CFrame.new(0,3,0)
+						if iSeeYou.Head.Transparency == 1 then invisible_spy.BrickColor = BrickColor.new("Really blue") end
 					end 
 					if iSeeYou:FindFirstChild("HumanoidRootPart") then 
 						invisible_spy.CFrame = iSeeYou.HumanoidRootPart.CFrame * CFrame.new(0,3,0)
@@ -2673,6 +2678,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 					iSeeYou = person.Character
 					if iSeeYou:FindFirstChild("iSeeYou") then iSeeYou:FindFirstChild("iSeeYou"):Remove() end  
 				end
+				workspace.hiden:Remove()
 				workspace.hiden:Remove()
 			end
 
