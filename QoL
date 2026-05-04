@@ -2592,7 +2592,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			
 			vis = Button:Clone() vis.Parent = masslist vis.Text = "vis char" 
 			vis.MouseButton1Click:Connect(function()   
-				for _, pla in pairs(char:GetChildren()) do if pla:IsA("BasePart") then   pla.Transparency = 0 end end   
+				for _, pla in pairs(char:GetDescendants()) do if pla:IsA("MeshPart")  then   pla.Transparency = 0 end end   
 			end) 
 			
 		end)  
