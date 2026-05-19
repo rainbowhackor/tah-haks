@@ -2414,21 +2414,24 @@ function guias()
 			gravs.MouseButton2Click:Connect(function() workspace.Gravity = 22 end)
 			gravs.MouseWheelForward:Connect(function() workspace.Gravity = 5 end)
 			gravs.MouseWheelBackward:Connect(function() workspace.Gravity = 2 end)
+			
 			gravs2 = Button:Clone() gravs2.Parent = masslist gravs2.Text = "G 55 , 33" 
 			gravs2.MouseButton1Click:Connect(function() workspace.Gravity = 55 end)
 			gravs2.MouseButton2Click:Connect(function() workspace.Gravity = 33 end)
-			gravs3 = Button:Clone() gravs3.Parent = masslist gravs3.Text = "G 444 , 333 , 555" 
-			gravs3.MouseButton1Click:Connect(function() workspace.Gravity = 444 end)
-			gravs3.MouseButton2Click:Connect(function() workspace.Gravity = 333 end)
-			gravs3.MouseWheelForward:Connect(function() workspace.Gravity = 555 end)
-			gravs4 = Button:Clone() gravs4.Parent = masslist gravs4.Text = "G 777 , 666" 
-			gravs4.MouseButton1Click:Connect(function() workspace.Gravity = 777 end)
-			gravs4.MouseButton2Click:Connect(function() workspace.Gravity = 666 end)
-			gravs5 = Button:Clone() gravs5.Parent = masslist gravs5.Text = "G 111 , 222, 160" 
+			gravs5 = Button:Clone() gravs5.Parent = masslist gravs5.Text = "G 111 , 222, 160" 	 
 			gravs5.MouseButton1Click:Connect(function() workspace.Gravity = 111 end)
 			gravs5.MouseButton2Click:Connect(function() workspace.Gravity = 222 end)
 			gravs5.MouseWheelForward:Connect(function() workspace.Gravity = 160 end)
-			gravs6 = Button:Clone() gravs6.Parent = masslist gravs6.Text = "G 1000 , 888, 250" 
+			
+			gravs3 = Button:Clone() gravs3.Parent = masslist gravs3.Text = "G 444 , 333 , 555"   gravs3.BackgroundColor3 = Color3.fromRGB(191, 191, 0)
+			gravs3.MouseButton1Click:Connect(function() workspace.Gravity = 444 end)
+			gravs3.MouseButton2Click:Connect(function() workspace.Gravity = 333 end)
+			gravs3.MouseWheelForward:Connect(function() workspace.Gravity = 555 end)
+			gravs4 = Button:Clone() gravs4.Parent = masslist gravs4.Text = "G 777 , 666" 		gravs4.BackgroundColor3 = Color3.fromRGB(191, 191, 0)
+			gravs4.MouseButton1Click:Connect(function() workspace.Gravity = 777 end)
+			gravs4.MouseButton2Click:Connect(function() workspace.Gravity = 666 end)
+			
+			gravs6 = Button:Clone() gravs6.Parent = masslist gravs6.Text = "G 1000 , 888, 250" 	gravs6.BackgroundColor3 = Color3.fromRGB(85, 0, 0)
 			gravs6.MouseButton1Click:Connect(function() workspace.Gravity = 1000 end)
 			gravs6.MouseButton2Click:Connect(function() workspace.Gravity = 888 end)
 			gravs6.MouseWheelForward:Connect(function() workspace.Gravity = 280 end)
@@ -2522,17 +2525,22 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			jum.MouseWheelBackward:Connect(function() char.Humanoid.JumpHeight = 22 end)
 			end
 			
-			jum2 = Button:Clone() jum2.Parent = masslist jum2.Text = "Jum  11, 15, 20, 40" jum2.BackgroundColor3 = Color3.fromRGB(255, 0, 255)
+			jum2 = Button:Clone() jum2.Parent = masslist jum2.Text = "Jum  11, 15, 20, 40" jum2.BackgroundColor3 = Color3.fromRGB(170, 0, 127)
 			jum2.MouseButton1Click:Connect(function()    char.Humanoid.JumpHeight = 11   end)
 			jum2.MouseButton2Click:Connect(function()    char.Humanoid.JumpHeight = 15   end)
 			jum2.MouseWheelForward:Connect(function() char.Humanoid.JumpHeight = 22 end)
 			jum2.MouseWheelBackward:Connect(function() char.Humanoid.JumpHeight = 40 end)
 			
-			jum3 = Button:Clone() jum3.Parent = masslist jum3.Text = "Jum  30, 50, 60, 80" jum3.BackgroundColor3 = Color3.fromRGB(255, 0, 255)
-			jum3.MouseButton1Click:Connect(function()    char.Humanoid.JumpHeight = 11   end)
-			jum3.MouseButton2Click:Connect(function()    char.Humanoid.JumpHeight = 15   end)
-			jum3.MouseWheelForward:Connect(function() char.Humanoid.JumpHeight = 22 end)
-			jum3.MouseWheelBackward:Connect(function() char.Humanoid.JumpHeight = 40 end)
+			jum3 = Button:Clone() jum3.Parent = masslist jum3.Text = "Jum  30, 50, 60, 80" jum3.BackgroundColor3 = Color3.fromRGB(255, 0, 127)
+			jum3.MouseButton1Click:Connect(function()    char.Humanoid.JumpHeight = 30   end)
+			jum3.MouseButton2Click:Connect(function()    char.Humanoid.JumpHeight = 50   end)
+			jum3.MouseWheelForward:Connect(function() char.Humanoid.JumpHeight = 60 end)
+			jum3.MouseWheelBackward:Connect(function() char.Humanoid.JumpHeight = 80 end)
+			
+			
+			nof = Button:Clone() nof.Parent = masslist nof.Text = "nofling" 		nof.BackgroundColor3 = Color3.fromRGB(255, 255, 127)
+			nof.MouseButton1Click:Connect(function()  AntiFlingPlayable() end)
+			nof.MouseButton2Click:Connect(function() AntiFlingPlayable()  end)
 			
 			--[[jum2 = Button:Clone() jum2.Parent = masslist jum2.Text = "Jum  / character height" jum2.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
 			jum2.MouseButton1Click:Connect(function() char.Humanoid.JumpPower = 50 * char.Humanoid.BodyHeightScale.Value  char.Humanoid.JumpHeight = 7.2 * char.Humanoid.BodyHeightScale.Value end)
@@ -2544,6 +2552,15 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			jump2.MouseButton2Click:Connect(function() char.Humanoid.JumpHeight = 25 end)]]
 
 		end)  
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		Lazy.MouseButton2Click:Connect(function()
 			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
 			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "lazylist2" then Ui:Remove() end end
@@ -2580,7 +2597,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			dn.MouseButton1Click:Connect(function()  for _, part in pairs(workspace:GetDescendants()  ) do if part:IsA("BillboardGui")   then part:Remove()    end end end) 
 			
 			
-			ttdcol = Button:Clone() ttdcol.Parent = masslist ttdcol.Text = "ttd collide" 
+			ttdcol = Button:Clone() ttdcol.Parent = masslist ttdcol.Text = "ttd collide"    ttdcol.BackgroundColor3 = Color3.fromRGB(255, 85, 0)
 			ttdcol.MouseButton1Click:Connect(function()  TTD() end) 
 			ttdcol.MouseButton2Click:Connect(function()  TTD2() end)
 			
@@ -2615,7 +2632,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 				for _, personw in pairs(rthe:GetChildren()) do personw.Parent = workspace end
 			end)
 			
-			vis = Button:Clone() vis.Parent = masslist vis.Text = "vis char" 
+			vis = Button:Clone() vis.Parent = masslist vis.Text = "visible char"   vis.BackgroundColor3 = Color3.fromRGB(170, 170, 170)
 			vis.MouseButton1Click:Connect(function()   
 				for _, pla in pairs(char:GetDescendants()) do if pla:IsA("MeshPart")  then   pla.Transparency = 0 end end   
 			end) 
@@ -2634,7 +2651,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 		swimin.MouseButton2Click:Connect(function() GetUp() end) 
 
 		ThisIs = {"gravity"} 
-		gravy = TextBox:Clone() gravy.Parent = Spaghetti gravy.PlaceholderText = "grav "..math.floor(workspace.Gravity * 10)/10 gravy.Position = UDim2.new(0.05,0 , 0,row18)  gravy.BackgroundColor3 = Color3.fromRGB(0, 110, 0)  
+		gravy = TextBox:Clone() gravy.Parent = Spaghetti gravy.PlaceholderText = "grav "..math.floor(workspace.Gravity * 10)/10 gravy.Position = UDim2.new(0.05,0 , 0,row12)  gravy.BackgroundColor3 = Color3.fromRGB(0, 110, 0)  
 		gravy.FocusLost:Connect(function() gravy.Text = gravy.Text:gsub('[^%d.]', ''); workspace.Gravity = (gravy.Text) end) 
 		--gravy:GetPropertyChangedSignal("Text"):Connect(function() gravy.Text = gravy.Text:gsub('[^%d.]', ''); workspace.Gravity = (gravy.Text) end) 
 		workspace:GetPropertyChangedSignal("Gravity"):Connect(function() gravy.Text = "grav "..math.floor(workspace.Gravity * 10)/10 end) 
@@ -2931,8 +2948,8 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 		end) ]]
 
 		This = {"Anti Fling 2"} 
-		afling = Button:Clone() afling.Parent = Spaghetti afling.Text = "nofling" afling.Position = UDim2.new(0.05,0 , 0,row12) afling.BackgroundColor3 = Color3.fromRGB(255, 255, 127) 
-		afling.MouseButton1Click:Connect(function() AntiFlingPlayable() end)
+		--afling = Button:Clone() afling.Parent = Spaghetti afling.Text = "nofling" afling.Position = UDim2.new(0.05,0 , 0,row12) afling.BackgroundColor3 = Color3.fromRGB(255, 255, 127) 
+		--afling.MouseButton1Click:Connect(function() AntiFlingPlayable() end)
 
 		This = {"HipHeight"} -- client side
 		--wheight = Button:Clone() wheight.Parent = Spaghetti wheight.Text = "hiphi" wheight.Position = UDim2.new(0.5,0 , 0, ) wheight.BackgroundColor3 = Color3.fromRGB(255, 255, 255)  
