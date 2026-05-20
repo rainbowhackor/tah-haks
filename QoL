@@ -491,13 +491,51 @@ function tpvector() char.HumanoidRootPart.Anchored = false if sethiddenproperty 
 	char:PivotTo(tptodone.CFrame) tptodone:Remove()
 end
 
-function tpOnPoint() if sethiddenproperty then player.CameraMaxZoomDistance = 1000 end
-	if char.Humanoid.SeatPart then for _,seat in pairs(char.Humanoid.SeatPart:GetConnectedParts(true)) do if seat.Anchored then print("seat is anchored") return end end end
+function tpOnPoint() if char.Humanoid.SeatPart then for _,seat in pairs(char.Humanoid.SeatPart:GetConnectedParts(true)) do if seat.Anchored then print("seat is anchored") return end end end
 	for _,v in pairs(char:GetChildren()) do if v:IsA("BasePart") then v.Velocity = Vector3.new(0,0,0) v.RotVelocity = Vector3.new(0,0,0) end end
-	tpto = Instance.new("Part") tpto.CanCollide = false tpto.CFrame = char.HumanoidRootPart.CFrame tpto.Position = Vector3.new(mouse.Hit.x, mouse.Hit.y+1, mouse.Hit.z)
+	tpto = Instance.new("Part") tpto.CanCollide = false tpto.CFrame = char.HumanoidRootPart.CFrame 
+	if mouse.Target ~= nil then tpto.Position = Vector3.new(mouse.Hit.x, mouse.Hit.y+1, mouse.Hit.z) else
+		
+		
+		
+	--[[local hitPos = mouse.Hit.Position
+	local distance = (hitPos - char.HumanoidRootPart.Position).Magnitude
+
+	if distance > 200 then
+		tpto.Position = Vector3.new(mouse.Hit.Position.Magnitude, mouse.Hit.LookVector.y+1, mouse.Hit.LookVector.z) end --print(mouse.Target)
+	 
+		-- Clamp to max range or handle out-of-range logic
+	end 
+		 
+		 
+		local MAX_RANGE = 200
+
+		--Mouse.Move:Connect(function()
+			-- Use UnitRay for precise direction control
+			local raycastOrigin = mouse.UnitRay.Origin
+			local raycastDirection = mouse.UnitRay.Direction * MAX_RANGE
+
+			local raycastParams = RaycastParams.new()
+			-- Configure filter if needed
+
+			local result = workspace:Raycast(raycastOrigin, raycastDirection, raycastParams)
+
+			if result then
+				local hitPosition = result.Position
+		-- Use hitPosition for your game logic
+		tpto.Position = hitPosition
+		else
+			tpto.Position =  char.HumanoidRootPart.Position * mouse.UnitRay.Direction * MAX_RANGE
+		end
+		]]
+		--end)
+	end	
+		
 	char:PivotTo(tpto.CFrame) tpto:Remove()
+	if gethiddenproperty then player.CameraMaxZoomDistance = 1000 end
+	player.CameraMaxZoomDistance = 1000
 end
-function tpAbovePoint() if sethiddenproperty then player.CameraMaxZoomDistance = 1000 end
+function tpAbovePoint()
 	if char.Humanoid.SeatPart then for _,seat in pairs(char.Humanoid.SeatPart:GetConnectedParts(true)) do if seat.Anchored then print("seat is anchored") return end end end
 	for _,v in pairs(char:GetChildren()) do if v:IsA("BasePart") then v.Velocity = Vector3.new(0,0,0) v.RotVelocity = Vector3.new(0,0,0) end end
 	modleh = Instance.new("Model",workspace)
@@ -505,6 +543,7 @@ function tpAbovePoint() if sethiddenproperty then player.CameraMaxZoomDistance =
 	tpto.CFrame = char.HumanoidRootPart.CFrame tpto.Position = Vector3.new(mouse.Hit.x, mouse.Hit.y+1, mouse.Hit.z)
 	modleh:MoveTo(Vector3.new(mouse.Hit.x, mouse.Hit.y, mouse.Hit.z))
 	char:PivotTo(tpto.CFrame)   modleh:Remove()	
+	if gethiddenproperty then player.CameraMaxZoomDistance = 1000 end
 end
 function tpCarOnPoint() if not char.Humanoid.SeatPart then return end
 	for _,seat in pairs(char.Humanoid.SeatPart:GetConnectedParts(true)) do if seat.Anchored then print("seat is anchored") return end end
@@ -2525,20 +2564,20 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			jum.MouseWheelBackward:Connect(function() char.Humanoid.JumpHeight = 22 end)
 			end
 			
-			jum2 = Button:Clone() jum2.Parent = masslist jum2.Text = "Jum  11, 15, 20, 40" jum2.BackgroundColor3 = Color3.fromRGB(0, 85, 127)
+			jum2 = Button:Clone() jum2.Parent = masslist jum2.Text = "Jum  11, 15, 20, 66" jum2.BackgroundColor3 = Color3.fromRGB(0, 85, 127)
 			jum2.MouseButton1Click:Connect(function()    char.Humanoid.JumpHeight = 11   end)
 			jum2.MouseButton2Click:Connect(function()    char.Humanoid.JumpHeight = 15   end)
-			jum2.MouseWheelForward:Connect(function() char.Humanoid.JumpHeight = 22 end)
-			jum2.MouseWheelBackward:Connect(function() char.Humanoid.JumpHeight = 40 end)
+			jum2.MouseWheelForward:Connect(function() char.Humanoid.JumpHeight = 20 end)
+			jum2.MouseWheelBackward:Connect(function() char.Humanoid.JumpHeight = 66 end)
 			
-			jum3 = Button:Clone() jum3.Parent = masslist jum3.Text = "Jum  30, 50, 60, 80" jum3.BackgroundColor3 = Color3.fromRGB(0, 85, 127)
-			jum3.MouseButton1Click:Connect(function()    char.Humanoid.JumpHeight = 30   end)
-			jum3.MouseButton2Click:Connect(function()    char.Humanoid.JumpHeight = 50   end)
-			jum3.MouseWheelForward:Connect(function() char.Humanoid.JumpHeight = 60 end)
+			jum3 = Button:Clone() jum3.Parent = masslist jum3.Text = "Jum  25, 44, 100, 80" jum3.BackgroundColor3 = Color3.fromRGB(0, 85, 127)
+			jum3.MouseButton1Click:Connect(function()    char.Humanoid.JumpHeight = 25   end)
+			jum3.MouseButton2Click:Connect(function()    char.Humanoid.JumpHeight = 44   end)
+			jum3.MouseWheelForward:Connect(function() char.Humanoid.JumpHeight = 100 end)
 			jum3.MouseWheelBackward:Connect(function() char.Humanoid.JumpHeight = 80 end)
 			
 			
-			nof = Button:Clone() nof.Parent = masslist nof.Text = "nofling" 		nof.BackgroundColor3 = Color3.fromRGB(255, 255, 127) nof.BackgroundTransparency = .7
+			nof = Button:Clone() nof.Parent = masslist nof.Text = "NoFling" 		nof.BackgroundColor3 = Color3.fromRGB(255, 255, 127) nof.BackgroundTransparency = .7
 			nof.MouseButton1Click:Connect(function()  AntiFlingPlayable() end)
 			nof.MouseButton2Click:Connect(function() AntiFlingPlayable()  end)
 			
