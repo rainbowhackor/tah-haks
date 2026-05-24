@@ -2425,15 +2425,15 @@ function guias()
 				ran.MouseWheelBackward:Connect(function() char.Humanoid.WalkSpeed = 120 end)
 			end
 			
-			ran3 = Button:Clone() ran3.Parent = masslist ran3.Text = "Run  140, 170, 375, 410" ran3.BackgroundColor3 = Color3.fromRGB(141, 0, 212)
-			ran3.MouseButton1Click:Connect(function() char.Humanoid.WalkSpeed = 140  end)
-			ran3.MouseButton2Click:Connect(function() char.Humanoid.WalkSpeed = 170 end)
-			ran3.MouseWheelForward:Connect(function() char.Humanoid.WalkSpeed = 375 end)
-			ran3.MouseWheelBackward:Connect(function() char.Humanoid.WalkSpeed = 410 end)
-			ran2 = Button:Clone() ran2.Parent = masslist ran2.Text = "Run  250, 333, 290, 200" ran2.BackgroundColor3 = Color3.fromRGB(141, 0, 212)
-			ran2.MouseButton1Click:Connect(function() char.Humanoid.WalkSpeed = 250  end)
+			ran3 = Button:Clone() ran3.Parent = masslist ran3.Text = "Run  375, 410,   170, 140" ran3.BackgroundColor3 = Color3.fromRGB(141, 0, 212)
+			ran3.MouseButton1Click:Connect(function() char.Humanoid.WalkSpeed = 375  end)
+			ran3.MouseButton2Click:Connect(function() char.Humanoid.WalkSpeed = 410 end)
+			ran3.MouseWheelForward:Connect(function() char.Humanoid.WalkSpeed = 170 end)
+			ran3.MouseWheelBackward:Connect(function() char.Humanoid.WalkSpeed = 140 end)
+			ran2 = Button:Clone() ran2.Parent = masslist ran2.Text = "Run  290, 333,   250, 200" ran2.BackgroundColor3 = Color3.fromRGB(141, 0, 212)
+			ran2.MouseButton1Click:Connect(function() char.Humanoid.WalkSpeed = 290  end)
 			ran2.MouseButton2Click:Connect(function() char.Humanoid.WalkSpeed = 333 end)
-			ran2.MouseWheelForward:Connect(function() char.Humanoid.WalkSpeed = 290 end)
+			ran2.MouseWheelForward:Connect(function() char.Humanoid.WalkSpeed = 250 end)
 			ran2.MouseWheelBackward:Connect(function() char.Humanoid.WalkSpeed = 200 end)
 			
 			if workspace:FindFirstChild("WeatherMachine") then 
@@ -2454,15 +2454,16 @@ function guias()
 			gravs.MouseWheelForward:Connect(function() workspace.Gravity = 5 end)
 			gravs.MouseWheelBackward:Connect(function() workspace.Gravity = 2 end)
 			
-			gravs2 = Button:Clone() gravs2.Parent = masslist gravs2.Text = "G 55 , 33" 
+			gravs2 = Button:Clone() gravs2.Parent = masslist gravs2.Text = "G 55 , 33 ,   77" 
 			gravs2.MouseButton1Click:Connect(function() workspace.Gravity = 55 end)
 			gravs2.MouseButton2Click:Connect(function() workspace.Gravity = 33 end)
-			gravs5 = Button:Clone() gravs5.Parent = masslist gravs5.Text = "G 111 , 222, 160" 	 
+			gravs5.MouseWheelForward:Connect(function() workspace.Gravity = 77 end)
+			gravs5 = Button:Clone() gravs5.Parent = masslist gravs5.Text = "G 111 , 222,   160" 	 
 			gravs5.MouseButton1Click:Connect(function() workspace.Gravity = 111 end)
 			gravs5.MouseButton2Click:Connect(function() workspace.Gravity = 222 end)
 			gravs5.MouseWheelForward:Connect(function() workspace.Gravity = 160 end)
 			
-			gravs3 = Button:Clone() gravs3.Parent = masslist gravs3.Text = "G 444 , 333 , 555"   gravs3.BackgroundColor3 = Color3.fromRGB(0, 100, 0)
+			gravs3 = Button:Clone() gravs3.Parent = masslist gravs3.Text = "G 444 , 333 ,   555"   gravs3.BackgroundColor3 = Color3.fromRGB(0, 100, 0)
 			gravs3.MouseButton1Click:Connect(function() workspace.Gravity = 444 end)
 			gravs3.MouseButton2Click:Connect(function() workspace.Gravity = 333 end)
 			gravs3.MouseWheelForward:Connect(function() workspace.Gravity = 555 end)
@@ -2470,7 +2471,7 @@ function guias()
 			gravs4.MouseButton1Click:Connect(function() workspace.Gravity = 777 end)
 			gravs4.MouseButton2Click:Connect(function() workspace.Gravity = 666 end)
 			
-			gravs6 = Button:Clone() gravs6.Parent = masslist gravs6.Text = "G 1000 , 888, 250" 	gravs6.BackgroundColor3 = Color3.fromRGB(0, 150, 0)
+			gravs6 = Button:Clone() gravs6.Parent = masslist gravs6.Text = "G 1000 , 888,   250" 	gravs6.BackgroundColor3 = Color3.fromRGB(0, 150, 0)
 			gravs6.MouseButton1Click:Connect(function() workspace.Gravity = 1000 end)
 			gravs6.MouseButton2Click:Connect(function() workspace.Gravity = 888 end)
 			gravs6.MouseWheelForward:Connect(function() workspace.Gravity = 280 end)
@@ -2496,14 +2497,14 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 				 
 					if xgame == true then
 						if char.HumanoidRootPart:FindFirstChild("mass") then char.HumanoidRootPart.mass:Remove() end
-						mass = masspart:Clone() mass.Parent = char.HumanoidRootPart mass.CustomPhysicalProperties = PhysicalProperties.new(100, 2, 0, 100, 100)
+						mass = masspart:Clone() mass.Parent = char.HumanoidRootPart mass.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100)
 						mass.Weld.Part1 = char.HumanoidRootPart
 						--char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) 
 					end
 					
 					if xgame==false then 
 						for _, part in pairs(char:GetChildren()) do 
-							if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, 2, 0, 100, 100) end 
+							if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) end 
 						end 
 					end 
 				 
@@ -2564,16 +2565,16 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			jum.MouseWheelBackward:Connect(function() char.Humanoid.JumpHeight = 22 end)
 			end
 			
-			jum2 = Button:Clone() jum2.Parent = masslist jum2.Text = "Jum  11, 15, 20, 66" jum2.BackgroundColor3 = Color3.fromRGB(0, 85, 127)
+			jum2 = Button:Clone() jum2.Parent = masslist jum2.Text = "Jum  11, 15, 20, 25" jum2.BackgroundColor3 = Color3.fromRGB(0, 85, 127)
 			jum2.MouseButton1Click:Connect(function()    char.Humanoid.JumpHeight = 11   end)
 			jum2.MouseButton2Click:Connect(function()    char.Humanoid.JumpHeight = 15   end)
 			jum2.MouseWheelForward:Connect(function() char.Humanoid.JumpHeight = 20 end)
-			jum2.MouseWheelBackward:Connect(function() char.Humanoid.JumpHeight = 66 end)
+			jum2.MouseWheelBackward:Connect(function() char.Humanoid.JumpHeight = 25 end)
 			
-			jum3 = Button:Clone() jum3.Parent = masslist jum3.Text = "Jum  25, 44, 100, 80" jum3.BackgroundColor3 = Color3.fromRGB(0, 85, 127)
-			jum3.MouseButton1Click:Connect(function()    char.Humanoid.JumpHeight = 25   end)
-			jum3.MouseButton2Click:Connect(function()    char.Humanoid.JumpHeight = 44   end)
-			jum3.MouseWheelForward:Connect(function() char.Humanoid.JumpHeight = 100 end)
+			jum3 = Button:Clone() jum3.Parent = masslist jum3.Text = "Jum  44, 100, 66, 80" jum3.BackgroundColor3 = Color3.fromRGB(0, 85, 127)
+			jum3.MouseButton1Click:Connect(function()    char.Humanoid.JumpHeight = 44   end)
+			jum3.MouseButton2Click:Connect(function()    char.Humanoid.JumpHeight = 100   end)
+			jum3.MouseWheelForward:Connect(function() char.Humanoid.JumpHeight = 66 end)
 			jum3.MouseWheelBackward:Connect(function() char.Humanoid.JumpHeight = 80 end)
 			
 			
@@ -2589,7 +2590,34 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			jump2 = Button:Clone() jump2.Parent = masslist jump2.Text = "jump 20 , 25" jump2.BackgroundColor3 = Color3.fromRGB(127, 90, 59)
 			jump2.MouseButton1Click:Connect(function() char.Humanoid.JumpHeight = 20 end)
 			jump2.MouseButton2Click:Connect(function() char.Humanoid.JumpHeight = 25 end)]]
+			
+			
+			ttdcol = Button:Clone() ttdcol.Parent = masslist ttdcol.Text = "ttd collide"    ttdcol.BackgroundColor3 = Color3.fromRGB(255, 85, 0)
+			ttdcol.MouseButton1Click:Connect(function()  TTD() end) 
+			ttdcol.MouseButton2Click:Connect(function()  TTD2() end)
+			vis = Button:Clone() vis.Parent = masslist vis.Text = "visible char"   vis.BackgroundColor3 = Color3.fromRGB(170, 170, 170)
+			vis.MouseButton1Click:Connect(function()   
+				for _, pla in pairs(char:GetDescendants()) do if pla:IsA("MeshPart")  then   pla.Transparency = 0 end end  
+				for _,target in pairs(char:GetDescendants()) do
+					if target:IsA("MeshPart") then 
+						if target.MeshId == "rbxassetid://16931221073" then target.Parent:Remove() end-- box
 
+						if target.MeshId == "rbxassetid://17899996187" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false end
+							--f= Instance.new("SelectionBox",target) f.Adornee = target f.Transparency = .9 f.Color3 = Color3.fromRGB(0, 255, 0) f.LineThickness = .07 end --krby
+
+						if target.MeshId == "rbxassetid://95880964398198" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false end --egg
+						if target.MeshId == "rbxassetid://15412035527" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false end
+						if target.MeshId == "rbxassetid://95880964398198" then target.Transparency = 1 end
+
+					end
+				end
+
+				if char:FindFirstChild("GreenPixie") then  
+					char:FindFirstChild("GreenPixie"):FindFirstChildWhichIsA("BasePart").Transparency = 1
+				end
+			end) 
+			
+			
 		end)  
 		
 		
@@ -2622,7 +2650,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			times2.MouseWheelForward:Connect(function() game.Lighting.ClockTime = 9 end)
 			times2.MouseWheelBackward:Connect(function() game.Lighting.ClockTime = 7 end)
 			
-			 	inviscam = Button:Clone() inviscam.Parent = masslist inviscam.Text = "invisicam" 
+			inviscam = Button:Clone() inviscam.Parent = masslist inviscam.Text = "invisicam"  inviscam.BackgroundColor3 = Color3.fromRGB(85, 85, 127)
 			inviscam.MouseButton1Click:Connect(function() player.DevCameraOcclusionMode = Enum.DevCameraOcclusionMode.Invisicam end)
 			inviscam.MouseButton2Click:Connect(function() player.DevCameraOcclusionMode = Enum.DevCameraOcclusionMode.Zoom  end)
 			
@@ -2674,6 +2702,24 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			vis = Button:Clone() vis.Parent = masslist vis.Text = "visible char"   vis.BackgroundColor3 = Color3.fromRGB(170, 170, 170)
 			vis.MouseButton1Click:Connect(function()   
 				for _, pla in pairs(char:GetDescendants()) do if pla:IsA("MeshPart")  then   pla.Transparency = 0 end end   
+				for _,target in pairs(char:GetDescendants()) do
+					if target:IsA("MeshPart") then 
+						if target.MeshId == "rbxassetid://16931221073" then target.Parent:Remove() end-- box
+
+						if target.MeshId == "rbxassetid://17899996187" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false end
+							--f= Instance.new("SelectionBox",target) f.Adornee = target f.Transparency = .9 f.Color3 = Color3.fromRGB(0, 255, 0) f.LineThickness = .07 end --krby
+
+						if target.MeshId == "rbxassetid://95880964398198" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false end --egg
+						if target.MeshId == "rbxassetid://15412035527" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false end
+						if target.MeshId == "rbxassetid://95880964398198" then target.Transparency = 1 end
+
+					end
+				end
+
+				if char:FindFirstChild("GreenPixie") then  
+					char:FindFirstChild("GreenPixie"):FindFirstChildWhichIsA("BasePart").Transparency = 1
+				end
+				
 			end) 
 			
 		end)  
@@ -5616,7 +5662,7 @@ function TTD()
 				if target.MeshId == "rbxassetid://17899996187" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false 
 					f= Instance.new("SelectionBox",target) f.Adornee = target f.Transparency = .9 f.Color3 = Color3.fromRGB(0, 255, 0) f.LineThickness = .07 end --krby
 
-				if target.MeshId == "rbxassetid://95880964398198" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false end
+				if target.MeshId == "rbxassetid://95880964398198" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false end --egg
 				if target.MeshId == "rbxassetid://15412035527" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false end
 				if target.MeshId == "rbxassetid://95880964398198" then target.Transparency = 1 end
 
@@ -5629,7 +5675,7 @@ function TTD()
 		if char.Humanoid.WalkSpeed <  20 then
 		char.Humanoid.JumpHeight =  11
 			char.Humanoid.WalkSpeed =  70
-			for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, 2, 0, 100, 100) end end  
+			for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) end end  
 			end
 		--char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) 
 		   
