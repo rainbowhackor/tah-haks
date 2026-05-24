@@ -2457,7 +2457,7 @@ function guias()
 			gravs2 = Button:Clone() gravs2.Parent = masslist gravs2.Text = "G 55 , 33 ,   77" 
 			gravs2.MouseButton1Click:Connect(function() workspace.Gravity = 55 end)
 			gravs2.MouseButton2Click:Connect(function() workspace.Gravity = 33 end)
-			gravs5.MouseWheelForward:Connect(function() workspace.Gravity = 77 end)
+			gravs2.MouseWheelForward:Connect(function() workspace.Gravity = 77 end)
 			gravs5 = Button:Clone() gravs5.Parent = masslist gravs5.Text = "G 111 , 222,   160" 	 
 			gravs5.MouseButton1Click:Connect(function() workspace.Gravity = 111 end)
 			gravs5.MouseButton2Click:Connect(function() workspace.Gravity = 222 end)
