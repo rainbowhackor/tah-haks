@@ -532,7 +532,7 @@ function tpOnPoint() if char.Humanoid.SeatPart then for _,seat in pairs(char.Hum
 	end	
 		
 	char:PivotTo(tpto.CFrame) tpto:Remove()
-	if gethiddenproperty then player.CameraMaxZoomDistance = 1000 end
+	--if gethiddenproperty then player.CameraMaxZoomDistance = 1000 end
 	player.CameraMaxZoomDistance = 1000
 end
 function tpAbovePoint()
@@ -542,8 +542,9 @@ function tpAbovePoint()
 	tpto = Instance.new("Part",modleh) tpto.Anchored = true tpto.Size = Vector3.new(5,5,5)  tpto.CanCollide = true tpto.Color = Color3.fromRGB(0, 255, 0) tpto.Material = Enum.Material.Neon
 	tpto.CFrame = char.HumanoidRootPart.CFrame tpto.Position = Vector3.new(mouse.Hit.x, mouse.Hit.y+1, mouse.Hit.z)
 	modleh:MoveTo(Vector3.new(mouse.Hit.x, mouse.Hit.y, mouse.Hit.z))
-	char:PivotTo(tpto.CFrame)   modleh:Remove()	
-	if gethiddenproperty then player.CameraMaxZoomDistance = 1000 end
+	if mouse.Target ~= nil then char:PivotTo(tpto.CFrame) end  
+	modleh:Remove()	
+	--if gethiddenproperty then player.CameraMaxZoomDistance = 1000 end
 end
 function tpCarOnPoint() if not char.Humanoid.SeatPart then return end
 	for _,seat in pairs(char.Humanoid.SeatPart:GetConnectedParts(true)) do if seat.Anchored then print("seat is anchored") return end end
@@ -3159,10 +3160,10 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 							local ba = Button:Clone() ba.Parent = copycharanim ba.Size = UDim2.new(0.95,0 , 0,15) ba.BackgroundTransparency = .5 ba.TextXAlignment = Enum.TextXAlignment.Left ba.BackgroundColor3 = Color3.fromRGB(0, 170, 0)
 							ba.Text = game:GetService("MarketplaceService"):GetProductInfo(tonumber(str)).Name .. "	"  ..str--track.Animation.AnimationId:gsub('[^%d.]', '')  -- track.Animation.AnimationId
 							ba.MouseButton1Down:Connect(function()
-								if sethiddenproperty then
+								--if sethiddenproperty then
 									--setclipboard("https://assetdelivery.roblox.com/v1/asset/?id="..str .."  ".. ba.Text  ) --pre ugc patch
-									setclipboard( ba.Text )
-								end
+								--	setclipboard( ba.Text )
+								--end
 								if not workspace:FindFirstChild("Erm Actually") then Instance.new("Folder",workspace).Name = "Erm Actually" end
 								Instance.new("Folder",workspace:FindFirstChild("Erm Actually") ).Name =   ba.Text 
 
@@ -5913,10 +5914,19 @@ NDS()
 
 
 
-if sethiddenproperty then
-	--for _,part in pairs(workspace:GetDescendants()) do if part:IsA("BasePart") then part.CanQuery = true end end
+--if sethiddenproperty then
+local success, data = pcall(function()
+	
+	
 	workspace.FallenPartsDestroyHeight = -50000 player.CameraMaxZoomDistance = 1000
 	player.DevCameraOcclusionMode = Enum.DevCameraOcclusionMode.Invisicam
+	
+	return  
+end)
+if success then --print("no error:", data)
+else  warn("Errors:", data) end
+	--for _,part in pairs(workspace:GetDescendants()) do if part:IsA("BasePart") then part.CanQuery = true end end
+	
 
 	ThisIs = {"invisicam broke"}
 	--[[local sc = (debug and debug.setconstant) or setconstant local gc = (debug and debug.getconstants) or getconstants
@@ -5927,7 +5937,7 @@ if sethiddenproperty then
 			for i, v1 in pairs(gc(v)) do if tonumber(v1) == .25 then sc(v, i, 0)   end end
 		end
 	end]]
-end
+--end
 
 
 
