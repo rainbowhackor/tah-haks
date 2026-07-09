@@ -159,7 +159,7 @@ if not game.Lighting:FindFirstChild("binds") then Instance.new("BoolValue",game.
 					elseif actionName == "Anti Fling HAX" then --AntiFling() 
 					elseif actionName == "RAINBOW STAR SWORDS" then RainbowStarSword()
 					elseif actionName == "Dog Walk" then Swim() --dog walk only works with werewolf swim animation
-					elseif actionName == "Default Gravity" then workspace.Gravity = 96.2 char.Humanoid.JumpPower = 50 actiontext.Text = "Default Gravity" --if Spaghetti and Spaghetti:FindFirstChild("fps 60") then Spaghetti:FindFirstChild("fps 60").fps.Value = 900 end
+					elseif actionName == "Default Gravity" then workspace.Gravity = 96.2 char.Humanoid.JumpPower = 50 actiontext.Text = "Default Gravity"  
 					elseif actionName == "Zero Gravity" then workspace.Gravity = 0 actiontext.Text = "Zero Gravity"
 					elseif actionName == "Moon Gravity" then workspace.Gravity = 32.41 actiontext.Text = "Moon Gravity" char.Humanoid.JumpPower = 25 char.Humanoid.JumpHeight = 11
 					elseif actionName == "Jupiter Gravity" then workspace.Gravity = 111111 actiontext.Text = "Jupiter Gravity"
@@ -176,7 +176,7 @@ if not game.Lighting:FindFirstChild("binds") then Instance.new("BoolValue",game.
 					elseif actionName == "SEAT no nds tp" then SEAT() 
 					elseif actionName == "Mirror" then  Mirror() --char:PivotTo(char.HumanoidRootPart.CFrame * CFrame.Angles(0,math.rad(180),0))
 					elseif actionName == "lookw" then X() 
-						
+
 					end
 				end 
 			end
@@ -188,7 +188,7 @@ if not game.Lighting:FindFirstChild("binds") then Instance.new("BoolValue",game.
 	--CAS:BindAction("Controls", hax, false, Enum.KeyCode.Y)
 	--	CAS:BindAction("Toggle Keybinds", hax, false, Enum.KeyCode.Z)
 	--CAS:BindAction("Toggle tp", hax, false, Enum.KeyCode.Y)
-	--CAS:BindAction("Low55", hax, false, Enum.KeyCode.X)
+	CAS:BindAction("Low55", hax, false, Enum.KeyCode.X)
 	CAS:BindAction("Low", hax, false, Enum.KeyCode.M)
 	--	CAS:BindAction("HAX", hax, false, Enum.KeyCode.G)
 	--CAS:BindAction("Mirror", hax, false, Enum.KeyCode.E)
@@ -242,10 +242,10 @@ Press Z to Disable HA-]] end
 					player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" 
 				end end
 
-			if UserInputService:IsKeyDown(Enum.KeyCode.Q) then 
+			--[[if UserInputService:IsKeyDown(Enum.KeyCode.Q) then 
 				if workspace:FindFirstChildWhichIsA("BrickColorValue") then return end 
 				player.Character.Humanoid.Sit = not player.Character.Humanoid.Sit actiontext.Text = "Sit" 
-			end 
+			end ]]
 
 		end
 
@@ -335,11 +335,12 @@ function X()
 	if looking == false then 
 		char["🌍 interaction"]["invis bodp"].enabled.Value = f
 	end
-	 
+
 end
 function Xg()
-	  
-	workspace.Gravity = 15   actiontext.Text = "Low Gravity"
+	if workspace:FindFirstChild("WeatherMachine") then 
+		workspace.Gravity = 15   actiontext.Text = "Low Gravity"
+	end
 end
 function AntiFling()   if Ruse == false then 
 
@@ -495,9 +496,9 @@ function tpOnPoint() if char.Humanoid.SeatPart then for _,seat in pairs(char.Hum
 	for _,v in pairs(char:GetChildren()) do if v:IsA("BasePart") then v.Velocity = Vector3.new(0,0,0) v.RotVelocity = Vector3.new(0,0,0) end end
 	tpto = Instance.new("Part") tpto.CanCollide = false tpto.CFrame = char.HumanoidRootPart.CFrame 
 	if mouse.Target ~= nil then tpto.Position = Vector3.new(mouse.Hit.x, mouse.Hit.y+1, mouse.Hit.z) else
-		
-		
-		
+
+
+
 	--[[local hitPos = mouse.Hit.Position
 	local distance = (hitPos - char.HumanoidRootPart.Position).Magnitude
 
@@ -530,7 +531,7 @@ function tpOnPoint() if char.Humanoid.SeatPart then for _,seat in pairs(char.Hum
 		]]
 		--end)
 	end	
-		
+
 	char:PivotTo(tpto.CFrame) tpto:Remove()
 	--if gethiddenproperty then player.CameraMaxZoomDistance = 1000 end
 	player.CameraMaxZoomDistance = 1000
@@ -605,7 +606,7 @@ function AirBlock()
 	if char:FindFirstChild("LeftFoot") then stand.Position = char.LeftFoot.Position - Vector3.new(0,.9,0) end 
 	if char.Humanoid.Sit == true then stand.Position = char.HumanoidRootPart.Position - Vector3.new(0,1,0) end
 	if char.Humanoid.PlatformStand == true then stand.Position = char.HumanoidRootPart.Position - Vector3.new(0,1,0) end 
-	
+
 	stand = Instance.new("Part",workspace) stand.Anchored = true stand.Name = "standin" stand.Size = Vector3.new(170,3,170) stand.Transparency = .85 
 	if char:FindFirstChild("LeftFoot") then stand.Position = char.LeftFoot.Position + Vector3.new(0,11,0) end  
 
@@ -702,8 +703,8 @@ function delski() if  char:FindFirstChild("Meshes/Chocolate Donut Rainbow Limite
 	if    char.LowerTorso.MeshId == "rbxassetid://102444473034465" or char.LowerTorso.MeshId == "rbxassetid://102444473034465"   then 
 		if not workspace:FindFirstChildWhichIsA("BrickColorValue") then 
 			for _, br in pairs(char:GetChildren()) do if br:IsA("BasePart") then br.Color = Color3.fromRGB(208, 156, 135)   end end  
-			end
- end
+		end
+	end
 end
 
 function SEAT() if workspace:FindFirstChild("seater") then workspace:FindFirstChild("seater"):Remove() return end 
@@ -739,9 +740,12 @@ function OOF() --to be honest I highly doubt roblox is worth $5O,OOO,OOO,OOO whe
 end
 colcor = nil
 function CharSettings()
+	--if Spaghetti and Spaghetti:FindFirstChild("fps 60") then Spaghetti:FindFirstChild("fps 60").fps.Value = 59 end
 	delski()
 	humy = char:WaitForChild("Humanoid") humy.UseJumpPower = false humy.AutoJumpEnabled = false game.StarterGui:SetCore("SendNotification", {Title="UseJumpPower = false"; Text= "JumpHeight better for gravity" ; Duration=5;})
-	if char.Head.MeshId == "https://assetdelivery.roblox.com/v1/asset/?id=14640466175" then char.Head.FaceFrontAttachment.Position = Vector3.new(0, -0.052, -0.523) end
+	if char.Head.MeshId == "https://assetdelivery.roblox.com/v1/asset/?id=14640466175" then 
+		--char.Head.FaceFrontAttachment.Position = Vector3.new(0, -0.052, -0.523)
+	end
 	workspace.Camera.CameraType = Enum.CameraType.Custom workspace.CurrentCamera.CameraType = Enum.CameraType.Custom
 	humy:GetPropertyChangedSignal("Sit"):Connect(function() wait() if humy.Sit == true then GetUp() end end)
 	humy:GetPropertyChangedSignal("PlatformStand"):Connect(function() wait() if humy.PlatformStand == true then GetUp() end end)
@@ -1261,7 +1265,7 @@ function RainbowStarSword() --( glow sticks for dancing ) OH MY GAH THIS LOOKS S
 	rlight = Instance.new("PointLight",sword) rlight.Range = 20 rlight.Brightness = .5 --if game.Lighting.Technology == Enum.Technology.Future then rlight.Brightness = 1 end
 	rSparkles = Instance.new("Sparkles",sword)
 	rlight.ChildAdded:Connect(function() rlight:FindFirstChildWhichIsA("BasePart"):Remove() end)
-	
+
 	The = {" Rainbow Color Changing "} if Ruse == false then
 		colorcwrap2 = coroutine.create(function() while workspace:FindFirstChild("RainbowStarSwords") do RunService.RenderStepped:Wait() if starfolder.SmoothColor.Value == false then
 					task.wait(math.random(35,70)/100) end rlight.Color = Color3.fromRGB(255,255,255) rSparkles.SparkleColor = ColorChanging.Value end end) coroutine.resume(colorcwrap2)
@@ -1878,7 +1882,7 @@ function guias()
 
 		if workspace.tpdied.Value == true then tpWHY.Enabled = true end--tplist.CanvasPosition= end
 		tpb = Button:Clone() tpb.Parent = Spaghetti tpb.Text = "tps" tpb.Position = UDim2.new(0.05,0 , 0,row12)
-		
+
 
 		tpb.MouseButton1Click:Connect(function() tpWHY.Enabled = not tpWHY.Enabled 
 			if workspace.tpdied.Value == true then tpb.BackgroundColor3 = Color3.fromRGB(255, 170, 127) else tpb.BackgroundColor3 = Color3.fromRGB(0, 255, 0) end end) 
@@ -2398,18 +2402,18 @@ function guias()
 			Mass41.MouseButton1Click:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, .3, .5, 1, 1) end end end)
 
 		end)
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
 		ThisIs = {"Lazy"} 
 		Lazy = Button:Clone() Lazy.Parent = Spaghetti Lazy.Text = "Lazy" Lazy.Position = UDim2.new(0.05,0 , 0,row10)  Lazy.BackgroundColor3 = Color3.fromRGB(255, 0, 127)   
 		Lazy.MouseButton1Click:Connect(function()
-			
-			
-			
+
+
+
 			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
 			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "lazylist" then Ui:Remove() end end
 			if Begal.GuiHolder:FindFirstChild("lazylist") then Begal.GuiHolder:FindFirstChild("lazylist"):Remove() return end
@@ -2417,15 +2421,15 @@ function guias()
 			listing = Instance.new("UIListLayout",masslist) listing.Padding = UDim.new(0,1)
 
 			plus = 15 Button.BackgroundColor3 = Color3.fromRGB(85, 85, 127) Button.Size = UDim2.new(0.95,0 , 0,15) Button.TextXAlignment = Enum.TextXAlignment.Left Button.BackgroundTransparency = .5
-			
+
 			if not  workspace:FindFirstChild("Map") then 
-			ran = Button:Clone() ran.Parent = masslist ran.Text = "Run  CH, 80, 16, 120" ran.BackgroundColor3 = Color3.fromRGB(170, 85, 127)
-			ran.MouseButton1Click:Connect(function() char.Humanoid.WalkSpeed = char.Humanoid.HipHeight * 7.634  end)
-			ran.MouseButton2Click:Connect(function() char.Humanoid.WalkSpeed = 80 end)
-			ran.MouseWheelForward:Connect(function() char.Humanoid.WalkSpeed = 16 end)
+				ran = Button:Clone() ran.Parent = masslist ran.Text = "Run  CH, 80, 16, 120" ran.BackgroundColor3 = Color3.fromRGB(170, 85, 127)
+				ran.MouseButton1Click:Connect(function() char.Humanoid.WalkSpeed = char.Humanoid.HipHeight * 7.634  end)
+				ran.MouseButton2Click:Connect(function() char.Humanoid.WalkSpeed = 80 end)
+				ran.MouseWheelForward:Connect(function() char.Humanoid.WalkSpeed = 16 end)
 				ran.MouseWheelBackward:Connect(function() char.Humanoid.WalkSpeed = 120 end)
 			end
-			
+
 			ran3 = Button:Clone() ran3.Parent = masslist ran3.Text = "Run  375, 410,   170, 140" ran3.BackgroundColor3 = Color3.fromRGB(141, 0, 212)
 			ran3.MouseButton1Click:Connect(function() char.Humanoid.WalkSpeed = 375  end)
 			ran3.MouseButton2Click:Connect(function() char.Humanoid.WalkSpeed = 410 end)
@@ -2436,25 +2440,25 @@ function guias()
 			ran2.MouseButton2Click:Connect(function() char.Humanoid.WalkSpeed = 333 end)
 			ran2.MouseWheelForward:Connect(function() char.Humanoid.WalkSpeed = 250 end)
 			ran2.MouseWheelBackward:Connect(function() char.Humanoid.WalkSpeed = 200 end)
-			
+
 			if workspace:FindFirstChild("WeatherMachine") then 
-			 dis = Button:Clone() dis.Parent = masslist dis.Text = "disaster" dis.BackgroundColor3 = Color3.fromRGB(191, 191, 0)
-			dis.MouseButton1Click:Connect(function() dis.Text = char.SurvivalTag.Value wait(2) dis.Text = "disaster"  end) 
-			dis.MouseButton2Click:Connect(function() char.PartCollision.CanCollide = not char.PartCollision.CanCollide char.Humanoid.Sit = char.PartCollision.CanCollide end)
-			dis.MouseButton2Click:Connect(function() char.CollisionPart.CanCollide = not char.CollisionPart.CanCollide end)
+				dis = Button:Clone() dis.Parent = masslist dis.Text = "disaster" dis.BackgroundColor3 = Color3.fromRGB(191, 191, 0)
+				dis.MouseButton1Click:Connect(function() dis.Text = char.SurvivalTag.Value wait(2) dis.Text = "disaster"  end) 
+				dis.MouseButton2Click:Connect(function() char.PartCollision.CanCollide = not char.PartCollision.CanCollide char.Humanoid.Sit = char.PartCollision.CanCollide end)
+				dis.MouseButton2Click:Connect(function() char.CollisionPart.CanCollide = not char.CollisionPart.CanCollide end)
 			end
-			
+
 		--[[ 	flin = Button:Clone() flin.Parent = masslist flin.Text = "flin" flin.BackgroundColor3 = Color3.fromRGB(85, 0, 127)
 			flin.MouseButton1Click:Connect(function() char.HumanoidRootPart.AssemblyAngularVelocity --.AssemblyLinearVelocity = Vector3.new(100,0,0)	   end) 
 			flin.MouseButton2Click:Connect(function() char.PartCollision.CanCollide = not char.PartCollision.CanCollide char.Humanoid.Sit = char.PartCollision.CanCollide end)
 			flin.MouseButton2Click:Connect(function() char.CollisionPart.CanCollide = not char.CollisionPart.CanCollide end)]]
-			
+
 			gravs = Button:Clone() gravs.Parent = masslist gravs.Text = "G 15 22 5 2" 
 			gravs.MouseButton1Click:Connect(function() workspace.Gravity = 15 end)
 			gravs.MouseButton2Click:Connect(function() workspace.Gravity = 22 end)
 			gravs.MouseWheelForward:Connect(function() workspace.Gravity = 5 end)
 			gravs.MouseWheelBackward:Connect(function() workspace.Gravity = 2 end)
-			
+
 			gravs2 = Button:Clone() gravs2.Parent = masslist gravs2.Text = "G 55 , 33 ,   77" 
 			gravs2.MouseButton1Click:Connect(function() workspace.Gravity = 55 end)
 			gravs2.MouseButton2Click:Connect(function() workspace.Gravity = 33 end)
@@ -2463,28 +2467,29 @@ function guias()
 			gravs5.MouseButton1Click:Connect(function() workspace.Gravity = 111 end)
 			gravs5.MouseButton2Click:Connect(function() workspace.Gravity = 222 end)
 			gravs5.MouseWheelForward:Connect(function() workspace.Gravity = 160 end)
-			
-			gravs3 = Button:Clone() gravs3.Parent = masslist gravs3.Text = "G 444 , 333 ,   555"   gravs3.BackgroundColor3 = Color3.fromRGB(0, 100, 0)
+
+			gravs3 = Button:Clone() gravs3.Parent = masslist gravs3.Text = "G 444 , 333 ,   555"  -- gravs3.BackgroundColor3 = Color3.fromRGB(0, 100, 0)
 			gravs3.MouseButton1Click:Connect(function() workspace.Gravity = 444 end)
 			gravs3.MouseButton2Click:Connect(function() workspace.Gravity = 333 end)
 			gravs3.MouseWheelForward:Connect(function() workspace.Gravity = 555 end)
-			gravs4 = Button:Clone() gravs4.Parent = masslist gravs4.Text = "G 777 , 666" 		gravs4.BackgroundColor3 = Color3.fromRGB(0, 100, 0)
+			gravs4 = Button:Clone() gravs4.Parent = masslist gravs4.Text = "G 777 , 666, 380 " 		--gravs4.BackgroundColor3 = Color3.fromRGB(0, 100, 0)
 			gravs4.MouseButton1Click:Connect(function() workspace.Gravity = 777 end)
 			gravs4.MouseButton2Click:Connect(function() workspace.Gravity = 666 end)
-			
-			gravs6 = Button:Clone() gravs6.Parent = masslist gravs6.Text = "G 1000 , 888,   250" 	gravs6.BackgroundColor3 = Color3.fromRGB(0, 150, 0)
+			gravs4.MouseWheelForward:Connect(function() workspace.Gravity = 380 end)
+
+			gravs6 = Button:Clone() gravs6.Parent = masslist gravs6.Text = "G 1000 , 888,   250" 	--gravs6.BackgroundColor3 = Color3.fromRGB(0, 150, 0)
 			gravs6.MouseButton1Click:Connect(function() workspace.Gravity = 1000 end)
 			gravs6.MouseButton2Click:Connect(function() workspace.Gravity = 888 end)
 			gravs6.MouseWheelForward:Connect(function() workspace.Gravity = 280 end)
 
 
-			
+
 			if workspace:FindFirstChild("WeatherMachine") then 
-falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld.BackgroundColor3 = Color3.fromRGB(0, 156, 0)
-			falld.MouseButton1Click:Connect(function()  player.falldamage.Value = not player.falldamage.Value
-				if player.falldamage.Value == true then  falld.BackgroundColor3 = Color3.fromRGB(0, 156, 0) else  falld.BackgroundColor3 = Color3.fromRGB(156,0 , 0) end end)
+				falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld.BackgroundColor3 = Color3.fromRGB(0, 156, 0)
+				falld.MouseButton1Click:Connect(function()  player.falldamage.Value = not player.falldamage.Value
+					if player.falldamage.Value == true then  falld.BackgroundColor3 = Color3.fromRGB(0, 156, 0) else  falld.BackgroundColor3 = Color3.fromRGB(156,0 , 0) end end)
 			end
-			
+
 			Mass24 = Button:Clone() Mass24.Parent = masslist Mass24.Text = "Glacier, Ice Ball, n, 10" Mass24.BackgroundColor3 = Color3.fromRGB(85, 170, 255)
 			--Mass24.MouseButton2Click:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100) end end end)
 			--Mass24.MouseButton1Click:Connect(function() for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) end end end)
@@ -2492,97 +2497,103 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			masspart = Instance.new("Part" ) masspart.Size = Vector3.new(1.6, 2, 1) masspart.Transparency = 1 masspart.CanCollide = true	   masspart.CanQuery = false
 			masspart.Name = "mass"
 			wel = Instance.new("Weld",masspart)  wel.Part0 = masspart --wel.Part1 = char.HumanoidRootPart
-			
+
 			Mass24.MouseButton1Click:Connect(function() 
 				xgame = false if char:FindFirstChild("fake clo") then  xgame= true end
-				 
-					if xgame == true then
-						if char.HumanoidRootPart:FindFirstChild("mass") then char.HumanoidRootPart.mass:Remove() end
-						mass = masspart:Clone() mass.Parent = char.HumanoidRootPart mass.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100)
-						mass.Weld.Part1 = char.HumanoidRootPart
-						--char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) 
-					end
-					
-					if xgame==false then 
-						for _, part in pairs(char:GetChildren()) do 
-							if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) end 
-						end 
+
+				if xgame == true then
+					if char.HumanoidRootPart:FindFirstChild("mass") then char.HumanoidRootPart.mass:Remove() end
+					mass = masspart:Clone() mass.Parent = char.HumanoidRootPart mass.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100)
+					mass.Weld.Part1 = char.HumanoidRootPart
+					--char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) 
+				end
+
+				if xgame==false then 
+					for _, part in pairs(char:GetChildren()) do 
+						if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) end 
 					end 
-				 
+				end 
+
 
 			end)
 			Mass24.MouseButton2Click:Connect(function()
 				xgame = false if char:FindFirstChild("fake clo") then  xgame= true end
-				 
-					if xgame == true then
-				if char.HumanoidRootPart:FindFirstChild("mass") then char.HumanoidRootPart.mass:Remove() end
-						mass = masspart:Clone() mass.Parent = char.HumanoidRootPart mass.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100) 
-						mass.Weld.Part1 = char.HumanoidRootPart
-				 end
+
+				if xgame == true then
+					if char.HumanoidRootPart:FindFirstChild("mass") then char.HumanoidRootPart.mass:Remove() end
+					mass = masspart:Clone() mass.Parent = char.HumanoidRootPart mass.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100) 
+					mass.Weld.Part1 = char.HumanoidRootPart
+				end
 				--char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100)  
-						if xgame==false then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100) end end  end 
-					 
+				if xgame==false then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(0.7, 0, 1, 100, 100) end end  end 
+
 			end)
-			
+
 			Mass24.MouseWheelForward:Connect(function()  
 				xgame = false if char:FindFirstChild("fake clo") then  xgame= true end
-				 
-					if xgame == true then
+
+				if xgame == true then
 					if char.HumanoidRootPart:FindFirstChild("mass") then char.HumanoidRootPart.mass:Remove() end
-						--char.HumanoidRootPart.CustomPhysicalProperties = nil
-						end
-						if xgame==false then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(nil) end end  end 
-					 
+					--char.HumanoidRootPart.CustomPhysicalProperties = nil
+				end
+				if xgame==false then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(nil) end end  end 
+
 			end)
 			Mass24.MouseWheelBackward:Connect(function()  
 				xgame = false if char:FindFirstChild("fake clo") then  xgame= true end
-			 
-					if xgame == true then
+
+				if xgame == true then
 					if char.HumanoidRootPart:FindFirstChild("mass") then char.HumanoidRootPart.mass:Remove() end
-						mass = masspart:Clone() mass.Parent = char.HumanoidRootPart mass.CustomPhysicalProperties = PhysicalProperties.new(1, 0, 1, 0, 0)
-						mass.Weld.Part1 = char.HumanoidRootPart
-				 end
+					mass = masspart:Clone() mass.Parent = char.HumanoidRootPart mass.CustomPhysicalProperties = PhysicalProperties.new(1, 0, 1, 0, 0)
+					mass.Weld.Part1 = char.HumanoidRootPart
+				end
 				--char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(1, 0, 1, 0, 0)
-						if xgame==false then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(1, 0, 1, 0, 0) end end  end 
-					 
+				if xgame==false then for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(1, 0, 1, 0, 0) end end  end 
+
 			end)
 
-			
-		
+
+
 
 			--[[sito = Button:Clone() sito.Parent = masslist sito.Text = "sit" 
 			sito.MouseButton1Click:Connect(function() char.Humanoid.Sit = not char.Humanoid.Sit  end)
 			sito.MouseButton2Click:Connect(function() char.Humanoid.PlatformStand = not char.Humanoid.PlatformStand  end)]]
 
-			
-			
-			
-			
+
+
+
+
 			if not  workspace:FindFirstChild("Map") then
-		 		jum = Button:Clone() jum.Parent = masslist jum.Text = "Jum  7.2, CH, 15, 22" jum.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
-			jum.MouseButton1Click:Connect(function() char.Humanoid.JumpPower = 50 char.Humanoid.JumpHeight = 7.2 end)
-			jum.MouseButton2Click:Connect(function() char.Humanoid.JumpPower = 50 * char.Humanoid.BodyHeightScale.Value  char.Humanoid.JumpHeight = 7.2 * char.Humanoid.BodyHeightScale.Value end)
-			jum.MouseWheelForward:Connect(function() char.Humanoid.JumpHeight = 15 end)
-			jum.MouseWheelBackward:Connect(function() char.Humanoid.JumpHeight = 22 end)
+				jum = Button:Clone() jum.Parent = masslist jum.Text = "Jum  7.2, CH, 15, 22" jum.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
+				jum.MouseButton1Click:Connect(function() char.Humanoid.JumpPower = 50 char.Humanoid.JumpHeight = 7.2 end)
+				jum.MouseButton2Click:Connect(function() char.Humanoid.JumpPower = 50 * char.Humanoid.BodyHeightScale.Value  char.Humanoid.JumpHeight = 7.2 * char.Humanoid.BodyHeightScale.Value end)
+				jum.MouseWheelForward:Connect(function() char.Humanoid.JumpHeight = 15 end)
+				jum.MouseWheelBackward:Connect(function() char.Humanoid.JumpHeight = 22 end)
 			end
-			
+
+			jum1 = Button:Clone() jum1.Parent = masslist jum1.Text = "Jum  9, 13, 14, 7" jum1.BackgroundColor3 = Color3.fromRGB(0, 85, 127)
+			jum1.MouseButton1Click:Connect(function()    char.Humanoid.JumpHeight = 9   end)
+			jum1.MouseButton2Click:Connect(function()    char.Humanoid.JumpHeight = 13   end)
+			jum1.MouseWheelForward:Connect(function() char.Humanoid.JumpHeight = 14 end)
+			jum1.MouseWheelBackward:Connect(function() char.Humanoid.JumpHeight = 7 end)
+
 			jum2 = Button:Clone() jum2.Parent = masslist jum2.Text = "Jum  11, 15, 20, 25" jum2.BackgroundColor3 = Color3.fromRGB(0, 85, 127)
 			jum2.MouseButton1Click:Connect(function()    char.Humanoid.JumpHeight = 11   end)
 			jum2.MouseButton2Click:Connect(function()    char.Humanoid.JumpHeight = 15   end)
 			jum2.MouseWheelForward:Connect(function() char.Humanoid.JumpHeight = 20 end)
 			jum2.MouseWheelBackward:Connect(function() char.Humanoid.JumpHeight = 25 end)
-			
+
 			jum3 = Button:Clone() jum3.Parent = masslist jum3.Text = "Jum  44, 100, 66, 80" jum3.BackgroundColor3 = Color3.fromRGB(0, 85, 127)
 			jum3.MouseButton1Click:Connect(function()    char.Humanoid.JumpHeight = 44   end)
 			jum3.MouseButton2Click:Connect(function()    char.Humanoid.JumpHeight = 100   end)
 			jum3.MouseWheelForward:Connect(function() char.Humanoid.JumpHeight = 66 end)
 			jum3.MouseWheelBackward:Connect(function() char.Humanoid.JumpHeight = 80 end)
-			
-			
+
+
 			nof = Button:Clone() nof.Parent = masslist nof.Text = "NoFling" 		nof.BackgroundColor3 = Color3.fromRGB(255, 255, 127) nof.BackgroundTransparency = .7
 			nof.MouseButton1Click:Connect(function()  AntiFlingPlayable() end)
 			nof.MouseButton2Click:Connect(function() AntiFlingPlayable()  end)
-			
+
 			--[[jum2 = Button:Clone() jum2.Parent = masslist jum2.Text = "Jum  / character height" jum2.BackgroundColor3 = Color3.fromRGB(0, 85, 0)
 			jum2.MouseButton1Click:Connect(function() char.Humanoid.JumpPower = 50 * char.Humanoid.BodyHeightScale.Value  char.Humanoid.JumpHeight = 7.2 * char.Humanoid.BodyHeightScale.Value end)
 			jump1 = Button:Clone() jump1.Parent = masslist jump1.Text = "jump 10 , 15" jump1.BackgroundColor3 = Color3.fromRGB(127, 90, 59)
@@ -2591,12 +2602,11 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			jump2 = Button:Clone() jump2.Parent = masslist jump2.Text = "jump 20 , 25" jump2.BackgroundColor3 = Color3.fromRGB(127, 90, 59)
 			jump2.MouseButton1Click:Connect(function() char.Humanoid.JumpHeight = 20 end)
 			jump2.MouseButton2Click:Connect(function() char.Humanoid.JumpHeight = 25 end)]]
-			
-			
-			ttdcol = Button:Clone() ttdcol.Parent = masslist ttdcol.Text = "ttd collide"    ttdcol.BackgroundColor3 = Color3.fromRGB(255, 85, 0)
-			ttdcol.MouseButton1Click:Connect(function()  TTD() end) 
-			ttdcol.MouseButton2Click:Connect(function()  TTD2() end)
-			vis = Button:Clone() vis.Parent = masslist vis.Text = "visible char"   vis.BackgroundColor3 = Color3.fromRGB(170, 170, 170)
+
+
+
+
+			vis = Button:Clone() vis.Parent = masslist vis.Text = "visible char"   vis.BackgroundColor3 = Color3.fromRGB(99, 99, 99)
 			vis.MouseButton1Click:Connect(function()   
 				for _, pla in pairs(char:GetDescendants()) do if pla:IsA("MeshPart")  then   pla.Transparency = 0 end end  
 				for _,target in pairs(char:GetDescendants()) do
@@ -2604,7 +2614,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 						if target.MeshId == "rbxassetid://16931221073" then target.Parent:Remove() end-- box
 
 						if target.MeshId == "rbxassetid://17899996187" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false end
-							--f= Instance.new("SelectionBox",target) f.Adornee = target f.Transparency = .9 f.Color3 = Color3.fromRGB(0, 255, 0) f.LineThickness = .07 end --krby
+						--f= Instance.new("SelectionBox",target) f.Adornee = target f.Transparency = .9 f.Color3 = Color3.fromRGB(0, 255, 0) f.LineThickness = .07 end --krby
 
 						if target.MeshId == "rbxassetid://95880964398198" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false end --egg
 						if target.MeshId == "rbxassetid://15412035527" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false end
@@ -2617,18 +2627,21 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 					char:FindFirstChild("GreenPixie"):FindFirstChildWhichIsA("BasePart").Transparency = 1
 				end
 			end) 
-			
-			
+
+			ttdcol = Button:Clone() ttdcol.Parent = masslist ttdcol.Text = "ttd collide"    ttdcol.BackgroundColor3 = Color3.fromRGB(255, 85, 0)
+			ttdcol.MouseButton1Click:Connect(function()  TTD() end) 
+			ttdcol.MouseButton2Click:Connect(function()  TTD2() end)
+
 		end)  
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
+
+
 		Lazy.MouseButton2Click:Connect(function()
 			if not Begal:FindFirstChild("GuiHolder") then guiholder = Instance.new("ScreenGui",Begal) guiholder.Name = "GuiHolder" end Begal.GuiHolder.Enabled = true
 			for _,Ui in pairs(Begal.GuiHolder:GetChildren()) do if Ui.Name ~= "lazylist2" then Ui:Remove() end end
@@ -2637,9 +2650,9 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			listing = Instance.new("UIListLayout",masslist) listing.Padding = UDim.new(0,1)
 
 			plus = 15 Button.BackgroundColor3 = Color3.fromRGB(85, 85, 127) Button.Size = UDim2.new(0.95,0 , 0,15) Button.TextXAlignment = Enum.TextXAlignment.Left Button.BackgroundTransparency = .5
-			
-			
-			
+
+
+
 			times = Button:Clone() times.Parent = masslist times.Text = "time  17.8 , 2 , 13 , 16" times.BackgroundColor3 = Color3.fromRGB(170, 0, 255)
 			times.MouseButton1Click:Connect(function() game.Lighting.ClockTime = 17.8  end)
 			times.MouseButton2Click:Connect(function() game.Lighting.ClockTime = 2 end)
@@ -2650,26 +2663,26 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			times2.MouseButton2Click:Connect(function() game.Lighting.ClockTime = 12 end)
 			times2.MouseWheelForward:Connect(function() game.Lighting.ClockTime = 9 end)
 			times2.MouseWheelBackward:Connect(function() game.Lighting.ClockTime = 7 end)
-			
+
 			inviscam = Button:Clone() inviscam.Parent = masslist inviscam.Text = "invisicam"  inviscam.BackgroundColor3 = Color3.fromRGB(85, 85, 127)
 			inviscam.MouseButton1Click:Connect(function() player.DevCameraOcclusionMode = Enum.DevCameraOcclusionMode.Invisicam end)
 			inviscam.MouseButton2Click:Connect(function() player.DevCameraOcclusionMode = Enum.DevCameraOcclusionMode.Zoom  end)
-			
+
 			res = Button:Clone() res.Parent = masslist res.Text = "reset grass" 
 			res.MouseButton1Click:Connect(function()  for _, part in pairs(workspace:GetDescendants()  ) do if part:IsA("BasePart") and part.Size == Vector3.new(164,.4,159) then part.CFrame = CFrame.new( -6.5,44.2,-7)  * CFrame.Angles(0,math.rad(90),0) end end end) 
-			
+
 			dli = Button:Clone() dli.Parent = masslist dli.Text = "del lights" 
 			dli.MouseButton1Click:Connect(function()  for _, part in pairs(workspace:GetDescendants()  ) do if part:IsA("Light")   then part:Remove()    end end end) 
-			
+
 			dn = Button:Clone() dn.Parent = masslist dn.Text = "del billboard" 
 			dn.MouseButton1Click:Connect(function()  for _, part in pairs(workspace:GetDescendants()  ) do if part:IsA("BillboardGui")   then part:Remove()    end end end) 
-			
-			
+
+
 			ttdcol = Button:Clone() ttdcol.Parent = masslist ttdcol.Text = "ttd collide"    ttdcol.BackgroundColor3 = Color3.fromRGB(255, 85, 0)
 			ttdcol.MouseButton1Click:Connect(function()  TTD() end) 
 			ttdcol.MouseButton2Click:Connect(function()  TTD2() end)
-			
-			
+
+
 			ttddb = Button:Clone() ttddb.Parent = masslist ttddb.Text = "ttd del backpack" 
 			ttddb.MouseButton1Click:Connect(function() --[[ for _, pla in pairs(game.Players:GetChildren()) do 
 					if pla:IsA("Player") then for _, backp in pairs(game.Players:GetChildren()) do 
@@ -2682,24 +2695,24 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 				for _, pla in pairs(game.Players:GetDescendants()) do if pla:IsA("StarterGear") then pla:Remove() end end 
 				for _, pla in pairs(game.Players:GetDescendants()) do if pla:IsA("Backpack")   then pla:Remove() end end 
 			end)
-			
+
 			ttdd = Button:Clone() ttdd.Parent = masslist ttdd.Text = "ttd del " 
 			ttdd.MouseButton1Click:Connect(function()  for _, part in pairs(workspace:GetDescendants()  ) do 
 					if part.Name == "RELICSxyz Boombox" or part.Name == "AudioEmitter" or part.Name == "Nametag"   then part:Remove()  end end end) 
-			
+
 			ttddp = Button:Clone() ttddp.Parent = masslist ttddp.Text = "ttd del play" 
 			ttddp.MouseButton1Click:Connect(function()
 				rthe = Instance.new("Model" ) rthe.Name = "hiden"
 				for _, person in pairs(game.Players:GetChildren()) do
 					if person ~= player then 
-					iSeeYou = person.Character iSeeYou.Parent = rthe
-						end
-					 end
+						iSeeYou = person.Character iSeeYou.Parent = rthe
+					end
+				end
 			end)
 			ttddp.MouseButton2Click:Connect(function()
 				for _, personw in pairs(rthe:GetChildren()) do personw.Parent = workspace end
 			end)
-			
+
 			vis = Button:Clone() vis.Parent = masslist vis.Text = "visible char"   vis.BackgroundColor3 = Color3.fromRGB(170, 170, 170)
 			vis.MouseButton1Click:Connect(function()   
 				for _, pla in pairs(char:GetDescendants()) do if pla:IsA("MeshPart")  then   pla.Transparency = 0 end end   
@@ -2708,7 +2721,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 						if target.MeshId == "rbxassetid://16931221073" then target.Parent:Remove() end-- box
 
 						if target.MeshId == "rbxassetid://17899996187" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false end
-							--f= Instance.new("SelectionBox",target) f.Adornee = target f.Transparency = .9 f.Color3 = Color3.fromRGB(0, 255, 0) f.LineThickness = .07 end --krby
+						--f= Instance.new("SelectionBox",target) f.Adornee = target f.Transparency = .9 f.Color3 = Color3.fromRGB(0, 255, 0) f.LineThickness = .07 end --krby
 
 						if target.MeshId == "rbxassetid://95880964398198" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false end --egg
 						if target.MeshId == "rbxassetid://15412035527" then target.Transparency = 1 target.HandleWrapLayer.Enabled = false end
@@ -2720,13 +2733,13 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 				if char:FindFirstChild("GreenPixie") then  
 					char:FindFirstChild("GreenPixie"):FindFirstChildWhichIsA("BasePart").Transparency = 1
 				end
-				
+
 			end) 
-			
+
 		end)  
 
 
-		 
+
 
 
 
@@ -2745,7 +2758,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 		runsp = TextBox:Clone() runsp.Parent = Spaghetti runsp.PlaceholderText = "run "..char.Humanoid.WalkSpeed runsp.Position = UDim2.new(0.5,0 , 0,row21)  runsp.BackgroundColor3 = Color3.fromRGB(255, 85, 0)  
 		--runsp:GetPropertyChangedSignal("Text"):Connect(function() runsp.Text = runsp.Text:gsub('[^%d.]', ''); char.Humanoid.WalkSpeed = (runsp.Text) end)  
 		runsp.FocusLost:Connect(function() runsp.Text = runsp.Text:gsub('[^%d.]', ''); char.Humanoid.WalkSpeed = (runsp.Text) end)  
-		
+
 		ThisIs = {"jumpheight"} 
 		jsp = TextBox:Clone() jsp.Parent = Spaghetti jsp.PlaceholderText = "jum "..math.floor(char.Humanoid.JumpHeight) jsp.Position = UDim2.new(0.5,0 , 0,row22)  jsp.BackgroundColor3 = Color3.fromRGB(255, 85, 0)  
 		--runsp:GetPropertyChangedSignal("Text"):Connect(function() runsp.Text = runsp.Text:gsub('[^%d.]', ''); char.Humanoid.WalkSpeed = (runsp.Text) end)  
@@ -2753,7 +2766,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 
 
 
-		
+
 
 
 
@@ -2762,10 +2775,21 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 		ThisIs = {"fps cap"} 
 		fpsc = TextBox:Clone() fpsc.Parent = Spaghetti fpsc.PlaceholderText = "fps 60" fpsc.Position = UDim2.new(0.05,0 , 0,row22)  fpsc.BackgroundColor3 = Color3.fromRGB(170, 0, 255)  
 		--runsp:GetPropertyChangedSignal("Text"):Connect(function() runsp.Text = runsp.Text:gsub('[^%d.]', ''); char.Humanoid.WalkSpeed = (runsp.Text) end)  
-		fpsc.FocusLost:Connect(function() if not fpsc:FindFirstChild("fps") then fps = Instance.new("NumberValue",fpsc) fps.Name = "fps" fps.Value = 50 end fpsc.Text = fpsc.Text:gsub('[^%d.]', ''); fpsc.fps.Value = (fpsc.Text) + .1  
-			while fpsc:FindFirstChild("fps") do
-				local t0 = tick() RunService.Heartbeat:Wait() repeat until (t0 + 1/fpsc:FindFirstChild("fps").Value) < tick()
-			end
+		task.spawn(function()
+			if workspace:FindFirstChild("ttds") or workspace:FindFirstChild("fps") then 
+				for i, face in pairs(char.HumanoidRootPart:GetChildren()) do if face:IsA("Sound") then  face:Remove() end end
+			if not workspace:FindFirstChild("fps") then fps = Instance.new("NumberValue",workspace) fps.Name = "fps" fps.Value = 60 end  
+			while workspace:FindFirstChild("fps") do
+				local t0 = tick() RunService.Heartbeat:Wait() repeat until (t0 + 1/workspace:FindFirstChild("fps").Value) < tick()
+				end
+				end
+		end)
+		
+		
+		fpsc.FocusLost:Connect(function() if not workspace:FindFirstChild("fps") then fps = Instance.new("NumberValue",workspace) fps.Name = "fps" fps.Value = 50 end fpsc.Text = fpsc.Text:gsub('[^%d.]', ''); workspace.fps.Value = (fpsc.Text) + .1  
+			---while fpsc:FindFirstChild("fps") do
+			--	local t0 = tick() RunService.Heartbeat:Wait() repeat until (t0 + 1/fpsc:FindFirstChild("fps").Value) < tick()
+			--end
 
 		end) 
 
@@ -2797,7 +2821,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 					end 
 					if iSeeYou:FindFirstChild("HumanoidRootPart") then 
 						invisible_spy.CFrame = iSeeYou.HumanoidRootPart.CFrame * CFrame.new(0,3,0)
-						end 
+					end 
 					--local look21 = Instance.new("Highlight", invisible_spy) look21.Name = "iSeeYou" look21.FillColor = Color3.fromRGB(0,255,85) look21.FillTransparency = .7  
 				end
 
@@ -2825,7 +2849,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 		end) 
 
 
-  
+
 
 		if Ruse == false or workspace:FindFirstChild("Baseplate") then
 			ThisIs = {"Sliding guis - Gravity, JumpHeight, WalkSpeed"}  --the old version
@@ -2877,7 +2901,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 					Sliding:TweenSize(UDim2.new(NewValue/Max.Value,0,1,0),Enum.EasingDirection.Out,Enum.EasingStyle.Quad,0.1,true,nil)
 					Point.ValueLabel.TextLabel.Text = NewValue *1--* ValueLabelMultiply.Value
 					if Slide.Name == "Gravity" then workspace.Gravity = NewValue end 
-				if Slide.Name == "Jump" then char.Humanoid.JumpHeight = NewValue/2 char.Humanoid.JumpPower = NewValue   Point.ValueLabel.TextLabel.Text = NewValue/2 end
+					if Slide.Name == "Jump" then char.Humanoid.JumpHeight = NewValue/2 char.Humanoid.JumpPower = NewValue   Point.ValueLabel.TextLabel.Text = NewValue/2 end
 					if Slide.Name == "Run" then char.Humanoid.WalkSpeed = NewValue end 
 					if Slide.Name == "Walk" then char.Humanoid.WalkSpeed = NewValue end 
 				end
@@ -2936,13 +2960,13 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 				Mouse.Move:Connect(function() if MouseisDown.Value == true then SetValueFromMousePos() end end)
 			end
 		end
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
 
 		ThisIs = {"Manage Current Accessories"} 
 		hats = Button:Clone() hats.Parent = Spaghetti hats.Text = "nil" hats.Position = UDim2.new(0.5,0 , 0,row11)  hats.BackgroundColor3 = Color3.fromRGB(255, 0, 127)  
@@ -3161,7 +3185,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 							ba.Text = game:GetService("MarketplaceService"):GetProductInfo(tonumber(str)).Name .. "	"  ..str--track.Animation.AnimationId:gsub('[^%d.]', '')  -- track.Animation.AnimationId
 							ba.MouseButton1Down:Connect(function()
 								--if sethiddenproperty then
-									--setclipboard("https://assetdelivery.roblox.com/v1/asset/?id="..str .."  ".. ba.Text  ) --pre ugc patch
+								--setclipboard("https://assetdelivery.roblox.com/v1/asset/?id="..str .."  ".. ba.Text  ) --pre ugc patch
 								--	setclipboard( ba.Text )
 								--end
 								if not workspace:FindFirstChild("Erm Actually") then Instance.new("Folder",workspace).Name = "Erm Actually" end
@@ -3532,10 +3556,10 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 		gamerGril = {  "hai paper" , "headphone n", }
 		dirt4 = {   "hai1 pony 2" , "hai2 bl"  ,"cat fluf", "ear1"  , } ---"hai2 p" ,"hai2 br", "hai1 pony b" ,"hai4", "hai5",  "hai5b"  "shadpl","shadpa" ,"shad r"
 		dirt5 = {    "hai pig"  ,"hai curl"  , "hai fluf", "bang swept","bang side" , }
-		
-		
-		
-		
+
+
+
+
 		fairys = {    "Fairy Winter", "Fairy Spring", "Fairy Beach", "Fairy PeaGold", "Fairy Fall", "Fairy St Patricks", }-- for _,tha in pairs(fairys) do hat2(tha) end
 		mewings = { "Wings Murica", "Wings Murica2", "Wings Galaxy", "Wings Gold" , } 
 		neckbling = { "Snow Queen", "Chain SUS", "Chain Troll", "Chain OOF",    }  
@@ -3701,29 +3725,29 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0.011, 0.412, 0)  HatAtt.Orientation = Vector3.new(0, 90, 0)  end
 						if Buttons.Text == "hai fluf" then HatMesh.MeshId = "rbxassetid://13489987658" HatMesh.TextureId = "http://www.roblox.com/asset/?id=11413134615" --HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0.003, 0.321, -0.039)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
-						
+
 						um = "    HatAtt.Position  =  AccessoryWeld.C0     or    Handle.Attachment.Position.OriginalPosition    "
-						
+
 						if Buttons.Text == "cat band" then HatMesh.MeshId = "rbxassetid://14204644567" HatMesh.TextureId = "rbxassetid://14205792734" --HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "HatAttachment" HatAtt.Position = Vector3.new(-0.011, 0.031, -0.077)  HatAtt.Orientation = Vector3.new(0, 180, 0)  end
 						if Buttons.Text == "hai big curl" then HatMesh.MeshId = "rbxassetid://15775589845" HatMesh.TextureId = "rbxassetid://15775589906"-- HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(-0.022, 0.585, 0)  HatAtt.Orientation = Vector3.new(0, 90, 0)  end
-						 
+
 						if Buttons.Text == "bang swept" then HatMesh.MeshId = "rbxassetid://6963528552" HatMesh.TextureId = "rbxassetid://6322812499"-- HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(0.035, -0.262, -0.121)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
 						if Buttons.Text == "bang side" then HatMesh.MeshId = "rbxassetid://5945976587" HatMesh.TextureId = "rbxassetid://6322812499" --HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(-0.002, -0.367, -0.287)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
-						
+
 						if Buttons.Text == "bang swept2" then HatMesh.MeshId = "rbxassetid://6963528552" HatMesh.TextureId = "rbxassetid://6322812499"-- HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(0.035, -0.212, 0.121)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
 						if Buttons.Text == "bang side2" then HatMesh.MeshId = "rbxassetid://5945976587" HatMesh.TextureId = "rbxassetid://6322812499" --HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "FaceFrontAttachment" HatAtt.Position = Vector3.new(-0.002, -0.05, -0.027)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
-						
+
 						if Buttons.Text == "hai paper" then HatMesh.MeshId = "rbxassetid://15655702576" HatMesh.TextureId = "http://www.roblox.com/asset/?id=15655681473" --HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0, 0.57, -0.08)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
 						if Buttons.Text == "headphone n" then HatMesh.MeshId = "rbxassetid://116789217672048" HatMesh.TextureId = "http://www.roblox.com/asset/?id=124529608517543" --HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "HatAttachment" HatAtt.Position = Vector3.new(-0, 0.266, 0.272)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
-						
+
 						if Buttons.Text == "hai sworl" then HatMesh.MeshId = "rbxassetid://17637209360" HatMesh.TextureId = "http://www.roblox.com/asset/?id=11089084282" --HatMesh.Scale=Vector3.new(.9,.9,.9)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0.001, 0.577, 0.028)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
 						if Buttons.Text == "Pink Bow" then HatMesh.MeshId = "rbxassetid://9235653313" HatMesh.TextureId = "rbxassetid://9235653495" --HatMesh.Scale=Vector3.new(.9,.9,.9)
@@ -3733,17 +3757,17 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0.002, 0.633, 0.017)  HatAtt.Orientation = Vector3.new(0, 180, 0)  end
 						--if Buttons.Text == "hai pig" then HatMesh.MeshId = "rbxassetid://15000865820" HatMesh.TextureId = "rbxassetid://14648503238" --HatMesh.Scale=Vector3.new(.9,.9,.9)
 						--	HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0.002, 0.533, 0.047)  HatAtt.Orientation = Vector3.new(0, 180, 0)  end
-						
+
 						if Buttons.Text == "hai cara" then HatMesh.MeshId = "rbxassetid://121549793202030" HatMesh.TextureId = "rbxassetid://126552920416269"-- HatMesh.Scale=Vector3.new(.95,.95,.95)
 							HatAtt.Name = "HairAttachment" HatAtt.Position = Vector3.new(0.006, 0.34, -0.325)  HatAtt.Orientation = Vector3.new(0, 0, 0)  end
 
-						
-						
-						
-						
-						
-						
-						
+
+
+
+
+
+
+
 
 
 						if Buttons.Text == "Fairy St Patricks" then HatMesh.MeshId = "http://www.roblox.com/asset/?id=226143404" HatMesh.TextureId = "http://www.roblox.com/asset/?id=226143506"  HatMesh.Scale=Vector3.new(.25	, .25, .25)
@@ -3920,10 +3944,10 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 								hweld.C0 = HatAtt.CFrame
 							end
 						end
-						
-						 
-						
-						
+
+
+
+
 					end	
 
 					if Buttons.Name == "A" then 
@@ -4009,11 +4033,11 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 
 
 							wide = char.Humanoid.BodyWidthScale.Value tall = char.Humanoid.BodyHeightScale.Value thicc = char.Humanoid.BodyDepthScale.Value 
-							
+
 							specialScale = 1
 							if char.Head.MeshId == "https://assetdelivery.roblox.com/v1/asset/?id=14640466175" then specialScale = .92 end
 							hedas = char.Humanoid.HeadScale.Value   
-							
+
 							for _,v in pairs(char:GetChildren()) do
 								FoundAttachment = v:FindFirstChild(HatAtt.Name) 
 								if FoundAttachment then hweld.Part1 = FoundAttachment.Parent hweld.C1 = FoundAttachment.CFrame hweld.Enabled = true 
@@ -4036,32 +4060,32 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 							if not char:FindFirstChildWhichIsA("ShirtGraphic") then Instance.new("ShirtGraphic",char) end char:FindFirstChildWhichIsA("ShirtGraphic").Graphic = "rbxassetid://91169003778096"  
 							--if not char.LowerTorso:FindFirstChild("Decal") then 
 							for _,v in pairs(char:GetDescendants()) do if v:IsA("Decal") and v:HasTag("bell") then v:Remove() end end 
-								deca = Instance.new("Decal",char.LowerTorso) deca.Color3 = Color3.fromRGB(254, 199, 199) deca:AddTag("bell")
-								bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://91169003778096" bel.Name = "bel" 
-								bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://18713397525" bel.Name = "c smal"--crac small
+							deca = Instance.new("Decal",char.LowerTorso) deca.Color3 = Color3.fromRGB(254, 199, 199) deca:AddTag("bell")
+							bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://91169003778096" bel.Name = "bel" 
+							bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://18713397525" bel.Name = "c smal"--crac small
 
-								bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://91169003778096" bel.Face = Enum.NormalId.Bottom  bel.Name = "bel bottom" 
-								bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://91169003778096" bel.Face = Enum.NormalId.Bottom  bel.Name = "bel bottom" 
+							bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://91169003778096" bel.Face = Enum.NormalId.Bottom  bel.Name = "bel bottom" 
+							bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://91169003778096" bel.Face = Enum.NormalId.Bottom  bel.Name = "bel bottom" 
 
-								bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://91169003778096" bel.Face = Enum.NormalId.Back	bel.Name = "bel back" 	
-								bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://124539244244105" bel.Face = Enum.NormalId.Back bel.Name = "c big back" -- crac big 
-								bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://124539244244105" bel.Face = Enum.NormalId.Back bel.Name = "c big back" 
-								--bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://124539244244105" bel.Face = Enum.NormalId.Back bel.Name = "c big back" -- crac big 
-								bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://124539244244105" bel.Face = Enum.NormalId.Front bel.Name = "c big front" -- crac big 
-								--bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://18713397525" bel.Face = Enum.NormalId.Back  bel.Name = "c smal back"--crac small
-								bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://18713397525" bel.Face = Enum.NormalId.Bottom  bel.Name = "c smal bottom"--crac small
-								bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://18713397525" bel.Face = Enum.NormalId.Bottom  bel.Name = "c smal bottom"--crac small
+							bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://91169003778096" bel.Face = Enum.NormalId.Back	bel.Name = "bel back" 	
+							bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://124539244244105" bel.Face = Enum.NormalId.Back bel.Name = "c big back" -- crac big 
+							bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://124539244244105" bel.Face = Enum.NormalId.Back bel.Name = "c big back" 
+							--bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://124539244244105" bel.Face = Enum.NormalId.Back bel.Name = "c big back" -- crac big 
+							bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://124539244244105" bel.Face = Enum.NormalId.Front bel.Name = "c big front" -- crac big 
+							--bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://18713397525" bel.Face = Enum.NormalId.Back  bel.Name = "c smal back"--crac small
+							bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://18713397525" bel.Face = Enum.NormalId.Bottom  bel.Name = "c smal bottom"--crac small
+							bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://18713397525" bel.Face = Enum.NormalId.Bottom  bel.Name = "c smal bottom"--crac small
 
-								--bel = Instance.new("Decal",char.UpperTorso) bel.Texture = "rbxassetid://91169003778096"	 bel.Name = "bel" 
-								--bel = Instance.new("Decal",char.UpperTorso) bel.Texture = "rbxassetid://91169003778096" bel.Face = Enum.NormalId.Back	bel.Name = "bel back" 
-								bel = deca:Clone() bel.Parent = char.UpperTorso  bel.Texture = "rbxassetid://18656573483" bel.Face = Enum.NormalId.Back	bel.Name = "back back" 
-								bel = deca:Clone() bel.Parent = char.UpperTorso bel.Texture = "rbxassetid://18656573483" bel.Name = "back front" 
-								bel = deca:Clone() bel.Parent = char.UpperTorso  bel.Texture = "rbxassetid://18713397525"   bel.Name = "c smal" --crac small
-								bel = deca:Clone() bel.Parent = char.UpperTorso  bel.Texture = "rbxassetid://18713397525" bel.Face = Enum.NormalId.Back  bel.Name = "c smal back"---crac small
+							--bel = Instance.new("Decal",char.UpperTorso) bel.Texture = "rbxassetid://91169003778096"	 bel.Name = "bel" 
+							--bel = Instance.new("Decal",char.UpperTorso) bel.Texture = "rbxassetid://91169003778096" bel.Face = Enum.NormalId.Back	bel.Name = "bel back" 
+							bel = deca:Clone() bel.Parent = char.UpperTorso  bel.Texture = "rbxassetid://18656573483" bel.Face = Enum.NormalId.Back	bel.Name = "back back" 
+							bel = deca:Clone() bel.Parent = char.UpperTorso bel.Texture = "rbxassetid://18656573483" bel.Name = "back front" 
+							bel = deca:Clone() bel.Parent = char.UpperTorso  bel.Texture = "rbxassetid://18713397525"   bel.Name = "c smal" --crac small
+							bel = deca:Clone() bel.Parent = char.UpperTorso  bel.Texture = "rbxassetid://18713397525" bel.Face = Enum.NormalId.Back  bel.Name = "c smal back"---crac small
 
 							--end
 						end
-						
+
 						function bels()  
 							if not char:FindFirstChildWhichIsA("ShirtGraphic") then Instance.new("ShirtGraphic",char) end char:FindFirstChildWhichIsA("ShirtGraphic").Graphic = "rbxassetid://91169003778096"  
 							--if not char.LowerTorso:FindFirstChild("Decal") then 
@@ -4073,7 +4097,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 							bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://91169003778096" bel.Face = Enum.NormalId.Bottom  bel.Name = "bel bottom" 
 							--bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://91169003778096" bel.Face = Enum.NormalId.Bottom  bel.Name = "bel bottom" 
 
-							 bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://91169003778096" bel.Face = Enum.NormalId.Back	bel.Name = "bel back" 	 
+							bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://91169003778096" bel.Face = Enum.NormalId.Back	bel.Name = "bel back" 	 
 							--bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://124539244244105" bel.Face = Enum.NormalId.Back bel.Name = "c big back" -- crac big  
 							--bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://18713397525" bel.Face = Enum.NormalId.Back  bel.Name = "c smal back"--crac small
 							--bel = deca:Clone() bel.Parent = char.LowerTorso bel.Texture = "rbxassetid://18713397525" bel.Face = Enum.NormalId.Bottom  bel.Name = "c smal bottom"--crac small
@@ -4088,18 +4112,18 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 
 							--end
 						end
-						
+
 						function beln()  
 							if not char:FindFirstChildWhichIsA("ShirtGraphic") then Instance.new("ShirtGraphic",char) end char:FindFirstChildWhichIsA("ShirtGraphic").Graphic = "rbxassetid://91169003778096"  
 							--if not char.LowerTorso:FindFirstChild("Decal") then 
 							for _,v in pairs(char:GetDescendants()) do if v:IsA("Decal") and v:HasTag("bell") then v:Remove() end end 
 						end
-						
+
 						--sbel2 rbxassetid://81538381090896
 						--sbel2 backup rbxassetid://83208957324495
 						--back rbxassetid://18656573483
-						
-						
+
+
 						--[[if Buttons.Text == "shadpl" then if char:FindFirstChild("HeartShutterSunGlasses") then 
 								char:FindFirstChild("HeartShutterSunGlasses").Handle.TextureID = "rbxassetid://9235653495" 
 								--char:FindFirstChild("HeartShutterSunGlasses"):FindFirstChildWhichIsA("BasePart"):FindFirstChildWhichIsA("SpecialMesh").TextureId = "rbxassetid://9235653495" 
@@ -4115,7 +4139,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 								char:FindFirstChild("HeartShutterSunGlasses"):FindFirstChildWhichIsA("BasePart"):FindFirstChildWhichIsA("SpecialMesh").TextureId = "rbxassetid://553852327" 
 							end
 						end]]
-						
+
 						if Buttons.Text == "refresh" then if myhatist:FindFirstChildWhichIsA("Pants") then char:FindFirstChildWhichIsA("Pants").PantsTemplate = myhatist:FindFirstChildWhichIsA("Pants").PantsTemplate end if myhatist:FindFirstChildWhichIsA("Shirt") then char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = myhatist:FindFirstChildWhichIsA("Shirt").ShirtTemplate end
 							for _,shad in pairs(char:GetChildren()) do 
 								if shad:IsA("Accessory") and shad:FindFirstChildWhichIsA("BasePart") then 
@@ -4133,9 +4157,9 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 									if shad:FindFirstChildWhichIsA("BasePart"):FindFirstChildWhichIsA("WrapLayer") then shad:FindFirstChildWhichIsA("BasePart"):FindFirstChildWhichIsA("WrapLayer").Enabled = false end
 								end
 							end
-							 
+
 						end	
-						
+
 						if Buttons.Text == "Wolf" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "http://www.roblox.com/asset/?id=6851982960" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "http://www.roblox.com/asset/?id=8219508887"
 							for _,shad in pairs(char:GetChildren()) do if shad:IsA("Accessory") and shad:FindFirstChildWhichIsA("BasePart") then if not shad:FindFirstChild("me") then shad:FindFirstChildWhichIsA("BasePart").Transparency = 1 end if shad:FindFirstChild("me") then shad:Remove() end end end
 							for _,tha in pairs(wolfy) do hatme2(tha) end
@@ -4180,7 +4204,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 						if Buttons.Text == "clo r" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "rbxassetid://7175643207" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "" end
 						if Buttons.Text == "clo t" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "http://www.roblox.com/asset/?id=7144143881" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "" end
 						if Buttons.Text == "clo b" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "rbxassetid://8770736859" end
-						
+
 						if Buttons.Text == "Wolf clo" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "http://www.roblox.com/asset/?id=6851982960" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "http://www.roblox.com/asset/?id=8219508887" end
 						if Buttons.Text == "clo1" then char:FindFirstChildWhichIsA("Pants").PantsTemplate =  "http://www.roblox.com/asset/?id=15100022603" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "http://www.roblox.com/asset/?id=131004016764723" end
 						if Buttons.Text == "clo2" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "rbxassetid://10719267706" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "rbxassetid://137631918411915" end
@@ -4192,7 +4216,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 						if Buttons.Text == "clo6" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "rbxassetid://136379601149273" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "rbxassetid://136379601149273" end
 						if Buttons.Text == "clo7" then char:FindFirstChildWhichIsA("Pants").PantsTemplate = "rbxassetid://131269505180260" char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "rbxassetid://131269505180260" end
 
-						 
+
 					end
 
 				end)
@@ -4247,12 +4271,14 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			faceID = { Color3.fromRGB(255, 188, 170 ),  Color3.fromRGB( 218, 163, 152 ),  Color3.fromRGB(253, 192, 177),  Color3.fromRGB(255, 184, 162),  Color3.fromRGB(241, 179, 161), 
 				Color3.fromRGB(239, 178, 159), Color3.fromRGB(218, 163, 145), Color3.fromRGB(218, 163, 152),    Color3.fromRGB(208, 156, 135), 
 				Color3.fromRGB(204, 142, 105), Color3.fromRGB(234, 184, 146),  }
-			for _, faces in pairs(faceID) do local face = FaceButton:Clone() face.Parent = facelist face.BackgroundTransparency = 0 face.BackgroundColor3 = faces face.MouseButton1Click:Connect(function()
+			for _, faces in pairs(faceID) do local face = FaceButton:Clone() face.Parent = facelist face.BackgroundTransparency = 0 face.BackgroundColor3 = faces 
+				if char.Head.Color == face.BackgroundColor3 then face.BorderColor = Color3.fromRGB(170, 85, 127) face.BorderSize = 6 face.ZIndex = 2 end	
+				face.MouseButton1Click:Connect(function()
 					for _, br in pairs(char:GetChildren()) do if br:IsA("BasePart") then br.Color = face.BackgroundColor3  end end  end) end
 		end)
-		
-		
-		
+
+
+
 		function NewHead1() if char:FindFirstChild("FakeHead") then char:FindFirstChild("FakeHead"):Remove() char.Head.Transparency = 0 for _,shad in pairs(char.Head.OriginalSize:GetDescendants()) do shad.Parent = char.Head end return end
 			FakeHead = Instance.new("Part",char) FakeHead.Name = "FakeHead" FakeHead.Size = char.Head.Size 
 			FakeHead.CanCollide = false FakeHead.Massless = true FakeHead.CanQuery = false FakeHead.Color = char.Head.Color char.Head.Transparency = 1 FakeHead.CastShadow = false char.Head.CastShadow = false 
@@ -4268,9 +4294,9 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			if Begal.GuiHolder:FindFirstChild("facelist") then Begal.GuiHolder:FindFirstChild("facelist"):Remove() return end
 			facelist = Scroll:Clone() facelist.Parent = Begal.GuiHolder  facelist.Name = "facelist" facelist.BackgroundTransparency = 1 facelist.Position = UDim2.new(0.15, 0 , 0.3, 0)  facelist.Size = UDim2.new(0.15, 0 , 0.36, 0)
 			gridding = Instance.new("UIGridLayout",facelist) gridding.CellPadding = UDim2.new(0,1,0,1) gridding.CellSize = UDim2.new(.3,0, 190/33/2/66,0)
-			
-			
-			
+
+
+
 			dec= Instance.new("Decal") dec:AddTag("face") 
 			function faceExtras1() 
 				brow = dec:Clone() brow.Texture = "http://www.roblox.com/asset/?id=3690850835" 	brow.Parent= FakeHead	brow.Name = "brow"
@@ -4289,19 +4315,19 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 				mes = dec:Clone() mes.Texture = "http://www.roblox.com/asset/?id=734276965"    mes.Transparency = .5	mes.Parent= FakeHead	mes.Name = "mes"
 				mes = dec:Clone() mes.Texture = "http://www.roblox.com/asset/?id=137899280" mes.ZIndex = 2  mes.Transparency = .6	mes.Parent= FakeHead	mes.Name = "mes"
 			end
-			
+
 			local ext = FaceButton:Clone() ext.Parent = facelist ext.Image = "http://www.roblox.com/asset/?id=389182271" ext.MouseButton1Click:Connect(function() faceExtras1() end) 
 			local mesy1 = FaceButton:Clone() mesy1.Parent = facelist mesy1.Image = "http://www.roblox.com/asset/?id=734276965" mesy1.MouseButton1Click:Connect(function() mes1()  end) 
 			mesy1.MouseButton2Click:Connect(function() for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") and faces.Name == "mes" then faces:Remove() end end  end)
-			
-			
-			
-			
+
+
+
+
 			if not char.Head:FindFirstChild("face") and not char:FindFirstChild("FakeHead") then NewHead1() end
 			FaceButton.Image = "rbxassetid://3428079000"
 			local ace1 = FaceButton:Clone() ace1.Parent = facelist   ace1.MouseButton1Click:Connect(function()
 				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
-					if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
+				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
 				m = dec:Clone() m.Texture = "http://www.roblox.com/asset/?id=6784493669"	m.Parent= FakeHead m.Name = "mouth"
 				e = dec:Clone() e.Texture = ace1.Image e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
 				faceExtras1() 
@@ -4341,7 +4367,7 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 				e = dec:Clone() e.Texture =  ace1.Image e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
 				faceExtras1()
 			end) 
-			 local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.MouseButton1Click:Connect(function()
+			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.MouseButton1Click:Connect(function()
 				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
 				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
 				m = dec:Clone() m.Texture = "http://www.roblox.com/asset/?ID=2801759774"	m.Parent= FakeHead m.Name = "mouth"
@@ -4355,17 +4381,17 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 				e = dec:Clone() e.Texture =  ace1.Image e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
 				faceExtras1()
 			end)
-			
-			
-			
-			
+
+
+
+
 			faces="a"
 			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "http://www.roblox.com/asset/?id=7806022869" ace1.MouseButton1Click:Connect(function()
 				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
 				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
 				m = dec:Clone() m.Texture = "http://www.roblox.com/asset/?id=7806022869"	m.Parent= FakeHead m.Name = "face" 
 				faceExtras1()
- 			end) 
+			end) 
 			local ace1 = FaceButton:Clone() ace1.Parent = facelist ace1.Image = "http://www.roblox.com/asset/?id=4880833769" ace1.MouseButton1Click:Connect(function()
 				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
 				if char.Head:FindFirstChild("face") then char.Head.face.Transparency = 1 end
@@ -4408,9 +4434,9 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 				m = dec:Clone() m.Texture = ace1.Image	m.Parent= FakeHead m.Name = "face" 
 				faceExtras2()
 			end) 
-			 
 
-			
+
+
 			eye="tear big"
 			FaceButton.Image = "rbxassetid://3428078396"
 			local ace1 = FaceButton:Clone() ace1.Parent = facelist   ace1.MouseButton1Click:Connect(function()
@@ -4469,10 +4495,10 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 				e = dec:Clone() e.Texture =  ace1.Image e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
 				faceExtras1()
 			end)
-			
-			
-			
-			 eye="tear small" 
+
+
+
+			eye="tear small" 
 			FaceButton.Image = "http://www.roblox.com/asset/?id=7361332082"
 			local ace1 = FaceButton:Clone() ace1.Parent = facelist   ace1.MouseButton1Click:Connect(function()
 				for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
@@ -4538,8 +4564,8 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 				e = dec:Clone() e.Texture = "rbxassetid://3428078396" e.ZIndex = 1 	e.Parent= FakeHead   e.Name = "eye"
 				faceExtras1()
 			end)
-			
-			
+
+
 			eye="squint"
 			FaceButton.Image = "rbxassetid://2801605473"
 			local ace1 = FaceButton:Clone() ace1.Parent = facelist   ace1.MouseButton1Click:Connect(function()
@@ -4598,9 +4624,9 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 				e = dec:Clone() e.Texture =  ace1.Image e.ZIndex = 2 	e.Parent= FakeHead   e.Name = "eye"
 				faceExtras1()
 			end)
-			
-			
-			
+
+
+
 			--faceID={494291269,26019070,42070576,1665629400, 16652251,20052135,398676450,180660043,26343188		   ,128992838,209995252,21024661,2409285794,406000958,236399287,116042990,258198928,29532363,49045351,28878297,29296146,244160766,10907541,7699174,7074729,14861743,10831558,66330106,391496223,15432080,15177601,11956548,110207437,}
 			faceID = {494290547,26018945,42070872,1868469550,629930519,20052028,398676207,179693472,26343132,6343843123,127959433,209712379,21024598,2409281591,405705854,236455674,115978221,258192246,29532362,49045252,28878210,29296097,243755928,10747810,7699086,7074712,14861556,10747371,66329524,629933140,15431991,15177471,11956455,108209955,}
 			for _, faces in pairs(faceID) do
@@ -4609,18 +4635,18 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 					--if faces == 1 then    end
 					for _, faces in pairs(FakeHead:GetChildren()) do if faces:IsA("Decal") then faces:Remove() end end
 					dec= Instance.new("Decal") dec:AddTag("face")   m = dec:Clone() m.Texture = face.Image	m.Parent= FakeHead m.Name = "face"
-					
+
 				end) 	
 			end
-			
+
 		end)
 		faces1.MouseButton2Click:Connect(function()
 			NewHead1()
 		end)
-		
-		
-		
-		
+
+
+
+
 		ThisIs = {"Import Layered"}	 
 
 		laeyers = Button:Clone() laeyers.Parent = Spaghetti laeyers.Text = "Layers" laeyers.Position = UDim2.new(0.5,0 , 0,row14)  laeyers.BackgroundColor3 = Color3.fromRGB(0, 170, 255)  
@@ -4637,14 +4663,14 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			if char:FindFirstChild("White cat paws") and not game.Lighting.layers.fit1:FindFirstChild("White cat paws") then  char:FindFirstChild("White cat paws"):Clone().Parent = game.Lighting.layers.fit1    game.Lighting.layers.fit1:FindFirstChild("White cat paws").Transparency = 0  end
 			if char:FindFirstChild("Accessory (Cat)") and not game.Lighting.layers.fit1:FindFirstChild("Accessory (Cat)") then  char:FindFirstChild("Accessory (Cat)"):Clone().Parent = game.Lighting.layers.fit1    game.Lighting.layers.fit1:FindFirstChild("Accessory (Cat)").Transparency = 0 end
 			if char:FindFirstChild("Accessory (Black Cat Feet)") and not game.Lighting.layers.fit1:FindFirstChild("Accessory (Black Cat Feet)") then  char:FindFirstChild("Accessory (Black Cat Feet)"):Clone().Parent = game.Lighting.layers.fit1 end
-			
+
 			if char:FindFirstChild("Accessory (Generated Accessory)") and not game.Lighting.layers.fit1:FindFirstChild("Accessory (Generated Accessory)") then  char:FindFirstChild("Accessory (Generated Accessory)"):Clone().Parent = game.Lighting.layers.fit1 end
-			
+
 			if char:FindFirstChild("Accessory (ribbon p)") and not game.Lighting.layers.fit1:FindFirstChild("Accessory (ribbon p)") then  char:FindFirstChild("Accessory (ribbon p)"):Clone().Parent = game.Lighting.layers.fit1 end
 			if char:FindFirstChild("Accessory (♾️ White goth lace fishnet stockings)") and not game.Lighting.layers.fit1:FindFirstChild("Accessory (♾️ White goth lace fishnet stockings)") then 
 				char:FindFirstChild("Accessory (♾️ White goth lace fishnet stockings)"):FindFirstChildWhichIsA("BasePart"):FindFirstChildWhichIsA("WrapLayer").Order = -1
 				char:FindFirstChild("Accessory (♾️ White goth lace fishnet stockings)"):Clone().Parent = game.Lighting.layers.fit1 end
-			
+
 
 
 
@@ -4668,8 +4694,8 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			ran2 = Button:Clone() ran2.Parent = list ran2.Text = " " 
 			ran2.MouseButton1Click:Connect(function()    end) 
 
-			
-			
+
+
 			p0 = Button:Clone() p0.Parent = list p0.Text = "chib foot  " 
 			p0.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (Black Cat Feet)") then char:FindFirstChild("Accessory (Black Cat Feet)"):Remove() return end  
 				hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (Black Cat Feet)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head   end) 
@@ -4679,10 +4705,10 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			p2 = Button:Clone() p2.Parent = list p2.Text = "paw foot " 
 			p2.MouseButton1Click:Connect(function()  if char:FindFirstChild("White cat paws") then char:FindFirstChild("White cat paws"):Remove() return end  
 				hat= game.Lighting.layers.fit1:FindFirstChild("White cat paws"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head   end) 
-			
+
 			dis = Button:Clone() dis.Parent = list dis.Text = " " 
 			dis.MouseButton1Click:Connect(function() dis.Text = char.SurvivalTag.Value wait(2) dis.Text = "disaster"  end) 
-			
+
 			b0 = Button:Clone() b0.Parent = list b0.Text = "bik0 " 
 			b0.MouseButton1Click:Connect(function()
 				--[[if not char:FindFirstChild("Accessory (Generated Accessory)") then
@@ -4697,11 +4723,11 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 			n1 = Button:Clone() n1.Parent = list n1.Text = "ribbon p " n1.BackgroundColor3 = Color3.fromRGB(255, 170, 255)
 			n1.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (ribbon p)") then char:FindFirstChild("Accessory (ribbon p)"):Remove() return end  
 				hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (ribbon p)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head   end) 
-			
+
 			ran2 = Button:Clone() ran2.Parent = list ran2.Text = " " 
 			ran2.MouseButton1Click:Connect(function()    end) 
-			
-			
+
+
 			Button.BackgroundColor3 = Color3.fromRGB(255, 85, 255)
 			ff1 = Button:Clone() ff1.Parent = list ff1.Text = "pl chib foot " 
 			ff1.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (Black Cat Feet)") then char:FindFirstChild("Accessory (Black Cat Feet)"):Remove() return end  
@@ -4717,11 +4743,11 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 				hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (Generated Accessory)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head 
 				hat.Handle.TextureID = "rbxassetid://9235653495"  hat.Handle.SurfaceAppearance:Remove() 
 			end) 
-			
-			
+
+
 			--char:FindFirstChild("HeartShutterSunGlasses").Handle.TextureID = "rbxassetid://9235653495" 
 			--char:FindFirstChild("HeartShutterSunGlasses"):FindFirstChildWhichIsA("BasePart"):FindFirstChildWhichIsA("SpecialMesh").TextureId = "rbxassetid://9235653495" 
-	 
+
 			Button.BackgroundColor3 = Color3.fromRGB(253, 198, 255)
 			ff1p = Button:Clone() ff1p.Parent = list ff1p.Text = "pa chib foot " 
 			ff1p.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (Black Cat Feet)") then char:FindFirstChild("Accessory (Black Cat Feet)"):Remove() return end  
@@ -4737,29 +4763,29 @@ falld = Button:Clone() falld.Parent = masslist falld.Text = "fall damage"  falld
 				hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (Generated Accessory)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head 
 				hat.Handle.TextureID = "rbxassetid://96379382109164"  hat.Handle.SurfaceAppearance:Remove() 
 			end) 
-			
+
 			shpl = Button:Clone() shpl.Parent = list shpl.Text = "pl shade" 
 			shpl.MouseButton1Click:Connect(function() char:FindFirstChild("HeartShutterSunGlasses").Handle.TextureID = "rbxassetid://9235653495"  end) 
 			shpa = Button:Clone() shpa.Parent = list shpa.Text = "pa shade" 
 			shpa.MouseButton1Click:Connect(function() char:FindFirstChild("HeartShutterSunGlasses").Handle.TextureID = "rbxassetid://96379382109164"  end) 
 			shr = Button:Clone() shr.Parent = list shr.Text = "ra shade" 
 			shr.MouseButton1Click:Connect(function() char:FindFirstChild("HeartShutterSunGlasses").Handle.TextureID = "rbxassetid://553852327"  end) 
-			
+
 			Button.BackgroundColor3 = Color3.fromRGB(255, 170, 255)
-		--	p0p = Button:Clone() p0p.Parent = list p0p.Text = "paw foot chib p" 
-		--	p0p.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (Black Cat Feet)") then char:FindFirstChild("Accessory (Black Cat Feet)"):Remove() return end  
-		--		hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (Black Cat Feet)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head hat.Handle.TextureID = "rbxassetid://12647749485" wait(2) hat.Handle.SurfaceAppearance:Remove()   end) 
+			--	p0p = Button:Clone() p0p.Parent = list p0p.Text = "paw foot chib p" 
+			--	p0p.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (Black Cat Feet)") then char:FindFirstChild("Accessory (Black Cat Feet)"):Remove() return end  
+			--		hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (Black Cat Feet)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head hat.Handle.TextureID = "rbxassetid://12647749485" wait(2) hat.Handle.SurfaceAppearance:Remove()   end) 
 			p1p = Button:Clone() p1p.Parent = list p1p.Text = "p chib hand " 
 			p1p.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (Cat)") then char:FindFirstChild("Accessory (Cat)"):Remove() return end  
 				hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (Cat)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head hat.Handle.TextureID = "rbxassetid://12647749485"   hat.Handle.SurfaceAppearance:Remove()  end) 
 			p2p = Button:Clone() p2p.Parent = list p2p.Text = "p paw foot " 
 			p2p.MouseButton1Click:Connect(function()  if char:FindFirstChild("White cat paws") then char:FindFirstChild("White cat paws"):Remove() return end  
 				hat= game.Lighting.layers.fit1:FindFirstChild("White cat paws"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head hat.Handle.TextureID = "rbxassetid://12647749485"  end) 
-			
-				
+
+
 			ran2 = Button:Clone() ran2.Parent = list ran2.Text = " " 
 			ran2.MouseButton1Click:Connect(function()    end) 
-Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
+			Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			p0b = Button:Clone() p0b.Parent = list p0b.Text = "bl chib foot  "  
 			p0b.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (Black Cat Feet)") then char:FindFirstChild("Accessory (Black Cat Feet)"):Remove() return end  
 				hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (Black Cat Feet)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head hat.Handle.TextureID = "rbxassetid://15695912871"   hat.Handle.SurfaceAppearance:Remove()   end) 
@@ -4773,8 +4799,8 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			bl4p.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (Generated Accessory)") then char:FindFirstChild("Accessory (Generated Accessory)"):Remove() return end  
 				hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (Generated Accessory)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head 
 				hat.Handle.TextureID = "rbxassetid://12647742078"  hat.Handle.SurfaceAppearance:Remove()  	end) 
-			 
-			
+
+
 			Button.BackgroundColor3 = Color3.fromRGB(79, 50, 20)
 			p0br = Button:Clone() p0br.Parent = list p0br.Text = "br chib foot " 	
 			p0br.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (Black Cat Feet)") then char:FindFirstChild("Accessory (Black Cat Feet)"):Remove() return end  
@@ -4789,7 +4815,7 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			bl41p.MouseButton1Click:Connect(function()  if char:FindFirstChild("Accessory (Generated Accessory)") then char:FindFirstChild("Accessory (Generated Accessory)"):Remove() return end  
 				hat= game.Lighting.layers.fit1:FindFirstChild("Accessory (Generated Accessory)"):Clone() hat.Parent= char hat.Handle.AccessoryWeld.Part1 = char.Head 
 				hat.Handle.TextureID = "rbxassetid://15689023005"  hat.Handle.SurfaceAppearance:Remove()  	end) 
-			
+
 			Button.BackgroundColor3 = Color3.fromRGB(124, 78, 32)
 			p2br2 = Button:Clone() p2br2.Parent = list p2br2.Text = "paw foot br v2" 
 			p2br2.MouseButton1Click:Connect(function()  if char:FindFirstChild("White cat paws") then char:FindFirstChild("White cat paws"):Remove() return end  
@@ -4804,12 +4830,12 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 
 		end) 
 		laeyers.MouseButton2Click:Connect(function()  end) 
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
 
 
 
@@ -5047,7 +5073,7 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 
 			{ Id = "75633008404400", Name = "criss cross",  Color = Color3.fromRGB(144, 0, 170)  },--no this is not potato { Id = "94705135359914", Name = "potato",  Color = Color3.fromRGB(144, 0, 170)  },
 			{ Id = "79008332815618", Name = "potato",  Color = Color3.fromRGB(144, 0, 170)  },
-			
+
 
 
 			{ Id = "101020675113442", Name = "Sm Moves",  Color = Color3.fromRGB(0, 0, 255)  },
@@ -5094,7 +5120,7 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 
 			{ Id = "3570535774", Name = "TopRock" ,  Color = Color3.fromRGB(170, 255, 0)  },
 			{ Id = "14901369589", Name = "ShutDown",  Color = Color3.fromRGB(170, 85, 255)  },
-			
+
 
 			{ Id = "6797938823", Name = "Under" ,  Color = Color3.fromRGB(0, 255, 255)  },
 
@@ -5114,19 +5140,19 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 
 			{ Id = "3576747102", Name = "AroundT",  Color = Color3.fromRGB(93, 0, 255)  },
 			{ Id = "5915776835", Name = "Highwave",  Color = Color3.fromRGB(170, 85, 127)  },
-			
+
 			{ Id = "18855603653", Name = "your last"  ,  Color = Color3.fromRGB(0, 255, 255)  },
 			{ Id = "3716636630", Name = "Monkey"  ,  Color = Color3.fromRGB(255, 85, 255)  },
-			 
+
 			{ Id = "18933761755", Name = "ABCD",  Color = Color3.fromRGB(0, 0, 255)  },
 			{ Id = "18855609889", Name = "BP what?" ,  Color = Color3.fromRGB(206, 0, 255)  },
-			
-			
+
+
 
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
 			{ Id = "0", Name = "",  Color = Color3.fromRGB(0, 0, 0)  },
-			
-			
+
+
 			{ Id = "124487350993833", Name = " phuthon " ,  Color = Color3.fromRGB(0, 170, 255)  },
 
 			{ Id = "134420026335824", Name = "phut1",  Color = Color3.fromRGB(170, 0, 255)  },
@@ -5153,7 +5179,7 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			{ Id = "132418977355888", Name = "4 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = "134885577802333", Name = "sway5 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 
-			
+
 			{ Id = "140245986767335", Name = "zero2 2 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 
 			{ Id = "129802318248541", Name = "sharp more " ,  Color = Color3.fromRGB(0, 170, 255)  },
@@ -5170,23 +5196,23 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 
 			{ Id = "107354998205291", Name = "hoop" ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = "78892987395715", Name = "m pede " ,  Color = Color3.fromRGB(0, 170, 255)  },
-			
+
 			{ Id = "79571874803989", Name = "5" ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = "98818874157512", Name = "6 " ,  Color = Color3.fromRGB(0, 170, 255)  },
-			
+
 			{ Id = "129614696948735", Name = "7 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = "95983712200119", Name = " 8" ,  Color = Color3.fromRGB(0, 170, 255)  },
-			
+
 			{ Id = "129118207350220", Name = "88" ,  Color = Color3.fromRGB(0, 170, 255)  },  --87011165040436
 			{ Id = "126071851398889", Name = "89 " ,  Color = Color3.fromRGB(0, 170, 255)  },
-			
+
 			{ Id = "136270889360317", Name = "90 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 133539659698206", Name = " 9 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 
 			{ Id = " 122812523688079", Name = " 10 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 107729403674430", Name = " 101 " ,  Color = Color3.fromRGB(0, 170, 255)  },	
 			--	{ Id = "139750331539521", Name = "wu no",  Color = Color3.fromRGB(170, 170, 0)  },
-			
+
 			{ Id = " 105650910334517", Name = " 11 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 113068846591404", Name = " 12 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 110090708504143", Name = " 13 " ,  Color = Color3.fromRGB(0, 170, 255)  },
@@ -5197,7 +5223,7 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			{ Id = " 77633791202080", Name = " 18 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 94193852132874", Name = " 19 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 72428556931833", Name = " 20 " ,  Color = Color3.fromRGB(0, 170, 255)  }, 
-			
+
 			{ Id = " 106637202507179", Name = " 21 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 81737521082865", Name = " 22 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 122991180611196", Name = " 23 " ,  Color = Color3.fromRGB(0, 170, 255)  },
@@ -5208,7 +5234,7 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			{ Id = " 97183249882959", Name = " 28 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 109773069081025", Name = " 29 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 113595742466830", Name = " 30 " ,  Color = Color3.fromRGB(0, 170, 255)  }, 
-			
+
 			{ Id = " 92756682183492", Name = " 31 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 126535501790980", Name = " 32 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 77673820687507", Name = " 33 " ,  Color = Color3.fromRGB(0, 170, 255)  },
@@ -5219,7 +5245,7 @@ Button.BackgroundColor3 = Color3.fromRGB(0,0,0)
 			{ Id = " 0", Name = " 38 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 0", Name = " 39 " ,  Color = Color3.fromRGB(0, 170, 255)  },
 			{ Id = " 0", Name = " 40 " ,  Color = Color3.fromRGB(0, 170, 255)  }, 
-			
+
 
 			--{ Id = "77444612920420", Name = "wu3",  Color = Color3.fromRGB(170, 170, 0)  },
 			--{ Id = "74278105103260", Name = "wu aura",  Color = Color3.fromRGB(170, 170, 0)  },
@@ -5539,7 +5565,7 @@ end)
 
 this = "TTD map settings"
 function TTD() 
-	
+
 	if workspace:FindFirstChild("NPC") then 
 		workspace:FindFirstChild("NPC"):Remove()
 	end
@@ -5562,7 +5588,7 @@ function TTD()
 					L.Name == "Bottom.001" or  L.Name == "Top.001"
 				then if L:IsA("BasePart") then L.CanCollide = false end
 				end
-				
+
 				if L.Name == "Meshes/tokyo_Cube.248" or L.Name == "Meshes/tokyo_Cube.207" then
 					L.CastShadow = false 
 				end
@@ -5611,7 +5637,7 @@ function TTD()
 
 				if L.Name == "Cherry Blossom Effect" or  L.Name =="Autumn Decor" or  L.Name =="SmokeVFX"   then L:Remove() end
 				if L.Name == "Meshes/basero2cky3333_Plane.076" then L.Size = Vector3.new(55.465, 23.778, 361.15) end
-				
+
 		--[[	if L.Name == "ground tower" or L.Name == "main tower"  or L.Name == "secondary towers"  or L.Name == "Lava particles" or L.Name == "Part" or L.Name == "Shop" then
 				if L.Parent.Name == "Volcano" then L:Remove() end
 			end]]
@@ -5628,7 +5654,7 @@ function TTD()
 
 
 		end  
-		
+
 		floors = Instance.new("Folder",jar) floors.Name = "collisionfloors"
 		collisionfloor = Instance.new("Part") collisionfloor.Name = "collision floor" collisionfloor.BrickColor = BrickColor.new("Earth green") collisionfloor.Anchored = true collisionfloor.Transparency = 1
 		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-57, 131.5, 1182) collisionfloor2.Size = Vector3.new(237, 2, 300) 
@@ -5640,18 +5666,21 @@ function TTD()
 		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-57, 117.5, 1182) collisionfloor2.Size = Vector3.new(237, 2, 300) 
 		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-57, 111.5, 1182) collisionfloor2.Size = Vector3.new(237, 4, 300) 
 
-		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-244.5, 131.5, 1130.5) collisionfloor2.Size = Vector3.new(285, 2, 403) collisionfloor2.Transparency = .8 collisionfloor2.Color = Color3.fromRGB(107, 131, 80)
-		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-244.5, 131.5, 1487.5) collisionfloor2.Size = Vector3.new(285, 2, 311) collisionfloor2.Transparency = .8 collisionfloor2.Color = Color3.fromRGB(212, 168, 107)
+		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-213.5, 131.5, 1009) collisionfloor2.Size = Vector3.new(571, 2, 645) collisionfloor2.Transparency = .8 collisionfloor2.Color = Color3.fromRGB(107, 131, 80)
+		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(-108, 131.5, 1567.75) collisionfloor2.Size = Vector3.new(610, 2, 471.5) collisionfloor2.Transparency = .8 collisionfloor2.Color = Color3.fromRGB(212, 168, 107)
 		
+		this="stair wall"
+		collisionfloor2 = collisionfloor:Clone() collisionfloor2.Parent = floors collisionfloor2.Position = Vector3.new(31.75, 138.5, 1344.25) collisionfloor2.Size = Vector3.new(65.5, 16, 9.5) collisionfloor2.Transparency = .8 collisionfloor2.Color = Color3.fromRGB(212, 168, 107)
+
 		game.Lighting.save4.Value = Vector3.new(-78.872, 135.806, 1231.664)
-		
+
 		this = "getting meshpart position didnt work so spawn new part on meshpart then delete all parts inside of part "
 		--if L:IsA("BasePart") then if L.Position == Vector3.new(-117.768, 144.099, 1252.087) then L.CanCollide = false  end end
 		breakparts = collisionfloor:Clone() breakparts.Parent = floors breakparts.Position = Vector3.new(-116.5, 146.5, 1259.5) breakparts.Size = Vector3.new(7, 24, 7) breakparts.Transparency = .8 breakparts.Color = Color3.fromRGB(76, 76, 76) breakparts.CanCollide = false
 		--for _,target in pairs(workspace:GetPartsInPart(breakparts )) do if target:IsA("MeshPart") then target:Remove() end 	end sky looked better on mobile
 		for _,target in pairs(workspace:GetPartsInPart(breakparts )) do  target:Remove()  	end
-		
-		
+
+
 		if jar:FindFirstChild("Zones") then 
 			local mouse = player:GetMouse()
 			mouse.TargetFilter = jar:FindFirstChild("Zones")
@@ -5662,10 +5691,10 @@ function TTD()
 			
 		end]]
 		end
-		
-		
-		
-		
+
+
+
+
 
 		for _,target in pairs(char:GetDescendants()) do
 			if target:IsA("MeshPart") then 
@@ -5685,14 +5714,14 @@ function TTD()
 			char:FindFirstChild("GreenPixie"):FindFirstChildWhichIsA("BasePart").Transparency = 1
 		end
 		if char.Humanoid.WalkSpeed <  20 then
-		char.Humanoid.JumpHeight =  11
+			char.Humanoid.JumpHeight =  11
 			char.Humanoid.WalkSpeed =  70
 			for _, part in pairs(char:GetChildren()) do if part:IsA("BasePart") then part.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) end end  
-			end
+		end
 		--char.HumanoidRootPart.CustomPhysicalProperties = PhysicalProperties.new(100, 0, 0, 100, 100) 
-		   
 
-		
+
+
 	end
 end
 
@@ -5700,53 +5729,53 @@ tcol = false
 function TTD2() 
 
 	tcol = not tcol
-	 
-			for _,L in pairs( workspace:GetDescendants()) do 
-				if L.Name == "SoccerField" then L:Remove() end
-				if L.Name == "Meshes/Palm Trees V2_Plane.001" or L.Name == "Meshes/Palm Trees V2_Plane.003" or L.Name == "Meshes/ad_Cylinder" or L.Name == "Meshes/ewe_Cylinder.006" or L.Name == "Meshes/ad_Icosphere.006" or L.Name == "Meshes/e_Plane.001 (1)" or L.Name == "Meshes/e_Icosphere.011"  
-					or L.Name == "FireVFX" or L.Name == "Meshes/DA_Cylinder.015" or L.Name == "Meshes/DA_Cylinder.017"  or L.Name == "Meshes/DA_Plane"  or L.Name == "Cylinder.003" or L.Name =="Meshes/stone head" or L.Name == "Meshes/sdasa_Plane.001"
-					or L.Name == "Meshes/tokyo bench_Cube.064" or L.Name == "Meshes/tokyo bench_Cube.063" or L.Name == "Meshes/tokyo_Cube.207" or L.Name == "Rocks" or L.Name == "Rock" or L.Name == "rock"
-					or L.Name == "Meshes/Bush_Cylinder.001" or L.Name == "Meshes/Bush_Sphere.003"  or L.Name == "Rock.002"  or L.Name == "tikitorch" or L.Name == "Tiki Hut_Seats" 
-					or L.Name == "Shrine_01" or L.Name == "Shrine_02"  or L.Name == "Shrine_03"  or L.Name == "Cooler" or 
-					L.Name == "Plane.164" or L.Name == "Circle.010" or L.Name == "Circle.047" or    
-					L.Name == "Bottom.001" or  L.Name == "Top.001"
+
+	for _,L in pairs( workspace:GetDescendants()) do 
+		if L.Name == "SoccerField" then L:Remove() end
+		if L.Name == "Meshes/Palm Trees V2_Plane.001" or L.Name == "Meshes/Palm Trees V2_Plane.003" or L.Name == "Meshes/ad_Cylinder" or L.Name == "Meshes/ewe_Cylinder.006" or L.Name == "Meshes/ad_Icosphere.006" or L.Name == "Meshes/e_Plane.001 (1)" or L.Name == "Meshes/e_Icosphere.011"  
+			or L.Name == "FireVFX" or L.Name == "Meshes/DA_Cylinder.015" or L.Name == "Meshes/DA_Cylinder.017"  or L.Name == "Meshes/DA_Plane"  or L.Name == "Cylinder.003" or L.Name =="Meshes/stone head" or L.Name == "Meshes/sdasa_Plane.001"
+			or L.Name == "Meshes/tokyo bench_Cube.064" or L.Name == "Meshes/tokyo bench_Cube.063" or L.Name == "Meshes/tokyo_Cube.207" or L.Name == "Rocks" or L.Name == "Rock" or L.Name == "rock"
+			or L.Name == "Meshes/Bush_Cylinder.001" or L.Name == "Meshes/Bush_Sphere.003"  or L.Name == "Rock.002"  or L.Name == "tikitorch" or L.Name == "Tiki Hut_Seats" 
+			or L.Name == "Shrine_01" or L.Name == "Shrine_02"  or L.Name == "Shrine_03"  or L.Name == "Cooler" or 
+			L.Name == "Plane.164" or L.Name == "Circle.010" or L.Name == "Circle.047" or    
+			L.Name == "Bottom.001" or  L.Name == "Top.001"
 		then if L:IsA("BasePart") then L.CanCollide = tcol end
-				end
-				 
-				if L:IsA("BasePart") then if L.Color == Color3.fromRGB(99, 79, 63) then 
+		end
+
+		if L:IsA("BasePart") then if L.Color == Color3.fromRGB(99, 79, 63) then 
 				L.CanCollide = tcol end
-				end
-				if L:IsA("MeshPart") then 
-					if L.MeshId == "rbxassetid://17814036182" or L.MeshId == "rbxassetid://17814036882" or L.MeshId == "rbxassetid://17814036743" 
-						or L.MeshId == "rbxassetid://18709871243"  then 
+		end
+		if L:IsA("MeshPart") then 
+			if L.MeshId == "rbxassetid://17814036182" or L.MeshId == "rbxassetid://17814036882" or L.MeshId == "rbxassetid://17814036743" 
+				or L.MeshId == "rbxassetid://18709871243" or L.MeshId =="rbxassetid://135475654041566" then 
 				L.CanCollide = tcol end
-				end
-				if L.Name == "Lamp post" or L.Name == "Tiki"  or L.Name == "Beach_chair"  or L.Name == "BeachStore"  or 
-					L.Name == "border" or L.Name == "Fence" or L.Name == "Crate" or L.Name == "Cart" or L.Name == "Box" or
-					L.Name == "Barrel" or L.Name == "Pine Tree" or L.Name == "Lantern" or L.Name == "bench" or L.Name == "Olive Tree" or
-					L.Name == "Broken pillar" or L.Name == "MediumBuilding" or L.Name == "Stable" or L.Name == "bucket"  or L.Name == "SWING"
-					or L.Name == "Camp Fires" or L.Name == "Tents" or L.Name == "Building3"
-				then
-					for _,p in pairs( L:GetDescendants()) do 
-						if p:IsA("BasePart") then  
+		end
+		if L.Name == "Lamp post" or L.Name == "Tiki"  or L.Name == "Beach_chair"  or L.Name == "BeachStore"  or 
+			L.Name == "border" or L.Name == "Fence" or L.Name == "Crate" or L.Name == "Cart" or L.Name == "Box" or
+			L.Name == "Barrel" or L.Name == "Pine Tree" or L.Name == "Lantern" or L.Name == "bench" or L.Name == "Olive Tree" or
+			L.Name == "Broken pillar" or L.Name == "MediumBuilding" or L.Name == "Stable" or L.Name == "bucket"  or L.Name == "SWING"
+			or L.Name == "Camp Fires" or L.Name == "Tents" or L.Name == "Building3" or  L.Name =="Cactus"  
+		then
+			for _,p in pairs( L:GetDescendants()) do 
+				if p:IsA("BasePart") then  
 					p.CanCollide = tcol end
 
-					end
-				end
-				if L.Name == "gate" then 
-					for _,p in pairs( L.Parent:GetDescendants()) do 
-						if p:IsA("BasePart") then  
+			end
+		end
+		if L.Name == "gate" then 
+			for _,p in pairs( L.Parent:GetDescendants()) do 
+				if p:IsA("BasePart") then  
 					p.CanCollide = tcol end
 
-					end
+			end
 		end
 		if L.Name == "Plane.099"  then 
 			if L:IsA("BasePart") then L.CanCollide = true end
 		end 
-				 
-			end
-		 
-	 
+
+	end
+
+
 end
 
 
@@ -5773,13 +5802,13 @@ function NDS()
 	end
 	--if not workspace:FindFirstChild("WeatherMachine") then return end
 	if workspace:FindFirstChild("OceanDrive") then return end
-	
+
 	if workspace:FindFirstChild("WeatherMachine") then 
 		nds=true
 		for _, p in pairs(workspace:GetDescendants()) do  
-			
+
 			if p.Name == "RTDPortal" or p.Name == "BillboardTop10" or p.Name == "ForwardPortal"   then p:Remove() end
-			
+
 			if p:IsA("BasePart") then  p.CanQuery = false 
 				--if p:IsA("Seat") or  p.CanTouch = false
 				--if p.Transparency > .96 and p.CanCollide == false and not p:FindFirstChildWhichIsA("ClickDetector") then p.CanQuery = false end
@@ -5820,7 +5849,7 @@ function NDS()
 				p.Locked = false 
 				--p.CanTouch = false --ya'know, I genuinely spent 24 hours trying to figure out why my character couldn't touch half the things in my games...
 			end 
-			
+
 			if p:IsA("TouchTransmitter") then 
 				p:Remove()
 			end
@@ -5895,10 +5924,10 @@ function NDS()
 					local v = r.AssemblyLinearVelocity
 					if lp.falldamage.Value == true then 
 						r.AssemblyLinearVelocity = z
-					rsd:Wait()
+						rsd:Wait()
 						r.AssemblyLinearVelocity = v
 					end
-					 
+
 				end)
 			end
 		end
@@ -5916,19 +5945,24 @@ NDS()
 
 --if sethiddenproperty then
 local success, data = pcall(function()
-	
-	
+
+	player.DevCameraOcclusionMode = Enum.DevCameraOcclusionMode.Invisicam 
+
+
+	return  
+end)
+local success, data = pcall(function() 
 	workspace.FallenPartsDestroyHeight = -50000 player.CameraMaxZoomDistance = 1000
-	player.DevCameraOcclusionMode = Enum.DevCameraOcclusionMode.Invisicam
-	
+
+
 	return  
 end)
 if success then --print("no error:", data)
 else  warn("Errors:", data) end
-	--for _,part in pairs(workspace:GetDescendants()) do if part:IsA("BasePart") then part.CanQuery = true end end
-	
+--for _,part in pairs(workspace:GetDescendants()) do if part:IsA("BasePart") then part.CanQuery = true end end
 
-	ThisIs = {"invisicam broke"}
+
+ThisIs = {"invisicam broke"}
 	--[[local sc = (debug and debug.setconstant) or setconstant local gc = (debug and debug.getconstants) or getconstants
 	if not sc or not getgc or not gc then return  end --notify = {'this runs on executors but not on default roblox'} 
 	local pop = game.Players.LocalPlayer.PlayerScripts.PlayerModule.CameraModule.ZoomController.Popper
