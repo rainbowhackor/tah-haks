@@ -4308,11 +4308,16 @@ function guias()
 			facelist = Scroll:Clone() facelist.Parent = Begal.GuiHolder  facelist.Name = "skinlist" facelist.BackgroundTransparency = 1 facelist.Position = UDim2.new(0.15, 0 , 0.3, 0)  facelist.Size = UDim2.new(0.15, 0 , 0.36, 0)
 			gridding = Instance.new("UIGridLayout",facelist) gridding.CellPadding = UDim2.new(0,1,0,1) gridding.CellSize = UDim2.new(.3,0, 190/33/2/66,0)
 
-			faceID = { Color3.fromRGB(255, 188, 170 ),  Color3.fromRGB( 218, 163, 152 ),  Color3.fromRGB(253, 192, 177),  Color3.fromRGB(255, 184, 162),  Color3.fromRGB(241, 179, 161), 
+			faceID = { Color3.fromRGB(255, 188, 170 ),  Color3.fromRGB( 218, 163, 152 ), 
+				Color3.fromRGB(253, 192, 177), -- 3 too pink
+				Color3.fromRGB(253, 195, 177), -- 3 just right, frustrating
+				Color3.fromRGB(253, 197, 177), -- 3 too pale
+				Color3.fromRGB(255, 184, 162),  Color3.fromRGB(241, 179, 161), 
 				Color3.fromRGB(239, 178, 159), Color3.fromRGB(218, 163, 145), Color3.fromRGB(218, 163, 152),    Color3.fromRGB(208, 156, 135), 
-				Color3.fromRGB(204, 142, 105), Color3.fromRGB(234, 184, 146),  }
+				Color3.fromRGB(204, 142, 105), Color3.fromRGB(234, 184, 146), 
+			}
 			for _, faces in pairs(faceID) do local face = FaceButton:Clone() face.Parent = facelist face.BackgroundTransparency = 0 face.BackgroundColor3 = faces 
-				if char.Head.Color == face.BackgroundColor3 then face.BorderColor3 = Color3.fromRGB(170, 85, 127) face.BorderSize = 6 face.ZIndex = 2 end	
+				if char.Head.Color == face.BackgroundColor3 then face.BorderColor3 = Color3.fromRGB(170, 85, 127) face.BorderSizePixel = 6 face.ZIndex = 2 end	
 				face.MouseButton1Click:Connect(function()
 					for _, br in pairs(char:GetChildren()) do if br:IsA("BasePart") then br.Color = face.BackgroundColor3  end end  end) end
 		end)
