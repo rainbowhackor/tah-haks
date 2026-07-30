@@ -1,7 +1,14 @@
 
 
 
+wait(1)
+
 --nds hax 
+
+--script.Parent = game.Players.LocalPlayer.PlayerScripts
+
+if script.Parent.Parent:FindFirstChild("se") then return end
+Instance.new("Part",script.Parent.Parent).Name = "se"
 
 
 
@@ -159,7 +166,7 @@ if not game.Lighting:FindFirstChild("binds") then Instance.new("BoolValue",game.
 					elseif actionName == "Anti Fling HAX" then --AntiFling() 
 					elseif actionName == "RAINBOW STAR SWORDS" then RainbowStarSword()
 					elseif actionName == "Dog Walk" then Swim() --dog walk only works with werewolf swim animation
-					elseif actionName == "Default Gravity" then workspace.Gravity = 96.2 char.Humanoid.JumpPower = 50 actiontext.Text = "Default Gravity"  
+					elseif actionName == "Default Gravity" then Dg()
 					elseif actionName == "Zero Gravity" then workspace.Gravity = 0 actiontext.Text = "Zero Gravity"
 					elseif actionName == "Moon Gravity" then workspace.Gravity = 32.41 actiontext.Text = "Moon Gravity" char.Humanoid.JumpPower = 25 char.Humanoid.JumpHeight = 11
 					elseif actionName == "Jupiter Gravity" then workspace.Gravity = 111111 actiontext.Text = "Jupiter Gravity"
@@ -342,6 +349,16 @@ function Xg()
 		workspace.Gravity = 15   actiontext.Text = "Low Gravity"
 	end
 end
+
+function Dg()
+
+	if Ruse == true then _G.are_you_sure()
+		
+		if JUST_DO_IT == false then return end
+end	 workspace.Gravity = 96.2 char.Humanoid.JumpPower = 50 actiontext.Text = "Default Gravity"
+
+end
+
 function AntiFling()   if Ruse == false then 
 
 		player.Character.HumanoidRootPart.Anchored = not player.Character.HumanoidRootPart.Anchored 
@@ -404,7 +421,19 @@ end
 
 mover = nil bayblade = nil bayblade2 = nil smack = nil rotat = nil wind = nil 
 if not _G.nds then _G.nds = true
-
+	
+	function _G.are_you_sure() JUST_DO_IT = false
+		if player.PlayerGui:FindFirstChild("ded") then player.PlayerGui:FindFirstChild("ded"):Remove() end
+		gui = Instance.new("ScreenGui",player.PlayerGui) gui.Name = "ded"
+		frame = Instance.new("Frame",gui) frame.Position = UDim2.new(.3,0,.7,0) frame.Size = UDim2.new(.2,0,.05,0) frame.BackgroundTransparency = .7
+		b1 = Instance.new("TextButton",frame) b1.Position = UDim2.new(.1,0,.1,0) b1.Size = UDim2.new(.4,0,.8,0) b1.BackgroundColor3 = Color3.fromRGB(0, 170, 0) b1.Text = "Yes" 
+		b1.MouseButton1Click:Connect(function() JUST_DO_IT = true gui:Remove() end)
+		b2 = Instance.new("TextButton",frame) b2.Position = UDim2.new(.5,0,.1,0) b2.Size = UDim2.new(.4,0,.8,0) b2.BackgroundColor3 = Color3.fromRGB(170, 0, 0) b2.Text = "No"
+		b2.MouseButton1Click:Connect(function() JUST_DO_IT = false gui:Remove() end)
+		eg = Instance.new("TextLabel",frame) eg.Position = UDim2.new(.0,0,-.1,0) eg.Size = UDim2.new(1,0,.5,0) eg.Text = "Are You Sure Died" frame.BackgroundTransparency = .7
+		wait(3) gui:Remove() 
+	end
+	
 	function _G.are_you_sure1() 
 		if player.PlayerGui:FindFirstChild("ded") then player.PlayerGui:FindFirstChild("ded"):Remove() end
 		gui = Instance.new("ScreenGui",player.PlayerGui) gui.Name = "ded"
@@ -479,7 +508,7 @@ end
 tptohide1 = nil tptohide2 = nil tptodone = nil tpto = nil modleh = nil 
 function tpvector() char.HumanoidRootPart.Anchored = false if sethiddenproperty then player.CameraMaxZoomDistance = 1000 end --if seatcheck == true then return end 
 	if char.Humanoid.SeatPart then for _,seat in pairs(char.Humanoid.SeatPart:GetConnectedParts(true)) do if seat.Anchored then print("seat is anchored") return end end  end
-	for _,v in pairs(char:GetChildren()) do if v:IsA("BasePart") then v.Velocity = Vector3.new(0,0,0) v.RotVelocity = Vector3.new(0,0,0) end end
+	for _,v in pairs(char:GetDescendants()) do if v:IsA("BasePart") then v.Velocity = Vector3.new(0,0,0) v.RotVelocity = Vector3.new(0,0,0) end end
 	if not char.Humanoid.SeatPart then
 		tptohide1 = Instance.new("Part") tptohide1.CanCollide = false tptohide1.CFrame = char.HumanoidRootPart.CFrame tptohide1.Position = Vector3.new(tptohide1.Position.X, 5, tptohide1.Position.Z) 
 		char:PivotTo(tptohide1.CFrame) tptohide1:Remove() task.wait(.1) os.time()
@@ -493,10 +522,14 @@ function tpvector() char.HumanoidRootPart.Anchored = false if sethiddenproperty 
 end
 
 function tpOnPoint() if char.Humanoid.SeatPart then for _,seat in pairs(char.Humanoid.SeatPart:GetConnectedParts(true)) do if seat.Anchored then print("seat is anchored") return end end end
-	for _,v in pairs(char:GetChildren()) do if v:IsA("BasePart") then v.Velocity = Vector3.new(0,0,0) v.RotVelocity = Vector3.new(0,0,0) end end
+	for _,v in pairs(char:GetDescendants()) do if v:IsA("BasePart") then v.Velocity = Vector3.new(0,0,0) v.RotVelocity = Vector3.new(0,0,0) end end
 	tpto = Instance.new("Part") tpto.CanCollide = false tpto.CFrame = char.HumanoidRootPart.CFrame 
-	if mouse.Target ~= nil then tpto.Position = Vector3.new(mouse.Hit.x, mouse.Hit.y+1, mouse.Hit.z) else
-
+	if mouse.Target ~= nil then 
+		tpto.Position = Vector3.new(mouse.Hit.x, mouse.Hit.y+1.5, mouse.Hit.z)
+	else
+		dir= mouse.Hit.LookVector
+		position = char.HumanoidRootPart.position + dir * 50
+		tpto.Position =  position
 
 
 	--[[local hitPos = mouse.Hit.Position
@@ -538,12 +571,25 @@ function tpOnPoint() if char.Humanoid.SeatPart then for _,seat in pairs(char.Hum
 end
 function tpAbovePoint()
 	if char.Humanoid.SeatPart then for _,seat in pairs(char.Humanoid.SeatPart:GetConnectedParts(true)) do if seat.Anchored then print("seat is anchored") return end end end
-	for _,v in pairs(char:GetChildren()) do if v:IsA("BasePart") then v.Velocity = Vector3.new(0,0,0) v.RotVelocity = Vector3.new(0,0,0) end end
+	for _,v in pairs(char:GetDescendants()) do if v:IsA("BasePart") then v.Velocity = Vector3.new(0,0,0) v.RotVelocity = Vector3.new(0,0,0) end end
 	modleh = Instance.new("Model",workspace)
 	tpto = Instance.new("Part",modleh) tpto.Anchored = true tpto.Size = Vector3.new(5,5,5)  tpto.CanCollide = true tpto.Color = Color3.fromRGB(0, 255, 0) tpto.Material = Enum.Material.Neon
-	tpto.CFrame = char.HumanoidRootPart.CFrame tpto.Position = Vector3.new(mouse.Hit.x, mouse.Hit.y+1, mouse.Hit.z)
+	tpto.CFrame = char.HumanoidRootPart.CFrame tpto.Position = Vector3.new(mouse.Hit.x, mouse.Hit.y+1.5, mouse.Hit.z)
 	modleh:MoveTo(Vector3.new(mouse.Hit.x, mouse.Hit.y, mouse.Hit.z))
-	if mouse.Target ~= nil then char:PivotTo(tpto.CFrame) end  
+	if mouse.Target ~= nil then 
+		 
+		range = mouse.Hit.Y+tpto.Position.Y if range > 10 then tpto.Position = mouse.Hit.Position + Vector3.new(0,2,0) end
+		--print(mouse.Hit.Y+tpto.Position.Y)
+		
+		char:PivotTo(tpto.CFrame)
+		 
+		
+	else 
+		dir= mouse.Hit.LookVector
+		position = char.HumanoidRootPart.position + dir * 50
+		tpto.Position =  position
+		char:PivotTo(tpto.CFrame)
+	end
 	modleh:Remove()	
 	--if gethiddenproperty then player.CameraMaxZoomDistance = 1000 end
 end
@@ -761,7 +807,7 @@ function CharSettings()
 		end ]]
 
 		an=169402 AnimSet()task.wait(1) an=0 runan=1
-		if not game.Lighting:FindFirstChildWhichIsA("ColorCorrectionEffect") then colcor=Instance.new("ColorCorrectionEffect",game.Lighting) colcor.Name = "morecolor" game.Lighting:FindFirstChildWhichIsA("ColorCorrectionEffect").Saturation = 0.2 end
+		--if not game.Lighting:FindFirstChildWhichIsA("ColorCorrectionEffect") then colcor=Instance.new("ColorCorrectionEffect",game.Lighting) colcor.Name = "morecolor" game.Lighting:FindFirstChildWhichIsA("ColorCorrectionEffect").Saturation = 0.2 end
 	end
 
 
@@ -2048,6 +2094,9 @@ function guias()
 		if not game.Lighting:FindFirstChild("save2") then save2 = Instance.new("StringValue",game.Lighting) save2.Name = "save2" save2.Value = "save2" end
 		if not game.Lighting:FindFirstChild("save3") then save3 = Instance.new("StringValue",game.Lighting) save3.Name = "save3" save3.Value = "save3" end
 		if not game.Lighting:FindFirstChild("save4") then save4 = Instance.new("Vector3Value",game.Lighting) save4.Name = "save4" end
+		if workspace:FindFirstChild("WeatherMachine a") then 
+			game.Lighting.save4.Value = Vector3.new(-2.946, 44.386, 150.062)
+		end
 		lastpoint = Button:Clone() lastpoint.Parent = tpWHY lastpoint.Text = game.Lighting.save1.Value lastpoint.Position = UDim2.new(0.89, 0 , 0.26, 0) lastpoint.Size = UDim2.new(0.1, 0 , 0,15) 
 		lastpoint.MouseButton2Click:Connect(function() torso = char.UpperTorso or char.Torso spot1 = char.UpperTorso.Position game.Lighting.save1.Value = math.floor(torso.Position.X/10 * 100 )/10 ..", "..math.floor(torso.Position.Y/10 * 100 )/10 ..", ".. math.floor(torso.Position.Z /10 * 100 )/10 lastpoint.Text = game.Lighting.save1.Value game.Lighting.save4.Value = char.UpperTorso.Position end)
 		lastpoint.MouseButton1Click:Connect(function() if lastpoint.Text ~= "save1 = right click" then tpval = spot1 tpvector() end end) 
@@ -2604,6 +2653,8 @@ function guias()
 			jump2.MouseButton2Click:Connect(function() char.Humanoid.JumpHeight = 25 end)]]
 
 
+
+
 			vis = Button:Clone() vis.Parent = masslist vis.Text = "visible char"   vis.BackgroundColor3 = Color3.fromRGB(99, 99, 99)
 			vis.MouseButton1Click:Connect(function()   
 				for _, pla in pairs(char:GetDescendants()) do if pla:IsA("MeshPart")  then   pla.Transparency = 0 end end  
@@ -2624,14 +2675,12 @@ function guias()
 				if char:FindFirstChild("GreenPixie") then  
 					char:FindFirstChild("GreenPixie"):FindFirstChildWhichIsA("BasePart").Transparency = 1
 				end
-				vis:Remove()
 			end) 
 
-			
-			
-			
-			
-			
+			ttdcol = Button:Clone() ttdcol.Parent = masslist ttdcol.Text = "ttd collide"    ttdcol.BackgroundColor3 = Color3.fromRGB(255, 85, 0)
+			ttdcol.MouseButton1Click:Connect(function()  TTD() end) 
+			ttdcol.MouseButton2Click:Connect(function()  TTD2() end)
+
 		end)  
 
 
@@ -2735,47 +2784,7 @@ function guias()
 				end
 
 			end) 
-			
-			
 
-			ttdcol = Button:Clone() ttdcol.Parent = masslist ttdcol.Text = "ttd collide"    ttdcol.BackgroundColor3 = Color3.fromRGB(255, 85, 0)
-			ttdcol.MouseButton1Click:Connect(function()  TTD() end) 
-			ttdcol.MouseButton2Click:Connect(function()  TTD2() end)
-
-
-
-			ca = false
-			carpt = Button:Clone() carpt.Parent = masslist carpt.Text = "rainbow carpet"  carpt.BackgroundColor3 = Color3.fromRGB(0, 170, 0)
-			carpt.MouseButton1Click:Connect(function()
-
-				if not char:FindFirstChild("carp") then
-					if char:FindFirstChild("Emote Effect") then -- char:FindFirstChild("Emote Effect").CarpetRainbow
-						rthe =  char:FindFirstChild("Emote Effect"):Clone() rthe.Parent = char  rthe.Name = "carp"
-					end
-				end
-
-				animNew = Instance.new("Animation",char) animNew.AnimationId = "http://www.roblox.com/asset/?id=10515042252" -- animNew.Name = "anims"
-				--Instance.new("Humanoid"):LoadAnimation(animNew):AdjustSpeed(.5)
-				arm = char.Humanoid:LoadAnimation(animNew)    
-				arm.Priority = Enum.AnimationPriority.Action4			
-				--arm.Speed = .05
-				--arm:AdjustSpeed(.05)
-				arm:Play()  
-				--"rbxassetid://10515042252"
-
-			end)
-			carpt.MouseButton2Click:Connect(function()
-				arm:Stop()
-
-			end)
-			carpt.MouseWheelForward:Connect(function()
-				char.carp:Remove()
-			end)
-			carpt.MouseWheelBackward:Connect(function()
-				AnimationTracks = char.Humanoid:GetPlayingAnimationTracks() for i, track in pairs (AnimationTracks) do track:Stop()  end
-			end)
-			
-			
 		end)  
 
 
@@ -3372,7 +3381,8 @@ function guias()
 			if workspace:FindFirstChild("fake") then workspace:FindFirstChild("fake"):Remove() end  
 			--if game.Lighting:FindFirstChild("oof2") then game.Lighting:FindFirstChild("oof2"):Remove() local wa = Instance.new("Model",game.Lighting) wa.Name = "oof2" end
 			local fake = Instance.new("Part",game.Workspace) fake.Anchored=true fake.CanCollide=false fake.Transparency=.7 fake.BrickColor=BrickColor.new("New Yeller")
-			fake.Name = "fake" fake.Size = Vector3.new(200,111,200)  fake.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+			sik = math.random(1,2) if sik == 1 then es=200 else es = 700 end
+			fake.Name = "fake" fake.Size = Vector3.new(es,111,es)  fake.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
 		end)
 		deloof.MouseButton2Click:Connect(function() if workspace:FindFirstChild("fake") then workspace:FindFirstChild("fake"):Remove() end end)
 		deloof.MouseWheelForward:Connect(function() local found = game.Workspace:GetPartsInPart(workspace.fake) added += 1
@@ -4297,7 +4307,7 @@ function guias()
 			end
 		end)
 
-
+		 
 		ThisIs = {"ski"} --no one can see this, it's just mental assurance  
 		faces1 = Button:Clone() faces1.Parent = Spaghetti faces1.Text = "skin" faces1.Position = UDim2.new(0.5,0 , 0,row20) faces1.BackgroundColor3 = Color3.fromRGB(241, 179, 161)   
 		faces1.MouseButton1Click:Connect(function() 
@@ -4308,14 +4318,9 @@ function guias()
 			facelist = Scroll:Clone() facelist.Parent = Begal.GuiHolder  facelist.Name = "skinlist" facelist.BackgroundTransparency = 1 facelist.Position = UDim2.new(0.15, 0 , 0.3, 0)  facelist.Size = UDim2.new(0.15, 0 , 0.36, 0)
 			gridding = Instance.new("UIGridLayout",facelist) gridding.CellPadding = UDim2.new(0,1,0,1) gridding.CellSize = UDim2.new(.3,0, 190/33/2/66,0)
 
-			faceID = { Color3.fromRGB(255, 188, 170 ),  Color3.fromRGB( 218, 163, 152 ), 
-				Color3.fromRGB(253, 192, 177), -- 3 too pink
-				Color3.fromRGB(253, 195, 177), -- 3 just right, frustrating
-				Color3.fromRGB(253, 197, 177), -- 3 too pale
-				Color3.fromRGB(255, 184, 162),  Color3.fromRGB(241, 179, 161), 
+			faceID = { Color3.fromRGB(255, 188, 170 ),  Color3.fromRGB( 218, 163, 152 ),  Color3.fromRGB(253, 192, 177),  Color3.fromRGB(255, 184, 162),  Color3.fromRGB(241, 179, 161), 
 				Color3.fromRGB(239, 178, 159), Color3.fromRGB(218, 163, 145), Color3.fromRGB(218, 163, 152),    Color3.fromRGB(208, 156, 135), 
-				Color3.fromRGB(204, 142, 105), Color3.fromRGB(234, 184, 146), 
-			}
+				Color3.fromRGB(204, 142, 105), Color3.fromRGB(234, 184, 146),  }
 			for _, faces in pairs(faceID) do local face = FaceButton:Clone() face.Parent = facelist face.BackgroundTransparency = 0 face.BackgroundColor3 = faces 
 				if char.Head.Color == face.BackgroundColor3 then face.BorderColor3 = Color3.fromRGB(170, 85, 127) face.BorderSizePixel = 6 face.ZIndex = 2 end	
 				face.MouseButton1Click:Connect(function()
@@ -5606,6 +5611,7 @@ game.Players.PlayerAdded:Connect(function(person) task.wait(.1) if game.Players.
 		imageval2.Texture = game.Players:GetUserThumbnailAsync(pchar.Value , Enum.ThumbnailType.AvatarThumbnail, Enum.ThumbnailSize.Size420x420)
 	end)]]
 end)
+
 
 
 this = "TTD map settings"
