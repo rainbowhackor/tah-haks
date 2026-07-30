@@ -6,9 +6,11 @@ wait(1)
 --nds hax 
 
 --script.Parent = game.Players.LocalPlayer.PlayerScripts
+player = game:GetService("Players").LocalPlayer
 
-if script.Parent.Parent:FindFirstChild("se") then return end
-Instance.new("Part",script.Parent.Parent).Name = "se"
+
+if player.PlayerGui:FindFirstChild("se") then return end
+Instance.new("Part",player.PlayerGui).Name = "se"
 
 
 
@@ -39,7 +41,7 @@ function L_Roblox() --why do hacked clients have more flexable settings than the
 end
 
 
-player = game:GetService("Players").LocalPlayer
+
 char = player.Character or player.CharacterAdded:wait()
 hum = char:WaitForChild("Humanoid") or char.Humanoid 
 UserInputService = game:GetService("UserInputService")
