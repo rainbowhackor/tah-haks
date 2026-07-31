@@ -2677,11 +2677,52 @@ function guias()
 				if char:FindFirstChild("GreenPixie") then  
 					char:FindFirstChild("GreenPixie"):FindFirstChildWhichIsA("BasePart").Transparency = 1
 				end
+				
+				vis:Remove()
 			end) 
+			
+			if  workspace:FindFirstChild("Map") then
+			ca = false
+			carpt = Button:Clone() carpt.Parent = masslist carpt.Text = "rainbow carpet"  carpt.BackgroundColor3 = Color3.fromRGB(0, 170, 0)
+			carpt.MouseButton1Click:Connect(function()
 
-			ttdcol = Button:Clone() ttdcol.Parent = masslist ttdcol.Text = "ttd collide"    ttdcol.BackgroundColor3 = Color3.fromRGB(255, 85, 0)
-			ttdcol.MouseButton1Click:Connect(function()  TTD() end) 
-			ttdcol.MouseButton2Click:Connect(function()  TTD2() end)
+				if not char:FindFirstChild("carp") then
+					if char:FindFirstChild("Emote Effect") then -- char:FindFirstChild("Emote Effect").CarpetRainbow
+						rthe =  char:FindFirstChild("Emote Effect"):Clone() rthe.Parent = char  rthe.Name = "carp"
+					end
+				end
+
+				animNew = Instance.new("Animation",char) animNew.AnimationId = "http://www.roblox.com/asset/?id=10515042252" -- animNew.Name = "anims"
+				--Instance.new("Humanoid"):LoadAnimation(animNew):AdjustSpeed(.5)
+				arm = char.Humanoid:LoadAnimation(animNew)    
+				arm.Priority = Enum.AnimationPriority.Action4			
+				--arm.Speed = .05
+				--arm:AdjustSpeed(.05)
+				arm:Play()  
+				--"rbxassetid://10515042252"
+
+			end)
+			carpt.MouseButton2Click:Connect(function()
+				arm:Stop()
+
+			end)
+			carpt.MouseWheelForward:Connect(function()
+				char.carp:Remove()
+			end)
+			carpt.MouseWheelBackward:Connect(function()
+				AnimationTracks = char.Humanoid:GetPlayingAnimationTracks() for i, track in pairs (AnimationTracks) do track:Stop()  end
+			end)
+			
+			
+			
+			 
+				
+			end
+			
+			
+			
+			
+			
 
 		end)  
 
