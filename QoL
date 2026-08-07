@@ -3461,7 +3461,55 @@ function guias()
 					v:Clone().Parent = inblock end --use saveimstance on game.Lighting.oof
 			end
 		end)
-
+		
+		
+		coof = Button:Clone() coof.Parent = Spaghetti coof.Text = "Copy all" coof.Position = UDim2.new(0.5,0 , 0,row25) coof.BackgroundColor3 = Color3.fromRGB(85, 85, 85)   
+		coof.MouseButton1Click:Connect(function()
+			if not game.Lighting:FindFirstChild("oof") then inblock = Instance.new("Model",game.Lighting ) inblock.Name = "oof "  end
+			
+			
+			for i,v in pairs(workspace:GetChildren()) do
+				--if v.Parent:FindFirstChildWhichIsA("Humanoid") then
+					--hit.Parent
+					--hit.Parent = game.Workspace.fake -- table insert
+				--else
+				if v:IsA("Terrain") or v:IsA("Camera") or v:IsA("Sound") or v:IsA("Value")  then
+					else 
+					v:Clone().Parent = game.Lighting.oof 
+					--if v:IsA("Model") then
+						
+					--end
+				end --use saveimstance on game.Lighting.oof
+			end
+			
+			for _,part1 in pairs(game.Lighting.oof:GetDescendants()) do 
+				if part1:IsA("BasePart")  then 
+					for _,partdupe in pairs(game.Lighting.oof:GetDescendants()) do
+						if partdupe.CFrame == part1.CFrame and partdupe.Size == part1.Size then partdupe:Remove() end
+					end
+				end
+				
+				end
+			
+			
+			d=0
+			repeat for _,s in pairs(game.Lighting.oof:GetDescendants()) do 
+							if s.ClassName==("Model") or  s.ClassName==("Folder") then tmatval =s:GetChildren() if #tmatval == 0 then s:Remove()   end end end  d += 1
+						  wait(.25)
+			until d == 10
+			
+			
+			
+		end)
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		This = "eeeEEEEWWWWW roblox bugged out and disabled everyones clothes, hey wait a second this isn't half bad. I think I'll add it "
 		fail = Button:Clone() fail.Parent = Spaghetti fail.Text = "nu p sk" fail.Position = UDim2.new(0.5,0 , 0,row21) fail.BackgroundColor3 = Color3.fromRGB(0, 0, 0)   
 		fail.MouseButton2Click:Connect(function() char:FindFirstChildWhichIsA("Shirt").ShirtTemplate = "" char:FindFirstChildWhichIsA("Pants").PantsTemplate = "" end)
@@ -3510,7 +3558,7 @@ function guias()
 
 		This = "Save sky settings for you game"
 		savedL=0
-		ligh = Button:Clone() ligh.Parent = Spaghetti ligh.Text = "save Light" ligh.Position = UDim2.new(0.5,0 , 0,row25) ligh.BackgroundColor3 = Color3.fromRGB(255, 170, 0)   
+		ligh = Button:Clone() ligh.Parent = Spaghetti ligh.Text = "save Light" ligh.Position = UDim2.new(0.5,0 , 0,row27) ligh.BackgroundColor3 = Color3.fromRGB(255, 170, 0)   
 		ligh.MouseButton1Click:Connect(function() 
 			gLighting = game.Lighting
 			--if game.Lighting:FindFirstChild("savedLighting") then game.Lighting:FindFirstChild("savedLighting"):Remove() end 
