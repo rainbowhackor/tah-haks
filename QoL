@@ -3446,9 +3446,10 @@ function guias()
 		deloof.MouseButton1Click:Connect(function()
 			if workspace:FindFirstChild("fake") then workspace:FindFirstChild("fake"):Remove() end  
 			--if game.Lighting:FindFirstChild("oof2") then game.Lighting:FindFirstChild("oof2"):Remove() local wa = Instance.new("Model",game.Lighting) wa.Name = "oof2" end
-			local fake = Instance.new("Part",game.Workspace) fake.Anchored=true fake.CanCollide=false fake.Transparency=.7 fake.BrickColor=BrickColor.new("New Yeller")
-			sik = math.random(1,2) if sik == 1 then es=200 else es = 700 end
-			fake.Name = "fake" fake.Size = Vector3.new(es,111,es)  fake.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position
+			local fake = Instance.new("Part",game.Workspace) fake.Anchored=true fake.CanCollide=false fake.CastShadow=false fake.Transparency=.7 fake.BrickColor=BrickColor.new("New Yeller")
+			--sik = math.random(1,2) if sik == 1 then es=200 else es = 700 end
+			fake.Name = "fake" fake.Size = Vector3.new(1250,800,1250)  fake.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position +Vector3.new(0,200,0)
+			f= Instance.new("SelectionBox",fake) f.Adornee = fake f.Transparency = 0 f.Color3 = Color3.fromRGB(0, 255, 0) f.LineThickness = 2  
 		end)
 		deloof.MouseButton2Click:Connect(function() if workspace:FindFirstChild("fake") then workspace:FindFirstChild("fake"):Remove() end end)
 		deloof.MouseWheelForward:Connect(function() local found = game.Workspace:GetPartsInPart(workspace.fake) added += 1
