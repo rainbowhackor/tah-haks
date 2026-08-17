@@ -1752,7 +1752,7 @@ heavy1 = nil masslist = nil listing = nil Mass5 = nil Mass6 = nil Mass7 = nil Ma
 faces1 = nil facelist = nil gridding = nil faceID = nil swimin = nil gravy = nil runsp = nil fpsc = nil fps = nil climbin = nil
 SliderG = nil SliderJ = nil SliderW = nil SliderR = nil colorG = nil colorR = nil sliders = nil Mouse = nil
 hats = nil stored = nil accesses = nil charhat = nil accesslist = nil allhats = nil eha = nil hatt = nil hatt2 = nil hattclone2 = nil obj = nil obj2 = nil
-invv = nil deleter = nil bhob = nil bho = nil afling = nil wheight = nil toolate = nil list = nil iFailed = nil uFailed = nil toolate2 = nil list2 = nil setclipboard = nil
+invv = nil deleter = nil bhob = nil bho = nil afling = nil wheight = nil toolate = nil list = nil iFailed = nil uFailed = nil toolate2 = nil list2 = nil --setclipboard = nil
 
 s = nil Apaused = nil Animspeed = nil Animspaused = nil ALL_THE_DANCES = nil Hm = nil HA = nil edance = nil noquake = nil ghostblock = nil 
 floor = nil oceanfloor = nil oceanfloors = nil oceanfloor1 = nil oceanfloor2 = nil oceanfloor3 = nil oceanfloor4 = nil oceanfloor5 = nil voidfloor = nil
@@ -3200,10 +3200,10 @@ function guias()
 				uFailed = Button:Clone() uFailed.Parent = list uFailed.Text = Ls.DisplayName uFailed.Size = UDim2.new(0.95,0 , 0,nan) uFailed.Position = UDim2.new(0.05, 0 , 0, plus) plus+=nan
 				--uFailed = Button:Clone() uFailed.Parent = list uFailed.Text = Ls.CharacterAppearanceId uFailed.Size = UDim2.new(0.95,0 , 0,nan) uFailed.Position = UDim2.new(0.05, 0 , 0, plus) plus+=nan plus+=5 
 				local bFailed = Button:Clone() bFailed.Parent = list  bFailed.Text = Ls.CharacterAppearanceId bFailed.Size = UDim2.new(0.95,0 , 0,nan) bFailed.Position = UDim2.new(0.05, 0 , 0, plus) plus+=nan plus+=5 
-				bFailed.MouseButton1Click:Connect(function(player) setclipboard(Ls.realname.Value .. " " .. Ls.id.Value)   end)-- setclipboard(tostring(cFailed.Text))   end)
+				bFailed.MouseButton1Click:Connect(function(player)   setclipboard(tostring(bFailed.Text))   end)
 				bFailed.MouseButton2Click:Connect(function(player) game:GetService("GuiService"):InspectPlayerFromUserId(Ls.CharacterAppearanceId) end)
 					--[[local GuiService = game:GetService("GuiService")
-					local Players = game:GetService("Players")
+					local Players = game:GetService("Players")	
 
 					-- Get user ID by username
 					local success, userId = pcall(function()
@@ -3235,7 +3235,12 @@ function guias()
 				uFailed = Button:Clone() uFailed.Parent = list2 if Ls:FindFirstChild("realname") then uFailed.Text = Ls.realname.Value end uFailed.Size = UDim2.new(0.95,0 , 0,nan) uFailed.Position = UDim2.new(0, 0 , 0, plus) plus+=nan 
 				uFailed = Button:Clone() uFailed.Parent = list2 if Ls:FindFirstChild("nickname") then uFailed.Text = Ls.nickname.Value end uFailed.Size = UDim2.new(0.95,0 , 0,nan) uFailed.Position = UDim2.new(0, 0 , 0, plus) plus+=nan
 				local cFailed = Button:Clone() cFailed.Parent = list2 if Ls:FindFirstChild("id") then cFailed.Text = Ls.id.Value end cFailed.Size = UDim2.new(0.95,0 , 0,nan) cFailed.Position = UDim2.new(0, 0 , 0, plus) plus+=nan plus+=5 
-				cFailed.MouseButton1Click:Connect(function(player) setclipboard(Ls.realname.Value .. " " .. Ls.id.Value)   end) -- setclipboard(tostring(cFailed.Text))   end)
+				cFailed.MouseButton1Click:Connect(function(player) 
+					--setclipboard(Ls.realname.Value .. " " .. Ls.id.Value)   end) 
+					-- setclipboard(tostring(cFailed.Text))  
+					setclipboard(tostring(cFailed.Text))  
+
+			end)
 				cFailed.MouseButton2Click:Connect(function(player)game:GetService("GuiService"):InspectPlayerFromUserId(Ls.id.Value) end)
 				--local delete = Button:Clone() cFailed.Parent = list2 if Ls:FindFirstChild("id") then cFailed.Text = Ls.id.Value end cFailed.Size = UDim2.new(0.95,0 , 0,nan) cFailed.Position = UDim2.new(0, 0 , 0, plus) plus+=nan plus+=5 
 			end 
@@ -3301,6 +3306,9 @@ function guias()
 							local ba = Button:Clone() ba.Parent = copycharanim ba.Size = UDim2.new(0.95,0 , 0,15) ba.BackgroundTransparency = .5 ba.TextXAlignment = Enum.TextXAlignment.Left ba.BackgroundColor3 = Color3.fromRGB(0, 170, 0)
 							ba.Text = game:GetService("MarketplaceService"):GetProductInfo(tonumber(str)).Name .. "	"  ..str--track.Animation.AnimationId:gsub('[^%d.]', '')  -- track.Animation.AnimationId
 							ba.MouseButton1Down:Connect(function()
+								local success, data = pcall(function() 
+									setclipboard(  ba.Text  ) 	  -- dont set setclipboard = nil in library    that broke all setclipboards
+								return end)
 								--if sethiddenproperty then
 								--setclipboard("https://assetdelivery.roblox.com/v1/asset/?id="..str .."  ".. ba.Text  ) --pre ugc patch
 								--	setclipboard( ba.Text )
@@ -3308,7 +3316,7 @@ function guias()
 								if not workspace:FindFirstChild("Erm Actually") then Instance.new("Folder",workspace).Name = "Erm Actually" end
 								Instance.new("Folder",workspace:FindFirstChild("Erm Actually") ).Name =   ba.Text 
 
-								setclipboard(  ba.Text  )
+								
 
 							end)
 						end
